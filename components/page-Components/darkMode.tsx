@@ -1,43 +1,50 @@
-import { IoSunny } from "react-icons/io5";
-import { BsFillMoonStarsFill } from "react-icons/bs";
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
+import { IoSunny } from "react-icons/io5"
+import { BsFillMoonStarsFill } from "react-icons/bs"
+import { useTheme } from "next-themes"
+import { useState, useEffect } from "react"
+import { useMantineColorScheme } from "@mantine/core"
 
 const DarkMode = () => {
-  const [mounted, setMounted] = useState(false);
-  const { systemTheme, theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false)
+    const { theme, setTheme } = useTheme()
 
-  useEffect(() => setMounted(true), []);
+    const { toggleColorScheme } = useMantineColorScheme()
 
-  if (!mounted) return null;
+    useEffect(() => setMounted(true), [])
 
-  const currentTheme = theme === "system" ? systemTheme : theme;
+    if (!mounted) return null
 
-  if (currentTheme === "dark") {
-    return (
-      <button
-        onClick={() => {
-          setTheme("light");
-        }}
-        className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mx-3  
+    const handleDarkMode = () => {
+        toggleColorScheme("dark")
+        setTheme("dark")
+    }
+
+    const handleLightMode = () => {
+        toggleColorScheme("light")
+        setTheme("light")
+    }
+
+    if (theme === "dark") {
+        return (
+            <button
+                onClick={handleLightMode}
+                className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mx-3  
         `}
-      >
-        <IoSunny />
-      </button>
-    );
-  } else {
-    return (
-      <button
-        onClick={() => {
-          setTheme("dark");
-        }}
-        className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mr-3  
+            >
+                <IoSunny />
+            </button>
+        )
+    } else {
+        return (
+            <button
+                onClick={handleDarkMode}
+                className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mr-3  
         `}
-      >
-        <BsFillMoonStarsFill />
-      </button>
-    );
-  }
-};
+            >
+                <BsFillMoonStarsFill />
+            </button>
+        )
+    }
+}
 
-export default DarkMode;
+export default DarkMode
