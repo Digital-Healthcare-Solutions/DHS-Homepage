@@ -1,12 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
-import { FaqSimple } from "../components/mantine-Components/faq";
+import Head from "next/head"
+import Image from "next/image"
+import { FaqSimple } from "../components/mantine-Components/faq"
+import { HeroHomePage } from "../components/mantine-Components/heroHomePage"
 
 export default function Home() {
-  return (
-    <main>
-      hello is this thing on? Lets test out this font With some capital shittttt
-      <FaqSimple />
-    </main>
-  );
+    return (
+        <main>
+            <HeroHomePage />
+            <FaqSimple />
+        </main>
+    )
 }
