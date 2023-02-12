@@ -11,7 +11,7 @@ const Nav = () => {
                     href="/"
                     className=" font-semibold text-base md:text-lg lg:text-2xl ml-2 lg:ml-4 hover:text-blue-500 tracking-wide dark:font-normal"
                 >
-                    Digital HealthCare Solutions
+                    Digital Healthcare Solutions
                 </Link>
             </div>
             <Burger />

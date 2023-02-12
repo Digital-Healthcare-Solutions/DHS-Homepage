@@ -157,7 +157,7 @@ export function Footer({ data }: FooterLinksProps) {
             </Container>
             <Container className={classes.afterFooter}>
                 <Text color="dimmed" size="sm">
-                    © 2020 mantine.dev. All rights reserved.
+                    © 2023 Digital Healthcare Solutions. All rights reserved.
                 </Text>
 
                 <Group

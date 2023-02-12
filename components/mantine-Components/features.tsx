@@ -39,6 +39,12 @@ export const MOCKDATA = [
         title: "24/7 Support",
         description:
             "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail"
+    },
+    {
+        icon: RiComputerLine,
+        title: "24/7 Support",
+        description:
+            "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail"
     }
 ]
 
