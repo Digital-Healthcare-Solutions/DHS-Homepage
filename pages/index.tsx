@@ -15,10 +15,10 @@ export default function Home() {
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             />
             <HomeCards />
-            <FaqSimple />
-            <section className="flex justify-center">
+            <section className="flex justify-center bg-gradient-to-b from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900">
                 <ContactUs />
-            </section>
+            </section>{" "}
+            <FaqSimple />
         </main>
     )
 }

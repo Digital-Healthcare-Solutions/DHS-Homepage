@@ -5,7 +5,7 @@ import CardHome from "../mantine-Components/cardHomepage"
 
 export default function HomeCards() {
     return (
-        <section className="flex flex-col maxMd:items-center md:flex-row justify-around mx-4 gap-4 mb-10">
+        <section className="flex flex-col maxMd:items-center md:flex-row justify-around px-4 gap-4 pb-10 bg-gradient-to-b from-blue-50 to-blue-50 dark:from-neutral-800 dark:to-neutral-800">
             <CardHome
                 icon={<RiComputerLine size={25} />}
                 title="Our Product"

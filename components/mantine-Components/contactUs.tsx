@@ -34,7 +34,8 @@ function ContactUs() {
     return (
         <form
             onSubmit={formik.handleSubmit}
-            className="px-8 w-full md:w-3/4 xl:w-1/2"
+            className="px-8 w-full md:w-3/4 xl:w-1/2 py-12
+            "
         >
             <Title
                 order={2}
@@ -57,7 +58,6 @@ function ContactUs() {
                     label="Name"
                     placeholder="Your name"
                     name="name"
-                    variant="filled"
                     value={formik.values.name}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -67,7 +67,6 @@ function ContactUs() {
                     label="Email"
                     placeholder="Your email"
                     name="email"
-                    variant="filled"
                     value={formik.values.email}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
@@ -80,7 +79,6 @@ function ContactUs() {
                 placeholder="Subject"
                 mt="md"
                 name="subject"
-                variant="filled"
                 value={formik.values.subject}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -94,7 +92,6 @@ function ContactUs() {
                 minRows={5}
                 autosize
                 name="message"
-                variant="filled"
                 value={formik.values.message}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}

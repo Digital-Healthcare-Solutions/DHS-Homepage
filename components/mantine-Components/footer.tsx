@@ -4,7 +4,7 @@ import { createStyles, Text, Container, ActionIcon, Group } from "@mantine/core"
 
 const useStyles = createStyles((theme) => ({
     footer: {
-        marginTop: 120,
+        marginTop: 40,
         paddingTop: theme.spacing.xl * 2,
         paddingBottom: theme.spacing.xl * 2,
         backgroundColor:
