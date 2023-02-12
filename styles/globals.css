@@ -7,3 +7,18 @@
         @apply dark:text-neutral-50 dark:bg-neutral-900;
     }
 }
+
+body::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+@layer dark {
+    body::-webkit-scrollbar-track {
+        @apply dark:bg-neutral-800;
+    }
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #3c3f42;
+    border-radius: 10px;
+}
