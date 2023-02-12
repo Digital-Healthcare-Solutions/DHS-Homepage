@@ -117,7 +117,11 @@ export function HeroHomePage() {
                             centered, care plans with ease
                         </div>
 
-                        <ButtonPrimary type="button" className="my-3" onClick>
+                        <ButtonPrimary
+                            type="button"
+                            className="my-3"
+                            onClick={console.log("hello")}
+                        >
                             Get started
                         </ButtonPrimary>
                     </section>

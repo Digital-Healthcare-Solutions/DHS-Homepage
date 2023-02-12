@@ -5,7 +5,7 @@ import {schemaTypes} from './schemas'
 
 export default defineConfig({
   name: 'default',
-  title: 'DigitalHealthcareSolutions_HomePage',
+  title: 'sanityBlog',
 
   projectId: 'u66uay7b',
   dataset: 'production',
