@@ -1,9 +1,19 @@
 import { Squash as Hamburger } from "hamburger-react"
+import { useState } from "react"
 
-const Burger = () => {
+const Burger = ({ open, setOpen }) => {
+    const theme = localStorage.getItem("theme")
     return (
         <div className="md:hidden mr-4">
-            <Hamburger />
+            <Hamburger
+                color={theme == "light" ? "#000" : "#fff"}
+                toggled={open}
+                toggle={setOpen}
+                size={20}
+                easing="ease-in-out"
+                rounded
+                label="Show menu"
+            />
         </div>
     )
 }

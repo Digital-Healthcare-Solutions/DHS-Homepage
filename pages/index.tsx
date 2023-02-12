@@ -5,10 +5,16 @@ import { FaqSimple } from "../components/mantine-Components/faq"
 import { FeaturesGrid } from "../components/mantine-Components/features"
 import { HeroHomePage } from "../components/mantine-Components/heroHomePage"
 import HomeCards from "../components/page-Components/HomeCards"
+import { motion } from "framer-motion"
 
 export default function Home() {
     return (
-        <main>
+        <motion.main
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6 }}
+        >
             <HeroHomePage />
             <FeaturesGrid
                 title="Features"
@@ -19,6 +25,6 @@ export default function Home() {
                 <ContactUs />
             </section>{" "}
             <FaqSimple />
-        </main>
+        </motion.main>
     )
 }

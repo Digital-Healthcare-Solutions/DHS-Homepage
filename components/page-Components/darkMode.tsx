@@ -38,7 +38,7 @@ const DarkMode = () => {
         return (
             <button
                 onClick={handleDarkMode}
-                className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mr-3  
+                className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mx-3  
         `}
             >
                 <BsFillMoonStarsFill />
