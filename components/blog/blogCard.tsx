@@ -59,7 +59,7 @@ function BlogCard({
             withBorder
             p="lg"
             radius="md"
-            className="bg-gray-100 ring-1 ring-gray-300 dark:ring-neutral-700 dark:bg-[#1A1B1E] w-full group hover:dark:shadow-neutral-200 hover:shadow-gray-500 hover:shadow-lg transition-shadow duration-200 ease-in-out active:dark:shadow-neutral-200 active:shadow-gray-500 active:shadow-lg"
+            className="bg-gray-100 ring-1 ring-gray-300 dark:ring-neutral-700 dark:bg-[#1A1B1E]  group hover:dark:shadow-neutral-200 hover:shadow-gray-500 hover:shadow-lg transition-shadow duration-200 ease-in-out active:dark:shadow-neutral-200 active:shadow-gray-500 active:shadow-lg w-72 sm:w-96 md:w-[21.5rem] lg:w-80 xl:w-96 h-fit"
         >
             <Card.Section mb="sm">
                 <Image

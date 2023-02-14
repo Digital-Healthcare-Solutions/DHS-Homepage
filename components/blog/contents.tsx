@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { createStyles, Box, Text, Group } from "@mantine/core"
-import { useRef } from "react"
 // import { IconListSearch } from '@tabler/icons';
 import slugify from "slugify"
 import Link from "next/link"
@@ -109,7 +108,7 @@ export function TableOfContentsFloating({
     console.log(tableElems)
 
     const { classes, cx } = useStyles()
-    const [active, setActive] = useState(2)
+    const [active, setActive] = useState(0)
 
     const items = tableElems.map((item, index) => (
         <Box

@@ -19,10 +19,10 @@ const Blog = ({ posts }: Props) => {
                 description="Read our latest blog posts to learn more about our products and services."
             />
 
-            <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 p-2 mx-1 md:mx-10">
+            <div className="flex flex-col items-center md:items-start md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8 p-2 mx-4 md:mx-8 ">
                 {posts.map((post) => (
                     <Link
-                        className="w-auto sm:w-96"
+                        className="self-auto"
                         key={post._id}
                         href={`/blog/${post.slug.current}`}
                     >
