@@ -19,7 +19,9 @@ module.exports = {
                 lg: "1024px",
                 xl: "1280px",
                 "2xl": "1536px",
-                maxMd: { max: "768px" }
+                maxMd: { max: "768px" },
+                minRandom: "1120px",
+                maxRandom: { max: "1120px" }
             }
         }
     },

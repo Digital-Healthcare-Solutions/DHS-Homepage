@@ -1,3 +1,7 @@
+type BadgeType = {
+    title: string
+}
+
 export interface Post {
     _id: string
     _createdAt: string
@@ -16,4 +20,6 @@ export interface Post {
         current: string
     }
     body: [object]
+    categories: [object: BadgeType]
+    readTime: number
 }

@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+
+sanityBlog/node_modules
+
+
 # testing
 /coverage
 

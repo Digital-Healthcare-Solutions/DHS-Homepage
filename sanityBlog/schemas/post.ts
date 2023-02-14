@@ -55,6 +55,13 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'readTime',
+      title: 'Read Time',
+      type: 'number',
+      description: 'Estimated read time in minutes',
+      validation: (Rule) => Rule.min(1).max(20).integer(),
+    }),
   ],
 
   preview: {

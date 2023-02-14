@@ -29,7 +29,7 @@ const placeholder =
 export function FaqSimple() {
     const { classes } = useStyles()
     return (
-        <div className="bg-gradient-to-b from-white to-white dark:from-neutral-900 dark:to-neutral-900">
+        <div className="bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-900">
             <Container size="sm" className={classes.wrapper}>
                 <Title align="center" className={classes.title}>
                     Frequently Asked Questions

@@ -42,7 +42,7 @@ const NavLinks = () => {
                 Product
             </Link>
             <Link
-                href="pricing"
+                href="/pricing"
                 className={
                     pathname === "/pricing"
                         ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700  dark:font-normal active:ring-2 "
