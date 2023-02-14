@@ -8,14 +8,25 @@ import { RichTextComponents } from "../../components/blog/RichTextComponents"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
 import { Avatar, Text } from "@mantine/core"
 import { TableOfContentsFloating } from "../../components/blog/contents"
+import { useScroll, motion } from "framer-motion"
 
 interface Props {
     post: Post
 }
 
 const Post = ({ post }: Props) => {
+    const { scrollYProgress } = useScroll()
+
     return (
         <article>
+            <motion.div
+                className={
+                    "h-1 bg-gradient-to-r from-blue-400 to-purple-500 top-14 md:top-16 lg:top-20 sticky z-50 left-0 origin-top-left rounded-full "
+                }
+                style={{ scaleX: scrollYProgress }}
+                initial={{ scaleX: 0 }}
+            ></motion.div>
+
             <Image
                 src={urlFor(post.mainImage).url()!}
                 className="w-full h-40 lg:h-64 object-cover"

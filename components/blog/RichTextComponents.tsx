@@ -84,7 +84,7 @@ export const RichTextComponents = {
         h4: LinkableH4,
         h5: LinkableH5,
         p: ({ children }: any) => (
-            <p className="text-base lg:text-lg py-5 md:py-8">{children}</p>
+            <p className="text-base lg:text-lg py-5 md:py-5">{children}</p>
         ),
 
         blockquote: ({ children }: any) => (

@@ -5,7 +5,7 @@ const ButtonSecondary = ({ className, onClick, children, ...props }) => {
         <button
             onClick={onClick}
             {...props}
-            className={`font-bold py-2 px-4 rounded-lg shadow-md font-sans flex items-center 
+            className={`font-bold py-3 px-4 rounded-lg shadow-md font-sans flex items-center 
       ${className}`}
         >
             {children}

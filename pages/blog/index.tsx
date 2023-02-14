@@ -19,7 +19,7 @@ const Blog = ({ posts }: Props) => {
                 description="Read our latest blog posts to learn more about our products and services."
             />
 
-            <div className="flex flex-col items-center md:items-start md:grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8 p-2 mx-4 md:mx-8 ">
+            <div className="flex flex-col items-center md:items-start md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-4 md:gap-8 p-2 mx-4 md:mx-8 pb-24 pt-12">
                 {posts.map((post) => (
                     <Link
                         className="self-auto"

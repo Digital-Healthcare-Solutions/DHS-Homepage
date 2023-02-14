@@ -81,9 +81,9 @@ export function HeroHomePage() {
                     gradient={
                         theme == "light"
                             ? "linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .15) 0%)"
-                            : "linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 90%)"
+                            : "linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .65) 50%)"
                     }
-                    opacity={1}
+                    opacity={1.3}
                     zIndex={0}
                 />
                 <Container className={classes.container}>

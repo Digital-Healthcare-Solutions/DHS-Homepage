@@ -3,6 +3,8 @@ import ButtonPrimary from "../../components/UI-Components/button-primary"
 import { useState } from "react"
 import { useRouter } from "next/router"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
+import { motion } from "framer-motion"
+import { Button } from "@mantine/core"
 
 const Pricing = () => {
     const router = useRouter()
@@ -11,35 +13,58 @@ const Pricing = () => {
     const [oneTimePayment, setOneTimePayment] = useState(false)
 
     return (
-        <section className="w-screen min-h-screen bg-gradient-to-tr dark:bg-gradient-to-t from-neutral-50 to-blue-400 dark:to-blue-400 dark:from-neutral-900 flex justify-center items-center text-white ">
+        <section className="bg-gradient-to-r dark:bg-gradient-to-r from-blue-300 to-blue-500 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center py-20">
             {" "}
-            <div className="flex flex-col  drop-shadow-lg">
-                {" "}
-                <article className="flex flex-row justify-center items-center">
-                    <ButtonSecondary
+            <div className="flex flex-col items-center  drop-shadow-lg">
+                <h1 className="flex flex-col items-center mx-3">
+                    <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-4">
+                        We offer a plan for all business sizes. Choose the one
+                        that fits yours best.
+                    </div>
+                    <div className="text-xl md:text-2xl w-fit max-w-3xl text-center font-bold">
+                        We are currently in beta. Please use the code
+                        <span className="text-green-500 font-sans">
+                            {" "}
+                            "BETA2023"{" "}
+                        </span>
+                        to get 50% off your first year. Or you can contact us{" "}
+                        <Link
+                            className="text-white dark:text-blue-300 hover:underline"
+                            href="/#contact"
+                        >
+                            here
+                        </Link>{" "}
+                        for more information.
+                    </div>
+                </h1>
+                <article className="flex flex-row justify-center items-center mb-4 mt-10">
+                    <Button
                         onClick={() => setOneTimePayment(false)}
+                        variant={oneTimePayment ? "light" : "filled"}
                         className={
                             oneTimePayment
-                                ? "bg-white text-blue-500 border border-[#3b82f6] px-4 mr-2 border-solid hover:bg-[#3b82f6] hover:text-white"
-                                : "bg-[#3b82f6] border text-white mr-2 border-[#3b82f6] px-4 border-solid hover:bg-[#3b82f6]"
+                                ? "bg-blue-200 text-black dark:hover:bg-blue-200 "
+                                : "text-black  bg-white font-bold hover:bg-white "
                         }
                     >
                         Monthly
-                    </ButtonSecondary>
-                    <ButtonSecondary
+                    </Button>
+                    <Button
                         onClick={() => setOneTimePayment(true)}
+                        variant={oneTimePayment ? "filled" : "light"}
                         className={
                             oneTimePayment
-                                ? "bg-[#3b82f6] border text-white border-[#3b82f6] px-4 border-solid hover:bg-[#3b82f6]"
-                                : "bg-white border border-[#3b82f6] px-4 border-solid hover:bg-[#3b82f6] hover:text-white text-blue-500"
+                                ? "text-black  bg-white font-bold hover:bg-white "
+                                : "bg-blue-200 text-black dark:hover:bg-blue-200 "
                         }
                     >
                         Yearly
-                    </ButtonSecondary>
+                    </Button>
                 </article>
                 {oneTimePayment ? (
                     <article className="grid grid-cols-1 lg:grid-cols-3 gap-3">
-                        <section className="bg-[#3b82f6] rounded-xl p-12 text-sm m-2 w-[333px] drop-shadow-menu">
+                        <section className="bg-white dark:bg-[#3b83f6] rounded-xl p-8 text-sm md:text-base m-2 max-w-[270px] xs:max-w-[325px] sm:max-w-[400px] drop-shadow-menu border-2 border-blue-500 text-neutral-800 dark:text-neutral-100 font-sans">
+                            {" "}
                             <h1 className="text-2xl font-sans font-medium pb-4">
                                 Base Plan
                             </h1>
@@ -61,7 +86,7 @@ const Pricing = () => {
                                 onClick={() =>
                                     router.push("https://smart-plan.io")
                                 }
-                                className="bg-white text-[#3b82f6] hover:bg-[#ffffffd2] w-full font-bold font-sans"
+                                className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 "
                             >
                                 Get Started today
                             </ButtonSecondary>
@@ -86,8 +111,8 @@ const Pricing = () => {
                                 </ul>
                             </div>
                         </section>
-                        <section className="bg-[#3b83f6] bg- rounded-xl pb-12 pl-12 pr-12 pt-4 text-sm m-2 w-[333px] drop-shadow-menu">
-                            <div className="text-xs mb-2 bg-gradient-to-r from-white to-yellow-500 p-[3px] text-center w-28 rounded text-black font-bold tracking-wide animate-shine">
+                        <section className="bg-white dark:bg-[#3b83f6]  bg- rounded-xl pb-8 pl-8 pr-8 pt-4 text-sm md:text-base m-2  max-w-[270px] xs:max-w-[325px]  sm:max-w-[400px] drop-shadow-menu  border-2 border-blue-500 text-neutral-800 dark:text-neutral-100 font-sans">
+                            <div className="text-xs mb-2 bg-gradient-to-r from-yellow-200 to-yellow-500 dark:from-neutral-100 dark:to-yellow-500 p-[3px] text-center w-28 rounded text-black font-bold tracking-wide animate-shine">
                                 Our best deal !
                             </div>
                             <h1 className="text-2xl font-sans font-medium pb-4">
@@ -111,7 +136,7 @@ const Pricing = () => {
                                 onClick={() =>
                                     router.push("https://smart-plan.io")
                                 }
-                                className="bg-white text-[#3b82f6] hover:bg-[#ffffffd2] w-full font-bold font-sans"
+                                className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 "
                             >
                                 Get Started today
                             </ButtonSecondary>
@@ -131,7 +156,7 @@ const Pricing = () => {
                                 </ul>
                             </div>
                         </section>
-                        <section className="bg-[#3b82f6] rounded-xl p-12 text-sm m-2 w-[333px] drop-shadow-menu">
+                        <section className="bg-white dark:bg-[#3b83f6] rounded-xl p-8 text-sm md:text-base m-2 max-w-[270px] xs:max-w-[325px]  sm:max-w-[400px] drop-shadow-menu border-2 border-blue-500 text-neutral-800 dark:text-neutral-100 font-sans">
                             <h1 className="text-2xl font-sans font-medium pb-4">
                                 Enterprise Plan
                             </h1>
@@ -140,7 +165,7 @@ const Pricing = () => {
                                 who require a larger amount of staff access and
                                 custom solutions.
                             </p>
-                            <div className="py-2 flex flex-row items-center">
+                            <div className="py-5 flex flex-row items-center">
                                 <div className="flex flex-row items-end">
                                     {" "}
                                     <span className="text-3xl pr-1 font-sans font-bold">
@@ -160,7 +185,7 @@ const Pricing = () => {
                                 onClick={() =>
                                     router.push("https://smart-plan.io")
                                 }
-                                className="bg-white text-[#3b82f6] hover:bg-[#ffffffd2] w-full font-bold font-sans"
+                                className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 "
                             >
                                 Get Started today
                             </ButtonSecondary>
@@ -188,8 +213,8 @@ const Pricing = () => {
                         </section>
                     </article>
                 ) : (
-                    <article className="flex flex-row">
-                        <section className="bg-[#3b82f6] rounded-xl p-12 text-sm m-2 w-[333px] drop-shadow-menu">
+                    <article className="grid grid-cols-1 lg:grid-cols-3 gap-3">
+                        <section className="bg-white dark:bg-[#3b83f6] rounded-xl p-8 text-sm md:text-base m-2  max-w-[270px] xs:max-w-[325px] sm:max-w-[400px] drop-shadow-menu border-2 border-blue-500 text-neutral-800 dark:text-neutral-100 font-sans">
                             <h1 className="text-2xl font-sans font-medium pb-4">
                                 Base Plan
                             </h1>
@@ -211,7 +236,7 @@ const Pricing = () => {
                                 onClick={() =>
                                     router.push("https://smart-plan.io")
                                 }
-                                className="bg-white text-[#3b82f6] hover:bg-[#ffffffd2] w-full font-bold font-sans"
+                                className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 "
                             >
                                 Get Started today
                             </ButtonSecondary>
@@ -236,8 +261,8 @@ const Pricing = () => {
                                 </ul>
                             </div>
                         </section>
-                        <section className="bg-[#3b83f6] bg- rounded-xl pb-12 pl-12 pr-12 pt-4 text-sm m-2 w-[333px] drop-shadow-menu">
-                            <div className="text-xs mb-2 bg-gradient-to-r from-white to-yellow-500 p-[3px] text-center w-20 rounded text-black font-bold tracking-wide animate-shine">
+                        <section className="bg-white dark:bg-[#3b83f6]  bg- rounded-xl pb-8 pl-8 pr-8 pt-4 text-sm md:text-base m-2  max-w-[270px] xs:max-w-[325px] sm:max-w-[400px] drop-shadow-menu  border-2 border-blue-500 text-neutral-800 dark:text-neutral-100 font-sans">
+                            <div className="text-xs mb-2 bg-gradient-to-r from-yellow-200 to-yellow-500 dark:from-neutral-100 dark:to-yellow-500 p-[3px] text-center w-28 rounded text-black font-bold tracking-wide animate-shine">
                                 Best Value
                             </div>
                             <h1 className="text-2xl font-sans font-medium pb-4">
@@ -261,7 +286,7 @@ const Pricing = () => {
                                 onClick={() =>
                                     router.push("https://smart-plan.io")
                                 }
-                                className="bg-white text-[#3b82f6] hover:bg-[#ffffffd2] w-full font-bold font-sans"
+                                className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 "
                             >
                                 Get Started today
                             </ButtonSecondary>
@@ -281,7 +306,7 @@ const Pricing = () => {
                                 </ul>
                             </div>
                         </section>
-                        <section className="bg-[#3b82f6] rounded-xl p-12 text-sm m-2 w-[333px] drop-shadow-menu">
+                        <section className="bg-white dark:bg-[#3b83f6] rounded-xl p-8 text-sm md:text-base m-2  max-w-[270px] xs:max-w-[325px] xs sm:max-w-[400px] drop-shadow-menu border-2 border-blue-500 text-neutral-800 dark:text-neutral-100 font-sans">
                             <h1 className="text-2xl font-sans font-medium pb-4">
                                 Enterprise Plan
                             </h1>
@@ -290,7 +315,7 @@ const Pricing = () => {
                                 who require a larger amount of staff access and
                                 custom solutions.
                             </p>
-                            <div className="py-2 flex flex-row items-center">
+                            <div className="py-5 flex flex-row items-center">
                                 <div className="flex flex-row items-end">
                                     {" "}
                                     <span className="text-3xl pr-1 font-sans font-bold">
@@ -310,7 +335,7 @@ const Pricing = () => {
                                 onClick={() =>
                                     router.push("https://smart-plan.io")
                                 }
-                                className="bg-white text-[#3b82f6] hover:bg-[#ffffffd2] w-full font-bold font-sans"
+                                className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 "
                             >
                                 Get Started today
                             </ButtonSecondary>
