@@ -1,6 +1,16 @@
-import { createStyles, Text, Container, ActionIcon, Group } from "@mantine/core"
+import {
+    createStyles,
+    Text,
+    Container,
+    ActionIcon,
+    Group,
+    Tooltip
+} from "@mantine/core"
+import Image from "next/image"
+import Link from "next/link"
 // import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
 // import { MantineLogo } from '@mantine/ds';
+import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs"
 
 const useStyles = createStyles((theme) => ({
     footer: {
@@ -19,7 +29,7 @@ const useStyles = createStyles((theme) => ({
     },
 
     logo: {
-        maxWidth: 200,
+        maxWidth: 225,
 
         [theme.fn.smallerThan("sm")]: {
             display: "flex",
@@ -143,14 +153,21 @@ export function Footer({ data }: FooterLinksProps) {
         <footer className={classes.footer}>
             <Container className={classes.inner}>
                 <div className={classes.logo}>
-                    {/* <MantineLogo size={30} /> */}
+                    <Image
+                        src="/dhs.svg"
+                        alt="DHS Logo"
+                        width={500}
+                        height={500}
+                        className="dark:invert"
+                    />
+
                     <Text
                         size="xs"
                         color="dimmed"
                         className={classes.description}
                     >
-                        Build fully functional accessible web applications
-                        faster than ever
+                        Empowering physicians to create personalized, patient
+                        centered, care plans with ease
                     </Text>
                 </div>
                 <div className={classes.groups}>{groups}</div>
@@ -166,14 +183,25 @@ export function Footer({ data }: FooterLinksProps) {
                     position="right"
                     noWrap
                 >
+                    <Tooltip
+                        label="Check out the Github for this site"
+                        openDelay={500}
+                        transition="slide-down"
+                        position="bottom"
+                    >
+                        <Link
+                            href={"https://github.com/BuckyMcYolo/DHS-Homepage"}
+                        >
+                            <ActionIcon size="lg">
+                                <BsGithub size={20} stroke={"1.5"} />
+                            </ActionIcon>
+                        </Link>
+                    </Tooltip>
                     <ActionIcon size="lg">
-                        {/* <IconBrandTwitter size={18} stroke={1.5} /> */}
+                        <BsLinkedin size={20} stroke={"1.5"} />
                     </ActionIcon>
                     <ActionIcon size="lg">
-                        {/* <IconBrandYoutube size={18} stroke={1.5} /> */}
-                    </ActionIcon>
-                    <ActionIcon size="lg">
-                        {/* <IconBrandInstagram size={18} stroke={1.5} /> */}
+                        <BsTwitter size={20} stroke={"1.5"} />
                     </ActionIcon>
                 </Group>
             </Container>

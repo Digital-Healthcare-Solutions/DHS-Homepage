@@ -113,8 +113,8 @@ export function HeroHomePage() {
                         </p> */}
 
                         <div className="font-normal text-center text-black dark:text-white text-xl">
-                            Empowering doctors to create personalized, patient
-                            centered, care plans with ease
+                            Empowering physicians to create personalized,
+                            patient centered, care plans with ease
                         </div>
 
                         <ButtonPrimary

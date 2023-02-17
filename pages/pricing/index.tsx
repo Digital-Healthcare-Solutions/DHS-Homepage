@@ -13,7 +13,7 @@ const Pricing = () => {
     const [oneTimePayment, setOneTimePayment] = useState(false)
 
     return (
-        <section className="bg-gradient-to-r dark:bg-gradient-to-r from-blue-300 to-blue-500 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center py-20">
+        <section className="bg-gradient-to-b from-white to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center py-20">
             {" "}
             <div className="flex flex-col items-center  drop-shadow-lg">
                 <h1 className="flex flex-col items-center mx-3">
@@ -23,13 +23,14 @@ const Pricing = () => {
                     </div>
                     <div className="text-xl md:text-2xl w-fit max-w-3xl text-center font-bold">
                         We are currently in beta. Please use the code
-                        <span className="text-green-500 font-sans">
+                        <span className="text-green-700 dark:text-green-500 font-sans">
                             {" "}
-                            "BETA2023"{" "}
+                            BETA2023{" "}
                         </span>
-                        to get 50% off your first year. Or you can contact us{" "}
+                        to get 50% off your first 6 months. Or you can contact
+                        us{" "}
                         <Link
-                            className="text-white dark:text-blue-300 hover:underline"
+                            className="text-blue-500  hover:underline"
                             href="/#contact"
                         >
                             here
@@ -43,7 +44,7 @@ const Pricing = () => {
                         variant={oneTimePayment ? "light" : "filled"}
                         className={
                             oneTimePayment
-                                ? "bg-blue-200 text-black dark:hover:bg-blue-200 "
+                                ? "bg-neutral-400 opacity-75 text-black dark:hover:bg-blue-100 dark:bg-blue-200  hover:bg-neutral-200 hover:opacity-100"
                                 : "text-black  bg-white font-bold hover:bg-white "
                         }
                     >
@@ -55,7 +56,7 @@ const Pricing = () => {
                         className={
                             oneTimePayment
                                 ? "text-black  bg-white font-bold hover:bg-white "
-                                : "bg-blue-200 text-black dark:hover:bg-blue-200 "
+                                : "bg-neutral-400 opacity-75 text-black dark:hover:bg-blue-100 dark:bg-blue-200  hover:bg-neutral-200 hover:opacity-100"
                         }
                     >
                         Yearly
