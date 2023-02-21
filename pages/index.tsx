@@ -6,6 +6,7 @@ import { FeaturesGrid } from "../components/mantine-Components/features"
 import { HeroHomePage } from "../components/mantine-Components/heroHomePage"
 import HomeCards from "../components/page-Components/HomeCards"
 import { motion } from "framer-motion"
+import SmartPlanDescription from "../components/page-Components/smartplanDescription"
 
 export default function Home() {
     return (
@@ -16,9 +17,10 @@ export default function Home() {
             transition={{ duration: 0.6 }}
         >
             <HeroHomePage />
+            <SmartPlanDescription />
             <FeaturesGrid
-                title="Features"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                title="Smartplan's Features"
+                description="We have a variety of features that can help you generate more revenue and run your practice more efficiently."
             />
             <HomeCards />
             <section className="flex justify-center bg-gradient-to-b from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900">

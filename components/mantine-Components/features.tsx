@@ -5,46 +5,61 @@ import {
     Container,
     SimpleGrid,
     useMantineTheme,
-    createStyles
+    createStyles,
+    Divider
 } from "@mantine/core"
 import { RiComputerLine } from "react-icons/ri"
 
 export const MOCKDATA = [
     {
         icon: RiComputerLine,
-        title: "Extreme performance",
+        title: "Provide evidence based and personalized care plans",
         description:
-            "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit"
+            "Smartplan allows anyone to create detailed care plans that cover all aspects of patient care, including disease specific symptom analysis, medication management, lifestyle modifications, education, and follow-up appointments."
     },
     {
         icon: RiComputerLine,
-        title: "Privacy focused",
+        title: "Save time",
         description:
-            "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma"
+            "Your staff members can create comprehensive and patient specific care plans without the need for the ordering provider to be present. This allows your staff to spend more time with your patients, and less time on paperwork."
     },
     {
         icon: RiComputerLine,
-        title: "No third parties",
+        title: "Earn reccuring revenue",
         description:
-            "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves"
+            "Smartplan allows you to bill for your care plans, and then automatically schedule follow-up appointments for your patients. This allows you to spend more time with your patients, and less time on paperwork."
+    },
+    {
+        icon: RiComputerLine,
+        title: "Access anywhere",
+        description:
+            "SmartPlan is cloud based and can be accessed from anywhere. No need to download any annoying installer, just log in and you're ready to go."
+    },
+
+    {
+        icon: RiComputerLine,
+        title: "Handle CCM in your own practice, with ease",
+        description:
+            "Don't outsource your patient's care to a third party, keep  control of your patient's care and your practice's revenue by using CCM in your own practice"
+    },
+    {
+        icon: RiComputerLine,
+        title: "No test limits",
+        description:
+            "We don't limit the number of patients you can bill CCMS for, or try to charge you extra for each patient you test. Pay one monthly fee and bill as many patients as you want"
+    },
+
+    {
+        icon: RiComputerLine,
+        title: "24/7 Support",
+        description:
+            "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail"
     },
     {
         icon: RiComputerLine,
         title: "Secure by default",
         description:
-            "Although it still can’t fly, its jumping power is outstanding, in Alola the mushrooms on Paras don’t grow up quite right"
-    },
-    {
-        icon: RiComputerLine,
-        title: "24/7 Support",
-        description:
-            "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail"
-    },
-    {
-        icon: RiComputerLine,
-        title: "24/7 Support",
-        description:
-            "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail"
+            "We utilize the latest in encryption technology to ensure that your patient's data is always safe and secure. We also have a HIPAA compliant hosting provider and utilize 2FA everytime for all of our users."
     }
 ]
 
@@ -71,17 +86,17 @@ const useStyles = createStyles((theme) => ({
         paddingBottom: theme.spacing.xl * 4
     },
 
-    title: {
-        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-        fontWeight: 900,
-        marginBottom: theme.spacing.md,
-        textAlign: "center",
+    // title: {
+    //     fontFamily: "Raleway, sans-serif",
+    //     fontWeight: 700,
+    //     marginBottom: theme.spacing.md,
+    //     textAlign: "center",
 
-        [theme.fn.smallerThan("sm")]: {
-            fontSize: 28,
-            textAlign: "left"
-        }
-    },
+    //     [theme.fn.smallerThan("sm")]: {
+    //         fontSize: 28,
+    //         textAlign: "left"
+    //     }
+    // },
 
     description: {
         textAlign: "center",
@@ -101,13 +116,14 @@ export function FeaturesGrid({ title, description, data = MOCKDATA }) {
     return (
         <div className="bg-gradient-to-b from-white to-blue-50 dark:from-neutral-900 dark:to-neutral-800">
             <Container className={classes.wrapper}>
-                <Title className={classes.title}>{title}</Title>
+                <h1 className="text-4xl font-bold text-center mb-5">{title}</h1>
 
                 <Container size={560} p={0}>
-                    <Text size="sm" className={classes.description}>
+                    <Text size="md" className={classes.description}>
                         {description}
                     </Text>
                 </Container>
+                {/* <Divider mt={20} size={2} /> */}
 
                 <SimpleGrid
                     mt={60}
