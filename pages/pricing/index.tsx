@@ -4,7 +4,9 @@ import { useState } from "react"
 import { useRouter } from "next/router"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import { motion } from "framer-motion"
-import { Button } from "@mantine/core"
+import { Button, Alert, Paper, Text, ThemeIcon, Group } from "@mantine/core"
+import { IoAlertCircleOutline } from "react-icons/io5"
+import { BsArrowDownRight } from "react-icons/bs"
 
 const Pricing = () => {
     const router = useRouter()
@@ -21,22 +23,98 @@ const Pricing = () => {
                         We offer a plan for all business sizes. Choose the one
                         that fits yours best.
                     </div>
-                    <div className="text-xl md:text-2xl w-fit max-w-3xl text-center font-bold">
-                        We are currently in beta. Please use the code
-                        <span className="text-green-700 dark:text-green-500 font-sans">
-                            {" "}
-                            BETA2023{" "}
-                        </span>
-                        to get 50% off your first 6 months. Or you can contact
-                        us{" "}
-                        <Link
-                            className="text-blue-500  hover:underline"
-                            href="/#contact"
-                        >
-                            here
-                        </Link>{" "}
-                        for more information.
-                    </div>
+                    <Alert
+                        icon={
+                            window.innerWidth < 1024 ? (
+                                ""
+                            ) : (
+                                <IoAlertCircleOutline size={25} />
+                            )
+                        }
+                        title="Good news!"
+                        radius="md"
+                        variant="outline"
+                        color="green"
+                    >
+                        <h2 className="flex flex-col items-center">
+                            <div className="text-xl md:text-2xl w-fit max-w-3xl text-center font-bold">
+                                {/* Please use the code
+                            <span className="text-green-700 dark:text-green-500 font-sans">
+                                {" "}
+                                BETA2023{" "}
+                            </span>
+                            to get 50% off your first 6 months. Or you can */}
+                                <div>
+                                    We are currently in beta. Contact us{" "}
+                                    <Link
+                                        className="text-blue-500  hover:underline"
+                                        href="/#contact"
+                                    >
+                                        here
+                                    </Link>{" "}
+                                    If you you would like to be part of our
+                                    closed beta program to get free testing
+                                    access to our platform for a limited time.
+                                </div>
+                            </div>
+                            <Paper
+                                withBorder
+                                p="md"
+                                radius="md"
+                                className="mt-5"
+                            >
+                                <Group position="apart">
+                                    <div>
+                                        <Text
+                                            color="dimmed"
+                                            transform="uppercase"
+                                            weight={700}
+                                            size="xs"
+                                        >
+                                            Positions left:{"  "}
+                                        </Text>
+                                        <Text weight={700} size="xl">
+                                            4
+                                        </Text>
+                                    </div>
+                                    <ThemeIcon
+                                        color="gray"
+                                        variant="light"
+                                        size={38}
+                                        radius="md"
+                                    >
+                                        <BsArrowDownRight
+                                            className="text-red-500"
+                                            size={28}
+                                        />
+                                    </ThemeIcon>
+                                </Group>
+                                <Text color="dimmed" size="sm" mt="md">
+                                    <Text
+                                        component="span"
+                                        color={"red"}
+                                        weight={700}
+                                    >
+                                        -20%
+                                    </Text>{" "}
+                                    decreased from previous
+                                </Text>
+                            </Paper>
+                        </h2>
+                    </Alert>
+
+                    {/* <Paper
+                        withBorder
+                        className="p-4 mt-4 flex flex-row w-80 justify-between items-center"
+                    >
+                        <Text size="xl" weight={700}>
+                            Number of positions left:{"  "}
+                        </Text>
+                        <Text className="text-red-500" size="xl">
+                            4
+                        </Text>{" "}
+                        <BsArrowDown size={20} className="text-red-500 mr-1" />
+                    </Paper> */}
                 </h1>
                 <article className="flex flex-row justify-center items-center mb-4 mt-10">
                     <Button

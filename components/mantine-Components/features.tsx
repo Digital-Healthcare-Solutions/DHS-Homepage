@@ -9,41 +9,46 @@ import {
     Divider
 } from "@mantine/core"
 import { RiComputerLine } from "react-icons/ri"
+import { BsCashStack } from "react-icons/bs"
+import { MdAccessTime, MdOpenInNewOff } from "react-icons/md"
+import { AiOutlineCloudUpload } from "react-icons/ai"
+import { RxCircleBackslash } from "react-icons/rx"
+import { BiDonateHeart } from "react-icons/bi"
 
 export const MOCKDATA = [
     {
-        icon: RiComputerLine,
+        icon: BiDonateHeart,
         title: "Provide evidence based and personalized care plans",
         description:
             "Smartplan allows anyone to create detailed care plans that cover all aspects of patient care, including disease specific symptom analysis, medication management, lifestyle modifications, education, and follow-up appointments."
     },
     {
-        icon: RiComputerLine,
+        icon: MdAccessTime,
         title: "Save time",
         description:
             "Your staff members can create comprehensive and patient specific care plans without the need for the ordering provider to be present. This allows your staff to spend more time with your patients, and less time on paperwork."
     },
     {
-        icon: RiComputerLine,
+        icon: BsCashStack,
         title: "Earn reccuring revenue",
         description:
             "Smartplan allows you to bill for your care plans, and then automatically schedule follow-up appointments for your patients. This allows you to spend more time with your patients, and less time on paperwork."
     },
     {
-        icon: RiComputerLine,
+        icon: AiOutlineCloudUpload,
         title: "Access anywhere",
         description:
             "SmartPlan is cloud based and can be accessed from anywhere. No need to download any annoying installer, just log in and you're ready to go."
     },
 
     {
-        icon: RiComputerLine,
+        icon: MdOpenInNewOff,
         title: "Handle CCM in your own practice, with ease",
         description:
             "Don't outsource your patient's care to a third party, keep  control of your patient's care and your practice's revenue by using CCM in your own practice"
     },
     {
-        icon: RiComputerLine,
+        icon: RxCircleBackslash,
         title: "No test limits",
         description:
             "We don't limit the number of patients you can bill CCMS for, or try to charge you extra for each patient you test. Pay one monthly fee and bill as many patients as you want"
