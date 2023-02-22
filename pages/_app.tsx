@@ -14,6 +14,8 @@ import { useState, useEffect } from "react"
 const raleway = Raleway({ subsets: ["latin"] })
 
 export default function App({ Component, pageProps }: AppProps) {
+    const { theme, setTheme, systemTheme } = useTheme()
+
     const [mounted, setMounted] = useState(false)
     const [colorScheme, setColorScheme] = useState<ColorScheme | null>()
     // theme === "dark" ? "dark" : "light"
@@ -26,16 +28,25 @@ export default function App({ Component, pageProps }: AppProps) {
     const toggleColorScheme = (value: ColorScheme) =>
         setColorScheme(value || (colorScheme === "light" ? "light" : "dark"))
     // console.log(colorScheme
-    const theme = localStorage.getItem("theme") || "light"
+    const Defaulttheme = localStorage.getItem("theme") || "dark"
+    console.log(systemTheme)
+    console.log(Defaulttheme)
     console.log(theme)
     return (
         <ColorSchemeProvider
             colorScheme={colorScheme}
             toggleColorScheme={toggleColorScheme}
         >
-            <ThemeProvider attribute="class" defaultTheme="light">
+            <ThemeProvider attribute="class">
                 <MantineProvider
-                    theme={{ colorScheme: theme === "dark" ? "dark" : "light" }}
+                    theme={{
+                        colorScheme:
+                            Defaulttheme === "system"
+                                ? systemTheme
+                                : Defaulttheme === "dark"
+                                ? "dark"
+                                : "light"
+                    }}
                 >
                     <div className={raleway.className}>
                         <Layout>

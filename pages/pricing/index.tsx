@@ -19,9 +19,8 @@ const Pricing = () => {
             {" "}
             <div className="flex flex-col items-center  drop-shadow-lg">
                 <h1 className="flex flex-col items-center mx-3">
-                    <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-4">
-                        We offer a plan for all business sizes. Choose the one
-                        that fits yours best.
+                    <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-8 line tracking-wide">
+                        We offer a variety of plans to fit your business' needs.
                     </div>
                     <Alert
                         icon={
@@ -154,7 +153,7 @@ const Pricing = () => {
                             </p>
                             <div className="py-4 mb-2 flex flex-row items-center">
                                 <span className="text-3xl pr-1 font-sans font-bold">
-                                    $3,000
+                                    $0
                                 </span>
                                 <span className="flex flex-col text-xs">
                                     <div>per</div>
@@ -202,9 +201,9 @@ const Pricing = () => {
                                 that require increased testing capabilities and
                                 more staff member access.
                             </p>
-                            <div className="py-4 mb-2 flex flex-row items-center">
+                            <div className="py-2 mb-2 flex flex-row items-center">
                                 <span className="text-3xl pr-1 font-sans font-bold">
-                                    $4500
+                                    $0
                                 </span>
                                 <span className="flex flex-col text-xs">
                                     <div>per</div>
@@ -244,7 +243,7 @@ const Pricing = () => {
                                 who require a larger amount of staff access and
                                 custom solutions.
                             </p>
-                            <div className="py-5 flex flex-row items-center">
+                            <div className="py-2 flex flex-row items-center">
                                 <div className="flex flex-row items-end">
                                     {" "}
                                     <span className="text-3xl pr-1 font-sans font-bold">
@@ -252,7 +251,7 @@ const Pricing = () => {
                                             starting at
                                         </span>
                                         {"   "}
-                                        $10,000
+                                        $0
                                     </span>
                                     <span className="flex flex-col text-xs">
                                         <div>per</div>
@@ -304,7 +303,7 @@ const Pricing = () => {
                             </p>
                             <div className="py-4 mb-2 flex flex-row items-center">
                                 <span className="text-3xl pr-1 font-sans font-bold">
-                                    $299
+                                    $0
                                 </span>
                                 <span className="flex flex-col text-xs">
                                     <div>per</div>
@@ -352,9 +351,9 @@ const Pricing = () => {
                                 that require increased testing capabilities and
                                 more staff member access.
                             </p>
-                            <div className="py-4 mb-2 flex flex-row items-center">
+                            <div className="py-2 mb-2 flex flex-row items-center">
                                 <span className="text-3xl pr-1 font-sans font-bold">
-                                    $499
+                                    $0
                                 </span>
                                 <span className="flex flex-col text-xs">
                                     <div>per</div>
@@ -394,7 +393,7 @@ const Pricing = () => {
                                 who require a larger amount of staff access and
                                 custom solutions.
                             </p>
-                            <div className="py-5 flex flex-row items-center">
+                            <div className="py-2 flex flex-row items-center">
                                 <div className="flex flex-row items-end">
                                     {" "}
                                     <span className="text-3xl pr-1 font-sans font-bold">
@@ -402,7 +401,7 @@ const Pricing = () => {
                                             starting at
                                         </span>
                                         {"   "}
-                                        $999
+                                        $0
                                     </span>
                                     <span className="flex flex-col text-xs">
                                         <div>per</div>

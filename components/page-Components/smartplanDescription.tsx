@@ -35,7 +35,7 @@ const SmartPlanDescription = () => {
                     <CiMedicalCase size={40} className=" text-blue-500" />
                 </div>
                 <div className="right-32 xl:right-44  2xl:right-56 translate-y-[565px]  absolute maxRandom:hidden ">
-                    <CiMedicalCross size={40} className=" text-blue-500" />
+                    <CiMedicalCross size={40} className="text-blue-500" />
                 </div>
 
                 {/* left icons */}

@@ -6,9 +6,11 @@ import { useMantineColorScheme } from "@mantine/core"
 
 const DarkMode = () => {
     const [mounted, setMounted] = useState(false)
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme, systemTheme } = useTheme()
 
     const { toggleColorScheme } = useMantineColorScheme()
+
+    const currentTheme = theme === "system" ? systemTheme : theme
 
     useEffect(() => setMounted(true), [])
 
@@ -24,7 +26,7 @@ const DarkMode = () => {
         setTheme("light")
     }
 
-    if (theme === "dark") {
+    if (currentTheme === "dark") {
         return (
             <button
                 onClick={handleLightMode}

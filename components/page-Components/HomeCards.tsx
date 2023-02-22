@@ -24,7 +24,7 @@ export default function HomeCards() {
                     "We are a family run business with two generations of medical experience. We developed SmartPlan to solve a specific need for us and we hope to solve those same needs for your practice."
                 }
                 p2Text1={"You can read more on the"}
-                p2Href="/about"
+                p2Href="/about-us"
                 p2HrefText="about us"
                 p2Text2={"page."}
             />

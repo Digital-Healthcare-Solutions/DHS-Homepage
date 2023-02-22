@@ -19,8 +19,8 @@ export default function Home() {
             <HeroHomePage />
             <SmartPlanDescription />
             <FeaturesGrid
-                title="Smartplan's Features"
-                description="We have a variety of features that can help you generate more revenue and run your practice more efficiently."
+                title="Benefits of SmartPlan"
+                description="We offer variety of features that can help you  run your practice more efficiently."
             />
             <HomeCards />
             <section className="flex justify-center bg-gradient-to-b from-blue-50 to-white dark:from-neutral-800 dark:to-neutral-900">
