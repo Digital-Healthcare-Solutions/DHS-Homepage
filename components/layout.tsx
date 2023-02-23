@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
                 },
                 {
                     label: "Features",
-                    link: "/product/features"
+                    link: "/product"
                 },
                 // {
                 //     label: "Demo",
