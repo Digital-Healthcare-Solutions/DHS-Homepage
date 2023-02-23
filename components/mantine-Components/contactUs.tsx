@@ -33,7 +33,6 @@ function ContactUs() {
 
     return (
         <form
-            id="contact"
             onSubmit={formik.handleSubmit}
             className="px-8 w-full md:w-3/4 xl:w-1/2 py-12
             "

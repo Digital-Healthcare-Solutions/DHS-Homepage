@@ -9,6 +9,7 @@ import {
     useMantineTheme
 } from "@mantine/core"
 import ButtonSecondary from "../UI-Components/button-secondary"
+import Link from "next/link"
 
 const useStyles = createStyles((theme) => ({
     card: {
@@ -35,6 +36,11 @@ const useStyles = createStyles((theme) => ({
         opacity: 0.7,
         fontWeight: 700,
         textTransform: "uppercase"
+    },
+
+    carousel: {
+        backgroundColor:
+            theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white
     }
 }))
 
@@ -42,9 +48,10 @@ interface CardProps {
     image: string
     title: string
     category: string
+    id: number
 }
 
-function Card({ image, title, category }: CardProps) {
+function Card({ image, title, category, id }: CardProps) {
     const { classes } = useStyles()
 
     return (
@@ -53,7 +60,8 @@ function Card({ image, title, category }: CardProps) {
             p="xl"
             radius="md"
             sx={{ backgroundImage: `url(${image})` }}
-            className={classes.card}
+            className={`
+            bg-cover bg-center bg-no-repeat flex flex-col h-[440px] justify-between items-start bg-opacity-80`}
         >
             <div>
                 <Text className={classes.category} size="xs">
@@ -63,49 +71,59 @@ function Card({ image, title, category }: CardProps) {
                     {title}
                 </Title>
             </div>
-            <ButtonSecondary
-                className="bg-white text-black
+            <Link href={`/product#${id}`}>
+                <ButtonSecondary
+                    className="bg-white text-black
+               
             "
-                onClick={() => {
-                    console.log("clicked")
-                }}
-            >
-                Read article
-            </ButtonSecondary>
+                    onClick={() => {
+                        console.log("clicked")
+                    }}
+                >
+                    Read More
+                </ButtonSecondary>
+            </Link>
         </Paper>
     )
 }
 
 const data = [
     {
-        image: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        title: "Best forests to visit in North America",
-        category: "nature"
+        image: "/carePlan.jpg",
+        title: "Create detailed Care plans for your patients",
+        category: "Main Feature",
+        id: 1
     },
     {
-        image: "https://images.unsplash.com/photo-1559494007-9f5847c49d94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        title: "Hawaii beaches review: better than you think",
-        category: "beach"
+        image: "/AI.png",
+        title: "Use our advanced AI powered dictation software to save time",
+        category: "Feature",
+        id: 2
     },
     {
-        image: "https://images.unsplash.com/photo-1608481337062-4093bf3ed404?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        title: "Mountains at night: 12 best locations to enjoy the view",
-        category: "nature"
+        image: "/report.jpg",
+        title: "Instantly generate reports and educational handouts for your patients",
+        category: "feature",
+        id: 3
+    },
+
+    {
+        image: "/cyber.jpg",
+        title: "Customize your security to fit your needs",
+        category: "feature",
+        id: 4
     },
     {
-        image: "https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        title: "Aurora in Norway: when to visit for best experience",
-        category: "nature"
+        image: "/charts.jpg",
+        title: "View detailed chart and graph analytics on your patients",
+        category: "feature",
+        id: 5
     },
     {
-        image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        title: "Best places to visit this winter",
-        category: "tourism"
-    },
-    {
-        image: "https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-        title: "Active volcanos reviews: travel at your own risk",
-        category: "nature"
+        image: "/staff.jpg",
+        title: "Easily add or revoke staff access to your account",
+        category: "feature",
+        id: 6
     }
 ]
 
@@ -120,6 +138,8 @@ const ProductCarousel = () => {
 
     return (
         <Carousel
+            loop
+            withIndicators
             slideSize="50%"
             breakpoints={[{ maxWidth: "sm", slideSize: "100%", slideGap: 2 }]}
             slideGap="xl"

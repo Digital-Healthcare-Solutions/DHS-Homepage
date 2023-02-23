@@ -50,7 +50,7 @@ export const MOCKDATA = [
         icon: RxCircleBackslash,
         title: "No test limits",
         description:
-            "We don't limit the number of patients you can bill CCMs for, or try to charge you extra for each patient you test. Pay one monthly fee and bill as many patients as you want"
+            "We don't limit the number of patients you can bill CCMs for, or try to charge you extra for each patient you test. Pay one monthly fee and bill as many patients as you want."
     },
 
     // {
@@ -63,7 +63,7 @@ export const MOCKDATA = [
         icon: BiCheckShield,
         title: "Secure by default",
         description:
-            "We utilize the latest in encryption technology to ensure that your patient's data is always safe and secure. We also have a HIPAA compliant hosting provider and utilize 2FA everytime for all of our users."
+            "We utilize the latest in encryption technology to ensure that your patient's data is always safe and secure. We utilize a HIPAA compliant database, server, and hosting provider and require 2FA everytime for all of our users."
     }
 ]
 
@@ -121,7 +121,10 @@ export function FeaturesGrid({ title, description, data = MOCKDATA }) {
     ))
 
     return (
-        <div className="bg-gradient-to-b from-white to-blue-50 dark:from-neutral-900 dark:to-neutral-800">
+        <div
+            className="bg-gradient-to-b from-white to-blue-50 dark:from-neutral-900 dark:to-neutral-800 "
+            id="features"
+        >
             <Container size={"lg"} className={classes.wrapper}>
                 <h1 className="text-4xl font-bold text-center mb-5">{title}</h1>
 

@@ -130,15 +130,14 @@ export function Footer({ data }: FooterLinksProps) {
 
     const groups = data.map((group) => {
         const links = group.links.map((link, index) => (
-            <Text<"a">
+            <Link
                 key={index}
                 className={classes.link}
-                component="a"
                 href={link.link}
-                onClick={(event) => event.preventDefault()}
+                // onClick={(event) => event.preventDefault()}
             >
                 {link.label}
-            </Text>
+            </Link>
         ))
 
         return (
@@ -174,7 +173,8 @@ export function Footer({ data }: FooterLinksProps) {
             </Container>
             <Container className={classes.afterFooter}>
                 <Text color="dimmed" size="sm">
-                    © 2023 Digital Healthcare Solutions. All rights reserved.
+                    © {new Date().getFullYear()} Digital Healthcare Solutions.
+                    All rights reserved.
                 </Text>
 
                 <Group

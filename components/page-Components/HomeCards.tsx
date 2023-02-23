@@ -1,6 +1,6 @@
 import { RiComputerLine } from "react-icons/ri"
 import { TfiBook } from "react-icons/tfi"
-import { BsCloudCheck } from "react-icons/bs"
+import { MdOutlineLightbulb } from "react-icons/md"
 import CardHome from "../mantine-Components/cardHomepage"
 
 export default function HomeCards() {
@@ -29,15 +29,15 @@ export default function HomeCards() {
                 p2Text2={"page."}
             />
             <CardHome
-                icon={<BsCloudCheck size={25} />}
-                title="Security"
+                icon={<MdOutlineLightbulb size={25} />}
+                title="Learn more"
                 p1Text={
-                    "You can rest easy knowing your patient information is safe with us. We recently passed our HIPPA compliant audit by Compliancy Group."
+                    "If you are interested in learning more about SmartPlan or how to implement Chronic care management in your practice, you can read some of our blog posts. If you have any questions, feel free to contact us using the form below."
                 }
                 p2Text1={"Click"}
-                p2Href="https://smart-plan.io"
+                p2Href="/blog"
                 p2HrefText="here"
-                p2Text2={"to see our badge."}
+                p2Text2={"to see some of our featured blog posts."}
             />
         </section>
     )

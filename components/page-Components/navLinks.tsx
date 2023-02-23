@@ -1,9 +1,10 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Button } from "@mantine/core"
+import { Button, Menu } from "@mantine/core"
 import { FiExternalLink } from "react-icons/fi"
 import DarkMode from "./darkMode"
 import ButtonPrimary from "../UI-Components/button-primary"
+import { BsChevronDown } from "react-icons/bs"
 
 const NavLinks = () => {
     const pathname = usePathname()
@@ -31,16 +32,69 @@ const NavLinks = () => {
             >
                 About<span className="maxMd:hidden ml-1">Us</span>
             </Link>
-            <Link
-                href="/product"
-                className={
-                    pathname === "/product"
-                        ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 "
-                        : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
-                }
+            <Menu
+                transition="scale-y"
+                transitionDuration={250}
+                trigger="hover"
+                position="bottom"
+                offset={0}
+                closeDelay={400}
             >
-                Product
-            </Link>
+                <Menu.Target>
+                    <div
+                        // href="/product"
+                        className={
+                            pathname === "/product" ||
+                            pathname === "/product/demo" ||
+                            pathname === "/product/roadmap"
+                                ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 cursor-pointer flex items-center"
+                                : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 cursor-pointer flex items-center"
+                        }
+                    >
+                        Product{" "}
+                        <BsChevronDown
+                            className="ml-2 text-black dark:text-white"
+                            size={12}
+                        />
+                    </div>
+                </Menu.Target>
+                <Menu.Dropdown>
+                    <Menu.Item
+                        component={Link}
+                        href="/product"
+                        className={
+                            pathname === "/product"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Features
+                    </Menu.Item>
+
+                    <Menu.Item
+                        component={Link}
+                        href="/product/demo"
+                        className={
+                            pathname === "/product/demo"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Demo
+                    </Menu.Item>
+                    <Menu.Item
+                        component={Link}
+                        href="/product/roadmap"
+                        className={
+                            pathname === "/product/roadmap"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Roadmap
+                    </Menu.Item>
+                </Menu.Dropdown>
+            </Menu>
             <Link
                 href="/pricing"
                 className={

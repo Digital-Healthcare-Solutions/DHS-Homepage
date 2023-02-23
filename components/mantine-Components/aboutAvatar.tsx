@@ -1,6 +1,6 @@
 import { createStyles, Avatar, Text, Group } from "@mantine/core"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useCallback } from "react"
 import ButtonPrimary from "../UI-Components/button-primary"
 // import { IconPhoneCall, IconAt } from '@tabler/icons';
 
@@ -33,11 +33,16 @@ function AboutAvatar({
     email
 }: UserInfoIconsProps) {
     const { classes } = useStyles()
-    const [width, setWidth] = useState(0)
+    const [width, setWidth] = useState(window.innerWidth)
+
+    const handleResize = useCallback(() => {
+        setWidth(window.innerWidth)
+    }, [])
 
     useEffect(() => {
-        setWidth(window.innerWidth)
-    }, [width])
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
+    }, [handleResize])
 
     return (
         <div>

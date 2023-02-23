@@ -22,3 +22,11 @@ body::-webkit-scrollbar-thumb {
     background: #3c3f42;
     border-radius: 10px;
 }
+
+.mantine-Carousel-control {
+    background: #ffffff;
+}
+
+.mantine-Carousel-indicator {
+    background: #ffffff;
+}

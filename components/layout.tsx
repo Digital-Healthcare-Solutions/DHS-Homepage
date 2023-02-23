@@ -3,67 +3,61 @@ import Nav from "./page-Components/nav"
 
 const Layout = ({ children }) => {
     const data = [
+        // {
+        //     title: "Product",
+        //     links: [
+        //         {
+        //             label: "About",
+        //             link: "/product"
+        //         },
+        //         {
+        //             label: "Features",
+        //             link: "/product/features"
+        //         }
+        //     ]
+        // },
+
         {
             title: "About",
             links: [
                 {
-                    label: "Features",
-                    link: "#"
+                    label: "Team",
+                    link: "/about-us"
                 },
+                {
+                    label: "Features",
+                    link: "/product/features"
+                },
+                // {
+                //     label: "Demo",
+                //     link: "/product/demo"
+                // },
                 {
                     label: "Pricing",
-                    link: "#"
-                },
-                {
-                    label: "Support",
-                    link: "#"
-                },
-                {
-                    label: "Forums",
-                    link: "#"
+                    link: "/pricing"
                 }
             ]
         },
         {
-            title: "Project",
+            title: "Learn More",
             links: [
                 {
-                    label: "Contribute",
-                    link: "#"
+                    label: "Blog",
+                    link: "/blog"
                 },
                 {
-                    label: "Media assets",
+                    label: "Careers",
                     link: "#"
                 },
+
                 {
-                    label: "Changelog",
-                    link: "#"
-                },
-                {
-                    label: "Releases",
-                    link: "#"
+                    label: "Contact us",
+                    link: "/#contact"
                 }
-            ]
-        },
-        {
-            title: "Community",
-            links: [
-                {
-                    label: "Join Discord",
-                    link: "#"
-                },
-                {
-                    label: "Follow on Twitter",
-                    link: "#"
-                },
-                {
-                    label: "Email newsletter",
-                    link: "#"
-                },
-                {
-                    label: "GitHub discussions",
-                    link: "#"
-                }
+                // {
+                //     label: "Releases",
+                //     link: "#"
+                // }
             ]
         }
     ]

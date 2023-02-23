@@ -22,9 +22,7 @@ const SmartPlanDescription = () => {
                     comprehensive plans of care for patients with various
                     chronic diseases.
                 </Text>
-
-                {/* right icons */}
-
+                {/* 
                 <div className="right-16 xl:right-24  translate-y-36  absolute maxRandom:hidden ">
                     <CiMedicalCross size={40} className=" text-blue-500" />
                 </div>
@@ -38,8 +36,6 @@ const SmartPlanDescription = () => {
                     <CiMedicalCross size={40} className="text-blue-500" />
                 </div>
 
-                {/* left icons */}
-
                 <div className="left-16 xl:left-24  translate-y-36  absolute maxRandom:hidden ">
                     <CiMedicalCase size={40} className=" text-blue-500" />
                 </div>
@@ -51,7 +47,7 @@ const SmartPlanDescription = () => {
                 </div>
                 <div className="left-32 xl:left-44  2xl:left-56 translate-y-[565px]  absolute maxRandom:hidden ">
                     <CiMedicalCase size={40} className=" text-blue-500" />
-                </div>
+                </div> */}
                 <div
                     className={
                         theme === "light"
