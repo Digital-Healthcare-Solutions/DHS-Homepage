@@ -11,81 +11,48 @@ import {
 import ButtonSecondary from "../UI-Components/button-secondary"
 import Link from "next/link"
 
-const useStyles = createStyles((theme) => ({
-    card: {
-        height: 440,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        alignItems: "flex-start",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-    },
+// interface CardProps {
+//     image: string
+//     title: string
+//     category: string
+//     id: number
+// }
 
-    title: {
-        fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-        fontWeight: 900,
-        color: theme.white,
-        lineHeight: 1.2,
-        fontSize: 32,
-        marginTop: theme.spacing.xs
-    },
+// function Card({ image, title, category, id }: CardProps) {
+//     const { classes } = useStyles()
 
-    category: {
-        color: theme.white,
-        opacity: 0.7,
-        fontWeight: 700,
-        textTransform: "uppercase"
-    },
+//     return (
+//         <Paper
+//             shadow="md"
+//             p="xl"
+//             radius="md"
+//             sx={{ backgroundImage: `url(${image})` }}
+//             className={`
+//             bg-cover bg-center bg-no-repeat flex flex-col h-[440px] justify-between items-start bg-opacity-80`}
+//         >
+//             <div>
+//                 <Text className={classes.category} size="xs">
+//                     {category}
+//                 </Text>
+//                 <Title order={3} className={classes.title}>
+//                     {title}
+//                 </Title>
+//             </div>
+//             <Link href={`/product#${id}`}>
+//                 <ButtonSecondary
+//                     className="bg-white text-black
 
-    carousel: {
-        backgroundColor:
-            theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white
-    }
-}))
-
-interface CardProps {
-    image: string
-    title: string
-    category: string
-    id: number
-}
-
-function Card({ image, title, category, id }: CardProps) {
-    const { classes } = useStyles()
-
-    return (
-        <Paper
-            shadow="md"
-            p="xl"
-            radius="md"
-            sx={{ backgroundImage: `url(${image})` }}
-            className={`
-            bg-cover bg-center bg-no-repeat flex flex-col h-[440px] justify-between items-start bg-opacity-80`}
-        >
-            <div>
-                <Text className={classes.category} size="xs">
-                    {category}
-                </Text>
-                <Title order={3} className={classes.title}>
-                    {title}
-                </Title>
-            </div>
-            <Link href={`/product#${id}`}>
-                <ButtonSecondary
-                    className="bg-white text-black
-               
-            "
-                    onClick={() => {
-                        console.log("clicked")
-                    }}
-                >
-                    Read More
-                </ButtonSecondary>
-            </Link>
-        </Paper>
-    )
-}
+//             "
+//                     onClick={() => {
+//                         console.log("clicked")
+//                     }}
+//                 >
+//                     Read More
+//                 </ButtonSecondary>
+//             </Link>
+//         </Paper>
+//     )
+// }
 
 const data = [
     {
@@ -128,11 +95,84 @@ const data = [
 ]
 
 const ProductCarousel = () => {
+    const useStyles = createStyles((theme) => ({
+        card: {
+            height: 440,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            backgroundSize: "cover",
+            backgroundPosition: "center"
+        },
+
+        title: {
+            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+            fontWeight: 900,
+            color: theme.white,
+            lineHeight: 1.2,
+            fontSize: 32,
+            marginTop: theme.spacing.xs
+        },
+        titleDark: {
+            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+            fontWeight: 900,
+            color: theme.black,
+            lineHeight: 1.2,
+            fontSize: 32,
+            marginTop: theme.spacing.xs
+        },
+
+        category: {
+            color: theme.white,
+            opacity: 0.7,
+            fontWeight: 700,
+            textTransform: "uppercase"
+        },
+
+        carousel: {
+            backgroundColor:
+                theme.colorScheme === "dark"
+                    ? theme.colors.dark[7]
+                    : theme.white
+        }
+    }))
+
+    const { classes } = useStyles()
+
     const theme = useMantineTheme()
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm}px)`)
-    const slides = data.map((item) => (
+    const slides = data.map((item, index) => (
         <Carousel.Slide key={item.title}>
-            <Card {...item} />
+            <Paper
+                shadow="md"
+                p="xl"
+                radius="md"
+                sx={{ backgroundImage: `url(${item.image})` }}
+                className={`
+            bg-cover bg-center bg-no-repeat flex flex-col h-[440px] justify-between items-start bg-opacity-80`}
+            >
+                <div>
+                    <Text className={classes.category} size="xs">
+                        {item.category}
+                    </Text>
+                    <Title order={3} className={classes.title}>
+                        {item.title}
+                    </Title>
+                </div>
+                <Link href={`/product#${item.id}`}>
+                    <ButtonSecondary
+                        className="bg-white text-black
+               
+            "
+                        onClick={() => {
+                            console.log("clicked")
+                        }}
+                    >
+                        Read More
+                    </ButtonSecondary>
+                </Link>
+            </Paper>
         </Carousel.Slide>
     ))
 
