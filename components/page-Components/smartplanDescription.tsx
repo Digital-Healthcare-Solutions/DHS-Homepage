@@ -17,9 +17,11 @@ const SmartPlanDescription = () => {
                 <h1 className="text-4xl font-bold mb-5">What is SmartPlan?</h1>
 
                 <Text className="text-center pb-8 lg:w-1/2 " size="lg">
-                    Smartplan is a cloud-based platform that makes the complex task of running a 
+                    Smartplan is a cloud-based practice management platform that
+                    automates and simplifies the complex process of running your
+                    medical practice.
                 </Text>
-                {/* 
+
                 <div className="right-16 xl:right-24  translate-y-36  absolute maxRandom:hidden ">
                     <CiMedicalCross size={40} className=" text-blue-500" />
                 </div>
@@ -44,7 +46,7 @@ const SmartPlanDescription = () => {
                 </div>
                 <div className="left-32 xl:left-44  2xl:left-56 translate-y-[565px]  absolute maxRandom:hidden ">
                     <CiMedicalCase size={40} className=" text-blue-500" />
-                </div> */}
+                </div>
                 <div
                     className={
                         theme === "light"
@@ -64,9 +66,11 @@ const SmartPlanDescription = () => {
                 </div>
                 <div className="flex flex-col items-center">
                     <h4 className="text-center py-8 lg:w-1/2 text-lg md:text-2xl">
-                        Our web app provides everything you need to get started
+                        See how SmartPlan can help you cut costs and increase
+                        revenue and patient satisfaction.
+                        {/* Our web app provides everything you need to get started
                         billing codes 99483, 99490, and 99491 in a user
-                        friendly, HIPPA compliant way.
+                        friendly, HIPPA compliant way. */}
                     </h4>
                     <Link href="https://smart-plan.io/login">
                         <ButtonPrimary onClick={""} className={""}>

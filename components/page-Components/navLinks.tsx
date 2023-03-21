@@ -70,6 +70,39 @@ const NavLinks = () => {
                     >
                         Features
                     </Menu.Item>
+                    <Menu.Item
+                        component={Link}
+                        href="/product/demo"
+                        className={
+                            pathname === "/product/demo"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Care Plans
+                    </Menu.Item>
+                    <Menu.Item
+                        component={Link}
+                        href="/product/demo"
+                        className={
+                            pathname === "/product/demo"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Call Center
+                    </Menu.Item>
+                    <Menu.Item
+                        component={Link}
+                        href="/product/demo"
+                        className={
+                            pathname === "/product/demo"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Online Paperwork
+                    </Menu.Item>
 
                     <Menu.Item
                         component={Link}

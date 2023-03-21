@@ -10,7 +10,11 @@ import {
 } from "@mantine/core"
 import { RiComputerLine } from "react-icons/ri"
 import { BsCashStack } from "react-icons/bs"
-import { MdAccessTime, MdOpenInNewOff } from "react-icons/md"
+import {
+    MdAccessTime,
+    MdOpenInNewOff,
+    MdOutlinePhoneEnabled
+} from "react-icons/md"
 import { AiOutlineCloudUpload } from "react-icons/ai"
 import { RxCircleBackslash } from "react-icons/rx"
 import { BiDonateHeart, BiCheckShield } from "react-icons/bi"
@@ -29,16 +33,16 @@ export const MOCKDATA = [
             "SmartPlan allows you to bill for Chronic Care Management (CCM) services, which is a reimbursable CPT code under Medicare. These services are perfomed on a recurring basis, and can be billed monthly, quarterly, or annually, depending on the CPT code."
     },
     {
-        icon: MdOpenInNewOff,
-        title: "Handle CCM in your own practice",
+        icon: MdOutlinePhoneEnabled,
+        title: "Handle communications in a modern way",
         description:
-            "Don't outsource your patient's care to a third party, keep your patient's trust and own your business' revenue by easily implementing CCM in your own practice."
+            "We built SmartPlan with the goal of making it easier to communicate with our patients and providers. We've integrated an AI powered, modern call center that's as flexible as your practice is and allows you to communicate with your patients and providers in a way that is easy and intuitive."
     },
     {
-        icon: MdAccessTime,
-        title: "Save time",
+        icon: RiComputerLine,
+        title: "Online Pre-registration",
         description:
-            "Your staff members can create comprehensive, dynamic, and patient specific care plans without the need for the ordering provider to be present. You can use this to create an alternative revenue stream, while still providing excellent care to your chronic patients."
+            "We make it easy to add seamless online pre-registration to your practice.Simply embed the custom link we provide you on your website and configure where you want the data to go, and instantly have an online registration flow for your business."
     },
     {
         icon: AiOutlineCloudUpload,
@@ -48,13 +52,13 @@ export const MOCKDATA = [
     },
     {
         icon: RxCircleBackslash,
-        title: "No test limits",
+        title: "No limits",
         description:
-            "We don't limit the number of patients you can bill CCMs for, or try to charge you extra for each patient you test. Pay one monthly fee and bill as many patients as you want."
+            "We don't limit the number of patients you can bill CCMs for, the number of calls you can make, or the amount of data that flows through our system. Pay one monthly fee and you're good to go."
     },
 
     // {
-    //     icon: RiComputerLine,
+    //     icon: ,
     //     title: "24/7 Support",
     //     description:
     //         "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail"

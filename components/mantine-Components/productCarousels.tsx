@@ -63,7 +63,7 @@ const data = [
     },
     {
         image: "/AI.png",
-        title: "Use our advanced AI powered dictation software to save time",
+        title: "Use AI to automate your call center",
         category: "Feature",
         id: 2
     },
@@ -75,20 +75,20 @@ const data = [
     },
 
     {
-        image: "/cyber.jpg",
-        title: "Customize your security to fit your needs",
+        image: "paperless.jpg",
+        title: "Seamlessly add paperless registration to your website",
         category: "feature",
         id: 4
     },
     {
-        image: "/charts.jpg",
-        title: "View detailed chart and graph analytics on your patients",
+        image: "/cyber.jpg",
+        title: "Security and compliance built in",
         category: "feature",
         id: 5
     },
     {
         image: "/staff.jpg",
-        title: "Easily add or revoke staff access to your account",
+        title: "Whether a small or large practice, we have a plan for you",
         category: "feature",
         id: 6
     }
@@ -156,7 +156,14 @@ const ProductCarousel = () => {
                     <Text className={classes.category} size="xs">
                         {item.category}
                     </Text>
-                    <Title order={3} className={classes.title}>
+                    <Title
+                        order={3}
+                        className={
+                            index == 2 || index == 3
+                                ? classes.titleDark
+                                : classes.title
+                        }
+                    >
                         {item.title}
                     </Title>
                 </div>
