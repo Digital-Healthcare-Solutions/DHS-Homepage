@@ -15,8 +15,8 @@ const Blog = ({ posts }: Props) => {
         <div>
             <ImageActionBanner
                 image="/blogHome.jpg"
-                title="Blog - Home"
-                description="Read our latest blog posts to learn more about our products and services."
+                title=""
+                description="Our content creators update weekly with new articles and videos. Subscribe to our newsletter to be notified of new content."
             />
 
             <div className="flex flex-col items-center md:items-start md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-4 md:gap-8 p-2 mx-4 md:mx-8 pb-24 pt-12">

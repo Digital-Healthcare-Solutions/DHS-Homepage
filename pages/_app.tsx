@@ -8,6 +8,7 @@ import {
     ColorSchemeProvider,
     ColorScheme
 } from "@mantine/core"
+import { NotificationsProvider } from "@mantine/notifications"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 
@@ -48,11 +49,17 @@ export default function App({ Component, pageProps }: AppProps) {
                                 : "light"
                     }}
                 >
-                    <div className={raleway.className}>
-                        <Layout>
-                            <Component {...pageProps} />
-                        </Layout>
-                    </div>
+                    <NotificationsProvider
+                        limit={3}
+                        autoClose={3000}
+                        position="bottom-right"
+                    >
+                        <div className={raleway.className}>
+                            <Layout>
+                                <Component {...pageProps} />
+                            </Layout>
+                        </div>
+                    </NotificationsProvider>
                 </MantineProvider>
             </ThemeProvider>
         </ColorSchemeProvider>

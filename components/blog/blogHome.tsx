@@ -58,7 +58,7 @@ export function ImageActionBanner({
                     "absolute -translate-x-4 text-white dark:text-black  flex flex-col items-center md:justify-center w-full h-full z-10 "
                 }
             >
-                <div className="max-w-[250px] md:max-w-[380px] p-5 md:p-12 rounded-lg bg-black bg-opacity-30 dark:bg-neutral-100 dark:bg-opacity-30 shadow-md shadow-black ">
+                <div className="max-w-[550px] md:max-w-[700px] p-5 md:p-12 rounded-lg bg-neutral-700 bg-opacity-40 dark:bg-neutral-400 dark:bg-opacity-30 shadow-sm shadow-black ">
                     <Text
                         className={
                             "mb-2 text-xl md:text-2xl lg:text-3xl font-light dark:font-normal"
@@ -67,13 +67,13 @@ export function ImageActionBanner({
                         {title}
                     </Text>
 
-                    <Text
+                    <div
                         className={
-                            " text-lg md:text-xl lg:text-2xl font-light dark:font-normal"
+                            " text-xl md:text-2xl lg:text-3xl font-semibold"
                         }
                     >
                         {description}
-                    </Text>
+                    </div>
                 </div>
             </div>{" "}
         </Card>

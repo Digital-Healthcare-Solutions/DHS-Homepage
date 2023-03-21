@@ -18,8 +18,8 @@ const Nav = () => {
                     className=" font-semibold text-base md:text-lg lg:text-2xl ml-3 lg:ml-4 hover:text-blue-500 tracking-wide dark:font-normal "
                 >
                     {" "}
-                    Digital HealthCare Solutions
-                    {/* <svg
+                    {/* Digital HealthCare Solutions */}
+                    <svg
                         className="w-56 sm:w-64 lg:w-80 xl:w-96 fill-black dark:fill-white         hover:fill-blue-500  dark:hover:fill-blue-500
                         "
                         version="1.0"
@@ -180,7 +180,7 @@ l-163 3 -3 173 c-2 164 -3 172 -22 172 -19 0 -20 -7 -20 -195z"
 15 -1100 15 -971 0 -1100 -2 -1100 -15z"
                             />
                         </g>
-                    </svg> */}
+                    </svg>
                     {/* <Image
                         src="/dhs.svg"
                         alt="DHS Logo"

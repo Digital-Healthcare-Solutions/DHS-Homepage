@@ -127,10 +127,8 @@ export function FaqSimple() {
                                 information very seriously. We utilize a variety
                                 of technologies to ensure that your patients
                                 information is secure. All data is encrypted in
-                                transit and at rest. Any data transferred to us
-                                is encrypted using 256-bit SSL encryption. We
-                                also host our own NLP (Natural Language
-                                Processing) model from{" "}
+                                transit and at rest. We also host our own NLP
+                                (Natural Language Processing) model from{" "}
                                 <Link
                                     className="text-blue-500 hover:underline"
                                     href="https://www.private-ai.com/"

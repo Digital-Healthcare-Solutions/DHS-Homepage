@@ -10,7 +10,7 @@ export default function HomeCards() {
                 icon={<RiComputerLine size={25} />}
                 title="Our Product"
                 p1Text={
-                    "Wether you are a small or large practice, we have a plan that will fit your needs. We offer a full suite of products to help you manage your practice and your patients."
+                    "Wether you are a small or large practice, we have a solution that will fit your needs. We offer a full suite of products to help you manage your practice and your patients."
                 }
                 p2Text1={"Visit our"}
                 p2Href="/product"
@@ -21,7 +21,7 @@ export default function HomeCards() {
                 icon={<TfiBook size={25} />}
                 title="Our Story"
                 p1Text={
-                    "We are a family run business with two generations of medical experience. We developed SmartPlan to solve a specific need for us and we hope to solve those same needs for your practice."
+                    "We are a family run business with two generations of medical experience. We developed Digital Healthcare Solutions to solve a specific need for us and we hope to solve those same needs for your practice."
                 }
                 p2Text1={"You can read more on the"}
                 p2Href="/about-us"
@@ -32,7 +32,7 @@ export default function HomeCards() {
                 icon={<MdOutlineLightbulb size={25} />}
                 title="Learn more"
                 p1Text={
-                    "If you are interested in learning more about SmartPlan or how to implement it in your practice, you can read some of our blog posts. If you have any questions, feel free to contact us using the form below."
+                    "If you are interested in learning more about our products or how to implement it in your practice, you can read some of our blog posts. If you have any questions, feel free to contact us using the form below."
                 }
                 p2Text1={"Click"}
                 p2Href="/blog"

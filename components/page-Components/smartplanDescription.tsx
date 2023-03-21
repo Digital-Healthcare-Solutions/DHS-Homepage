@@ -14,12 +14,14 @@ const SmartPlanDescription = () => {
     return (
         <Container size="lg">
             <div className="flex flex-col items-center mt-16 ">
-                <h1 className="text-4xl font-bold mb-5">What is SmartPlan?</h1>
+                <h1 className="text-4xl font-bold mb-5">
+                    Digital Healthcare Solutions
+                </h1>
 
                 <Text className="text-center pb-8 lg:w-1/2 " size="lg">
-                    Smartplan is a cloud-based practice management platform that
-                    automates and simplifies the complex process of running your
-                    medical practice.
+                    We are a healthcare software company that provides a
+                    cloud-based practice management platform for medical
+                    professionals.
                 </Text>
 
                 <div className="right-16 xl:right-24  translate-y-36  absolute maxRandom:hidden ">
@@ -66,8 +68,8 @@ const SmartPlanDescription = () => {
                 </div>
                 <div className="flex flex-col items-center">
                     <h4 className="text-center py-8 lg:w-1/2 text-lg md:text-2xl">
-                        See how SmartPlan can help you cut costs and increase
-                        revenue and patient satisfaction.
+                        See how our customized solutions can help you cut costs,
+                        maximize revenue and increase patient satisfaction.
                         {/* Our web app provides everything you need to get started
                         billing codes 99483, 99490, and 99491 in a user
                         friendly, HIPPA compliant way. */}

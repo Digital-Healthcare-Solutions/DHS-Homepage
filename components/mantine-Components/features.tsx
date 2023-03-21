@@ -26,6 +26,7 @@ export const MOCKDATA = [
     //     description:
     //         "Smartplan allows anyone to create detailed care plans that cover all aspects of patient care, including disease specific symptom analysis, medication management, lifestyle modifications, education, and follow-up appointments."
     // },
+
     {
         icon: BsCashStack,
         title: "Earn reccuring revenue",
@@ -36,19 +37,19 @@ export const MOCKDATA = [
         icon: MdOutlinePhoneEnabled,
         title: "Handle communications in a modern way",
         description:
-            "We built SmartPlan with the goal of making it easier to communicate with our patients and providers. We've integrated an AI powered, modern call center that's as flexible as your practice is and allows you to communicate with your patients and providers in a way that is easy and intuitive."
+            "We built IntelliCall with the goal of making it easier to communicate with our patients and providers. We've integrated an AI powered, modern call center that's as flexible as your practice is and allows you to communicate with your patients and providers in a way that is easy and intuitive."
     },
     {
         icon: RiComputerLine,
-        title: "Online Pre-registration",
+        title: "Online paperwork made easy",
         description:
-            "We make it easy to add seamless online pre-registration to your practice.Simply embed the custom link we provide you on your website and configure where you want the data to go, and instantly have an online registration flow for your business."
+            "We make it easy to add seamless online pre-registration to your practice. Simply embed the custom link we provide on your website  and instantly have an online registration flow for your business."
     },
     {
         icon: AiOutlineCloudUpload,
         title: "Access anywhere",
         description:
-            "SmartPlan is cloud based and can be accessed from anywhere. No need to download any annoying installers, just log in and you're ready to go."
+            "Our web app is cloud based and can be accessed from anywhere. No need to download any annoying installers, just log in and you're ready to go."
     },
     {
         icon: RxCircleBackslash,

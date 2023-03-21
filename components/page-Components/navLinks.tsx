@@ -61,14 +61,14 @@ const NavLinks = () => {
                 <Menu.Dropdown>
                     <Menu.Item
                         component={Link}
-                        href="/product"
+                        href="/product/demo"
                         className={
-                            pathname === "/product"
+                            pathname === "/product/demo"
                                 ? "text-base text-blue-500"
                                 : "text-base"
                         }
                     >
-                        Features
+                        Smart<strong>Plan</strong>
                     </Menu.Item>
                     <Menu.Item
                         component={Link}
@@ -79,7 +79,7 @@ const NavLinks = () => {
                                 : "text-base"
                         }
                     >
-                        Care Plans
+                        Intelli<strong>Call</strong>
                     </Menu.Item>
                     <Menu.Item
                         component={Link}
@@ -90,7 +90,7 @@ const NavLinks = () => {
                                 : "text-base"
                         }
                     >
-                        Call Center
+                        Smart<strong>Form</strong>
                     </Menu.Item>
                     <Menu.Item
                         component={Link}
@@ -101,10 +101,20 @@ const NavLinks = () => {
                                 : "text-base"
                         }
                     >
-                        Online Paperwork
+                        Easy<strong>Auth</strong>
                     </Menu.Item>
-
                     <Menu.Item
+                        component={Link}
+                        href="/product/demo"
+                        className={
+                            pathname === "/product/demo"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Smart<strong>Voice</strong>
+                    </Menu.Item>
+                    {/* <Menu.Item
                         component={Link}
                         href="/product/demo"
                         className={
@@ -114,8 +124,19 @@ const NavLinks = () => {
                         }
                     >
                         Demo
-                    </Menu.Item>
+                    </Menu.Item> */}
                     <Menu.Item
+                        component={Link}
+                        href="/product"
+                        className={
+                            pathname === "/product"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Demos
+                    </Menu.Item>
+                    {/* <Menu.Item
                         component={Link}
                         href="/product/roadmap"
                         className={
@@ -125,7 +146,7 @@ const NavLinks = () => {
                         }
                     >
                         Roadmap
-                    </Menu.Item>
+                    </Menu.Item> */}
                 </Menu.Dropdown>
             </Menu>
             <Link
@@ -156,8 +177,9 @@ const NavLinks = () => {
                 rel="noopener noreferrer"
             >
                 <ButtonPrimary onClick={() => {}} className="text-sm">
-                    Launch<span className="hidden lg:block  md:ml-1"> App</span>{" "}
-                    <FiExternalLink size={20} className="ml-1" />
+                    {/* Launch<span className="hidden lg:block  md:ml-1"> App</span>{" "} */}
+                    Login
+                    {/* <FiExternalLink size={17} className="ml-1" /> */}
                 </ButtonPrimary>
             </a>
         </div>

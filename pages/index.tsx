@@ -21,7 +21,7 @@ export default function Home() {
                 <meta
                     name="description"
                     content="
-                Digital Healthcare Solutions is a healthcare software company that provides a cloud-based practice management software for healthcare professionals.
+                Digital Healthcare Solutions is a healthcare software company that provides a cloud-based practice management platform for healthcare professionals.
                 "
                 />
                 <link rel="icon" href="/favicon.ico" />
@@ -29,7 +29,7 @@ export default function Home() {
             <HeroHomePage />
             <SmartPlanDescription />
             <FeaturesGrid
-                title="Benefits of SmartPlan"
+                title="Our solutions"
                 description="We offer variety of features that can help you  run your practice more efficiently."
             />
             <HomeCards />

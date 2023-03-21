@@ -9,6 +9,7 @@ import {
 import { useFormik } from "formik"
 import * as Yup from "yup"
 import ButtonPrimary from "../UI-Components/button-primary"
+import { showNotification } from "@mantine/notifications"
 
 function ContactUs() {
     const formik = useFormik({
@@ -27,7 +28,12 @@ function ContactUs() {
             message: Yup.string().required("Required")
         }),
         onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
+            showNotification({
+                color: "blue",
+                title: "I will never close",
+                message: "unless you click X",
+                autoClose: false
+            })
         }
     })
 
@@ -106,11 +112,9 @@ function ContactUs() {
                             ? "bg-blue-500 "
                             : "bg-gray-500 hover:bg-gray-700 hover:text-white ring-red-500"
                     }
-                    onClick={
-                        formik.isValid
-                            ? () => alert("Message sent!")
-                            : () => alert("Please fill out all fields.")
-                    }
+                    onClick={() => {
+                        console.log("clicked")
+                    }}
                 >
                     Send message
                 </ButtonPrimary>
