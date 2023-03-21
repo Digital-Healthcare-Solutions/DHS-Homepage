@@ -7,6 +7,7 @@ import { HeroHomePage } from "../components/mantine-Components/heroHomePage"
 import HomeCards from "../components/page-Components/HomeCards"
 import { motion } from "framer-motion"
 import SmartPlanDescription from "../components/page-Components/smartplanDescription"
+import HomePoints from "../components/page-Components/homePoints"
 
 export default function Home() {
     return (
@@ -39,6 +40,12 @@ export default function Home() {
             >
                 <ContactUs />
             </section>{" "}
+            <section className="mt-14">
+                <h1 className="text-4xl font-bold text-center">
+                    You're in good hands
+                </h1>
+                <HomePoints />
+            </section>
             <FaqSimple />
         </motion.main>
     )

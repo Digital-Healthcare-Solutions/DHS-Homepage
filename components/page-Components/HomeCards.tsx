@@ -14,8 +14,8 @@ export default function HomeCards() {
                 }
                 p2Text1={"Visit our"}
                 p2Href="/product"
-                p2HrefText="product"
-                p2Text2={"page for more information."}
+                p2HrefText="demo"
+                p2Text2={"page for more information on each product."}
             />
             <CardHome
                 icon={<TfiBook size={25} />}
