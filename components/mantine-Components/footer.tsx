@@ -165,8 +165,8 @@ export function Footer({ data }: FooterLinksProps) {
                         color="dimmed"
                         className={classes.description}
                     >
-                        Empowering physicians to create personalized, patient
-                        centered, care plans with ease
+                        Revolutionize your practice and elevate patient care
+                        with AI-powered automation
                     </Text>
                 </div>
                 <div className={classes.groups}>{groups}</div>

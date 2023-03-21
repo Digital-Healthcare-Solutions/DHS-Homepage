@@ -17,10 +17,7 @@ const SmartPlanDescription = () => {
                 <h1 className="text-4xl font-bold mb-5">What is SmartPlan?</h1>
 
                 <Text className="text-center pb-8 lg:w-1/2 " size="lg">
-                    Smartplan is a cloud-based platform that allows physicians
-                    and primary care providers to easily create and manage
-                    comprehensive plans of care for patients with various
-                    chronic diseases.
+                    Smartplan is a cloud-based platform that makes the complex task of running a 
                 </Text>
                 {/* 
                 <div className="right-16 xl:right-24  translate-y-36  absolute maxRandom:hidden ">
