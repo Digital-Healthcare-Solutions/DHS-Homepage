@@ -29,10 +29,10 @@ function ContactUs() {
         }),
         onSubmit: (values) => {
             showNotification({
-                color: "blue",
-                title: "I will never close",
-                message: "unless you click X",
-                autoClose: false
+                color: "green",
+                title: "Success!",
+                message: "We will get back to you soon!",
+                autoClose: 3000
             })
         }
     })

@@ -76,7 +76,7 @@ const SmartPlanDescription = () => {
                     </h4>
                     <Link href="https://smart-plan.io/login">
                         <ButtonPrimary onClick={""} className={""}>
-                            View Demo
+                            View Demos
                         </ButtonPrimary>
                     </Link>
                 </div>

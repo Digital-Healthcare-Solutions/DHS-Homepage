@@ -3,19 +3,31 @@ import Nav from "./page-Components/nav"
 
 const Layout = ({ children }) => {
     const data = [
-        // {
-        //     title: "Product",
-        //     links: [
-        //         {
-        //             label: "About",
-        //             link: "/product"
-        //         },
-        //         {
-        //             label: "Features",
-        //             link: "/product/features"
-        //         }
-        //     ]
-        // },
+        {
+            title: "Product",
+            links: [
+                {
+                    label: "Care Plans",
+                    link: "/product"
+                },
+                {
+                    label: "Call Center",
+                    link: "/product/features"
+                },
+                {
+                    label: "Dictation ",
+                    link: "/product/features"
+                }
+                // {
+                //     label: "Prior Authorization",
+                //     link: "/product/features"
+                // },
+                // {
+                //     label: "Online Paperwork",
+                //     link: "/product/features"
+                // }
+            ]
+        },
 
         {
             title: "About",
@@ -46,7 +58,7 @@ const Layout = ({ children }) => {
                     link: "/blog"
                 },
                 {
-                    label: "Careers",
+                    label: "Newsletter",
                     link: "#"
                 },
 

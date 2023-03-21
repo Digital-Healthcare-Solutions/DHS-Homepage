@@ -45,8 +45,11 @@ const NavLinks = () => {
                         // href="/product"
                         className={
                             pathname === "/product" ||
-                            pathname === "/product/demo" ||
-                            pathname === "/product/roadmap"
+                            pathname === "/product/smart-voice" ||
+                            pathname === "/product/easy-auth" ||
+                            pathname === "/product/smart-form" ||
+                            pathname === "/product/intellicall" ||
+                            pathname === "/product/smart-plan"
                                 ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 cursor-pointer flex items-center"
                                 : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 cursor-pointer flex items-center"
                         }
@@ -61,9 +64,9 @@ const NavLinks = () => {
                 <Menu.Dropdown>
                     <Menu.Item
                         component={Link}
-                        href="/product/demo"
+                        href="/product/smart-plan"
                         className={
-                            pathname === "/product/demo"
+                            pathname === "/product/smart-plan"
                                 ? "text-base text-blue-500"
                                 : "text-base"
                         }
@@ -72,9 +75,9 @@ const NavLinks = () => {
                     </Menu.Item>
                     <Menu.Item
                         component={Link}
-                        href="/product/demo"
+                        href="/product/intellicall"
                         className={
-                            pathname === "/product/demo"
+                            pathname === "/product/intellicall"
                                 ? "text-base text-blue-500"
                                 : "text-base"
                         }
@@ -83,9 +86,9 @@ const NavLinks = () => {
                     </Menu.Item>
                     <Menu.Item
                         component={Link}
-                        href="/product/demo"
+                        href="/product/smart-form"
                         className={
-                            pathname === "/product/demo"
+                            pathname === "/product/smart-form"
                                 ? "text-base text-blue-500"
                                 : "text-base"
                         }
@@ -94,9 +97,9 @@ const NavLinks = () => {
                     </Menu.Item>
                     <Menu.Item
                         component={Link}
-                        href="/product/demo"
+                        href="/product/easy-auth"
                         className={
-                            pathname === "/product/demo"
+                            pathname === "/product/easy-auth"
                                 ? "text-base text-blue-500"
                                 : "text-base"
                         }
@@ -105,9 +108,9 @@ const NavLinks = () => {
                     </Menu.Item>
                     <Menu.Item
                         component={Link}
-                        href="/product/demo"
+                        href="/product/smart-voice"
                         className={
-                            pathname === "/product/demo"
+                            pathname === "/product/smart-voice"
                                 ? "text-base text-blue-500"
                                 : "text-base"
                         }

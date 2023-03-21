@@ -37,13 +37,13 @@ export const MOCKDATA = [
         icon: MdOutlinePhoneEnabled,
         title: "Handle communications in a modern way",
         description:
-            "We built IntelliCall with the goal of making it easier to communicate with our patients and providers. We've integrated an AI powered, modern call center that's as flexible as your practice is and allows you to communicate with your patients and providers in a way that is easy and intuitive."
+            "We built our integrated call center (IntelliCall) with the goal of making it easier to communicate with our patients and other providers. We've integrated an AI powered, modern call center that's as flexible as your practice is and allows you to communicate with your patients in a way that is easy and intuitive."
     },
     {
         icon: RiComputerLine,
-        title: "Online paperwork made easy",
+        title: "Seamlessly add online pre-registration",
         description:
-            "We make it easy to add seamless online pre-registration to your practice. Simply embed the custom link we provide on your website  and instantly have an online registration flow for your business."
+            "We make it easy to add seamless online pre-registration to your practice. Simply embed the custom link we provide on your website  and instantly have a secure online registration flow for your patients."
     },
     {
         icon: AiOutlineCloudUpload,

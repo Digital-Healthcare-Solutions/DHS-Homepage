@@ -65,8 +65,11 @@ const MobileNav = ({ open, setOpen }) => {
                                 // href="/product"
                                 className={
                                     pathname === "/product" ||
-                                    pathname === "/product/demo" ||
-                                    pathname === "/product/roadmap"
+                                    pathname === "/product/smart-voice" ||
+                                    pathname === "/product/easy-auth" ||
+                                    pathname === "/product/smart-form" ||
+                                    pathname === "/product/intellicall" ||
+                                    pathname === "/product/smart-plan"
                                         ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 mx-1 flex items-center"
                                         : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 mx-1 flex items-center"
                                 }
@@ -81,6 +84,72 @@ const MobileNav = ({ open, setOpen }) => {
                         <Menu.Dropdown>
                             <Menu.Item
                                 component={Link}
+                                href="/product/smart-plan"
+                                className={
+                                    pathname === "/product/smart-plan"
+                                        ? "text-base text-blue-500"
+                                        : "text-base"
+                                }
+                            >
+                                Smart<strong>Plan</strong>
+                            </Menu.Item>
+                            <Menu.Item
+                                component={Link}
+                                href="/product/intellicall"
+                                className={
+                                    pathname === "/product/intellicall"
+                                        ? "text-base text-blue-500"
+                                        : "text-base"
+                                }
+                            >
+                                Intelli<strong>Call</strong>
+                            </Menu.Item>
+                            <Menu.Item
+                                component={Link}
+                                href="/product/smart-form"
+                                className={
+                                    pathname === "/product/smart-form"
+                                        ? "text-base text-blue-500"
+                                        : "text-base"
+                                }
+                            >
+                                Smart<strong>Form</strong>
+                            </Menu.Item>
+                            <Menu.Item
+                                component={Link}
+                                href="/product/easy-auth"
+                                className={
+                                    pathname === "/product/easy-auth"
+                                        ? "text-base text-blue-500"
+                                        : "text-base"
+                                }
+                            >
+                                Easy<strong>Auth</strong>
+                            </Menu.Item>
+                            <Menu.Item
+                                component={Link}
+                                href="/product/smart-voice"
+                                className={
+                                    pathname === "/product/smart-voice"
+                                        ? "text-base text-blue-500"
+                                        : "text-base"
+                                }
+                            >
+                                Smart<strong>Voice</strong>
+                            </Menu.Item>
+                            {/* <Menu.Item
+                        component={Link}
+                        href="/product/demo"
+                        className={
+                            pathname === "/product/demo"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Demo
+                    </Menu.Item> */}
+                            <Menu.Item
+                                component={Link}
                                 href="/product"
                                 className={
                                     pathname === "/product"
@@ -88,31 +157,19 @@ const MobileNav = ({ open, setOpen }) => {
                                         : "text-base"
                                 }
                             >
-                                Features
+                                Demos
                             </Menu.Item>
-
-                            <Menu.Item
-                                component={Link}
-                                href="/product/demo"
-                                className={
-                                    pathname === "/product/demo"
-                                        ? "text-base text-blue-500"
-                                        : "text-base"
-                                }
-                            >
-                                Demo
-                            </Menu.Item>
-                            <Menu.Item
-                                component={Link}
-                                href="/product/roadmap"
-                                className={
-                                    pathname === "/product/roadmap"
-                                        ? "text-base text-blue-500"
-                                        : "text-base"
-                                }
-                            >
-                                Roadmap
-                            </Menu.Item>
+                            {/* <Menu.Item
+                        component={Link}
+                        href="/product/roadmap"
+                        className={
+                            pathname === "/product/roadmap"
+                                ? "text-base text-blue-500"
+                                : "text-base"
+                        }
+                    >
+                        Roadmap
+                    </Menu.Item> */}
                         </Menu.Dropdown>
                     </Menu>
                     {/* <Link
@@ -158,9 +215,10 @@ const MobileNav = ({ open, setOpen }) => {
                             onClick={() => {}}
                             className="text-sm mb-3 ml-2"
                         >
-                            Launch
-                            <span className="ml-1"> App</span>{" "}
-                            <FiExternalLink size={20} className="ml-1" />
+                            {/* Launch
+                            <span className="ml-1"> App</span>{" "} */}
+                            Login
+                            {/* <FiExternalLink size={15} className="ml-1" /> */}
                         </ButtonPrimary>
                     </a>
                 </motion.section>
