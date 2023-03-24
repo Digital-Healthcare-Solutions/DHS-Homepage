@@ -19,7 +19,7 @@ const Pricing = () => {
             {" "}
             <div className="flex flex-col items-center  drop-shadow-lg">
                 <h1 className="flex flex-col items-center mx-3">
-                    <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-8 line tracking-wide">
+                    <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-10 line tracking-wide">
                         We offer a variety of plans to fit your business' needs.
                     </div>
                     <Alert
@@ -34,6 +34,7 @@ const Pricing = () => {
                         radius="md"
                         variant="outline"
                         color="green"
+                        className="py-8"
                     >
                         <h2 className="flex flex-col items-center">
                             <div className="text-xl md:text-2xl w-fit max-w-3xl text-center font-bold">
@@ -56,7 +57,7 @@ const Pricing = () => {
                                     access to our platform for a limited time.
                                 </div>
                             </div>
-                            <Paper
+                            {/* <Paper
                                 withBorder
                                 p="md"
                                 radius="md"
@@ -98,7 +99,7 @@ const Pricing = () => {
                                     </Text>{" "}
                                     decreased from previous
                                 </Text>
-                            </Paper>
+                            </Paper> */}
                         </h2>
                     </Alert>
 

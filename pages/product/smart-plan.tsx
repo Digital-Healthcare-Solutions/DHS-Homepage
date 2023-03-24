@@ -106,9 +106,6 @@ const SmartPlan = () => {
                         width={300}
                         height={300}
                     />
-                    {/* <span className=" w-fit text-5xl ml-2 flex items-center text-transparent bg-clip-text bg-gradient-to-r  to-[#194767] from-[#518cba] font-semibold">
-            IntelliCall
-        </span> */}
                 </h1>
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
                     <Image
@@ -247,7 +244,7 @@ const SmartPlan = () => {
                 <div className="flex justify-center mt-8">
                     <ButtonSecondary
                         onClick={""}
-                        className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 "
+                        className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 "
                     >
                         See Demo
                     </ButtonSecondary>
@@ -273,7 +270,7 @@ const SmartPlan = () => {
                         <div className="flex justify-center">
                             <ButtonSecondary
                                 onClick={""}
-                                className="text-lg bg-white text-blue-500"
+                                className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
                             >
                                 Contact Us
                             </ButtonSecondary>
@@ -325,8 +322,7 @@ const SmartPlan = () => {
                 </div>
                 <h2 className="py-6">
                     <div className="text-center text-xl">
-                        You can always read more about our Smartplan on one of
-                        our{" "}
+                        You can always read more about Smartplan on one of our{" "}
                         <Link
                             href="/blog"
                             className="text-blue-500 hover:underline"

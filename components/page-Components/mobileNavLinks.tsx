@@ -115,7 +115,7 @@ const MobileNav = ({ open, setOpen }) => {
                             >
                                 Smart<strong>Form</strong>
                             </Menu.Item>
-                            <Menu.Item
+                            {/* <Menu.Item
                                 component={Link}
                                 href="/product/easy-auth"
                                 className={
@@ -125,7 +125,7 @@ const MobileNav = ({ open, setOpen }) => {
                                 }
                             >
                                 Easy<strong>Auth</strong>
-                            </Menu.Item>
+                            </Menu.Item> */}
                             <Menu.Item
                                 component={Link}
                                 href="/product/smart-voice"

@@ -15,12 +15,7 @@ import {
     MdOpenInNewOff,
     MdOutlinePhoneEnabled
 } from "react-icons/md"
-import { AiOutlineCloudUpload } from "react-icons/ai"
-import { RxCircleBackslash } from "react-icons/rx"
-import { BiDonateHeart, BiCheckShield } from "react-icons/bi"
-import { HiOutlineMicrophone } from "react-icons/hi"
 import { MdOutlinePersonOff } from "react-icons/md"
-import Link from "next/link"
 
 export function Feature({ icon: Icon, title, description }) {
     const theme = useMantineTheme()
@@ -127,13 +122,12 @@ export function FeaturesGrid({ title, description }) {
                     </a>{" "} */}
                     model built by
                     <a
-                        className="text-blue-500 hover:underline"
+                        className="text-blue-500 hover:underline mx-1"
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.private-ai.com/"
                     >
-                        {" "}
-                        Private AI{" "}
+                        Private AI
                     </a>
                     that allows you to redact PHI in text, images, and videos.
                     Simply upload your desired document and it will return fully

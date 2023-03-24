@@ -30,3 +30,8 @@ body::-webkit-scrollbar-thumb {
 .mantine-Carousel-indicator {
     background: #ffffff;
 }
+
+.loading {
+    clip-path: inset(0 1.4ch 0 0);
+    animation: l 1s steps(4) infinite;
+}

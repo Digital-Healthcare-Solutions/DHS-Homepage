@@ -95,7 +95,7 @@ const NavLinks = () => {
                     >
                         Smart<strong>Form</strong>
                     </Menu.Item>
-                    <Menu.Item
+                    {/* <Menu.Item
                         component={Link}
                         href="/product/easy-auth"
                         className={
@@ -105,7 +105,7 @@ const NavLinks = () => {
                         }
                     >
                         Easy<strong>Auth</strong>
-                    </Menu.Item>
+                    </Menu.Item> */}
                     <Menu.Item
                         component={Link}
                         href="/product/smart-voice"
@@ -130,7 +130,7 @@ const NavLinks = () => {
                     </Menu.Item> */}
                     <Menu.Item
                         component={Link}
-                        href="/product"
+                        href="/product/demos"
                         className={
                             pathname === "/product"
                                 ? "text-base text-blue-500"

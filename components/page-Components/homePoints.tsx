@@ -15,7 +15,7 @@ const points = [
         icon: BiCheckShield,
         title: "Secure by default",
         description:
-            "We utilize the latest in encryption technology to ensure that your patient's data is always safe and secure. We have a HIPAA compliant database, server, and hosting provider and require 2FA everytime for all of our users."
+            "We utilize encryption algorithms in everything we do to ensure that your patient's data is always safe and secure. We have a HIPAA compliant database, server, and hosting provider and require 2FA everytime for all of our users."
     },
     {
         icon: RxCircleBackslash,

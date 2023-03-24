@@ -13,7 +13,7 @@ export default function HomeCards() {
                     "Wether you are a small or large practice, we have a solution that will fit your needs. We offer a full suite of products to help you manage your practice and your patients."
                 }
                 p2Text1={"Visit our"}
-                p2Href="/product"
+                p2Href="/product/demos"
                 p2HrefText="demo"
                 p2Text2={"page for more information on each product."}
             />
