@@ -59,14 +59,20 @@ const SmartVoice = () => {
         setLoading(true)
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
-            let options = { mimeType: "audio/mp3" }
-            // if (MediaRecorder.isTypeSupported("audio/mp4")) {
-            //     options = { mimeType: "audio/mp4" }
-            // } else if (MediaRecorder.isTypeSupported("audio/webm")) {
-            //     options = { mimeType: "audio/webm" }
-            // } else {
-            //     alert("no suitable mimetype found for this device")
-            // }
+            let options: any
+            let type: any
+            let fileName: any
+            if (MediaRecorder.isTypeSupported("audio/mp4")) {
+                options = { mimeType: "audio/mp4" }
+                type = "audio/mp4"
+                fileName = "audio.mp4"
+            } else if (MediaRecorder.isTypeSupported("audio/webm")) {
+                options = { mimeType: "audio/webm" }
+                type = "audio/webm"
+                fileName = "audio.webm"
+            } else {
+                alert("no suitable mimetype found for this device")
+            }
             navigator.mediaDevices
                 .getUserMedia({ audio: true, video: false })
                 .then((stream) => {
@@ -78,16 +84,15 @@ const SmartVoice = () => {
                         chunks.push(event.data)
                         console.log(chunks)
                         const audioData = new Blob(chunks, {
-                            type: "audio/mp3"
+                            type: type
                         })
                         const formData = new FormData()
-                        formData.append("file", audioData, "audio.webm")
+                        formData.append("file", audioData, fileName)
                         formData.append("model", "whisper-1")
-                        // formData.append(
-                        //     "prompt",
-                        //     "You are a Medical Transcription bot. You may come across a lot of complex medical terms such as brachial plexopathy, cervical radiculopathy and so on."
-                        // )
-
+                        formData.append(
+                            "prompt",
+                            "You are a Medical Transcription bot. You may come across a lot of complex medical terms such as brachial plexopathy, cervical radiculopathy and so on."
+                        )
                         mediaRecorder.onstop = () => {
                             console.log("stopped")
                             fetchAudio(formData)
