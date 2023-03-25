@@ -59,14 +59,14 @@ const SmartVoice = () => {
         setLoading(true)
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
-            let options: any
-            if (MediaRecorder.isTypeSupported("audio/mp4")) {
-                options = { mimeType: "audio/mp4" }
-            } else if (MediaRecorder.isTypeSupported("audio/webm")) {
-                options = { mimeType: "audio/webm" }
-            } else {
-                alert("no suitable mimetype found for this device")
-            }
+            let options = { mimeType: "audio/mp4" }
+            // if (MediaRecorder.isTypeSupported("audio/mp4")) {
+            //     options = { mimeType: "audio/mp4" }
+            // } else if (MediaRecorder.isTypeSupported("audio/webm")) {
+            //     options = { mimeType: "audio/webm" }
+            // } else {
+            //     alert("no suitable mimetype found for this device")
+            // }
             navigator.mediaDevices
                 .getUserMedia({ audio: true })
                 .then((stream) => {
