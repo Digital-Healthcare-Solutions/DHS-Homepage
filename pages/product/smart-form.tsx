@@ -201,7 +201,8 @@ const SmartForm = () => {
                         src="/registration.jpg"
                         width={300}
                         height={300}
-                        alt="phone"
+                        alt="Analog registration on paper"
+                        priority={true}
                     />
 
                     <div className="text-lg w-fit lg:w-[30rem]">
@@ -249,7 +250,8 @@ const SmartForm = () => {
                         src="/online.jpg"
                         width={400}
                         height={400}
-                        alt="Voice Recognition"
+                        alt="Online Registration graphic"
+                        priority={true}
                     />
                 </div>
 

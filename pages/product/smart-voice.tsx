@@ -232,7 +232,8 @@ const SmartVoice = () => {
                             src="/drTyping.jpg"
                             width={300}
                             height={300}
-                            alt="phone"
+                            alt="Doctor typing on a laptop"
+                            priority={true}
                         />
                     </div>
                     <div className="flex flex-col items-center justify-between gap-8 ">
@@ -262,6 +263,7 @@ const SmartVoice = () => {
                             width={400}
                             height={400}
                             alt="Voice Recognition"
+                            priority={true}
                         />
                     </div>
                 </section>

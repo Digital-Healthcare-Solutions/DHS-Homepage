@@ -176,7 +176,8 @@ const IntelliCall = () => {
                         src="/phoneRinging.jpg"
                         width={300}
                         height={300}
-                        alt="phone"
+                        alt="Phone ringing"
+                        priority={true}
                     />
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between gap-8 py-20 items-center">
@@ -186,7 +187,8 @@ const IntelliCall = () => {
                         src="/cloudPhone.jpg"
                         width={300}
                         height={300}
-                        alt="Voice Recognition"
+                        alt="Cloud Phone system"
+                        priority={true}
                     />
                     <div className="text-lg">
                         <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">

@@ -157,7 +157,8 @@ const SmartPlan = () => {
                         src="/carePlan.jpg"
                         width={400}
                         height={400}
-                        alt="phone"
+                        alt="Care Plan"
+                        priority={true}
                     />
                     <div className="text-lg">
                         <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
@@ -204,7 +205,8 @@ const SmartPlan = () => {
                         src="/ourCarePlan.jpg"
                         width={400}
                         height={400}
-                        alt="Voice Recognition"
+                        alt="Improved Care Plan"
+                        priority={true}
                     />
                 </div>
 
