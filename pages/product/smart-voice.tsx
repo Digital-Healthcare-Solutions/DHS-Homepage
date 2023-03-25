@@ -16,10 +16,7 @@ const SmartVoice = () => {
     const [error, setError] = useState("")
     const [width, setWidth] = useState(0)
 
-    useEffect(() => {
-        setWidth(window.innerWidth)
-    }, [])
-
+    console.log(window.innerWidth)
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -63,7 +60,7 @@ const SmartVoice = () => {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
             let options: any
-            if (width > 768) {
+            if (window.innerWidth > 768) {
                 options = { mimeType: "audio/webm" }
             } else {
                 options = { mimeType: "audio/mp4" }
