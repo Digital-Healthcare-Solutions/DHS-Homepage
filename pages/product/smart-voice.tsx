@@ -63,8 +63,8 @@ const SmartVoice = () => {
             let type: any
             let fileName: any
             if (MediaRecorder.isTypeSupported("audio/mp4")) {
-                options = { mimeType: "audio/mp4" }
-                type = "audio/mp4"
+                options = { mimeType: "audio/mp4;codecs=mp4a" }
+                type = "audio/mp4;codecs=mp4a"
                 fileName = "audio.mp4"
             } else if (MediaRecorder.isTypeSupported("audio/webm")) {
                 options = { mimeType: "audio/webm" }
