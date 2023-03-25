@@ -59,7 +59,7 @@ const SmartVoice = () => {
         setLoading(true)
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
-            let options = { mimeType: "audio/mp4" }
+            let options = { mimeType: "audio/mp3" }
             // if (MediaRecorder.isTypeSupported("audio/mp4")) {
             //     options = { mimeType: "audio/mp4" }
             // } else if (MediaRecorder.isTypeSupported("audio/webm")) {
@@ -68,7 +68,7 @@ const SmartVoice = () => {
             //     alert("no suitable mimetype found for this device")
             // }
             navigator.mediaDevices
-                .getUserMedia({ audio: true })
+                .getUserMedia({ audio: true, video: false })
                 .then((stream) => {
                     const mediaRecorder = new MediaRecorder(stream, options)
 
@@ -78,7 +78,7 @@ const SmartVoice = () => {
                         chunks.push(event.data)
                         console.log(chunks)
                         const audioData = new Blob(chunks, {
-                            type: "audio/mp4"
+                            type: "audio/mp3"
                         })
                         const formData = new FormData()
                         formData.append("file", audioData, "audio.webm")
