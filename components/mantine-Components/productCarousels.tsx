@@ -167,13 +167,16 @@ const ProductCarousel = () => {
                         {item.title}
                     </Title>
                 </div>
-                <Link href={`/product/demos#${item.id}`}>
+                <Link
+                    href={`/product/demos#${item.id}`}
+                    className="text-black absolute bottom-5 left-5"
+                >
                     <ButtonSecondary
                         className="bg-white text-black
                
             "
                         onClick={() => {
-                            console.log("clicked")
+                            console.log("")
                         }}
                     >
                         Read More

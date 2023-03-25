@@ -404,21 +404,20 @@ const SmartForm = () => {
                 <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl px-0 py-8">
                     <Title
                         order={2}
-                        size="h1"
                         sx={(theme) => ({
                             fontFamily: `Greycliff CF, ${theme.fontFamily}`
                         })}
-                        weight={900}
-                        align="center"
-                        className="mt-16 text-white"
+                        className=" text-white font-black items-center justify-center flex flex-col mt-16 h-full"
                     >
-                        Interested ?{" "}
-                        <div className="flex text-xl justify-center items-center pt-3">
+                        <span className="text-white text-4xl">
+                            Interested ?
+                        </span>{" "}
+                        <div className="flex text-xl justify-center items-center pt-3 text-white">
                             Get notified when we launch{" "}
                             <BsArrowDown className="ml-2 block lg:hidden" />
                             <BsArrowRight className="ml-2 hidden lg:block" />
                         </div>
-                        <p className="text-lg py-4">or</p>
+                        <p className="text-lg py-4 text-white">or</p>
                         <div className="flex justify-center">
                             <Link href="/#contact">
                                 <ButtonSecondary

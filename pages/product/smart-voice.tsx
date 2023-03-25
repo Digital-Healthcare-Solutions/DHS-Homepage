@@ -332,21 +332,20 @@ const SmartVoice = () => {
                 >
                     <Title
                         order={2}
-                        size="h1"
                         sx={(theme) => ({
                             fontFamily: `Greycliff CF, ${theme.fontFamily}`
                         })}
-                        weight={900}
-                        align="center"
-                        className="mt-16 text-white"
+                        className=" text-white font-black items-center justify-center flex flex-col mt-16 h-full"
                     >
-                        Interested ?{" "}
-                        <div className="flex text-xl justify-center items-center pt-3">
+                        <span className="text-white text-4xl">
+                            Interested ?
+                        </span>{" "}
+                        <div className="flex text-xl justify-center items-center pt-3 text-white">
                             Get notified when we launch{" "}
                             <BsArrowDown className="ml-2 block lg:hidden" />
                             <BsArrowRight className="ml-2 hidden lg:block" />
                         </div>
-                        <p className="text-lg py-4">or</p>
+                        <p className="text-lg py-4 text-white">or</p>
                         <div className="flex justify-center">
                             <Link href="/#contact">
                                 <ButtonSecondary
@@ -357,7 +356,7 @@ const SmartVoice = () => {
                                 </ButtonSecondary>
                             </Link>
                         </div>
-                    </Title>{" "}
+                    </Title>
                     <div className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl">
                         <TextInput
                             label="Name"
