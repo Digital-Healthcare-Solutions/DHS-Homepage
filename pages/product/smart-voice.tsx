@@ -57,12 +57,18 @@ const SmartVoice = () => {
         setLoading(true)
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
+            let options: any
+            if (MediaRecorder.isTypeSupported("audio/webm")) {
+                options = { mimeType: "audio/webm" }
+            } else if (MediaRecorder.isTypeSupported("audio/mp4")) {
+                options = { mimeType: "audio/mp4" }
+            } else {
+                options = { mimeType: "audio/ogg" }
+            }
             navigator.mediaDevices
                 .getUserMedia({ audio: true })
                 .then((stream) => {
-                    const mediaRecorder = new MediaRecorder(stream, {
-                        mimeType: "audio/webm"
-                    })
+                    const mediaRecorder = new MediaRecorder(stream, options)
 
                     console.log(mediaRecorder)
                     const chunks = []
