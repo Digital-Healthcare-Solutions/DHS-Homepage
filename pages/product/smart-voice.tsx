@@ -78,10 +78,10 @@ const SmartVoice = () => {
                         chunks.push(event.data)
                         console.log(chunks)
                         const audioData = new Blob(chunks, {
-                            type: "audio/webm"
+                            type: "audio/mp4"
                         })
                         const formData = new FormData()
-                        formData.append("file", audioData, "audio.webm")
+                        formData.append("file", audioData, "audio.mp4")
                         formData.append("model", "whisper-1")
                         // formData.append(
                         //     "prompt",
