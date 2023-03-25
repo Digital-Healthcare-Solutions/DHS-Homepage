@@ -405,9 +405,10 @@ const SmartForm = () => {
                     <Title
                         order={2}
                         sx={(theme) => ({
-                            fontFamily: `Greycliff CF, ${theme.fontFamily}`
+                            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+                            marginTop: "64px"
                         })}
-                        className=" text-white font-black items-center justify-center flex flex-col mt-16 h-full"
+                        className=" text-white font-black items-center justify-center flex flex-col h-full"
                     >
                         <span className="text-white text-4xl">
                             Interested ?
@@ -428,7 +429,7 @@ const SmartForm = () => {
                                 </ButtonSecondary>
                             </Link>
                         </div>
-                    </Title>{" "}
+                    </Title>
                     <form
                         className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl"
                         onSubmit={formik.handleSubmit}

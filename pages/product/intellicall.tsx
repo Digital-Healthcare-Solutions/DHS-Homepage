@@ -311,9 +311,10 @@ const IntelliCall = () => {
                     <Title
                         order={2}
                         sx={(theme) => ({
-                            fontFamily: `Greycliff CF, ${theme.fontFamily}`
+                            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+                            marginTop: "64px"
                         })}
-                        className=" text-white font-black items-center justify-center flex flex-col mt-16 h-full"
+                        className=" text-white font-black items-center justify-center flex flex-col h-full"
                     >
                         <span className="text-white text-4xl">
                             Interested ?
