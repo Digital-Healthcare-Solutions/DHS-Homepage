@@ -22,6 +22,7 @@ import ButtonPrimary from "../../components/UI-Components/button-primary"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import { BsArrowRight, BsArrowDown } from "react-icons/bs"
 import Link from "next/link"
+import { showNotification } from "@mantine/notifications"
 
 const howItWorks = [
     {
@@ -134,10 +135,53 @@ const SmartForm = () => {
                 .required("Required"),
             businessName: Yup.string().required("Required")
         }),
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
+        onSubmit: () => {
+            subscribeToLaunch(
+                formik.values.name,
+                formik.values.email,
+                formik.values.businessName
+            )
         }
     })
+
+    const subscribeToLaunch = async (
+        name: string,
+        email: string,
+        business: string
+    ) => {
+        const res = await fetch(
+            "https://xmks-s250-ypw0.n7.xano.io/api:5iYyLrKQ/subscribeToLaunchList",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    business
+                })
+            }
+        )
+        const data = await res.json()
+        if (res.ok) {
+            showNotification({
+                title: "Success",
+                message: "You have been added to our launch list",
+                color: "green",
+                autoClose: 5000
+            })
+            formik.resetForm()
+        } else {
+            showNotification({
+                title: "Error",
+                message: data.message,
+                color: "red",
+                autoClose: 5000
+            })
+        }
+        return data
+    }
 
     return (
         <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
@@ -145,18 +189,18 @@ const SmartForm = () => {
                 <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
                     <Image
                         className="rounded-xl dark:brightness-150 "
-                        src="/smartplanLogo.png"
+                        src="/SmartFormLogo.png"
                         alt="Smart Plan"
-                        width={300}
+                        width={315}
                         height={300}
                     />
                 </h1>
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-32 ">
                     <Image
-                        className="rounded-xl brightness-150"
-                        src="/carePlan.jpg"
-                        width={400}
-                        height={400}
+                        className="rounded-xl shadow-lg dark:shadow-gray-700 "
+                        src="/registration.jpg"
+                        width={300}
+                        height={300}
                         alt="phone"
                     />
 
@@ -201,8 +245,8 @@ const SmartForm = () => {
                         </h3>
                     </div>{" "}
                     <Image
-                        className="rounded-xl"
-                        src="/voiceRecognition.jpg"
+                        className="rounded-xl shadow-lg dark:shadow-gray-700"
+                        src="/online.jpg"
                         width={400}
                         height={400}
                         alt="Voice Recognition"
@@ -348,12 +392,14 @@ const SmartForm = () => {
                     </div>
                 ))}
                 <div className="flex justify-center mt-8">
-                    <ButtonSecondary
-                        onClick={""}
-                        className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 "
-                    >
-                        See Demo
-                    </ButtonSecondary>
+                    <Link href="/product/demos">
+                        <ButtonSecondary
+                            onClick={() => console.log(``)}
+                            className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 "
+                        >
+                            See Demo
+                        </ButtonSecondary>
+                    </Link>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl px-0 py-8">
                     <Title
@@ -374,15 +420,20 @@ const SmartForm = () => {
                         </div>
                         <p className="text-lg py-4">or</p>
                         <div className="flex justify-center">
-                            <ButtonSecondary
-                                onClick={""}
-                                className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
-                            >
-                                Contact Us
-                            </ButtonSecondary>
+                            <Link href="/#contact">
+                                <ButtonSecondary
+                                    onClick={() => console.log("clicked")}
+                                    className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
+                                >
+                                    Contact Us
+                                </ButtonSecondary>
+                            </Link>
                         </div>
                     </Title>{" "}
-                    <div className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl">
+                    <form
+                        className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl"
+                        onSubmit={formik.handleSubmit}
+                    >
                         <TextInput
                             label="Name"
                             placeholder="Your name"
@@ -420,11 +471,15 @@ const SmartForm = () => {
                             }
                         />{" "}
                         <div className="flex justify-center pt-5">
-                            <ButtonPrimary onClick={""} className="">
+                            <ButtonPrimary
+                                type="submit"
+                                onClick={() => console.log("clicked")}
+                                className=""
+                            >
                                 Notify Me
                             </ButtonPrimary>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <h2 className="py-6">
                     <div className="text-center text-xl">

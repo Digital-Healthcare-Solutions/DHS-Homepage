@@ -58,10 +58,10 @@ export function ImageActionBanner({
                     "absolute -translate-x-4 text-white dark:text-black  flex flex-col items-center md:justify-center w-full h-full z-10 "
                 }
             >
-                <div className="max-w-[550px] md:max-w-[700px] p-5 md:p-12 rounded-lg bg-neutral-700 bg-opacity-40 dark:bg-neutral-400 dark:bg-opacity-30 shadow-sm shadow-black ">
+                <div className="max-w-[550px] md:max-w-[700px] p-5 md:p-12 rounded-lg bg-neutral-700 bg-opacity-40 dark:bg-neutral-400 dark:bg-opacity-30 shadow-sm shadow-black mx-5">
                     <Text
                         className={
-                            "mb-2 text-xl md:text-2xl lg:text-3xl font-light dark:font-normal"
+                            "mb-2 text-xl md:text-2xl lg:text-2xl font-light dark:font-normal"
                         }
                     >
                         {title}
@@ -69,7 +69,7 @@ export function ImageActionBanner({
 
                     <div
                         className={
-                            " text-xl md:text-2xl lg:text-3xl font-semibold"
+                            " text-lg md:text-xl lg:text-2xl font-semibold mx-2"
                         }
                     >
                         {description}

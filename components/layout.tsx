@@ -8,15 +8,15 @@ const Layout = ({ children }) => {
             links: [
                 {
                     label: "Care Plans",
-                    link: "/product"
+                    link: "/product/smart-plan"
                 },
                 {
                     label: "Call Center",
-                    link: "/product/features"
+                    link: "/product/intellicall"
                 },
                 {
                     label: "Dictation ",
-                    link: "/product/features"
+                    link: "/product/smart-voice"
                 }
                 // {
                 //     label: "Prior Authorization",
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
                 },
                 {
                     label: "Features",
-                    link: "/product"
+                    link: "/product/demos"
                 },
                 // {
                 //     label: "Demo",
@@ -58,8 +58,8 @@ const Layout = ({ children }) => {
                     link: "/blog"
                 },
                 {
-                    label: "Newsletter",
-                    link: "#"
+                    label: "Launch list",
+                    link: "/product/smart-plan#launch-list"
                 },
 
                 {

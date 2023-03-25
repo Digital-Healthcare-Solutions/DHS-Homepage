@@ -7,6 +7,7 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
+import Link from "next/link"
 
 const SmartVoice = () => {
     const [loading, setLoading] = useState(false)
@@ -27,8 +28,12 @@ const SmartVoice = () => {
                 .required("Required"),
             businessName: Yup.string().required("Required")
         }),
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
+        onSubmit: () => {
+            subscribeToLaunch(
+                formik.values.name,
+                formik.values.email,
+                formik.values.businessName
+            )
         }
     })
 
@@ -121,16 +126,7 @@ const SmartVoice = () => {
                 body: audiodata
             }
         )
-        // const response = await fetch(
-        //     "https://api.openai.com/v1/audio/transcriptions",
-        //     {
-        //         method: "POST",
-        //         headers: {
-        //             Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`
-        //         },
-        //         body: audiodata
-        //     }
-        // )
+
         const data = await response.json()
         console.log(data)
         if (response.ok) {
@@ -153,6 +149,45 @@ const SmartVoice = () => {
     const handleRecord = () => {
         setRecording(true)
         getLocalStream()
+    }
+
+    const subscribeToLaunch = async (
+        name: string,
+        email: string,
+        business: string
+    ) => {
+        const res = await fetch(
+            "https://xmks-s250-ypw0.n7.xano.io/api:5iYyLrKQ/subscribeToLaunchList",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    business
+                })
+            }
+        )
+        const data = await res.json()
+        if (res.ok) {
+            showNotification({
+                title: "Success",
+                message: "You have been added to our launch list",
+                color: "green",
+                autoClose: 5000
+            })
+            formik.resetForm()
+        } else {
+            showNotification({
+                title: "Error",
+                message: data.message,
+                color: "red",
+                autoClose: 5000
+            })
+        }
+        return data
     }
 
     return (
@@ -193,8 +228,8 @@ const SmartVoice = () => {
                             </h3>
                         </div>{" "}
                         <Image
-                            className="rounded-xl"
-                            src="/phone.jpg"
+                            className="rounded-xl shadow-lg dark:shadow-gray-700"
+                            src="/drTyping.jpg"
                             width={300}
                             height={300}
                             alt="phone"
@@ -222,10 +257,10 @@ const SmartVoice = () => {
                             </h3>
                         </div>{" "}
                         <Image
-                            className="rounded-xl"
+                            className="rounded-xl shadow-lg dark:shadow-gray-700"
                             src="/voiceRecognition.jpg"
-                            width={300}
-                            height={300}
+                            width={400}
+                            height={400}
                             alt="Voice Recognition"
                         />
                     </div>
@@ -234,11 +269,11 @@ const SmartVoice = () => {
                     <h2 className="text-blue-500  font-semibold text-3xl text-center pt-20">
                         Try it out!
                     </h2>
-                    <p className="py-5 text-xs text-center">
+                    {/* <p className="py-5 text-xs text-center">
                         Note: This demo implementation is limited to 20 attempts
                         per user. This demo is not HIPPA compliant and is not
                         intended for use in a clinical setting.
-                    </p>
+                    </p> */}
                     <div className="flex justify-center ">
                         <Textarea
                             disabled={parseInt(APIcount) > 20}
@@ -254,7 +289,8 @@ const SmartVoice = () => {
                             className="w-[66%] lg:mt-4"
                             minRows={4}
                             maxRows={10}
-                            description="Try your most difficult voice commands here! Even complicated medical terms!"
+                            autosize={true}
+                            description="Try your most difficult voice commands here! Even complicated medical terms! ( limited to 20 attempts per user. )"
                         />
                     </div>
                     <div className="flex justify-center mt-3">
@@ -290,7 +326,10 @@ const SmartVoice = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl px-0 py-8">
+                <form
+                    className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl px-0 py-8"
+                    onSubmit={formik.handleSubmit}
+                >
                     <Title
                         order={2}
                         size="h1"
@@ -309,12 +348,14 @@ const SmartVoice = () => {
                         </div>
                         <p className="text-lg py-4">or</p>
                         <div className="flex justify-center">
-                            <ButtonSecondary
-                                onClick={""}
-                                className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
-                            >
-                                Contact Us
-                            </ButtonSecondary>
+                            <Link href="/#contact">
+                                <ButtonSecondary
+                                    onClick={() => console.log("clicked")}
+                                    className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
+                                >
+                                    Contact Us
+                                </ButtonSecondary>
+                            </Link>
                         </div>
                     </Title>{" "}
                     <div className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl">
@@ -355,12 +396,16 @@ const SmartVoice = () => {
                             }
                         />{" "}
                         <div className="flex justify-center pt-5">
-                            <ButtonPrimary onClick={""} className="">
+                            <ButtonPrimary
+                                type="submit"
+                                onClick={() => console.log("clicked")}
+                                className=""
+                            >
                                 Notify Me
                             </ButtonPrimary>
                         </div>
                     </div>
-                </div>
+                </form>
             </Container>
         </div>
     )

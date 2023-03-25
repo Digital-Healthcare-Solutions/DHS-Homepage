@@ -64,7 +64,7 @@ const MobileNav = ({ open, setOpen }) => {
                             <div
                                 // href="/product"
                                 className={
-                                    pathname === "/product" ||
+                                    pathname === "/product/demos" ||
                                     pathname === "/product/smart-voice" ||
                                     pathname === "/product/easy-auth" ||
                                     pathname === "/product/smart-form" ||
@@ -150,9 +150,9 @@ const MobileNav = ({ open, setOpen }) => {
                     </Menu.Item> */}
                             <Menu.Item
                                 component={Link}
-                                href="/product"
+                                href="/product/demos"
                                 className={
-                                    pathname === "/product"
+                                    pathname === "/product/demos"
                                         ? "text-base text-blue-500"
                                         : "text-base"
                                 }

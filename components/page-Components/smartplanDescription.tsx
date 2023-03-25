@@ -24,7 +24,7 @@ const SmartPlanDescription = () => {
                     professionals.
                 </Text>
 
-                <div className="right-16 xl:right-24  translate-y-36  absolute maxRandom:hidden ">
+                {/* <div className="right-16 xl:right-24  translate-y-36  absolute maxRandom:hidden ">
                     <CiMedicalCross size={40} className=" text-blue-500" />
                 </div>
                 <div className="right-32 xl:right-44  2xl:right-56  translate-y-72 absolute maxRandom:hidden ">
@@ -48,24 +48,28 @@ const SmartPlanDescription = () => {
                 </div>
                 <div className="left-32 xl:left-44  2xl:left-56 translate-y-[565px]  absolute maxRandom:hidden ">
                     <CiMedicalCase size={40} className=" text-blue-500" />
-                </div>
+                </div> */}
                 <div
                     className={
                         theme === "light"
-                            ? "opacity-100 rounded-xl shadow-md shadow-neutral-800"
-                            : "opacity-60 rounded-xl shadow-md "
+                            ? "opacity-100 rounded-xl shadow-lg shadow-gray-300 "
+                            : "opacity-90 rounded-xl shadow-lg shadow-gray-700 "
                     }
                 >
                     <Image
                         className="rounded-xl "
-                        src="/test.jpg"
+                        src="/homePageGraphic.jpg"
                         alt="Smart Plan"
                         width={800}
                         height={800}
                         quality={100}
                         priority
                     />
+                    {/* <p className="flex flex-row justify-end mr-2 text-xs text-gray-400">
+                        Image by macrovector on Freepik
+                    </p> */}
                 </div>
+
                 <div className="flex flex-col items-center">
                     <h4 className="text-center py-8 lg:w-1/2 text-lg md:text-2xl">
                         See how our customized solutions can help you save time,
@@ -74,8 +78,11 @@ const SmartPlanDescription = () => {
                         billing codes 99483, 99490, and 99491 in a user
                         friendly, HIPPA compliant way. */}
                     </h4>
-                    <Link href="https://smart-plan.io/login">
-                        <ButtonPrimary onClick={""} className={""}>
+                    <Link href="/product/demos">
+                        <ButtonPrimary
+                            onClick={() => console.log("")}
+                            className={""}
+                        >
                             View Demos
                         </ButtonPrimary>
                     </Link>

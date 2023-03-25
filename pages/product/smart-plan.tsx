@@ -20,6 +20,7 @@ import ButtonPrimary from "../../components/UI-Components/button-primary"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import { BsArrowRight, BsArrowDown } from "react-icons/bs"
 import Link from "next/link"
+import { showNotification } from "@mantine/notifications"
 
 const features = [
     {
@@ -90,10 +91,53 @@ const SmartPlan = () => {
                 .required("Required"),
             businessName: Yup.string().required("Required")
         }),
-        onSubmit: (values) => {
-            alert(JSON.stringify(values, null, 2))
+        onSubmit: () => {
+            subscribeToLaunch(
+                formik.values.name,
+                formik.values.email,
+                formik.values.businessName
+            )
         }
     })
+
+    const subscribeToLaunch = async (
+        name: string,
+        email: string,
+        business: string
+    ) => {
+        const res = await fetch(
+            "https://xmks-s250-ypw0.n7.xano.io/api:5iYyLrKQ/subscribeToLaunchList",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    business
+                })
+            }
+        )
+        const data = await res.json()
+        if (res.ok) {
+            showNotification({
+                title: "Success",
+                message: "You have been added to our launch list",
+                color: "green",
+                autoClose: 5000
+            })
+            formik.resetForm()
+        } else {
+            showNotification({
+                title: "Error",
+                message: data.message,
+                color: "red",
+                autoClose: 5000
+            })
+        }
+        return data
+    }
 
     return (
         <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
@@ -103,16 +147,16 @@ const SmartPlan = () => {
                         className="rounded-xl dark:brightness-150 "
                         src="/smartplanLogo.png"
                         alt="Smart Plan"
-                        width={300}
-                        height={300}
+                        width={350}
+                        height={350}
                     />
                 </h1>
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
                     <Image
-                        className="rounded-xl brightness-150"
+                        className="rounded-xl brightness-150 shadow-lg dark:shadow-gray-700"
                         src="/carePlan.jpg"
-                        width={300}
-                        height={300}
+                        width={400}
+                        height={400}
                         alt="phone"
                     />
                     <div className="text-lg">
@@ -156,10 +200,10 @@ const SmartPlan = () => {
                         </h3>
                     </div>{" "}
                     <Image
-                        className="rounded-xl"
-                        src="/voiceRecognition.jpg"
-                        width={300}
-                        height={300}
+                        className="rounded-xl shadow-lg dark:shadow-gray-700"
+                        src="/ourCarePlan.jpg"
+                        width={400}
+                        height={400}
                         alt="Voice Recognition"
                     />
                 </div>
@@ -178,10 +222,19 @@ const SmartPlan = () => {
                                     sit amet consectetur adipisicing elit. Ut,
                                     illum?
                                 </Text>
-
-                                <ButtonPrimary onClick={""} className="">
-                                    Get started
-                                </ButtonPrimary>
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href="https://smart-plan.io"
+                                >
+                                    <ButtonPrimary
+                                        type="button"
+                                        className={""}
+                                        onClick={console.log("")}
+                                    >
+                                        Get Started
+                                    </ButtonPrimary>
+                                </a>
                             </Col>
                             <Col span={12} md={7}>
                                 <SimpleGrid
@@ -242,14 +295,20 @@ const SmartPlan = () => {
                     </div>
                 ))}
                 <div className="flex justify-center mt-8">
-                    <ButtonSecondary
-                        onClick={""}
-                        className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 "
-                    >
-                        See Demo
-                    </ButtonSecondary>
+                    <Link href="/product/demos">
+                        <ButtonSecondary
+                            onClick={() => console.log(``)}
+                            className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 "
+                        >
+                            See Demo
+                        </ButtonSecondary>
+                    </Link>
                 </div>
-                <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl px-0 py-8">
+                <form
+                    id="launch-list"
+                    className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl px-0 py-8"
+                    onSubmit={formik.handleSubmit}
+                >
                     <Title
                         order={2}
                         size="h1"
@@ -268,12 +327,14 @@ const SmartPlan = () => {
                         </div>
                         <p className="text-lg py-4">or</p>
                         <div className="flex justify-center">
-                            <ButtonSecondary
-                                onClick={""}
-                                className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
-                            >
-                                Contact Us
-                            </ButtonSecondary>
+                            <Link href="/#contact">
+                                <ButtonSecondary
+                                    onClick={() => console.log("clicked")}
+                                    className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
+                                >
+                                    Contact Us
+                                </ButtonSecondary>
+                            </Link>
                         </div>
                     </Title>{" "}
                     <div className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl">
@@ -314,12 +375,16 @@ const SmartPlan = () => {
                             }
                         />{" "}
                         <div className="flex justify-center pt-5">
-                            <ButtonPrimary onClick={""} className="">
+                            <ButtonPrimary
+                                type="submit"
+                                onClick={() => console.log("clicked")}
+                                className=""
+                            >
                                 Notify Me
                             </ButtonPrimary>
                         </div>
                     </div>
-                </div>
+                </form>
                 <h2 className="py-6">
                     <div className="text-center text-xl">
                         You can always read more about Smartplan on one of our{" "}

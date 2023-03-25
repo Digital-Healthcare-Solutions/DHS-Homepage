@@ -5,17 +5,14 @@ import ProductCarousel from "../../components/mantine-Components/productCarousel
 const Features = () => {
     return (
         <div className="mt-12">
-            {/* <h1 className="text-center text-2xl lg:text-4xl pb-10 pt-5 font-bold dark:font-normal">
-                    Features
-                </h1> */}
             <Container size="lg">
                 <ProductCarousel />{" "}
             </Container>
             <Container size="md">
                 <main className="my-10 text-lg tracking-wide">
                     <section id="1" className="py-5">
-                        <h2 className="text-center text-xl lg:text-3xl pb-2">
-                            Care Plans
+                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                            Care Plans (SmartPlan)
                             <Divider className="mt-2" />
                         </h2>
                         <p>
@@ -40,10 +37,62 @@ const Features = () => {
                             patient's needs are being met and that the treatment
                             approach remains effective over time.
                         </p>
+                        <br />
+                        <p>
+                            Our software will automatically generate a concise
+                            report for you as well as a detailed report for you
+                            to give your patient before they leave. The report
+                            will include a summary of the patient's condition, a
+                            list of all questiionaires performed and scores, a
+                            list of recommended supplements, diet, lifestyle
+                            changes, and 3 actionable, measurable, time based
+                            goals for the patient to work on.
+                        </p>
                     </section>
                     <section id="2" className="py-5">
-                        <h2 className="text-center text-xl lg:text-3xl pb-2">
-                            AI powered dictation <Divider className="mt-2" />
+                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                            AI powered call center (IntelliCall){" "}
+                            <Divider className="mt-2" />
+                        </h2>
+                        <p>
+                            Our AI powered call center integrates with your
+                            existing phone system and is as flexible as you need
+                            it to be. When someone calls and leaves a voicemail,
+                            first our system will automatically transcribe the
+                            call to text, then it will use intelligent lookup to
+                            determine the caller ID, caller phone type (mobile,
+                            landline, etc..), and whether the caller is a
+                            business or a consumer.After that, it will gather
+                            the sentiment of the message and assign the message
+                            to one of 8 labels. You can filter and sort the
+                            messages to your applicable personal by these
+                            labels. If the transcription is a little rough or
+                            hard to understand, we allow you to listen to the
+                            voicemail right in our app. After you're done, you
+                            can conviently text the patient back (if they have a
+                            mobile phone) or call them back right from your
+                            browser.
+                        </p>
+                        <br />
+                        <p>
+                            Our system is also configurable to your needs. You
+                            can choose your own greeting message that will be
+                            read to the calling party if they do not get an
+                            answer. You can also choose whether to call your
+                            existing number first (so that someone will have a
+                            chance to answer) or to immediately go to voicemail
+                            transcription (this setting may be useful when you
+                            are not in the office). We also have a useful AI
+                            assisstant that can help you answer common medical
+                            questions automatically. You can configure the
+                            optimization settings to be more catered to
+                            answering lab questions, medication questions, or
+                            general medical questions.
+                        </p>
+                    </section>
+                    <section id="3" className="py-5">
+                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                            Dictation (SmartVoice) <Divider className="mt-2" />
                         </h2>
                         <p>
                             Our AI powered dictation tool will transcribe your
@@ -60,32 +109,38 @@ const Features = () => {
                             want to go back to Dragon again.
                         </p>
                     </section>
-                    <section id="3" className="py-5">
-                        <h2 className="text-center text-xl lg:text-3xl pb-2">
-                            Generate reports automatically{" "}
+                    <section id="4" className="py-5">
+                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                            Paperless Registration (SmartForm)
                             <Divider className="mt-2" />
                         </h2>
                         <p>
-                            When you finish any of our care plans, a report will
-                            be generated automatically. This report will be
-                            saved under that patient's file and you can easily
-                            access it at any time. You can also download the
-                            report as a PDF or print it out if you'd like. Our
-                            platform will also automatically generate a
-                            Smartplan for that patient. This Smartplan will be
-                            dynamically generated based on the patient's
-                            answers. It will include all the scores from the
-                            exams, educational materials that were discussed
-                            with them during the exam, and any resources that
-                            may be applicable to their situation. You can print
-                            this report out and give it to your patient to take
-                            home with them or send an anonymized version to them
-                            via email.
+                            We have several different forms that you can use to
+                            collect patient information. You can choose between
+                            a full registration form that collects all of the
+                            information you need to register a new patient and a
+                            HRA (Health Risk Assessment) form that collects
+                            information about the patient's current health risk
+                            factors. Patient's will sign a consent form
+                            electronically that is assigned to your practice.
+                            After the patient fills out the form, you can view
+                            the information in your dashboard or you can
+                            configure it to send to your email inbox (we
+                            recommend{" "}
+                            <a
+                                href="https://proton.me/"
+                                target={"_blank"}
+                                className="text-blue-500 hover:underline"
+                                rel="noopener noreferrer"
+                            >
+                                Proton Mail
+                            </a>{" "}
+                            as a free HIPPA compliant email provider).
                         </p>
                     </section>
-                    <section id="4" className="py-5">
-                        <h2 className="text-center text-xl lg:text-3xl pb-2">
-                            Customize your security <Divider className="mt-2" />
+                    <section id="5" className="py-5">
+                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                            Security and Compliance <Divider className="mt-2" />
                         </h2>
                         <p>
                             We understand that every practice is different and
@@ -101,35 +156,33 @@ const Features = () => {
                             patient data safe. We have a built in two factor
                             authentication system that will send you a text
                             message with a code every time someone tries to log
-                            in.
-                        </p>
-                    </section>
-                    <section id="5" className="py-5">
-                        <h2 className="text-center text-xl lg:text-3xl pb-2">
-                            Advanced analytics <Divider className="mt-2" />
-                        </h2>
-                        <p>
-                            We have built in advanced analytics tools that will
-                            help you better understand your patients and
-                            practice. These tools will help you identify trends
-                            in your patient population and help you better
-                            understand the factors that may be contributing to
-                            their conditions.
+                            in. We recently received HIPPA compliance status by
+                            Compliancy Group. You can view our compliance
+                            certificate{" "}
+                            <a
+                                href="https://smart-plan.io"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                className="text-blue-500 hover:underline"
+                            >
+                                here.
+                            </a>
                         </p>
                     </section>
                     <section id="6" className="py-5">
-                        <h2 className="text-center text-xl lg:text-3xl pb-2">
-                            Granular control over staff access{" "}
+                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                            Solutions for a clinic of any size
                             <Divider className="mt-2" />
                         </h2>
                         <p>
-                            When you sign up for our platform, you will be given
-                            an admin account. As an admin you have the ability
-                            to control what each of your staff members can
-                            access. You can give them access to all of your
-                            patients or just a subset of them. You can also
-                            invite new staff or remove existing staff members
-                            from your account easily.
+                            We have a solution for any size clinic. Whether you
+                            are a solo practitioner or a large clinic, we have a
+                            plan that will work for you. We have a free plan
+                            that will allow you to get started with a few basic
+                            features on our platform. Our paid plans allow
+                            access to the more advanced features and are priced
+                            based on the number of users you have. We also offer
+                            custom plans for clinics that have unique needs.
                         </p>
                     </section>
                 </main>

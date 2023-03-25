@@ -44,7 +44,7 @@ const NavLinks = () => {
                     <div
                         // href="/product"
                         className={
-                            pathname === "/product" ||
+                            pathname === "/product/demos" ||
                             pathname === "/product/smart-voice" ||
                             pathname === "/product/easy-auth" ||
                             pathname === "/product/smart-form" ||
@@ -132,7 +132,7 @@ const NavLinks = () => {
                         component={Link}
                         href="/product/demos"
                         className={
-                            pathname === "/product"
+                            pathname === "/product/demos"
                                 ? "text-base text-blue-500"
                                 : "text-base"
                         }

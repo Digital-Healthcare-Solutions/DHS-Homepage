@@ -9,6 +9,7 @@ import {
 import Image from "next/image"
 import ButtonPrimary from "../UI-Components/button-primary"
 import { Quicksand } from "@next/font/google"
+import Link from "next/link"
 
 const quicksand = Quicksand({
     subsets: ["latin"]
@@ -278,14 +279,19 @@ l-163 3 -3 173 c-2 164 -3 172 -22 172 -19 0 -20 -7 -20 -195z"
                             Revolutionize your practice and elevate patient care
                             with AI-powered automation
                         </div>
-
-                        <ButtonPrimary
-                            type="button"
-                            className="my-3"
-                            onClick={console.log("hello")}
+                        <a
+                            target="_blank"
+                            rel="noreferrer"
+                            href="https://smart-plan.io"
                         >
-                            Get Started
-                        </ButtonPrimary>
+                            <ButtonPrimary
+                                type="button"
+                                className="my-3"
+                                onClick={console.log("")}
+                            >
+                                Get Started
+                            </ButtonPrimary>
+                        </a>
                     </section>
                 </Container>
             </div>{" "}

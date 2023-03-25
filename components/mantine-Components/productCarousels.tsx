@@ -58,26 +58,26 @@ const data = [
     {
         image: "/carePlan.jpg",
         title: "Create detailed Care plans for your patients",
-        category: "Main Feature",
+        category: "SmartPlan",
         id: 1
     },
     {
         image: "/AI.png",
         title: "Use AI to automate your call center",
-        category: "Feature",
+        category: "IntelliCall",
         id: 2
     },
     {
         image: "/report.jpg",
-        title: "Instantly generate reports and educational handouts for your patients",
-        category: "feature",
+        title: "Write your notes faster than ever with intelligent dictation",
+        category: "SmartVoice",
         id: 3
     },
 
     {
-        image: "paperless.jpg",
+        image: "/paperless1.jpg",
         title: "Seamlessly add paperless registration to your website",
-        category: "feature",
+        category: "SmartForm",
         id: 4
     },
     {
@@ -167,7 +167,7 @@ const ProductCarousel = () => {
                         {item.title}
                     </Title>
                 </div>
-                <Link href={`/product#${item.id}`}>
+                <Link href={`/product/demos#${item.id}`}>
                     <ButtonSecondary
                         className="bg-white text-black
                

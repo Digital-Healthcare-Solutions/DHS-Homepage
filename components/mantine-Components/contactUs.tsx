@@ -27,15 +27,46 @@ function ContactUs() {
             subject: Yup.string().required("Required"),
             message: Yup.string().required("Required")
         }),
-        onSubmit: (values) => {
+        onSubmit: () => {
+            contactFn()
+        }
+    })
+
+    const contactFn = async () => {
+        const res = await fetch(
+            "https://xmks-s250-ypw0.n7.xano.io/api:5iYyLrKQ/contact-us",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: formik.values.name,
+                    email: formik.values.email,
+                    subject: formik.values.subject,
+                    message: formik.values.message
+                })
+            }
+        )
+        const data = await res.json()
+        if (!res.ok) {
+            showNotification({
+                color: "red",
+                title: "Error!",
+                message: data.message,
+                autoClose: 5000
+            })
+        } else {
             showNotification({
                 color: "green",
                 title: "Success!",
                 message: "We will get back to you soon!",
-                autoClose: 3000
+                autoClose: 5000
             })
+            formik.resetForm()
         }
-    })
+        return data
+    }
 
     return (
         <form
@@ -110,10 +141,10 @@ function ContactUs() {
                     className={
                         formik.isValid
                             ? "bg-blue-500 "
-                            : "bg-gray-500 hover:bg-gray-700 hover:text-white ring-red-500"
+                            : "bg-red-400 hover:bg-gray-700 hover:text-red-500 ring-red-500 cursor-not-allowed active:text-red-400 active:ring-red-400"
                     }
                     onClick={() => {
-                        console.log("clicked")
+                        console.log("")
                     }}
                 >
                     Send message
