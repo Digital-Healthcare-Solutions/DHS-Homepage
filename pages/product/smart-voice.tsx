@@ -14,6 +14,11 @@ const SmartVoice = () => {
     const [recording, setRecording] = useState(false)
     const [text, setText] = useState("")
     const [error, setError] = useState("")
+    const [width, setWidth] = useState(0)
+
+    useEffect(() => {
+        setWidth(window.innerWidth)
+    }, [])
 
     const formik = useFormik({
         initialValues: {
@@ -58,12 +63,10 @@ const SmartVoice = () => {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
             let options: any
-            if (MediaRecorder.isTypeSupported("audio/webm")) {
+            if (width > 768) {
                 options = { mimeType: "audio/webm" }
-            } else if (MediaRecorder.isTypeSupported("audio/mp4")) {
-                options = { mimeType: "audio/mp4" }
             } else {
-                options = { mimeType: "audio/ogg" }
+                options = { mimeType: "audio/mp4" }
             }
             navigator.mediaDevices
                 .getUserMedia({ audio: true })
