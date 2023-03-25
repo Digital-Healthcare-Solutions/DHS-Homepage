@@ -60,10 +60,12 @@ const SmartVoice = () => {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
             let options: any
-            if (window.innerWidth > 768) {
+            if (MediaRecorder.isTypeSupported("audio/mp4")) {
+                options = { mimeType: "audio/mp4" }
+            } else if (MediaRecorder.isTypeSupported("audio/webm")) {
                 options = { mimeType: "audio/webm" }
             } else {
-                options = { mimeType: "audio/mp4" }
+                alert("no suitable mimetype found for this device")
             }
             navigator.mediaDevices
                 .getUserMedia({ audio: true })
