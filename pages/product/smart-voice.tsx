@@ -57,52 +57,50 @@ const SmartVoice = () => {
         setLoading(true)
         // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         console.log("getUserMedia supported.")
-        navigator.mediaDevices
-            .getUserMedia({ audio: true })
-            .then((stream) => {
-                const mediaRecorder = new MediaRecorder(stream, {
-                    mimeType: "audio/webm"
-                })
-
-                console.log(mediaRecorder)
-                const chunks = []
-                mediaRecorder.addEventListener("dataavailable", (event) => {
-                    chunks.push(event.data)
-                    console.log(chunks)
-                    const audioData = new Blob(chunks, {
-                        type: "audio/webm"
-                    })
-                    const formData = new FormData()
-                    formData.append("file", audioData, "audio.webm")
-                    formData.append("model", "whisper-1")
-                    // formData.append(
-                    //     "prompt",
-                    //     "You are a Medical Transcription bot. You may come across a lot of complex medical terms such as brachial plexopathy, cervical radiculopathy and so on."
-                    // )
-
-                    mediaRecorder.onstop = () => {
-                        console.log("stopped")
-                        fetchAudio(formData)
-                    }
-                    mediaRecorder.onerror = (e) => {
-                        alert(e)
-                    }
-                })
-                mediaRecorder.start(500)
-                console.log(mediaRecorder)
-
-                document
-                    .getElementById("stop")
-                    .addEventListener("click", function stopClick() {
-                        mediaRecorder.stop()
-                        console.log(mediaRecorder)
-                        this.removeEventListener("click", stopClick)
-                    })
+        navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
+            const mediaRecorder = new MediaRecorder(stream, {
+                mimeType: "audio/webm"
             })
-            .catch((err) => {
-                alert("Please plug in a microphone and try again")
-                console.log(err)
+
+            console.log(mediaRecorder)
+            const chunks = []
+            mediaRecorder.addEventListener("dataavailable", (event) => {
+                chunks.push(event.data)
+                console.log(chunks)
+                const audioData = new Blob(chunks, {
+                    type: "audio/webm"
+                })
+                const formData = new FormData()
+                formData.append("file", audioData, "audio.webm")
+                formData.append("model", "whisper-1")
+                // formData.append(
+                //     "prompt",
+                //     "You are a Medical Transcription bot. You may come across a lot of complex medical terms such as brachial plexopathy, cervical radiculopathy and so on."
+                // )
+
+                mediaRecorder.onstop = () => {
+                    console.log("stopped")
+                    fetchAudio(formData)
+                }
+                mediaRecorder.onerror = (e) => {
+                    alert(e)
+                }
             })
+            mediaRecorder.start(500)
+            console.log(mediaRecorder)
+
+            document
+                .getElementById("stop")
+                .addEventListener("click", function stopClick() {
+                    mediaRecorder.stop()
+                    console.log(mediaRecorder)
+                    this.removeEventListener("click", stopClick)
+                })
+        })
+        // .catch((err) => {
+        //     alert("Please plug in a microphone and try again")
+        //     console.log(err)
+        // })
         // } else {
         //     alert("Your browser does not support this feature")
         // }
