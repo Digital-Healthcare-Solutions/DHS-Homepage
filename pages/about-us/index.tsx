@@ -76,20 +76,20 @@ const AboutUs = () => {
                 </section>
             </Container>
             <Container size={"lg"}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 ">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-20 ">
                     <AboutAvatar
                         avatar="me.jpg"
                         nameFirst="Jacob"
                         nameLast="Owens"
                         title="Co-Founder / Developer"
-                        email="jacobowens@smart-plan.io"
+                        email="jacobowens@digitalhealthcaresolutions.io"
                     />
                     <AboutAvatar
-                        avatar="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80"
+                        avatar={"/hahhahahhahahahaha.jpg"}
                         nameFirst="William"
                         nameLast="Owens, MD"
                         title="Co-Founder"
-                        email="jacobowens@smart-plan.io"
+                        email="william@digitalhealthcaresolutions.io"
                     />
                 </div>
             </Container>
@@ -174,9 +174,7 @@ const AboutUs = () => {
                                 make him a respected leader in the industry.
                             </Text>
                             <Avatar
-                                src={
-                                    "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=250&q=80"
-                                }
+                                src={"/hahhahahhahahahaha.jpg"}
                                 size={width > 1024 ? 250 : 150}
                                 radius="md"
                             />

@@ -63,7 +63,7 @@ export function HeroHomePage() {
                     loop
                     muted
                     className="
-                object-cover object-center w-full h-[500px] md:h-[700px]  absolute top-0 left-0 z-0
+                object-cover object-center w-full h-[500px] md:h-[700px]  absolute top-0 left-0 z-0 dark:brightness-50
             "
                 />
                 {/* <Image
@@ -78,7 +78,7 @@ export function HeroHomePage() {
                     objectPosition: "center"
                 }}
             /> */}
-                <Overlay
+                {/* <Overlay
                     gradient={
                         theme == "light"
                             ? "linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, .15) 0%)"
@@ -86,7 +86,7 @@ export function HeroHomePage() {
                     }
                     opacity={1.3}
                     zIndex={0}
-                />
+                /> */}
                 <Container className={classes.container}>
                     <section className=" bg-neutral-300 bg-opacity-80 rounded-xl flex flex-col items-center max-w-md dark:bg-neutral-800 dark:bg-opacity-70 ">
                         {/* <h2 className="text-black font-normal text-2xl pt-2 dark:text-white">
@@ -282,7 +282,7 @@ l-163 3 -3 173 c-2 164 -3 172 -22 172 -19 0 -20 -7 -20 -195z"
                         <a
                             target="_blank"
                             rel="noreferrer"
-                            href="https://smart-plan.io"
+                            href="https://app.digitalhealthcaresolutions.io/login"
                         >
                             <ButtonPrimary
                                 type="button"

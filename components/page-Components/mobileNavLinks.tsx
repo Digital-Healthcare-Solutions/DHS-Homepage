@@ -207,7 +207,7 @@ const MobileNav = ({ open, setOpen }) => {
                         <DarkMode />
                     </div>
                     <a
-                        href="https://smart-plan.io"
+                        href="https://app.digitalhealthcaresolutions.io/login"
                         target="_blank"
                         rel="noopener noreferrer"
                     >

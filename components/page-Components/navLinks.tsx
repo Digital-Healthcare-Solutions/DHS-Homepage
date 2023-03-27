@@ -175,7 +175,7 @@ const NavLinks = () => {
             {/* <DarkMode /> */}
             <DarkMode />
             <a
-                href="https://smart-plan.io"
+                href="https://app.digitalhealthcaresolutions.io/login"
                 target="_blank"
                 rel="noopener noreferrer"
             >

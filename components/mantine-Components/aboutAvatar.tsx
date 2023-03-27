@@ -2,6 +2,7 @@ import { createStyles, Avatar, Text, Group } from "@mantine/core"
 import Link from "next/link"
 import { useEffect, useState, useCallback } from "react"
 import ButtonPrimary from "../UI-Components/button-primary"
+// import { HiAtSymbol } from "react-icons/hi"
 // import { IconPhoneCall, IconAt } from '@tabler/icons';
 
 const useStyles = createStyles((theme) => ({
@@ -71,9 +72,11 @@ function AboutAvatar({
                     </Text>
 
                     <Group noWrap spacing={10} mt={3}>
-                        {/* <IconAt stroke={1.5} size={16} className={classes.icon} /> */}
-                        <Text size={width > 1024 ? "lg" : "md"} color="dimmed">
-                            {email}
+                        {/* <HiAtSymbol size={16} className={classes.icon} /> */}
+                        <Text size={width > 1024 ? "md" : "sm"} color="dimmed">
+                            {email.length > 18
+                                ? email.slice(0, 18) + "\n" + email.slice(18)
+                                : email}
                         </Text>
                     </Group>
                     <Link href={`/about-us#${nameFirst}`}>

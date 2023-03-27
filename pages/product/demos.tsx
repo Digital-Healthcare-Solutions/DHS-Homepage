@@ -55,14 +55,14 @@ const Features = () => {
                             <Divider className="mt-2" />
                         </h2>
                         <p>
-                            Our AI powered call center integrates with your
+                            Our Intelligent call center integrates with your
                             existing phone system and is as flexible as you need
                             it to be. When someone calls and leaves a voicemail,
                             first our system will automatically transcribe the
                             call to text, then it will use intelligent lookup to
                             determine the caller ID, caller phone type (mobile,
                             landline, etc..), and whether the caller is a
-                            business or a consumer.After that, it will gather
+                            business or a consumer. After that, it will gather
                             the sentiment of the message and assign the message
                             to one of 8 labels. You can filter and sort the
                             messages to your applicable personal by these

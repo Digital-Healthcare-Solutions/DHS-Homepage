@@ -14,7 +14,7 @@ const SmartPlanDescription = () => {
     return (
         <Container size="lg">
             <div className="flex flex-col items-center mt-16 ">
-                <h1 className="text-4xl font-bold mb-5">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-5 text-center">
                     What is Digital Healthcare Solutions ?
                 </h1>
 

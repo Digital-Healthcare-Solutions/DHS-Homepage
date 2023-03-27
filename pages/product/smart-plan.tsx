@@ -18,62 +18,68 @@ import Image from "next/image"
 import { AiOutlineCloudUpload } from "react-icons/ai"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
-import { BsArrowRight, BsArrowDown } from "react-icons/bs"
+import {
+    BsArrowRight,
+    BsArrowDown,
+    BsCashStack,
+    BsShuffle
+} from "react-icons/bs"
 import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
+import { FaHandHoldingHeart } from "react-icons/fa"
+import { AiOutlineArrowUp } from "react-icons/ai"
 
 const features = [
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: BsShuffle,
+        title: "Streamlined Workflow",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "Our software simplifies the chronic care management process, automating essential functions, and freeing up staff time. By streamlining the workflow, you can provide better care to patients without sacrificing productivity"
     },
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: BsCashStack,
+        title: "Increased Revenue",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "Our software makes it easy to qualify for CMS reimbursements for chronic care management, leading to increased revenue for your practice."
     },
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: AiOutlineArrowUp,
+        title: "Improved Patient Outcomes",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit?"
+            "By using our software to monitor patient progress and manage care plans, you can provide more personalized care that leads to improved patient outcomes."
     },
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: FaHandHoldingHeart,
+        title: "Delegate Care Delivery",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit?"
+            "Our software enables physicians to delegate chronic care management tasks to other staff members, such as nurses or medical assistants, without sacrificing the quality of care. "
     }
 ]
 
 const howItWorks = [
     {
         number: 1,
-        description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+        description: "Sign into our software and go to the Testing page."
     },
     {
         number: 2,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "Click 'Create New Patient' or 'Start new Test' under the patient you want to retest."
     },
     {
         number: 3,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "The Care Plans prompt the clinician through various sections including disease specific quetionaires and tests, mental health evaluations, medication review with contraindications, safety assessments, and lifestyle modifications with the patient"
     },
     {
         number: 4,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "Once finished, the care plans prepare a clinical copy for physicians and a customized SmartPlan version for the patients and care givers to take home with them. You can print or email the care plans to the patient."
     },
     {
         number: 5,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "You're done! The software will automatically alert you when the patient is due for a retest."
     }
 ]
 
@@ -161,43 +167,86 @@ const SmartPlan = () => {
                         priority={true}
                     />
                     <div className="text-lg">
-                        <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
+                        <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-2xl pb-2">
                             The Problem :
                         </h2>
                         <h3>
-                            {" "}
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quo sint quas eum saepe culpa aperiam magnam
-                            quia qui, vero explicabo ducimus odit? Consectetur,
-                            inventore magni qui facere perferendis neque porro
-                            ad quae sapiente ex facilis at repudiandae excepturi
-                            incidunt, impedit sint optio? Et tempora excepturi
-                            blanditiis labore debitis corrupti nesciunt! Lorem
-                            ipsum dolor sit, amet consectetur adipisicing elit.
-                            Sunt molestias atque repellat incidunt autem
-                            laboriosam velit dicta labore ullam, dolor libero a
-                            ea itaque natus.
+                            Managing chronic care in your practice can be
+                            challenging due to several reasons. Firstly, it can
+                            be time-consuming to monitor and track patients'
+                            progress continuously. Secondly, there is a lack of
+                            standardized protocols across healthcare systems,
+                            making it challenging to manage chronic care
+                            effectively. Additionally, there are reimbursement
+                            challenges from payers, which can be confusing for
+                            healthcare providers. Implementing chronic care
+                            management in your practice can be a daunting task,
+                            but the benefits of providing better patient care
+                            and increased revenue make it worth considering.
                         </h3>
+                        {/* <h3>
+                            Chronic care management in elderly patients is a
+                            daunting task for any clinic. Most elderly patients
+                            have more than one chronic disease that are managed
+                            by different specialists. These patients have to
+                            keep up with appointments, medications, self care
+                            and now they also have to ensure that their
+                            neurologist knows what the cardiologist changed
+                            about their regimens. In many of these patients, the
+                            diseases can overwhelm them, leading to a disruption
+                            in communication. This can cause extra fees for
+                            double testing, overmedication, adverse side effects
+                            of drugs, and several other negative events, all
+                            because each of the doctors are unaware of what the
+                            other is doing to best help the patient.
+                        </h3> */}
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between gap-8 py-20 items-center">
                     <div className="text-lg">
-                        <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
+                        <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-2xl pb-2">
                             Our Solution :
                         </h2>
+                        {/* <h3>
+                            We have made an application to take the
+                            responsibility off of these patients called
+                            SmartPlan. We keep a standardized timely record of
+                            multiple chronic care plans that can assist
+                            immensely in care management across any and all
+                            healthcare facilities. These care plans are as
+                            relaxed as annual visits or as acute as monthly
+                            visits. They cover chronic diseases such as
+                            Alzheimer's, Parkinson's, Migraines and general
+                            wellness. Every time the patient comes to a visit,
+                            the past visit information is available to compare
+                            for changes in medications, ability to maintain
+                            independence, mental and emotional wellness, and
+                            many more important categories of care. The patients
+                            no longer have to shoulder the weight of managing
+                            their care between facilities since the care plans
+                            prompt the clinic or hospital staff to ask the most
+                            up to date evidence-based questions at all visits.
+                            If a patient's health begins to decline it is often
+                            caught earlier than the patient can become
+                            symptomatic
+                        </h3> */}
                         <h3>
-                            {" "}
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quo sint quas eum saepe culpa aperiam magnam
-                            quia qui, vero explicabo ducimus odit? Consectetur,
-                            inventore magni qui facere perferendis neque porro
-                            ad quae sapiente ex facilis at repudiandae excepturi
-                            incidunt, impedit sint optio? Et tempora excepturi
-                            blanditiis labore debitis corrupti nesciunt! Lorem
-                            ipsum dolor sit, amet consectetur adipisicing elit.
-                            Sunt molestias atque repellat incidunt autem
-                            laboriosam velit dicta labore ullam, dolor libero a
-                            ea itaque natus.
+                            At our company, we understand the challenges that
+                            come with implementing chronic care management into
+                            your practice. That's why we have developed an
+                            automated software solution that simplifies the
+                            process, making it easy to incorporate into your
+                            workflow seamlessly. Our software automates several
+                            essential functions, including tracking patient
+                            progress, managing care plans, and generating
+                            reports, freeing up your staff's time to focus on
+                            providing high-quality care to your patients. With
+                            our solution, you can take advantage of CMS
+                            reimbursements for chronic care management while
+                            providing your patients with the best possible care.
+                            Join the numerous healthcare providers who have
+                            implemented our solution and revolutionize the way
+                            you manage chronic care in your practice today!
                         </h3>
                     </div>{" "}
                     <Image
@@ -215,19 +264,17 @@ const SmartPlan = () => {
                         <Grid gutter={80}>
                             <Col span={12} md={5}>
                                 <Title order={2} className="text-3xl">
-                                    Smartplan makes testing your chronic care
-                                    management patients easy
+                                    Smartplan makes chronic care management easy
                                 </Title>
                                 <Text className="py-6">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quo sint Lorem ipsum dolor
-                                    sit amet consectetur adipisicing elit. Ut,
-                                    illum?
+                                    Revolutionize Your Practice with Our
+                                    Automated Solution for Chronic Care
+                                    Management
                                 </Text>
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
-                                    href="https://smart-plan.io"
+                                    href="https://app.digitalhealthcaresolutions.io/login"
                                 >
                                     <ButtonPrimary
                                         type="button"
@@ -237,6 +284,15 @@ const SmartPlan = () => {
                                         Get Started
                                     </ButtonPrimary>
                                 </a>
+                                <div className="hidden lg:block pt-20">
+                                    <Image
+                                        className="rounded-xl dark:brightness-150 "
+                                        src="/smartplanLogo.png"
+                                        alt="Smart Plan"
+                                        width={300}
+                                        height={300}
+                                    />
+                                </div>
                             </Col>
                             <Col span={12} md={7}>
                                 <SimpleGrid

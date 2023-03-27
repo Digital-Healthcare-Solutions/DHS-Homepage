@@ -21,31 +21,35 @@ import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import { BsArrowRight, BsArrowDown } from "react-icons/bs"
 import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
+import { MdOutlinePersonPin } from "react-icons/md"
+import { GiBattery100 } from "react-icons/gi"
+import { AiOutlineArrowUp } from "react-icons/ai"
+import { BiPhoneCall } from "react-icons/bi"
 
 const features = [
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: BiPhoneCall,
+        title: "Efficient Communication",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "IntelliCall's AI technology transcribes calls, sorts them by topic, and provides actionable insights, making it easier to manage communication flow in your medical practice. This feature allows you to save time, streamline workflow, and prioritize patient needs."
     },
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: AiOutlineArrowUp,
+        title: "Improved Patient Care",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "With IntelliCall, you can text and call patients back directly from your browser using AI-generated tips about the content of their message. This feature allows you to provide more personalized care to your patients and quickly respond to their needs."
     },
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: GiBattery100,
+        title: "Improved Staff Efficiency",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit?"
+            " By automating communication management and transcribing calls, IntelliCall allows your staff to focus on other important tasks, saving time and boosting efficiency."
     },
     {
-        icon: AiOutlineCloudUpload,
-        title: "Lorem ipsum dolor sit amet",
+        icon: MdOutlinePersonPin,
+        title: "Personalized Patient Experience:",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit?"
+            "With IntelliCall you can communicate with patients in a way that feels more personal and engaging. By using IntelliCall, you can enhance your patient's experience and show them that you care about their needs."
     }
 ]
 
@@ -53,27 +57,27 @@ const howItWorks = [
     {
         number: 1,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "Sign into our software and go to the settings page. Under the IntelliCall tab, you can register a new phone number and configure your call settings."
     },
     {
         number: 2,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "You have several options to choose from. You can select whether you want your call to forward to your clinic's phone number, or got stright to voicemail transcription. You can also input your greeting message and select the language you want your transcription to be in. You can select the hours of operation for your call forwarding. Lastly choose whether you want to enable AI or disable AI for message analysis."
     },
     {
         number: 3,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "Once you have configured your initial settings you can click 'Register' and your phone number will be registered. Go ahead and test your call forwarding by calling your new phone number and leaving a voicemail."
     },
     {
         number: 4,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "Now when you visit the IntelliCall tab, you can see your call history. You can see the date and time of the call, the caller's phone number, the duration of the call, and the transcription of the voicemail. You can also listen to the voicemail by clicking the play button."
     },
     {
         number: 5,
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sint quas eum saepe culpa aperiam magnam quia qui, vero explicabo ducimus odit? "
+            "That's it! You're all set up. Now you can sit back and relax while your calls are being handled by IntelliCall."
     }
 ]
 
@@ -157,18 +161,17 @@ const IntelliCall = () => {
                             The Problem :
                         </h2>
                         <h3>
-                            {" "}
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quo sint quas eum saepe culpa aperiam magnam
-                            quia qui, vero explicabo ducimus odit? Consectetur,
-                            inventore magni qui facere perferendis neque porro
-                            ad quae sapiente ex facilis at repudiandae excepturi
-                            incidunt, impedit sint optio? Et tempora excepturi
-                            blanditiis labore debitis corrupti nesciunt! Lorem
-                            ipsum dolor sit, amet consectetur adipisicing elit.
-                            Sunt molestias atque repellat incidunt autem
-                            laboriosam velit dicta labore ullam, dolor libero a
-                            ea itaque natus.
+                            Constant phone calls and the need to listen to
+                            voicemails can be overwhelming and time-consuming
+                            for medical practices. The volume of incoming calls
+                            can be difficult to manage, leading to long hold
+                            times and frustrated patients. Moreover, the need to
+                            listen to and respond to voicemails can consume a
+                            significant portion of staff time, making it
+                            difficult to keep up with other important tasks.
+                            These communication challenges can lead to decreased
+                            patient satisfaction, reduced staff efficiency, and
+                            even lost revenue.
                         </h3>
                     </div>{" "}
                     <Image
@@ -195,18 +198,20 @@ const IntelliCall = () => {
                             Our Solution :
                         </h2>
                         <h3>
-                            {" "}
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quo sint quas eum saepe culpa aperiam magnam
-                            quia qui, vero explicabo ducimus odit? Consectetur,
-                            inventore magni qui facere perferendis neque porro
-                            ad quae sapiente ex facilis at repudiandae excepturi
-                            incidunt, impedit sint optio? Et tempora excepturi
-                            blanditiis labore debitis corrupti nesciunt! Lorem
-                            ipsum dolor sit, amet consectetur adipisicing elit.
-                            Sunt molestias atque repellat incidunt autem
-                            laboriosam velit dicta labore ullam, dolor libero a
-                            ea itaque natus.
+                            Managing communication flow in a medical practice
+                            can be overwhelming, but IntelliCall makes it easy.
+                            Our intelligent call management software uses
+                            advanced AI technology to transcribe calls, sort
+                            them by topic, and provide actionable insights. With
+                            our solution, you can quickly identify the purpose
+                            of each call and prioritize them accordingly,
+                            without the need to listen to long voicemail
+                            messages. Plus, our software allows you to text and
+                            call back patients directly from your browser using
+                            AI-generated tips, enhancing patient engagement and
+                            satisfaction. By using IntelliCall, medical
+                            practices can streamline communication management,
+                            save time, and provide a better patient experience.
                         </h3>
                     </div>{" "}
                 </div>
@@ -280,20 +285,18 @@ const IntelliCall = () => {
                             </Col>
                             <Col span={12} md={5}>
                                 <Title order={2} className="text-3xl">
-                                    Smartplan makes testing your chronic care
-                                    management patients easy
+                                    IntelliCall makes communication flow.
                                 </Title>
                                 <Text className="py-6">
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quo sint Lorem ipsum dolor
-                                    sit amet consectetur adipisicing elit. Ut,
-                                    illum?
+                                    Streamline Patient Communication and Boost
+                                    Efficiency with Our Intelligent Call
+                                    Management Solution
                                 </Text>
 
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
-                                    href="https://smart-plan.io"
+                                    href="https://app.digitalhealthcaresolutions.io/login"
                                 >
                                     <ButtonPrimary
                                         className=""
@@ -302,6 +305,15 @@ const IntelliCall = () => {
                                         Get Started
                                     </ButtonPrimary>
                                 </a>
+                                <div className="hidden lg:block pt-20">
+                                    <Image
+                                        className="rounded-xl dark:brightness-150 "
+                                        src="/IntelliCallLogo.png"
+                                        alt="IntelliCall"
+                                        width={300}
+                                        height={300}
+                                    />
+                                </div>
                             </Col>
                         </Grid>
                     </Container>
