@@ -105,7 +105,7 @@ export function FeaturesGrid({ title, description }) {
         },
         {
             icon: MdOutlinePersonOff,
-            title: "Redact PHI in text, images, and videos ",
+            title: "Redact PHI in text, images and audio",
             description: (
                 <span>
                     Anonymize your patients PHI in text, images, and videos to
