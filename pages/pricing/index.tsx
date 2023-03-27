@@ -43,8 +43,8 @@ const Pricing = () => {
                                         here
                                     </Link>{" "}
                                     If you you would like to be part of our
-                                    closed beta program to get free testing
-                                    access to our platform for a limited time.
+                                    closed beta program to get early access to
+                                    our platform for a limited time.
                                 </div>
                             </div>
                         </h2>

@@ -224,19 +224,13 @@ const SmartVoice = () => {
                                 The Problem :
                             </h2>
                             <h3>
-                                {" "}
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quo sint quas eum saepe culpa
-                                aperiam magnam quia qui, vero explicabo ducimus
-                                odit? Consectetur, inventore magni qui facere
-                                perferendis neque porro ad quae sapiente ex
-                                facilis at repudiandae excepturi incidunt,
-                                impedit sint optio? Et tempora excepturi
-                                blanditiis labore debitis corrupti nesciunt!
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Sunt molestias atque repellat
-                                incidunt autem laboriosam velit dicta labore
-                                ullam, dolor libero a ea itaque natus.
+                                Don't get stuck in the past with outdated
+                                note-taking methods! Hand writing or typing
+                                notes is slow, tedious, and error-prone, while
+                                existing dictation tools can be complicated and
+                                expensive. As a medical professional, you need a
+                                solution that's both efficient and affordable.
+                                That's where SmartVoice dictation comes in.
                             </h3>
                         </div>{" "}
                         <Image
@@ -254,19 +248,13 @@ const SmartVoice = () => {
                                 Our Solution :
                             </h2>
                             <h3>
-                                {" "}
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Quo sint quas eum saepe culpa
-                                aperiam magnam quia qui, vero explicabo ducimus
-                                odit? Consectetur, inventore magni qui facere
-                                perferendis neque porro ad quae sapiente ex
-                                facilis at repudiandae excepturi incidunt,
-                                impedit sint optio? Et tempora excepturi
-                                blanditiis labore debitis corrupti nesciunt!
-                                Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Sunt molestias atque repellat
-                                incidunt autem laboriosam velit dicta labore
-                                ullam, dolor libero a ea itaque natus.
+                                Our software uses advanced speech recognition
+                                technology to transcribe your spoken words into
+                                text in real time, eliminating the need for
+                                manual note-taking or inelligible notes. With
+                                SmartVoice, you can focus on what really
+                                matters: providing quality patient care. The
+                                best part is, it come free with any plan!
                             </h3>
                         </div>{" "}
                         <Image
