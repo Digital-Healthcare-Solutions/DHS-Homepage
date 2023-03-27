@@ -285,13 +285,13 @@ const SmartPlan = () => {
                                     </ButtonPrimary>
                                 </a>
                                 <div className="hidden lg:block pt-20">
-                                    <Image
+                                    {/* <Image
                                         className="rounded-xl dark:brightness-150 "
                                         src="/smartplanLogo.png"
                                         alt="Smart Plan"
                                         width={300}
                                         height={300}
-                                    />
+                                    /> */}
                                 </div>
                             </Col>
                             <Col span={12} md={7}>

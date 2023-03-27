@@ -63,35 +63,53 @@ const NavLinks = () => {
                 </Menu.Target>
                 <Menu.Dropdown>
                     <Menu.Item
+                        sx={
+                            pathname == "/product/smart-plan"
+                                ? {
+                                      color: "rgb(59 130 246)",
+                                      fontSize: "1rem"
+                                  }
+                                : {
+                                      color: "inherit",
+                                      fontSize: "1rem"
+                                  }
+                        }
                         component={Link}
                         href="/product/smart-plan"
-                        className={
-                            pathname === "/product/smart-plan"
-                                ? "text-base text-blue-500"
-                                : "text-base"
-                        }
                     >
                         Smart<strong>Plan</strong>
                     </Menu.Item>
                     <Menu.Item
+                        sx={
+                            pathname == "/product/intellicall"
+                                ? {
+                                      color: "rgb(59 130 246)",
+                                      fontSize: "1rem"
+                                  }
+                                : {
+                                      color: "inherit",
+                                      fontSize: "1rem"
+                                  }
+                        }
                         component={Link}
                         href="/product/intellicall"
-                        className={
-                            pathname === "/product/intellicall"
-                                ? "text-base text-blue-500"
-                                : "text-base"
-                        }
                     >
                         Intelli<strong>Call</strong>
                     </Menu.Item>
                     <Menu.Item
+                        sx={
+                            pathname == "/product/smart-form"
+                                ? {
+                                      color: "rgb(59 130 246)",
+                                      fontSize: "1rem"
+                                  }
+                                : {
+                                      color: "inherit",
+                                      fontSize: "1rem"
+                                  }
+                        }
                         component={Link}
                         href="/product/smart-form"
-                        className={
-                            pathname === "/product/smart-form"
-                                ? "text-base text-blue-500"
-                                : "text-base"
-                        }
                     >
                         Smart<strong>Form</strong>
                     </Menu.Item>
@@ -107,13 +125,19 @@ const NavLinks = () => {
                         Easy<strong>Auth</strong>
                     </Menu.Item> */}
                     <Menu.Item
+                        sx={
+                            pathname == "/product/smart-voice"
+                                ? {
+                                      color: "rgb(59 130 246)",
+                                      fontSize: "1rem"
+                                  }
+                                : {
+                                      color: "inherit",
+                                      fontSize: "1rem"
+                                  }
+                        }
                         component={Link}
                         href="/product/smart-voice"
-                        className={
-                            pathname === "/product/smart-voice"
-                                ? "text-base text-blue-500"
-                                : "text-base"
-                        }
                     >
                         Smart<strong>Voice</strong>
                     </Menu.Item>
@@ -129,13 +153,19 @@ const NavLinks = () => {
                         Demo
                     </Menu.Item> */}
                     <Menu.Item
+                        sx={
+                            pathname == "/product/demos"
+                                ? {
+                                      color: "rgb(59 130 246)",
+                                      fontSize: "1rem"
+                                  }
+                                : {
+                                      color: "inherit",
+                                      fontSize: "1rem"
+                                  }
+                        }
                         component={Link}
                         href="/product/demos"
-                        className={
-                            pathname === "/product/demos"
-                                ? "text-base text-blue-500"
-                                : "text-base"
-                        }
                     >
                         Demos
                     </Menu.Item>
