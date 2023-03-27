@@ -160,7 +160,7 @@ const Features = () => {
                             Compliancy Group. You can view our compliance
                             certificate{" "}
                             <a
-                                href="https://smart-plan.io"
+                                href="https://app.digitalhealthcaresolutions.io/login"
                                 rel="noopener noreferrer"
                                 target="_blank"
                                 className="text-blue-500 hover:underline"
