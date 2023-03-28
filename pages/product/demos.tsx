@@ -89,6 +89,19 @@ const Features = () => {
                             answering lab questions, medication questions, or
                             general medical questions.
                         </p>
+                        <div className="flex flex-col items-center justify-center py-8">
+                            <h2 className="pb-5">
+                                <Text size="xl" weight={700}>
+                                    Watch Demo
+                                </Text>
+                            </h2>
+                            <iframe
+                                allow="autoplay;"
+                                allowFullScreen
+                                src="https://clipchamp.com/watch/KTGDfgZIhA6/embed"
+                                className="w-full h-48 md:h-64 lg:h-96"
+                            ></iframe>
+                        </div>
                     </section>
                     <section id="3" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
