@@ -1,6 +1,8 @@
 import { Container, Divider, Timeline, Text } from "@mantine/core"
+import Link from "next/link"
 import React from "react"
 import ProductCarousel from "../../components/mantine-Components/productCarousels"
+import ButtonPrimary from "../../components/UI-Components/button-primary"
 
 const Features = () => {
     return (
@@ -121,6 +123,18 @@ const Features = () => {
                             it later. We guarantee once you try it, you'll never
                             want to go back to Dragon again.
                         </p>
+                        <div className="flex justify-center">
+                            <Link href="/product/smart-voice">
+                                <ButtonPrimary
+                                    className="mt-5"
+                                    onClick={() => {
+                                        console.log("")
+                                    }}
+                                >
+                                    Try it out
+                                </ButtonPrimary>
+                            </Link>
+                        </div>
                     </section>
                     <section id="4" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
@@ -137,19 +151,22 @@ const Features = () => {
                             factors. Patient's will sign a consent form
                             electronically that is assigned to your practice.
                             After the patient fills out the form, you can view
-                            the information in your dashboard or you can
-                            configure it to send to your email inbox (we
-                            recommend{" "}
-                            <a
-                                href="https://proton.me/"
-                                target={"_blank"}
-                                className="text-blue-500 hover:underline"
-                                rel="noopener noreferrer"
-                            >
-                                Proton Mail
-                            </a>{" "}
-                            as a free HIPPA compliant email provider).
+                            the information in your dashboard and download the
+                            information as a PDF or print it out.
                         </p>
+                        <div className="flex flex-col items-center justify-center py-8">
+                            <h2 className="pb-5">
+                                <Text size="xl" weight={700}>
+                                    Watch Demo
+                                </Text>
+                            </h2>
+                            <iframe
+                                allow="autoplay;"
+                                allowFullScreen
+                                src="https://clipchamp.com/watch/L5kmptIntkY/embed"
+                                className="w-full h-48 md:h-64 lg:h-96"
+                            ></iframe>
+                        </div>
                     </section>
                     <section id="5" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">

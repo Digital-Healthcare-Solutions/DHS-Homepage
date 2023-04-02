@@ -31,27 +31,23 @@ const howItWorks = [
     {
         number: 1,
         description:
-            "You configure some settings on the SmartForm settings dashboard. You can add your logo, change the colors, add your own custom fields, and more."
+            "You configure some settings on the SmartForm settings dashboard. You can add your logo, add your own custom fields, and more."
     },
+
     {
         number: 2,
-        description:
-            "Choose where you want to access the form. You can either view it in our app or have them sent to you own email address (provided its HIPPA compliant)."
-    },
-    {
-        number: 3,
         description:
             "We generate a unique link for you to share with your patients. And you add that link to your website, social media, or anywhere else you want."
     },
     {
-        number: 4,
+        number: 3,
         description:
-            "The patient fills out the form and submits it. You can then view the form wherever configured it be sent."
+            "The patient fills out the form and submits it. You can then view the form in the SmartForm dashboard."
     },
     {
-        number: 5,
+        number: 4,
         description:
-            "That's it! You now have paperless pre registration integrated in your new patient flow. "
+            "That's it! You now have paperless pre registration integrated in your practice. "
     }
 ]
 
@@ -238,11 +234,11 @@ const SmartForm = () => {
                             patients to complete pre-registration forms at their
                             convenience, from the comfort of their own home.
                             Patients can access the paperwork via a link you put
-                            on your website or email you send, and can securely
+                            on your website or send them, and can securely
                             submit their information using any device. Our
-                            product has autocomplete for health conditions
-                            andmedications and ensures that all required fields
-                            are completed, reducing the likelihood of errors in
+                            product has autocomplete for health conditions and
+                            medications and ensures that all required fields are
+                            completed, reducing the likelihood of errors in
                             patient data.
                         </h3>
                     </div>{" "}
