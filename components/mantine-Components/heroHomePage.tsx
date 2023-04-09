@@ -276,8 +276,8 @@ l-163 3 -3 173 c-2 164 -3 172 -22 172 -19 0 -20 -7 -20 -195z"
                             </g>
                         </svg>
                         <div className="font-normal text-center text-black dark:text-white text-xl">
-                            Revolutionize your practice and elevate patient care
-                            with AI-powered automation
+                            Streamline your medical practice with automated
+                            efficiency.
                         </div>
                         <a
                             target="_blank"

@@ -77,13 +77,13 @@ export function FeaturesGrid({ title, description }) {
             icon: BsCashStack,
             title: "Earn reccuring revenue",
             description:
-                "SmartPlan allows you to bill for Chronic Care Management (CCM) services, which is a reimbursable CPT code under Medicare. These services are perfomed on a recurring basis, and can be billed monthly, quarterly, or annually, depending on the CPT code."
+                "Our product (SmartPlan) allows you to bill for Chronic Care Management (CCM) services, which is a reimbursable CPT code under Medicare. These services are perfomed on a recurring basis, and can be billed monthly, quarterly, or annually, depending on the CPT code."
         },
         {
             icon: MdOutlinePhoneEnabled,
             title: "Handle communications in a modern way",
             description:
-                "We built our integrated call center (IntelliCall) with the goal of making it easier to communicate with our patients and other providers. We've integrated an AI powered, modern call center that's as flexible as your practice is and allows you to communicate with your patients in a way that is easy and intuitive."
+                "We built our call center (IntelliCall) with the goal of making it easier to communicate with our patients and other providers. Our product plugs in with your existing phone system and allows you to view call transcriptions, listen to voicemails, respond via text messages, make and receive calls, and more right from your computer."
         },
         {
             icon: RiComputerLine,
@@ -95,7 +95,7 @@ export function FeaturesGrid({ title, description }) {
             icon: BsMic,
             title: "Dictation and transcription",
             description:
-                "Use our integrated dictation and transcription service to save time writing your notes.  We utilize the latest in speech recognition technology that is extemely accurate with medical terminology and can even remove background noise, 'umms' from speech and translate  any langauge to English. "
+                "Use our dictation and transcription service to save time writing your notes. We utilize the latest in speech recognition technology that is extemely accurate with medical terminology and can even remove background noise, 'umms' from speech and translate  any langauge to English. "
         },
         {
             icon: BsPatchCheck,
