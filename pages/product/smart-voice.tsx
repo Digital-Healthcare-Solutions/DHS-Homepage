@@ -88,11 +88,7 @@ const SmartVoice = () => {
                         })
                         const formData = new FormData()
                         formData.append("file", audioData, fileName)
-                        formData.append("model", "whisper-1")
-                        formData.append(
-                            "prompt",
-                            "You are a Medical Transcription bot. You may come across a lot of complex medical terms such as brachial plexopathy, cervical radiculopathy and so on."
-                        )
+
                         mediaRecorder.onstop = () => {
                             console.log("stopped")
                             fetchAudio(formData)
@@ -132,7 +128,7 @@ const SmartVoice = () => {
             return
         }
         const response = await fetch(
-            "https://xmks-s250-ypw0.n7.xano.io/api:5iYyLrKQ/transcribeAudio",
+            "https://xmks-s250-ypw0.n7.xano.io/api:PkXylm3k/homepage/dictation",
             {
                 method: "POST",
                 body: audiodata
