@@ -1,0 +1,66 @@
+.circle {
+    border-radius: 50%;
+    background-color: rgb(59 130 246);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    opacity: 0;
+    animation: scaleIn 2s infinite cubic-bezier(0.36, 0.11, 0.89, 0.32);
+}
+
+.circle2 {
+    border-radius: 50%;
+    background-color: rgb(59 130 246);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 4px 1px rgb(168, 173, 178);
+}
+.circle3 {
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(59 130 246);
+    color: rgb(59 130 246);
+    box-shadow: 1px 1px 4px 1px rgb(168, 173, 178);
+}
+
+.circle2:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(59 130 246);
+    border: 1px solid rgb(59 130 246);
+}
+.circle:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(59 130 246);
+    border: 1px solid rgb(59 130 246);
+}
+
+.item {
+    z-index: 10;
+    padding: 2px;
+}
+
+.item img {
+    width: 50px;
+}
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8, 0.8);
+        opacity: 0.9;
+    }
+    to {
+        transform: scale(1.7, 1.7);
+        opacity: 0;
+    }
+}

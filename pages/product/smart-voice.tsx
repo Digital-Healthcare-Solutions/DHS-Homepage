@@ -1,4 +1,11 @@
-import { Container, Textarea, TextInput, ThemeIcon, Title } from "@mantine/core"
+import {
+    Container,
+    Loader,
+    Textarea,
+    TextInput,
+    ThemeIcon,
+    Title
+} from "@mantine/core"
 import Image from "next/image"
 import { BsArrowDown, BsArrowRight, BsMic } from "react-icons/bs"
 import { useEffect, useState } from "react"
@@ -8,6 +15,7 @@ import * as Yup from "yup"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
 import Link from "next/link"
+import styles from "../../styles/circle.module.css"
 
 const SmartVoice = () => {
     const [loading, setLoading] = useState(false)
@@ -105,6 +113,7 @@ const SmartVoice = () => {
                         .addEventListener("click", function stopClick() {
                             mediaRecorder.stop()
                             console.log(mediaRecorder)
+                            setRecording(false)
                             this.removeEventListener("click", stopClick)
                         })
                 })
@@ -140,7 +149,6 @@ const SmartVoice = () => {
         if (response.ok) {
             setText((prevTranscription) => prevTranscription + data + " ")
             setLoading(false)
-            setRecording(false)
         }
         if (!response.ok) {
             setError(data.message)
@@ -280,6 +288,8 @@ const SmartVoice = () => {
                             placeholder={
                                 recording
                                     ? "Recording..."
+                                    : loading
+                                    ? "Loading..."
                                     : parseInt(APIcount) > 20
                                     ? "All out of transcriptions!"
                                     : "Your transcript will appear here"
@@ -290,8 +300,53 @@ const SmartVoice = () => {
                             autosize={true}
                             description="Try your most difficult voice commands here! Even complicated medical terms! ( limited to 20 attempts per user. )"
                         />
+                        {loading ? (
+                            <div className="flex justify-end">
+                                <Loader
+                                    type="ThreeDots"
+                                    color="#00BFFF"
+                                    height={20}
+                                    width={20}
+                                    className="absolute -translate-x-5  translate-y-14 lg:translate-y-12"
+                                />
+                            </div>
+                        ) : null}
                     </div>
-                    <div className="flex justify-center mt-3">
+
+                    {recording ? (
+                        <section className="flex flex-row justify-center pt-6">
+                            <div className={styles.item}></div>
+                            <button
+                                id="stop"
+                                className={styles.circle3}
+                                //   onClick={handleStopRecord}
+                            >
+                                <BsMic
+                                    size={25}
+                                    className=" text-blue-500 z-50"
+                                />
+                            </button>
+                            <div
+                                className={styles.circle}
+                                style={{ animationDelay: "0s" }}
+                            ></div>
+                            <div
+                                className={styles.circle}
+                                style={{ animationDelay: "1s" }}
+                            ></div>
+                            <div className={styles.circle}></div>
+                        </section>
+                    ) : (
+                        <section className="flex flex-row justify-center text-white z-50 hover:text-blue-500  pt-6">
+                            <button
+                                className={styles.circle2}
+                                onClick={handleRecord}
+                            >
+                                <BsMic size={25} />
+                            </button>
+                        </section>
+                    )}
+                    {/* <div className="flex justify-center mt-3">
                         {!recording ? (
                             <ThemeIcon
                                 className={
@@ -321,7 +376,7 @@ const SmartVoice = () => {
                                 <BsMic size={22} />
                             </ThemeIcon>
                         )}
-                    </div>
+                    </div>*/}
                 </div>
 
                 <form
