@@ -64,7 +64,6 @@ const SmartVoice = () => {
     }, [recording])
 
     async function getLocalStream() {
-        setLoading(true)
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
             console.log("getUserMedia supported.")
             let options: any
@@ -136,6 +135,7 @@ const SmartVoice = () => {
             })
             return
         }
+        setLoading(true)
         const response = await fetch(
             "https://xmks-s250-ypw0.n7.xano.io/api:PkXylm3k/homepage/dictation",
             {
@@ -337,8 +337,15 @@ const SmartVoice = () => {
                             <div className={styles.circle}></div>
                         </section>
                     ) : (
-                        <section className="flex flex-row justify-center text-white z-50 hover:text-blue-500  pt-6">
+                        <section
+                            className={
+                                parseInt(APIcount) > 20
+                                    ? "flex flex-row justify-center text-white z-50 hover:text-blue-500  pt-6 cursor-not-allowed"
+                                    : "flex flex-row justify-center text-white z-50 hover:text-blue-500  pt-6"
+                            }
+                        >
                             <button
+                                disabled={parseInt(APIcount) > 20 || loading}
                                 className={styles.circle2}
                                 onClick={handleRecord}
                             >

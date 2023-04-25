@@ -18,7 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 1px 1px 4px 1px rgb(168, 173, 178);
+    box-shadow: 1px rgba(168, 173, 178, 0.134);
 }
 .circle3 {
     border-radius: 50%;
