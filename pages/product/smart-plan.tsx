@@ -29,42 +29,51 @@ import { showNotification } from "@mantine/notifications"
 import { FaHandHoldingHeart } from "react-icons/fa"
 import { AiOutlineArrowUp } from "react-icons/ai"
 
+const carePlans = [
+    "Annual Wellness Visit",
+    "Dementia / Alzheimer's",
+    "Depression and Anxiety",
+    "Migraines",
+    "Parkinson's disease",
+    "General Care Plan (CHF, Diabetes, HTN, etc.)"
+]
+
 const features = [
     {
         icon: BsShuffle,
-        title: "Streamlined Workflow",
+        title: "Streamline Workflow",
         description:
             "Our software simplifies the chronic care management process, automating essential functions, and freeing up staff time. By streamlining the workflow, you can provide better care to patients without sacrificing productivity"
     },
     {
         icon: BsCashStack,
-        title: "Increased Revenue",
+        title: "Increase Revenue",
         description:
-            "Our software makes it easy to qualify for CMS reimbursements for chronic care management, leading to increased revenue for your practice."
+            "Our solution makes it easy to qualify for CMS reimbursements for chronic care management, leading to increased revenue for your practice."
     },
     {
         icon: AiOutlineArrowUp,
-        title: "Improved Patient Outcomes",
+        title: "Improve Patient Outcomes",
         description:
-            "By using our software to monitor patient progress and manage care plans, you can provide more personalized care that leads to improved patient outcomes."
+            "By using our platform to monitor patient progress and manage care plans, you can provide more personalized care that leads to improved patient outcomes."
     },
     {
         icon: FaHandHoldingHeart,
         title: "Delegate Care Delivery",
         description:
-            "Our software enables physicians to delegate chronic care management tasks to other staff members, such as nurses or medical assistants, without sacrificing the quality of care. "
+            "SmartPlan enables physicians to delegate chronic care management tasks to other staff members, such as nurses or medical assistants, without sacrificing the quality of care. "
     }
 ]
 
 const howItWorks = [
     {
         number: 1,
-        description: "Sign into our software and go to the Testing page."
+        description: "Sign into our web app."
     },
     {
         number: 2,
         description:
-            "Click 'Create New Patient' or 'Start new Test' under the patient you want to retest."
+            "Head over to the SmartPlan tab to get started. You can create a new patient or retest an existing one."
     },
     {
         number: 3,
@@ -74,7 +83,7 @@ const howItWorks = [
     {
         number: 4,
         description:
-            "Once finished, the care plans prepare a clinical copy for physicians and a customized SmartPlan version for the patients and care givers to take home with them. You can print or email the care plans to the patient."
+            "Once finished, the care plans prepare a clinical copy for physicians and a customized SmartPlan for the patients and care givers to take home with them. You can print or email the care plans to the patient."
     },
     {
         number: 5,
@@ -238,15 +247,13 @@ const SmartPlan = () => {
                             process, making it easy to incorporate into your
                             workflow seamlessly. Our software automates several
                             essential functions, including tracking patient
-                            progress, managing care plans, and generating
-                            reports, freeing up your staff's time to focus on
-                            providing high-quality care to your patients. With
-                            our solution, you can take advantage of CMS
-                            reimbursements for chronic care management while
-                            providing your patients with the best possible care.
-                            Join the numerous healthcare providers who have
-                            implemented our solution and revolutionize the way
-                            you manage chronic care in your practice today!
+                            progress, keeping up with retest dates, and
+                            generating reports and patient handouts, freeing up
+                            your staff's time to focus on providing high-quality
+                            care to your patients. With our solution, you can
+                            take advantage of CMS reimbursements for chronic
+                            care management while providing your patients with
+                            the best possible care.
                         </h3>
                     </div>{" "}
                     <Image
@@ -268,8 +275,7 @@ const SmartPlan = () => {
                                 </Title>
                                 <Text className="py-6">
                                     Revolutionize Your Practice with Our
-                                    Automated Solution for Chronic Care
-                                    Management
+                                    Solution for Chronic Care Management
                                 </Text>
                                 <a
                                     target="_blank"
@@ -330,6 +336,36 @@ const SmartPlan = () => {
                         </Grid>
                     </Container>
                 </div>
+
+                <div className="py-10 flex justify-center gap-8 ">
+                    <Container size="lg">
+                        <Grid className="flex flex-col items-center">
+                            <Title order={2} className="text-3xl">
+                                Care Plans
+                            </Title>
+                            <Text className="pt-6 pb-10 text-xl">
+                                We currently offer the following care plans:
+                            </Text>
+                        </Grid>
+                        <ul className="lg:grid lg:grid-cols-2 ">
+                            {carePlans.map((item, index: number) => (
+                                <li className="py-3 mr-4">
+                                    <div className="flex items-center">
+                                        <ThemeIcon
+                                            size={44}
+                                            radius="md"
+                                            className="bg-gray-300 text-black dark:bg-neutral-600 dark:text-white"
+                                        >
+                                            {index + 1}
+                                        </ThemeIcon>
+                                        <p className="ml-3 text-xl">{item}</p>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
+                    </Container>
+                </div>
+
                 <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 lg:mt-12">
                     How it works :
                 </h2>

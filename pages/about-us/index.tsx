@@ -141,8 +141,8 @@ const AboutUs = () => {
                             >
                                 Jacob is a Registered Nurse and a self taught
                                 web developer. He has been working in the
-                                medical field for over 5 years and has been a
-                                developer for over 2 years. As the co-founder of
+                                medical field for over 4 years and has been a
+                                developer for 2 years. As the co-founder of
                                 Digital Healthcare Solutions, Jacob is the lead
                                 developer and oversees the implementation of new
                                 features and the maintenance of the platform.

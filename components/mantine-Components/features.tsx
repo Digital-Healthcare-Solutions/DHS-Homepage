@@ -9,13 +9,11 @@ import {
     Divider
 } from "@mantine/core"
 import { RiComputerLine } from "react-icons/ri"
-import { BsCashStack, BsMic, BsPatchCheck } from "react-icons/bs"
-import {
-    MdAccessTime,
-    MdOpenInNewOff,
-    MdOutlinePhoneEnabled
-} from "react-icons/md"
+import { BsCashStack, BsMic } from "react-icons/bs"
+import { MdOutlinePhoneEnabled } from "react-icons/md"
 import { MdOutlinePersonOff } from "react-icons/md"
+import { BsChatLeftText } from "react-icons/bs"
+import { AiOutlineMessage } from "react-icons/ai"
 
 export function Feature({ icon: Icon, title, description }) {
     const theme = useMantineTheme()
@@ -98,17 +96,17 @@ export function FeaturesGrid({ title, description }) {
                 "Use our dictation and transcription service to save time writing your notes. We utilize the latest in speech recognition technology that is extemely accurate with medical terminology and can even remove background noise, 'umms' from speech and translate  any langauge to English. "
         },
         {
-            icon: BsPatchCheck,
-            title: "Automate your Prior Authorization process (Coming Soon)",
+            icon: AiOutlineMessage,
+            title: "Realtime messaging and referral system (Coming Soon)",
             description:
-                "We're building a Prior Authorization (PA) automation tool that allows you to automatically submit PA requests to insurance companies and receive a response in real time. If the insurance company turns you down, we automatically write you a response letter."
+                "Ditch the fax machine, we're building a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about a Slack, but for healthcare. Anyone who is a part of the network can send referrals and communicate with each other in realtime. We beleive in a more connected healthcare system, so we're making this free for all providers."
         },
         {
             icon: MdOutlinePersonOff,
             title: "Redact PHI in text, images and audio",
             description: (
                 <span>
-                    Anonymize your patients PHI in text, images, and videos to
+                    Anonymize your patients PHI in text, images, and audio to
                     ensure HIPAA compliance. We host our own NLP (Natural
                     Language Processing){" "}
                     {/* <a

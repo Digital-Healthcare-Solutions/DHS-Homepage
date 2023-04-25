@@ -35,21 +35,21 @@ const features = [
     },
     {
         icon: AiOutlineArrowUp,
-        title: "Improved Patient Care",
+        title: "Increase reimbursement",
         description:
-            "With IntelliCall, you can text and call patients back directly from your browser using AI-generated tips about the content of their message. This feature allows you to provide more personalized care to your patients and quickly respond to their needs."
+            "With IntelliCall, when you text and call patients back through our system, the content is auto documented to allow for easy billing. This feature allows you to increase your reimbursement by ensuring that all virtual patient communication is documented."
     },
     {
         icon: GiBattery100,
         title: "Improved Staff Efficiency",
         description:
-            " By automating communication management and transcribing calls, IntelliCall allows your staff to focus on other important tasks, saving time and boosting efficiency."
+            "By automating communication management and transcribing calls into text, IntelliCall allows your staff to focus on other important tasks, saving time and boosting efficiency."
     },
     {
         icon: MdOutlinePersonPin,
         title: "Personalized Patient Experience:",
         description:
-            "With IntelliCall you can communicate with patients in a way that feels more personal and engaging. By using IntelliCall, you can enhance your patient's experience and show them that you care about their needs."
+            "Our solution allows you to communicate with patients in a way that feels more personal and engaging. By using IntelliCall, you can enhance your patient's experience and show them that you care about their needs."
     }
 ]
 
@@ -62,7 +62,7 @@ const howItWorks = [
     {
         number: 2,
         description:
-            "You have several options to choose from. You can select whether you want your call to forward to your clinic's phone number, or got stright to voicemail transcription. You can also input your greeting message and select the language you want your transcription to be in. You can select the hours of operation for your call forwarding. Lastly choose whether you want to enable AI or disable AI for message analysis."
+            "You have several options to choose from. You can select whether you want your call to forward to your clinic's phone number, or go stright to voicemail transcription. You can also input your greeting message and select options to identify which provider the caller is calling about. Lastly choose whether you want to enable AI or disable AI for message analysis."
     },
     {
         number: 3,

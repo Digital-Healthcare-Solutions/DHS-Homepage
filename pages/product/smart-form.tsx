@@ -62,7 +62,7 @@ const features = [
         icon: TfiTarget,
         title: "Improve data accuracy:",
         description:
-            "ur system automatically checks for errors and ensures that all required fields are completed, reducing the likelihood of errors in patient data. This feature can help improve the accuracy of patient information and reduce the risk of errors in medical records."
+            "Our system automatically checks for errors and ensures that all required fields are completed, reducing the likelihood of errors in patient data. This feature can help improve the accuracy of patient information and reduce the risk of errors in medical records."
     },
     {
         icon: GiHeartPlus,
