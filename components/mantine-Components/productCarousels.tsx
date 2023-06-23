@@ -56,42 +56,49 @@ import Link from "next/link"
 
 const data = [
     {
-        image: "/carePlan.jpg",
-        title: "Create detailed Care plans for your patients",
-        category: "SmartPlan",
+        image: "/chatImage.png",
+        title: "Chat and send referrals in realtime to other providers",
+        category: "Clinic-Connect",
         id: 1
     },
     {
         image: "/AI.png",
-        title: "Use AI to automate your call center",
+        title: "Use AI to automate your phone system ",
         category: "IntelliCall",
         id: 2
     },
     {
-        image: "/report.jpg",
-        title: "Write your notes faster than ever with intelligent dictation",
-        category: "SmartVoice",
+        image: "/carePlan.jpg",
+        title: "Create detailed Care plans for your patients",
+        category: "SmartPlan",
         id: 3
+    },
+
+    {
+        image: "/report.jpg",
+        title: "Finish your notes faster than ever with intelligent dictation",
+        category: "SmartVoice",
+        id: 4
     },
 
     {
         image: "/paperless1.jpg",
         title: "Seamlessly add paperless registration to your website",
         category: "SmartForm",
-        id: 4
+        id: 5
     },
     {
         image: "/cyber.jpg",
         title: "Security and compliance built in",
-        category: "feature",
-        id: 5
-    },
-    {
-        image: "/staff.jpg",
-        title: "Whether a small or large practice, we have a plan for you",
-        category: "feature",
+        category: "HIPPA Compliant",
         id: 6
     }
+    // {
+    //     image: "/staff.jpg",
+    //     title: "Whether a small or large practice, we have a plan for you",
+    //     category: "feature",
+    //     id: 7
+    // }
 ]
 
 const ProductCarousel = () => {
@@ -129,6 +136,12 @@ const ProductCarousel = () => {
             fontWeight: 700,
             textTransform: "uppercase"
         },
+        categoryDark: {
+            color: theme.black,
+            opacity: 0.7,
+            fontWeight: 700,
+            textTransform: "uppercase"
+        },
 
         carousel: {
             backgroundColor:
@@ -153,13 +166,20 @@ const ProductCarousel = () => {
             bg-cover bg-center bg-no-repeat flex flex-col h-[440px] justify-between items-start bg-opacity-80`}
             >
                 <div>
-                    <Text className={classes.category} size="xs">
+                    <Text
+                        className={
+                            index == 0 || index == 3 || index == 4
+                                ? classes.categoryDark
+                                : classes.category
+                        }
+                        size="xs"
+                    >
                         {item.category}
                     </Text>
                     <Title
                         order={3}
                         className={
-                            index == 2 || index == 3
+                            index == 0 || index == 3 || index == 4
                                 ? classes.titleDark
                                 : classes.title
                         }

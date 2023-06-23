@@ -69,7 +69,8 @@ const MobileNav = ({ open, setOpen }) => {
                                     pathname === "/product/easy-auth" ||
                                     pathname === "/product/smart-form" ||
                                     pathname === "/product/intellicall" ||
-                                    pathname === "/product/smart-plan"
+                                    pathname === "/product/smart-plan" ||
+                                    pathname === "/product/clinic-connect"
                                         ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 mx-1 flex items-center"
                                         : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 mx-1 flex items-center"
                                 }
@@ -84,15 +85,16 @@ const MobileNav = ({ open, setOpen }) => {
                         <Menu.Dropdown>
                             <Menu.Item
                                 component={Link}
-                                href="/product/smart-plan"
+                                href="/product/clinic-connect"
                                 className={
-                                    pathname === "/product/smart-plan"
+                                    pathname === "/product/clinic-connect"
                                         ? "text-base text-blue-500"
                                         : "text-base"
                                 }
                             >
-                                Smart<strong>Plan</strong>
+                                Clinic<strong>-Connect</strong>
                             </Menu.Item>
+
                             <Menu.Item
                                 component={Link}
                                 href="/product/intellicall"
@@ -103,6 +105,17 @@ const MobileNav = ({ open, setOpen }) => {
                                 }
                             >
                                 Intelli<strong>Call</strong>
+                            </Menu.Item>
+                            <Menu.Item
+                                component={Link}
+                                href="/product/smart-plan"
+                                className={
+                                    pathname === "/product/smart-plan"
+                                        ? "text-base text-blue-500"
+                                        : "text-base"
+                                }
+                            >
+                                Smart<strong>Plan</strong>
                             </Menu.Item>
                             <Menu.Item
                                 component={Link}

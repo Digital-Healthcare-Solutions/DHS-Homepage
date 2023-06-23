@@ -190,7 +190,8 @@ const SmartVoice = () => {
         if (res.ok) {
             showNotification({
                 title: "Success",
-                message: "You have been added to our launch list",
+                message:
+                    "Thanks for your interest! A representative will be in touch soon.",
                 color: "green",
                 autoClose: 5000
             })
@@ -402,7 +403,7 @@ const SmartVoice = () => {
                             Interested ?
                         </span>{" "}
                         <div className="flex text-xl justify-center items-center pt-3 text-white">
-                            Get notified when we launch{" "}
+                            Request a Demo
                             <BsArrowDown className="ml-2 block lg:hidden" />
                             <BsArrowRight className="ml-2 hidden lg:block" />
                         </div>
@@ -461,7 +462,7 @@ const SmartVoice = () => {
                                 onClick={() => console.log("clicked")}
                                 className=""
                             >
-                                Notify Me
+                                Submit
                             </ButtonPrimary>
                         </div>
                     </div>

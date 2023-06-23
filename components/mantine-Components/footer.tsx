@@ -159,14 +159,13 @@ export function Footer({ data }: FooterLinksProps) {
                         height={500}
                         className="dark:invert"
                     />
-
                     <Text
                         size="xs"
                         color="dimmed"
                         className={classes.description}
                     >
-                        Revolutionize your practice and elevate patient care
-                        with AI-powered automation
+                        Level up your practice with our next-generation
+                        communication platform for healthcare providers.
                     </Text>
                 </div>
                 <div className={classes.groups}>{groups}</div>

@@ -45,7 +45,7 @@ const Features = () => {
                             report for you as well as a detailed report for you
                             to give your patient before they leave. The report
                             will include a summary of the patient's condition, a
-                            list of all questiionaires performed and scores, a
+                            list of all questionaires performed and scores, a
                             list of recommended supplements, diet, lifestyle
                             changes, and 3 actionable, measurable, time based
                             goals for the patient to work on.
@@ -91,7 +91,7 @@ const Features = () => {
                             answering lab questions, medication questions, or
                             general medical questions.
                         </p>
-                        <div className="flex flex-col items-center justify-center py-8">
+                        {/* <div className="flex flex-col items-center justify-center py-8">
                             <h2 className="pb-5">
                                 <Text size="xl" weight={700}>
                                     Watch Demo
@@ -103,7 +103,7 @@ const Features = () => {
                                 src="https://clipchamp.com/watch/KTGDfgZIhA6/embed"
                                 className="w-full h-48 md:h-64 lg:h-96"
                             ></iframe>
-                        </div>
+                        </div> */}
                     </section>
                     <section id="3" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
@@ -154,7 +154,7 @@ const Features = () => {
                             the information in your dashboard and download the
                             information as a PDF or print it out.
                         </p>
-                        <div className="flex flex-col items-center justify-center py-8">
+                        {/* <div className="flex flex-col items-center justify-center py-8">
                             <h2 className="pb-5">
                                 <Text size="xl" weight={700}>
                                     Watch Demo
@@ -166,7 +166,7 @@ const Features = () => {
                                 src="https://clipchamp.com/watch/L5kmptIntkY/embed"
                                 className="w-full h-48 md:h-64 lg:h-96"
                             ></iframe>
-                        </div>
+                        </div> */}
                     </section>
                     <section id="5" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
@@ -199,7 +199,7 @@ const Features = () => {
                             </a>
                         </p>
                     </section>
-                    <section id="6" className="py-5">
+                    {/* <section id="6" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
                             Solutions for a clinic of any size
                             <Divider className="mt-2" />
@@ -214,7 +214,7 @@ const Features = () => {
                             based on the number of users you have. We also offer
                             custom plans for clinics that have unique needs.
                         </p>
-                    </section>
+                    </section> */}
                 </main>
             </Container>
         </div>

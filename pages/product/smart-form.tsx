@@ -37,12 +37,12 @@ const howItWorks = [
     {
         number: 2,
         description:
-            "We generate a unique link for you to share with your patients. And you add that link to your website, social media, or anywhere else you want."
+            "We generate a unique link for you to share with your patients. You add that link to your website, social media, or anywhere else you want."
     },
     {
         number: 3,
         description:
-            "The patient fills out the form and submits it. You can then view the form in the SmartForm dashboard."
+            "The patient visits the secure page on their mobile phone or computer, fills out the form and submits it. You can then view the form in the SmartForm dashboard."
     },
     {
         number: 4,
@@ -54,13 +54,13 @@ const howItWorks = [
 const features = [
     {
         icon: MdAccessTime,
-        title: "Save time and money",
+        title: "Save time for patients and staff",
         description:
             "By using our paperless pre-registration system, you can reduce wait times and eliminate the need for manual data entry. Patients can complete forms in advance, allowing staff to review and process information ahead of time, reducing delays and saving time for both patients and staff."
     },
     {
         icon: TfiTarget,
-        title: "Improve data accuracy:",
+        title: "Improve data accuracy",
         description:
             "Our system automatically checks for errors and ensures that all required fields are completed, reducing the likelihood of errors in patient data. This feature can help improve the accuracy of patient information and reduce the risk of errors in medical records."
     },
@@ -166,7 +166,8 @@ const SmartForm = () => {
         if (res.ok) {
             showNotification({
                 title: "Success",
-                message: "You have been added to our launch list",
+                message:
+                    "Thanks for your interest! A representative will be in touch soon.",
                 color: "green",
                 autoClose: 5000
             })
@@ -412,7 +413,7 @@ const SmartForm = () => {
                             Interested ?
                         </span>{" "}
                         <div className="flex text-xl justify-center items-center pt-3 text-white">
-                            Get notified when we launch{" "}
+                            Request a Demo
                             <BsArrowDown className="ml-2 block lg:hidden" />
                             <BsArrowRight className="ml-2 hidden lg:block" />
                         </div>
@@ -474,7 +475,7 @@ const SmartForm = () => {
                                 onClick={() => console.log("clicked")}
                                 className=""
                             >
-                                Notify Me
+                                Submit
                             </ButtonPrimary>
                         </div>
                     </form>

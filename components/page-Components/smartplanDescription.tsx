@@ -73,7 +73,8 @@ const SmartPlanDescription = () => {
                 <div className="flex flex-col items-center">
                     <h4 className="text-center py-8 lg:w-1/2 text-lg md:text-2xl">
                         See how our customized solutions can help you save time,
-                        maximize revenue and increase patient satisfaction.
+                        cut costs, maximize revenue and increase patient
+                        satisfaction.
                         {/* Our web app provides everything you need to get started
                         billing codes 99483, 99490, and 99491 in a user
                         friendly, HIPPA compliant way. */}

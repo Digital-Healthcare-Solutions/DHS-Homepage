@@ -70,18 +70,25 @@ export function FeaturesGrid({ title, description }) {
         //     description:
         //         "Smartplan allows anyone to create detailed care plans that cover all aspects of patient care, including disease specific symptom analysis, medication management, lifestyle modifications, education, and follow-up appointments."
         // },
+        {
+            icon: AiOutlineMessage,
+            title: "Realtime messaging and referrals",
+            description:
+                "Ditch the fax machine, sign up on our Clinic-Connect network today for free! Clinic-Connect is a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about Slack, but for healthcare. Anyone who is part of the network can send referrals and communicate with each other in realtime."
+        },
+
+        {
+            icon: MdOutlinePhoneEnabled,
+            title: "Handle communications in a modern way",
+            description:
+                "We built our call center (IntelliCall) with the goal of making it easier to communicate with our patients and other providers. Our product plugs in with your existing phone system and allows you to view call transcriptions, listen to voicemails, respond via text messages, make and receive calls, and more right from your computer."
+        },
 
         {
             icon: BsCashStack,
             title: "Earn reccuring revenue",
             description:
                 "Our product (SmartPlan) allows you to bill for Chronic Care Management (CCM) services, which is a reimbursable CPT code under Medicare. These services are perfomed on a recurring basis, and can be billed monthly, quarterly, or annually, depending on the CPT code."
-        },
-        {
-            icon: MdOutlinePhoneEnabled,
-            title: "Handle communications in a modern way",
-            description:
-                "We built our call center (IntelliCall) with the goal of making it easier to communicate with our patients and other providers. Our product plugs in with your existing phone system and allows you to view call transcriptions, listen to voicemails, respond via text messages, make and receive calls, and more right from your computer."
         },
         {
             icon: RiComputerLine,
@@ -94,45 +101,40 @@ export function FeaturesGrid({ title, description }) {
             title: "Dictation and transcription",
             description:
                 "Use our dictation and transcription service to save time writing your notes. We utilize the latest in speech recognition technology that is extemely accurate with medical terminology and can even remove background noise, 'umms' from speech and translate  any langauge to English. "
-        },
-        {
-            icon: AiOutlineMessage,
-            title: "Realtime messaging and referral system (Coming Soon)",
-            description:
-                "Ditch the fax machine, we're building a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about a Slack, but for healthcare. Anyone who is a part of the network can send referrals and communicate with each other in realtime. We beleive in a more connected healthcare system, so we're making this free for all providers."
-        },
-        {
-            icon: MdOutlinePersonOff,
-            title: "Redact PHI in text, images and audio",
-            description: (
-                <span>
-                    Anonymize your patients PHI in text, images, and audio to
-                    ensure HIPAA compliance. We host our own NLP (Natural
-                    Language Processing){" "}
-                    {/* <a
-                        className="text-blue-500 hover:underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.turing.com/kb/a-comprehensive-guide-to-named-entity-recognition"
-                    >
-                        {" "}
-                        named enity recogntion
-                    </a>{" "} */}
-                    model built by
-                    <a
-                        className="text-blue-500 hover:underline mx-1"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://www.private-ai.com/"
-                    >
-                        Private AI
-                    </a>
-                    that allows you to redact PHI in text, images, and videos.
-                    Simply upload your desired document and it will return fully
-                    anonymized.
-                </span>
-            )
         }
+
+        // {
+        //     icon: MdOutlinePersonOff,
+        //     title: "Redact PHI in text, images and audio",
+        //     description: (
+        //         <span>
+        //             Anonymize your patients PHI in text, images, and audio to
+        //             ensure HIPAA compliance. We host our own NLP (Natural
+        //             Language Processing){" "}
+        //             {/* <a
+        //                 className="text-blue-500 hover:underline"
+        //                 target="_blank"
+        //                 rel="noopener noreferrer"
+        //                 href="https://www.turing.com/kb/a-comprehensive-guide-to-named-entity-recognition"
+        //             >
+        //                 {" "}
+        //                 named enity recogntion
+        //             </a>{" "} */}
+        //             model built by
+        //             <a
+        //                 className="text-blue-500 hover:underline mx-1"
+        //                 target="_blank"
+        //                 rel="noopener noreferrer"
+        //                 href="https://www.private-ai.com/"
+        //             >
+        //                 Private AI
+        //             </a>
+        //             that allows you to redact PHI in text, images, and videos.
+        //             Simply upload your desired document and it will return fully
+        //             anonymized.
+        //         </span>
+        //     )
+        // }
 
         // {
         //     icon: AiOutlineCloudUpload,

@@ -49,7 +49,8 @@ const NavLinks = () => {
                             pathname === "/product/easy-auth" ||
                             pathname === "/product/smart-form" ||
                             pathname === "/product/intellicall" ||
-                            pathname === "/product/smart-plan"
+                            pathname === "/product/smart-plan" ||
+                            pathname === "/product/clinic-connect"
                                 ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 cursor-pointer flex items-center"
                                 : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 cursor-pointer flex items-center"
                         }
@@ -64,7 +65,7 @@ const NavLinks = () => {
                 <Menu.Dropdown>
                     <Menu.Item
                         sx={
-                            pathname == "/product/smart-plan"
+                            pathname == "/product/clinic-connect"
                                 ? {
                                       color: "rgb(59 130 246)",
                                       fontSize: "1rem"
@@ -75,10 +76,11 @@ const NavLinks = () => {
                                   }
                         }
                         component={Link}
-                        href="/product/smart-plan"
+                        href="/product/clinic-connect"
                     >
-                        Smart<strong>Plan</strong>
+                        Clinic<strong>-Connect</strong>
                     </Menu.Item>
+
                     <Menu.Item
                         sx={
                             pathname == "/product/intellicall"
@@ -95,6 +97,23 @@ const NavLinks = () => {
                         href="/product/intellicall"
                     >
                         Intelli<strong>Call</strong>
+                    </Menu.Item>
+                    <Menu.Item
+                        sx={
+                            pathname == "/product/smart-plan"
+                                ? {
+                                      color: "rgb(59 130 246)",
+                                      fontSize: "1rem"
+                                  }
+                                : {
+                                      color: "inherit",
+                                      fontSize: "1rem"
+                                  }
+                        }
+                        component={Link}
+                        href="/product/smart-plan"
+                    >
+                        Smart<strong>Plan</strong>
                     </Menu.Item>
                     <Menu.Item
                         sx={

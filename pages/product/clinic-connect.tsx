@@ -30,19 +30,19 @@ import { RxCircleBackslash } from "react-icons/rx"
 const features = [
     {
         icon: BiPhoneCall,
-        title: "Efficient Communication",
+        title: "Stop faxing your referrals",
         description:
-            "IntelliCall is essentially your clinic's shared iPhone, allowing you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
+            "Ditch the fax machine and start sending referrals in seconds. With Clinic-Connect, you can streamline your commuincation process and expierence the way medical referrals should always have been."
     },
     {
         icon: AiOutlineArrowUp,
-        title: "Increase reimbursement",
+        title: "Cut down on wasted time",
         description:
-            "With IntelliCall, all phone communication is auto documented and kept until you delete it. This allows you to monitor all patient communication and ensure that you are reimbursed for extra time you spend on the phone with patients."
+            "With Clinic-Connect, you can send and receive messages in seconds. No more wondering if your referral went through. No more calling to see if your referral was received. No more unnecessary busy work."
     },
     {
         icon: RxCircleBackslash,
-        title: "Cut costs and save time",
+        title: "No more lost referrals",
         description:
             "Choose IntelliCall as your primary office phone number. Save an average of 50% on your phone bill. Respond to patients anywhere, anytime. No office constraints or sharing your personal phone number."
     },
@@ -57,32 +57,41 @@ const features = [
 const howItWorks = [
     {
         number: 1,
-        description:
-            "Sign up for our platform and go to the settings page. Under the IntelliCall tab, you can register a new phone number and configure your call settings."
+        description: "Sign up for our platform"
     },
     {
         number: 2,
         description:
-            "You have several options to choose from. You can select whether you want your call to forward to your clinic's phone number, or go stright to voicemail transcription. You can also input your greeting message and select options to identify which provider the caller is calling about. Lastly choose whether you want to enable AI or disable AI for message analysis."
+            "Visit the Clinic-connect page. You will be redirected to the settings page to configure your settings and register your clinic for Clinic-Connect."
     },
     {
         number: 3,
         description:
-            "Once you have configured your initial settings you can click 'Register' and your phone number will be registered. Go ahead and test your call forwarding by calling your new phone number and leaving a voicemail."
+            "Once you have configured your initial settings, a internal chatroom will automatically be created for your clinic. You can use this as a way to communicate with your staff."
     },
     {
         number: 4,
         description:
-            "Now when you visit the IntelliCall tab, you can see your call history. You can see the date and time of the call, the caller's phone number, the duration of the call, and the transcription of the voicemail. You can also listen to the voicemail by clicking the play button."
+            "Head back to the Clinic-Connect page. You can now start sending connection requests with other clinics. Once they accept your request, you will be able to communicate with them through the chatroom."
     },
     {
         number: 5,
         description:
-            "You can respond to the voicemail either by text or call. If you choose to respond by text, simply type your message and send it, IntelliCall works like a normal text messaging app. If you choose to respond by call, click the phone Icon and you can call the patient back."
+            "To send a referral, you can attach a PDF file to the chatroom or you can fill out a referral form with the patient's information to send to the other clinic."
+    },
+    {
+        number: 6,
+        description:
+            "The clinic will receive your message in realtime and will be able to respond to you through the chatroom."
+    },
+    {
+        number: 7,
+        description:
+            "That's it! Your conversation history will always be available to you in the chatroom if you need to refer back to it."
     }
 ]
 
-const IntelliCall = () => {
+const ClinicConnect = () => {
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -151,10 +160,10 @@ const IntelliCall = () => {
                 <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
                     <Image
                         className="rounded-xl dark:brightness-150 "
-                        src="/IntelliCallLogo.png"
+                        src="/clinic-connect.png"
                         width={350}
                         height={350}
-                        alt="IntelliCall Logo"
+                        alt="Clinic Connect logo"
                     />
                 </h1>
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
@@ -163,27 +172,26 @@ const IntelliCall = () => {
                             The Problem :
                         </h2>
                         <h3>
-                            Constant phone calls and voicemails can be
-                            overwhelming and time-consuming for medical
-                            practices. The volume of incoming calls often can be
-                            difficult to manage, leading to long hold times and
-                            frustrated patients. The need to listen to and
-                            respond to voicemails can consume a significant
-                            portion of staff time, making it difficult to keep
-                            up with other important tasks. These communication
-                            challenges can lead to decreased patient
-                            satisfaction, reduced staff efficiency, and even
-                            lost revenue. Many practices even resort to spending
-                            thousands of dollars on call centers to help manage
-                            their call volume.
+                            {/* this is all about faxes */}
+                            Old fashioned ways of communicating between
+                            healthcare providers get in the way of providing the
+                            best care for patients. Fax machines can be slow,
+                            unreliable, and error prone. Medical practices spend
+                            hundreds of dollars per month in paper and ink
+                            costs, waste hours of staff time on sorting and
+                            filing faxes, and risk losing important patient
+                            information. Many times, faxes are sent to the wrong
+                            number or the fax machine is out of paper and the
+                            fax is never received. This can lead to serious
+                            consequences for patients and providers.
                         </h3>
                     </div>{" "}
                     <Image
                         className="rounded-xl shadow-lg dark:shadow-gray-700"
-                        src="/phoneRinging.jpg"
+                        src="/faxing-sucks.jpeg"
                         width={300}
                         height={300}
-                        alt="Phone ringing"
+                        alt="Fax machine"
                         priority={true}
                     />
                 </div>
@@ -191,7 +199,7 @@ const IntelliCall = () => {
                     {" "}
                     <Image
                         className="rounded-xl shadow-lg dark:shadow-gray-700"
-                        src="/cloudPhone.jpg"
+                        src="/cloud-computing.jpg"
                         width={300}
                         height={300}
                         alt="Cloud Phone system"
@@ -202,21 +210,22 @@ const IntelliCall = () => {
                             Our Solution :
                         </h2>
                         <h3>
-                            IntelliCall makes it easy to manage your
-                            communication with patients. Our intelligent call
-                            management software uses advanced AI technology to
-                            transcribe calls, sort them by topic, and provide
-                            actionable insights. With our solution, you can
-                            quickly identify the purpose of each call and
-                            prioritize them accordingly, without the need to
-                            listen to long voicemail messages. Our software
-                            allows you to text and call back patients directly
-                            from your browser, giving you the ability to respond
-                            to patients quickly and efficiently without long
-                            wait times or needing to spend thousands on a call
-                            center. By using IntelliCall, medical practices can
-                            streamline communication management, save time,
-                            money and provide a better patient experience.
+                            Clinic-Connect is a commmunication platform that
+                            allows healthcare providers to refer patients to
+                            each other in real time over the internet. Our
+                            solution enables healthcare providers to communicate
+                            with each other in a modern, efficient, and secure
+                            way, eliminating the headache of using archaic fax
+                            machines. Simply connect with another clinic, send
+                            your patient's record as a PDF or other file type,
+                            and the other clinic will receive it instantly. You
+                            can even discuss the patient's case with the other
+                            clinic in real time using our chat feature,
+                            eliminating the need for phone tag. Clinic-Connect
+                            is HIPAA compliant and secure, so you can rest
+                            assured that your patient's information is safe.
+                            Sign up today for free and start communicating with
+                            other healthcare providers in your area.
                         </h3>
                     </div>{" "}
                 </div>
@@ -290,14 +299,13 @@ const IntelliCall = () => {
                             </Col>
                             <Col span={12} md={5}>
                                 <Title order={2} className="text-3xl">
-                                    IntelliCall makes communication flow.
+                                    Clinic-Connect makes communication easy
+                                    again
                                 </Title>
                                 <Text className="py-6">
-                                    Streamline Patient Communication and Boost
-                                    Efficiency with Our Intelligent Call
-                                    Management Solution
+                                    Sign up today for free experience the
+                                    benefits of Clinic-Connect for yourself.
                                 </Text>
-
                                 <a
                                     target="_blank"
                                     rel="noreferrer"
@@ -305,11 +313,7 @@ const IntelliCall = () => {
                                 >
                                     <ButtonPrimary
                                         className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
-                                        onClick={() =>
-                                            window.open(
-                                                "https://app.digitalhealthcaresolutions.io/login"
-                                            )
-                                        }
+                                        onClick={console.log("")}
                                     >
                                         Get Started
                                     </ButtonPrimary>
@@ -409,7 +413,8 @@ const IntelliCall = () => {
                 </form>
                 <h2 className="py-6">
                     <div className="text-center text-xl">
-                        You can always read more about IntelliCall on one of our{" "}
+                        You can always read more about Clinic-Connect on one of
+                        our{" "}
                         <Link
                             href="/blog"
                             className="text-blue-500 hover:underline"
@@ -425,4 +430,4 @@ const IntelliCall = () => {
     )
 }
 
-export default IntelliCall
+export default ClinicConnect

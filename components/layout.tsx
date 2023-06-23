@@ -7,17 +7,22 @@ const Layout = ({ children }) => {
             title: "Product",
             links: [
                 {
-                    label: "Care Plans",
-                    link: "/product/smart-plan"
+                    label: "Clinic Connect",
+                    link: "/product/clinic-connect"
                 },
                 {
                     label: "Call Center",
                     link: "/product/intellicall"
                 },
                 {
+                    label: "Care Plans",
+                    link: "/product/smart-plan"
+                },
+                {
                     label: "Dictation ",
                     link: "/product/smart-voice"
                 }
+
                 // {
                 //     label: "Prior Authorization",
                 //     link: "/product/features"
@@ -58,8 +63,8 @@ const Layout = ({ children }) => {
                     link: "/blog"
                 },
                 {
-                    label: "Launch list",
-                    link: "/product/smart-plan#launch-list"
+                    label: "Request a Demo",
+                    link: "/product/smart-plan#request-demo"
                 },
 
                 {

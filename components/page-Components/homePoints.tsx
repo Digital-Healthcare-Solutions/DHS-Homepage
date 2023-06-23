@@ -2,6 +2,7 @@ import { Container, ThemeIcon } from "@mantine/core"
 import { AiOutlineCloudUpload } from "react-icons/ai"
 import { RxCircleBackslash } from "react-icons/rx"
 import { BiCheckShield } from "react-icons/bi"
+import { BsCurrencyDollar } from "react-icons/bs"
 
 const points = [
     {
@@ -10,18 +11,17 @@ const points = [
         description:
             "Our web app is cloud based and can be accessed from anywhere. No need to download any annoying installers, just log in and you're ready to go."
     },
-
     {
         icon: BiCheckShield,
         title: "Secure by default",
         description:
-            "We utilize encryption algorithms in everything we do to ensure that your patient's data is always safe and secure. We have a HIPAA compliant database, server, and hosting provider and require 2FA everytime for all of our users."
+            "All data is encypted in transit and at rest to ensure that your patient's data is always safe and secure. We have a HIPAA compliant database and server and require 2FA everytime for all of our users."
     },
     {
-        icon: RxCircleBackslash,
-        title: "No limits",
+        icon: BsCurrencyDollar,
+        title: "Only pay for what you use",
         description:
-            "We don't limit the number of patients you can bill CCMs for, the number of calls you can make, or the amount of data that flows through our system. Pay one monthly fee and you're good to go."
+            "If you're a solo practitioner, you shouldn't have to pay the same as a large practice. We offer usage based pricing so you only pay for what you use."
     }
 ]
 

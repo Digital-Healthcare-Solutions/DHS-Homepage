@@ -35,7 +35,7 @@ const carePlans = [
     "Depression and Anxiety",
     "Migraines",
     "Parkinson's disease",
-    "General Care Plan (CHF, Diabetes, HTN, etc.)"
+    "General Care Plan (CHF, Diabetes, HTN, +12 more)"
 ]
 
 const features = [
@@ -68,27 +68,43 @@ const features = [
 const howItWorks = [
     {
         number: 1,
-        description: "Sign into our web app."
+        description:
+            "Create a new patient or an existing patient in our web app."
     },
     {
         number: 2,
         description:
-            "Head over to the SmartPlan tab to get started. You can create a new patient or retest an existing one."
+            "Select the care plan that best fits the patient's needs. You can choose from a variety of care plans, including Annual Wellness Visit, Dementia / Alzheimer's, Depression and Anxiety, Migraines, Parkinson's disease, and General Care Plan (CHF, Diabetes, HTN, +12 more)."
     },
     {
         number: 3,
         description:
-            "The Care Plans prompt the clinician through various sections including disease specific quetionaires and tests, mental health evaluations, medication review with contraindications, safety assessments, and lifestyle modifications with the patient"
+            "Follow the prompts to enter the patient's medical history, medications, and other relevant information."
     },
     {
         number: 4,
         description:
-            "Once finished, the care plans prepare a clinical copy for physicians and a customized SmartPlan for the patients and care givers to take home with them. You can print or email the care plans to the patient."
+            "Our software will walk your staff through the questions to ask the patient during the care management session. It will dynamically generate the questions based on the patient's responses to previously asked questions."
     },
     {
         number: 5,
         description:
-            "You're done! The software will automatically alert you when the patient is due for a retest."
+            "All questions asked during the care management session are based on the latest clinical guidelines and evidence based practices for each condition."
+    },
+    {
+        number: 6,
+        description:
+            "When the care plan session is complete, the software will generate a professional report to go into the patients record and a care plan summary that can be shared with the patient."
+    },
+    {
+        number: 7,
+        description:
+            "The report includes a list of recommended actions for each condition, along with the patient's responses to the questions asked during the care management session."
+    },
+    {
+        number: 8,
+        description:
+            "The care plan summary includes a list of recommended actions for the patient to take, such as, lifestyle changes, medications, custom diets, and more."
     }
 ]
 
@@ -138,7 +154,8 @@ const SmartPlan = () => {
         if (res.ok) {
             showNotification({
                 title: "Success",
-                message: "You have been added to our launch list",
+                message:
+                    "Thanks for your interest! A representative will be in touch soon.",
                 color: "green",
                 autoClose: 5000
             })
@@ -193,22 +210,6 @@ const SmartPlan = () => {
                             but the benefits of providing better patient care
                             and increased revenue make it worth considering.
                         </h3>
-                        {/* <h3>
-                            Chronic care management in elderly patients is a
-                            daunting task for any clinic. Most elderly patients
-                            have more than one chronic disease that are managed
-                            by different specialists. These patients have to
-                            keep up with appointments, medications, self care
-                            and now they also have to ensure that their
-                            neurologist knows what the cardiologist changed
-                            about their regimens. In many of these patients, the
-                            diseases can overwhelm them, leading to a disruption
-                            in communication. This can cause extra fees for
-                            double testing, overmedication, adverse side effects
-                            of drugs, and several other negative events, all
-                            because each of the doctors are unaware of what the
-                            other is doing to best help the patient.
-                        </h3> */}
                     </div>
                 </div>
                 <div className="flex flex-col lg:flex-row justify-between gap-8 py-20 items-center">
@@ -216,29 +217,7 @@ const SmartPlan = () => {
                         <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-2xl pb-2">
                             Our Solution :
                         </h2>
-                        {/* <h3>
-                            We have made an application to take the
-                            responsibility off of these patients called
-                            SmartPlan. We keep a standardized timely record of
-                            multiple chronic care plans that can assist
-                            immensely in care management across any and all
-                            healthcare facilities. These care plans are as
-                            relaxed as annual visits or as acute as monthly
-                            visits. They cover chronic diseases such as
-                            Alzheimer's, Parkinson's, Migraines and general
-                            wellness. Every time the patient comes to a visit,
-                            the past visit information is available to compare
-                            for changes in medications, ability to maintain
-                            independence, mental and emotional wellness, and
-                            many more important categories of care. The patients
-                            no longer have to shoulder the weight of managing
-                            their care between facilities since the care plans
-                            prompt the clinic or hospital staff to ask the most
-                            up to date evidence-based questions at all visits.
-                            If a patient's health begins to decline it is often
-                            caught earlier than the patient can become
-                            symptomatic
-                        </h3> */}
+
                         <h3>
                             At our company, we understand the challenges that
                             come with implementing chronic care management into
@@ -284,8 +263,12 @@ const SmartPlan = () => {
                                 >
                                     <ButtonPrimary
                                         type="button"
-                                        className={""}
-                                        onClick={console.log("")}
+                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
+                                        onClick={() =>
+                                            window.open(
+                                                "https://app.digitalhealthcaresolutions.io/login"
+                                            )
+                                        }
                                     >
                                         Get Started
                                     </ButtonPrimary>
@@ -399,7 +382,7 @@ const SmartPlan = () => {
                     </Link>
                 </div>
                 <form
-                    id="launch-list"
+                    id="request-demo"
                     className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl px-0 py-8"
                     onSubmit={formik.handleSubmit}
                 >
@@ -415,7 +398,7 @@ const SmartPlan = () => {
                             Interested ?
                         </span>{" "}
                         <div className="flex text-xl justify-center items-center pt-3 text-white">
-                            Get notified when we launch{" "}
+                            Request a Demo
                             <BsArrowDown className="ml-2 block lg:hidden" />
                             <BsArrowRight className="ml-2 hidden lg:block" />
                         </div>
@@ -474,7 +457,7 @@ const SmartPlan = () => {
                                 onClick={() => console.log("clicked")}
                                 className=""
                             >
-                                Notify Me
+                                Submit
                             </ButtonPrimary>
                         </div>
                     </div>
