@@ -3,6 +3,7 @@ import Link from "next/link"
 import React from "react"
 import ProductCarousel from "../../components/mantine-Components/productCarousels"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
+import Image from "next/image"
 
 const Features = () => {
     return (
@@ -14,41 +15,29 @@ const Features = () => {
                 <main className="my-10 text-lg tracking-wide">
                     <section id="1" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
-                            Care Plans (SmartPlan)
-                            <Divider className="mt-2" />
+                            Clinic-Connect <Divider className="mt-2" />
                         </h2>
                         <p>
-                            Each care plan is designed to be a comprehensive
-                            test for a specific condition. The care plan
-                            includes a review of the patient&apos;s medical
-                            history and current medications, a review of the
-                            patient&apos;s current symptoms, a mental health
-                            screening, a review of the patient&apos;s current
-                            diet, and a review of some environmental factors
-                            that may be contributing to the patient&apos;s
-                            condition. The care plan also gives you a
-                            recommended follow up time for the patient.
+                            Clinic-Connect is a peer to peer messaging platform
+                            for healthcare professionals. It allows you to send
+                            messages and referrals to other healthcare
+                            professionals in realtime.
                         </p>
-                        <br />
+                        <div className="w-full">
+                            <Image
+                                src="/clinic-connect-home.jpeg"
+                                alt="clinic-connect"
+                                className="object-cover rounded-xl shadow-lg"
+                                width={1000}
+                                height={500}
+                            />
+                            <p className="flex justify-end text-xs pt-1">
+                                Clinic-Connect home page
+                            </p>
+                        </div>
                         <p>
-                            The goal of the care plan is to provide a roadmap
-                            for the patient's care team to follow, with clear
-                            steps and goals to help the patient achieve optimal
-                            health outcomes. Regular monitoring and adjustment
-                            of the care plan may be necessary to ensure that the
-                            patient's needs are being met and that the treatment
-                            approach remains effective over time.
-                        </p>
-                        <br />
-                        <p>
-                            Our software will automatically generate a concise
-                            report for you as well as a detailed report for you
-                            to give your patient before they leave. The report
-                            will include a summary of the patient's condition, a
-                            list of all questionaires performed and scores, a
-                            list of recommended supplements, diet, lifestyle
-                            changes, and 3 actionable, measurable, time based
-                            goals for the patient to work on.
+                            You can click on any of the chat rooms to enter the
+                            chat room and start sending messages.
                         </p>
                     </section>
                     <section id="2" className="py-5">
@@ -107,6 +96,45 @@ const Features = () => {
                     </section>
                     <section id="3" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                            Chronic care management (SmartPlan)
+                            <Divider className="mt-2" />
+                        </h2>
+                        <p>
+                            Each care plan is designed to be a comprehensive
+                            test for a specific condition. The care plan
+                            includes a review of the patient&apos;s medical
+                            history and current medications, a review of the
+                            patient&apos;s current symptoms, a mental health
+                            screening, a review of the patient&apos;s current
+                            diet, and a review of some environmental factors
+                            that may be contributing to the patient&apos;s
+                            condition. The care plan also gives you a
+                            recommended follow up time for the patient.
+                        </p>
+                        <br />
+                        <p>
+                            The goal of the care plan is to provide a roadmap
+                            for the patient's care team to follow, with clear
+                            steps and goals to help the patient achieve optimal
+                            health outcomes. Regular monitoring and adjustment
+                            of the care plan may be necessary to ensure that the
+                            patient's needs are being met and that the treatment
+                            approach remains effective over time.
+                        </p>
+                        <br />
+                        <p>
+                            Our software will automatically generate a concise
+                            report for you as well as a detailed report for you
+                            to give your patient before they leave. The report
+                            will include a summary of the patient's condition, a
+                            list of all questionaires performed and scores, a
+                            list of recommended supplements, diet, lifestyle
+                            changes, and 3 actionable, measurable, time based
+                            goals for the patient to work on.
+                        </p>
+                    </section>
+                    <section id="4" className="py-5">
+                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
                             Dictation (SmartVoice) <Divider className="mt-2" />
                         </h2>
                         <p>
@@ -135,8 +163,22 @@ const Features = () => {
                                 </ButtonPrimary>
                             </Link>
                         </div>
+
+                        {/* <div className="flex flex-col items-center justify-center py-8">
+                            <h2 className="pb-5">
+                                <Text size="xl" weight={700}>
+                                    Watch Demo
+                                </Text>
+                            </h2>
+                            <iframe
+                                allow="autoplay;"
+                                allowFullScreen
+                                src="https://clipchamp.com/watch/L5kmptIntkY/embed"
+                                className="w-full h-48 md:h-64 lg:h-96"
+                            ></iframe>
+                        </div> */}
                     </section>
-                    <section id="4" className="py-5">
+                    <section id="5" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
                             Paperless Registration (SmartForm)
                             <Divider className="mt-2" />
@@ -154,21 +196,8 @@ const Features = () => {
                             the information in your dashboard and download the
                             information as a PDF or print it out.
                         </p>
-                        {/* <div className="flex flex-col items-center justify-center py-8">
-                            <h2 className="pb-5">
-                                <Text size="xl" weight={700}>
-                                    Watch Demo
-                                </Text>
-                            </h2>
-                            <iframe
-                                allow="autoplay;"
-                                allowFullScreen
-                                src="https://clipchamp.com/watch/L5kmptIntkY/embed"
-                                className="w-full h-48 md:h-64 lg:h-96"
-                            ></iframe>
-                        </div> */}
                     </section>
-                    <section id="5" className="py-5">
+                    <section id="6" className="py-5">
                         <h2 className="text-center text-2xl lg:text-3xl pb-2">
                             Security and Compliance <Divider className="mt-2" />
                         </h2>
@@ -199,22 +228,6 @@ const Features = () => {
                             </a>
                         </p>
                     </section>
-                    {/* <section id="6" className="py-5">
-                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
-                            Solutions for a clinic of any size
-                            <Divider className="mt-2" />
-                        </h2>
-                        <p>
-                            We have a solution for any size clinic. Whether you
-                            are a solo practitioner or a large clinic, we have a
-                            plan that will work for you. We have a free plan
-                            that will allow you to get started with a few basic
-                            features on our platform. Our paid plans allow
-                            access to the more advanced features and are priced
-                            based on the number of users you have. We also offer
-                            custom plans for clinics that have unique needs.
-                        </p>
-                    </section> */}
                 </main>
             </Container>
         </div>

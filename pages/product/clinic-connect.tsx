@@ -21,58 +21,65 @@ import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import { BsArrowRight, BsArrowDown } from "react-icons/bs"
 import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
-import { MdOutlinePersonPin } from "react-icons/md"
+import {
+    MdLockOutline,
+    MdOutlinePersonPin,
+    MdOutlineTrendingUp
+} from "react-icons/md"
 import { GiBattery100 } from "react-icons/gi"
 import { AiOutlineArrowUp } from "react-icons/ai"
 import { BiPhoneCall } from "react-icons/bi"
 import { RxCircleBackslash } from "react-icons/rx"
+import { FaRegClock, FaRegComments } from "react-icons/fa"
+import { FiTrendingUp } from "react-icons/fi"
+import { IoTrendingUpOutline, IoTrendingUp } from "react-icons/io5"
 
 const features = [
     {
-        icon: BiPhoneCall,
-        title: "Stop faxing your referrals",
+        icon: MdOutlineTrendingUp,
+        title: "Enhanced Efficiency",
         description:
-            "Ditch the fax machine and start sending referrals in seconds. With Clinic-Connect, you can streamline your commuincation process and expierence the way medical referrals should always have been."
+            "Clinic-Connect eliminates the reliance on traditional fax machines, enabling healthcare providers to streamline their referral process. Say goodbye to the hassle of paper-based systems, lost faxes, and manual data entry. With Clinic-Connect's digital messaging system, referrals can be sent and received instantly."
     },
     {
-        icon: AiOutlineArrowUp,
-        title: "Cut down on wasted time",
+        icon: FaRegComments,
+        title: "Improved Communication",
         description:
-            "With Clinic-Connect, you can send and receive messages in seconds. No more wondering if your referral went through. No more calling to see if your referral was received. No more unnecessary busy work."
+            "Clinic-Connect fosters seamless communication and collaboration among healthcare providers. By providing a secure, peer-to-peer messaging platform, it enables real-time discussions, exchange of patient information, and the ability to seek clarifications or provide updates."
     },
     {
-        icon: RxCircleBackslash,
-        title: "No more lost referrals",
+        icon: MdLockOutline,
+        title: "Secure messaging",
         description:
-            "Choose IntelliCall as your primary office phone number. Save an average of 50% on your phone bill. Respond to patients anywhere, anytime. No office constraints or sharing your personal phone number."
+            "Clinic-Connect prioritizes security and compliance by utilizing  encryption protocols and adhering to industry standards. Unlike fax machines, which can be prone to privacy breaches and unauthorized access, Clinic-Connect ensures secure transmission of sensitive patient information, maintaining confidentiality and security."
     },
     {
-        icon: MdOutlinePersonPin,
-        title: "Personalized Patient Experience:",
+        icon: FaRegClock,
+        title: "Time and Cost Savings",
         description:
-            "Our solution allows you to communicate with patients in a way that feels more personal and engaging. By using IntelliCall, you can enhance your patient's experience and show them that you care about their needs."
+            "Clinic-Connect offers significant time and cost savings compared to traditional fax-based referral systems. Eliminating the need for manual faxing, printing, and filing saves valuable staff hours. Additionally, Clinic-Connect eliminates paper and ink expenses associated with faxing, reducing operational costs and contributing to a more sustainable healthcare environment."
     }
 ]
 
 const howItWorks = [
     {
         number: 1,
-        description: "Sign up for our platform"
+        description: "Sign up for our platform and create an account."
     },
     {
         number: 2,
         description:
-            "Visit the Clinic-connect page. You will be redirected to the settings page to configure your settings and register your clinic for Clinic-Connect."
+            "Visit the Clinic-connect page. You will be redirected to the settings page to configure your initial settings and register your clinic for Clinic-Connect."
     },
     {
         number: 3,
         description:
-            "Once you have configured your initial settings, a internal chatroom will automatically be created for your clinic. You can use this as a way to communicate with your staff."
+            "Once you have configured your settings, an internal chatroom will automatically be created for your clinic. You can use this as a way to communicate with your staff."
     },
     {
         number: 4,
         description:
-            "Head back to the Clinic-Connect page. You can now start sending connection requests with other clinics. Once they accept your request, you will be able to communicate with them through the chatroom."
+            "Head back to the Clinic-Connect page. You can now start sending connection requests with other clinics. Once they accept your request, you will be able to communicate with them instantly"
     },
     {
         number: 5,
@@ -166,14 +173,99 @@ const ClinicConnect = () => {
                         alt="Clinic Connect logo"
                     />
                 </h1>
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+                <section className="flex flex-col lg:flex-row items-start gap-20">
+                    <div className="flex flex-col items-center justify-between gap-8">
+                        <div className="text-lg max-w-lg">
+                            <h2 className="text-blue-500 underline underline-offset-4 font-semibold mb-3">
+                                The Problem :
+                            </h2>
+                            <ul className="list-disc list-inside">
+                                <li className="pb-2">
+                                    Fax machines are slow, unreliable, and error
+                                    prone
+                                </li>
+                                <li className="pb-2">
+                                    Fax machines are expensive to use and
+                                    maintain
+                                </li>
+                                <li className="pb-2">
+                                    High paper and ink usage are costly to the
+                                    environment
+                                </li>
+
+                                <li className="pb-2">
+                                    Hours of staff time are wasted on sorting
+                                    and filing faxes
+                                </li>
+
+                                {/* <li className="pb-2">
+                                    Faxes are often sent to the wrong number
+                                </li> */}
+                            </ul>
+                        </div>{" "}
+                        <Image
+                            className="rounded-xl shadow-lg dark:shadow-gray-700"
+                            src="/faxing-sucks.jpeg"
+                            width={300}
+                            height={300}
+                            alt="Fax machine"
+                            priority={true}
+                        />
+                    </div>
+                    <div className="flex flex-col items-center justify-between gap-8 ">
+                        <div className="text-lg max-w-lg">
+                            <h2 className="text-blue-500 underline underline-offset-4 font-semibold mb-3">
+                                Our Solution :
+                            </h2>
+                            <ul className="list-disc list-inside">
+                                <li className="pb-2">
+                                    Send and receive referrals to any provider
+                                    instantly
+                                </li>{" "}
+                                <li className="pb-2">
+                                    Save hundreds of dollars on paper and ink
+                                </li>
+                                <li className="pb-2">
+                                    Paperless referrals are better for the
+                                    environment
+                                </li>
+                                <li className="pb-2">
+                                    All referrals are auto sorted and easily
+                                    accessible
+                                </li>
+                                {/* <li className="pb-2">
+                                    Be confident that your referrals are sent to
+                                    the right clinic
+                                </li> */}
+                            </ul>
+                        </div>{" "}
+                        <Image
+                            className="rounded-xl shadow-lg dark:shadow-gray-700"
+                            src="/cloud-computing.jpg"
+                            width={360}
+                            height={360}
+                            alt="Cloud computing"
+                            priority={true}
+                        />
+                    </div>
+                </section>
+                {/* <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
                     <div className="text-lg">
                         <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
                             The Problem :
                         </h2>
-                        <h3>
-                            {/* this is all about faxes */}
-                            Old fashioned ways of communicating between
+                        <div className="grid-cols-1 md:grid-cols-2 grid gap-4">
+                            <ul className="list-disc list-inside">
+                                <li className="pb-2">
+                                    Fax machines are slow, unreliable, and error
+                                    prone
+                                </li>
+                                <li className="pb-2">
+                                    High paper and ink usage are costly to the
+                                    clinic and the environment
+                                </li>
+
+                                 Old fashioned ways of communicating between
                             healthcare providers get in the way of providing the
                             best care for patients. Fax machines can be slow,
                             unreliable, and error prone. Medical practices spend
@@ -183,9 +275,21 @@ const ClinicConnect = () => {
                             information. Many times, faxes are sent to the wrong
                             number or the fax machine is out of paper and the
                             fax is never received. This can lead to serious
-                            consequences for patients and providers.
-                        </h3>
-                    </div>{" "}
+                            consequences for patients and providers. 
+                            </ul>
+                            <ul className="list-disc list-inside">
+                                <li className="pb-2">
+                                    Hours of staff time are wasted on sorting
+                                    and filing faxes
+                                </li>
+
+                                <li className="pb-2">
+                                    Faxes are often sent to the wrong number
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+               
                     <Image
                         className="rounded-xl shadow-lg dark:shadow-gray-700"
                         src="/faxing-sucks.jpeg"
@@ -194,8 +298,8 @@ const ClinicConnect = () => {
                         alt="Fax machine"
                         priority={true}
                     />
-                </div>
-                <div className="flex flex-col lg:flex-row justify-between gap-8 py-20 items-center">
+                </div>  */}
+                {/* <div className="flex flex-col lg:flex-row justify-between gap-8 pt-20 items-center">
                     {" "}
                     <Image
                         className="rounded-xl shadow-lg dark:shadow-gray-700"
@@ -220,50 +324,49 @@ const ClinicConnect = () => {
                             your patient's record as a PDF or other file type,
                             and the other clinic will receive it instantly. You
                             can even discuss the patient's case with the other
-                            clinic in real time using our chat feature,
-                            eliminating the need for phone tag. Clinic-Connect
-                            is HIPAA compliant and secure, so you can rest
-                            assured that your patient's information is safe.
-                            Sign up today for free and start communicating with
-                            other healthcare providers in your area.
+                            clinic in real time in the chatroom, eliminating the
+                            need for phone tag. Clinic-Connect is HIPAA
+                            compliant and secure, so you can rest assured that
+                            your patient's information is safe. Sign up today
+                            for free and start communicating with other
+                            healthcare providers in your area.
                         </h3>
                     </div>{" "}
-                </div>
-                <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 ">
-                    How it works :
-                </h2>
-                {howItWorks.map((item) => (
-                    <div className="py-6">
-                        <div className="flex items-center">
-                            <ThemeIcon
-                                size={44}
-                                radius="md"
-                                variant="gradient"
-                                gradient={{
-                                    deg: 50,
-                                    from: "rgb(59 130 246)",
-                                    to: "rgb(59 130 246)"
-                                }}
-                            >
-                                {item.number}
-                            </ThemeIcon>
-                            <p className="ml-3">{item.description}</p>
-                        </div>
-                    </div>
-                ))}{" "}
-                <div className="flex justify-center mt-8">
-                    <Link href="/product/demos">
-                        <ButtonSecondary
-                            onClick={() => console.log(``)}
-                            className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 "
-                        >
-                            See Demo
-                        </ButtonSecondary>
-                    </Link>
-                </div>
+                </div> */}
                 <div className="py-10 mt-20 ">
                     <Container size="lg">
                         <Grid gutter={80}>
+                            <Col span={12} md={5}>
+                                <Title order={2} className="text-3xl">
+                                    Clinic-Connect makes communication easy
+                                    again
+                                </Title>
+                                <Text className="py-6">
+                                    Sign up today for free experience the
+                                    benefits of Clinic-Connect for yourself.
+                                </Text>
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href="https://app.digitalhealthcaresolutions.io/login"
+                                >
+                                    <ButtonPrimary
+                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
+                                        onClick={console.log("")}
+                                    >
+                                        Get Started
+                                    </ButtonPrimary>
+                                </a>
+                                <div className="hidden lg:block pt-20">
+                                    {/* <Image
+                                        className="rounded-xl dark:brightness-150 "
+                                        src="/IntelliCallLogo.png"
+                                        alt="IntelliCall"
+                                        width={300}
+                                        height={300}
+                                    /> */}
+                                </div>
+                            </Col>
                             <Col span={12} md={7}>
                                 <SimpleGrid
                                     cols={2}
@@ -297,39 +400,40 @@ const ClinicConnect = () => {
                                     ))}
                                 </SimpleGrid>
                             </Col>
-                            <Col span={12} md={5}>
-                                <Title order={2} className="text-3xl">
-                                    Clinic-Connect makes communication easy
-                                    again
-                                </Title>
-                                <Text className="py-6">
-                                    Sign up today for free experience the
-                                    benefits of Clinic-Connect for yourself.
-                                </Text>
-                                <a
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href="https://app.digitalhealthcaresolutions.io/login"
-                                >
-                                    <ButtonPrimary
-                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
-                                        onClick={console.log("")}
-                                    >
-                                        Get Started
-                                    </ButtonPrimary>
-                                </a>
-                                <div className="hidden lg:block pt-20">
-                                    {/* <Image
-                                        className="rounded-xl dark:brightness-150 "
-                                        src="/IntelliCallLogo.png"
-                                        alt="IntelliCall"
-                                        width={300}
-                                        height={300}
-                                    /> */}
-                                </div>
-                            </Col>
                         </Grid>
                     </Container>
+                </div>
+                <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 ">
+                    How it works :
+                </h2>
+                {howItWorks.map((item) => (
+                    <div className="py-6">
+                        <div className="flex items-center">
+                            <ThemeIcon
+                                size={44}
+                                radius="md"
+                                variant="gradient"
+                                gradient={{
+                                    deg: 50,
+                                    from: "rgb(59 130 246)",
+                                    to: "rgb(59 130 246)"
+                                }}
+                            >
+                                {item.number}
+                            </ThemeIcon>
+                            <p className="ml-3">{item.description}</p>
+                        </div>
+                    </div>
+                ))}{" "}
+                <div className="flex justify-center mt-8">
+                    <Link href="/product/demos">
+                        <ButtonSecondary
+                            onClick={() => console.log(``)}
+                            className=" bg-neutral-100 dark:bg-blue-500 ring-1 dark:ring-blue-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-blue-600 "
+                        >
+                            Read more
+                        </ButtonSecondary>
+                    </Link>
                 </div>
                 <form
                     className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl  py-8"
@@ -417,7 +521,7 @@ const ClinicConnect = () => {
                         our{" "}
                         <Link
                             href="/blog"
-                            className="text-blue-500 hover:underline"
+                            className="text-blue-500 hover:underline underline-offset-4"
                         >
                             {" "}
                             blog

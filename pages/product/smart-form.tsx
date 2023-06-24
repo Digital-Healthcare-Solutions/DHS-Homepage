@@ -394,9 +394,9 @@ const SmartForm = () => {
                     <Link href="/product/demos">
                         <ButtonSecondary
                             onClick={() => console.log(``)}
-                            className=" bg-neutral-100 dark:bg-neutral-700 ring-1 dark:ring-gray-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 "
+                            className=" bg-neutral-100 dark:bg-blue-500 ring-1 dark:ring-blue-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-blue-600 "
                         >
-                            See Demo
+                            Read more
                         </ButtonSecondary>
                     </Link>
                 </div>
@@ -480,7 +480,7 @@ const SmartForm = () => {
                         </div>
                     </form>
                 </div>
-                <h2 className="py-6">
+                {/* <h2 className="py-6">
                     <div className="text-center text-xl">
                         You can always read more about Smartplan on one of our{" "}
                         <Link
@@ -492,7 +492,7 @@ const SmartForm = () => {
                         </Link>{" "}
                         posts.
                     </div>
-                </h2>
+                </h2> */}
             </Container>
         </div>
     )

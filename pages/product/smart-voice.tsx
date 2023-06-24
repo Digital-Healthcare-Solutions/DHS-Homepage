@@ -235,7 +235,6 @@ const SmartVoice = () => {
                                 existing dictation tools can be complicated and
                                 expensive. As a medical professional, you need a
                                 solution that's both efficient and affordable.
-                                That's where SmartVoice dictation comes in.
                             </h3>
                         </div>{" "}
                         <Image
@@ -258,8 +257,7 @@ const SmartVoice = () => {
                                 text in real time, eliminating the need for
                                 manual note-taking or inelligible notes. With
                                 SmartVoice, you can focus on what really
-                                matters: providing quality patient care. The
-                                best part is, it come free with any plan!
+                                matters: providing quality patient care.
                             </h3>
                         </div>{" "}
                         <Image

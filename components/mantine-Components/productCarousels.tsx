@@ -192,9 +192,7 @@ const ProductCarousel = () => {
                     className="text-black absolute bottom-5 left-5"
                 >
                     <ButtonSecondary
-                        className="bg-white text-black
-               
-            "
+                        className="bg-white text-black hover:bg-neutral-200"
                         onClick={() => {
                             console.log("")
                         }}
