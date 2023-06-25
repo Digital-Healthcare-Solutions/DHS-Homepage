@@ -14,16 +14,27 @@ const Features = () => {
             <Container size="md">
                 <main className="my-10 text-lg tracking-wide">
                     <section id="1" className="py-5">
-                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                        <h2
+                            className="text-center sticky top-14 md:top-20 bg-white dark:bg-neutral-900
+                         text-2xl lg:text-3xl pb-2"
+                        >
                             Clinic-Connect <Divider className="mt-2" />
                         </h2>
-                        <p>
+                        <h1 className="text-xl pb-6 text-center">
                             Clinic-Connect is a peer to peer messaging platform
                             for healthcare professionals. It allows you to send
                             messages and referrals to other healthcare
                             professionals in realtime.
+                        </h1>
+                        <p className="pb-1 dark:text-gray-200">
+                            When you first log in, you will see a list of chat
+                            rooms that you are a part of and any new messages
+                            that you have received. If you have any new connect
+                            requests, you will see them here as well. You can
+                            click on any of the chat rooms to enter the chat
+                            room and start sending messages.
                         </p>
-                        <div className="w-full">
+                        <div className="w-full pb-5">
                             <Image
                                 src="/clinic-connect-home.jpeg"
                                 alt="clinic-connect"
@@ -35,14 +46,135 @@ const Features = () => {
                                 Clinic-Connect home page
                             </p>
                         </div>
-                        <p>
-                            You can click on any of the chat rooms to enter the
-                            chat room and start sending messages.
+                        <p className="pb-1 dark:text-gray-200">
+                            Once inside the chat room, you can send a message
+                            which will be received by all members of the chat
+                            room instantly. Attach a file to your message by
+                            clicking the paperclip icon. Any files that are
+                            attached to the chat room will be available for
+                            download by all members of the chat room.
                         </p>
+                        <div className="w-full pb-5">
+                            <Image
+                                src="/demo-clinic-connect.png"
+                                alt="clinic-connect-demo"
+                                className="object-cover rounded-xl shadow-lg"
+                                width={1000}
+                                height={500}
+                            />
+                            <p className="flex justify-end text-xs pt-1 dark:text-gray-300 text-gray-600">
+                                Inside the clinic-connect chatroom
+                            </p>
+                        </div>
+                        <p className="pb-1 dark:text-gray-200">
+                            To create a new connection with another clinic,
+                            click on the pen icon in the upper left corner of
+                            the screen.
+                        </p>
+                        <div className="w-full pb-5">
+                            <Image
+                                src="/create-request.png"
+                                alt="clinic-connect-demo"
+                                className="object-cover rounded-xl shadow-lg"
+                                width={1000}
+                                height={500}
+                            />
+                            <p className="flex justify-end text-xs pt-1 dark:text-gray-300 text-gray-600">
+                                Creating a new clinic connection
+                            </p>
+                        </div>
+
+                        <p className="pb-1 dark:text-gray-200">
+                            You can search for clinics by business name, city,
+                            state, zip, provider name, or provider specialty.
+                            Once you find the clinic you are looking for, click
+                            on the &quot;Send Connection Request&quot; button to
+                            send the request. The other clinic will receive your
+                            request and can choose to accept or deny it. If they
+                            accept, you will then be able to communicate with
+                            them in realtime.
+                        </p>
+                        <div className="w-full pb-5">
+                            <Image
+                                src="/clinic-connection-demo.png"
+                                alt="clinic-connect-demo"
+                                className="object-cover rounded-xl shadow-lg"
+                                width={1000}
+                                height={500}
+                            />
+                            <p className="flex justify-end text-xs pt-1">
+                                Creating a new clinic connection
+                            </p>
+                        </div>
+                        <p className="pb-1 dark:text-gray-300">
+                            You can also create custom chatrooms with members of
+                            other clinics that your clinic is connected with. To
+                            create a new direct connection, click on the pen
+                            icon in the upper right corner of the screen.
+                        </p>
+                        <div className="w-full pb-5">
+                            <Image
+                                src="/createDM.png"
+                                alt="clinic-connect-demo"
+                                className="object-cover rounded-xl shadow-lg"
+                                width={1000}
+                                height={500}
+                            />
+                            <p className="flex justify-end text-xs pt-1">
+                                Creating a new direct connection
+                            </p>
+                        </div>
+                        <p className="pb-1 dark:text-gray-300">
+                            You can search for any member of any clinic that
+                            your clinic is connected with. Once you find the
+                            member you are looking for, click on them to add
+                            them to the chatroom. You can add as many members as
+                            you like. You can also give your new chatroom a
+                            name. Once you are done, click the
+                            &quot;Create&quot; button to create the chatroom.
+                            You will then be able to send messages to all
+                            members of the chatroom.
+                        </p>
+                        <div className="w-full pb-5">
+                            <Image
+                                src="/direct-connection-demo-create.jpeg"
+                                alt="clinic-connect-demo"
+                                className="object-cover rounded-xl shadow-lg"
+                                width={1000}
+                                height={500}
+                            />
+                            <p className="flex justify-end text-xs pt-1">
+                                Creating a new direct connection
+                            </p>
+                        </div>
+
+                        <p className="pb-1 dark:text-gray-300">
+                            The new chatroom will only be visible to the members
+                            of the chatroom. If you want to add more members to
+                            the chatroom, click on the &quot;Add Members&quot;
+                            button. If you want to leave the chatroom, click on
+                            the &quot;Leave Chatroom&quot; button. You can
+                            create as many direct connections as you need.
+                        </p>
+                        <div className="w-full pb-5">
+                            <Image
+                                src="/direct-connection-demo.png"
+                                alt="clinic-connect-demo"
+                                className="object-cover rounded-xl shadow-lg"
+                                width={1000}
+                                height={500}
+                            />
+                            <p className="flex justify-end text-xs pt-1">
+                                Inside the direct-connection chatroom
+                            </p>
+                        </div>
                     </section>
                     <section id="2" className="py-5">
-                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
-                            AI powered call center (IntelliCall){" "}
+                        <h2
+                            className="text-center sticky top-14 md:top-20 bg-white dark:bg-neutral-900
+                         text-2xl lg:text-3xl pb-2"
+                        >
+                            IntelliCall
                             <Divider className="mt-2" />
                         </h2>
                         <p>
@@ -95,8 +227,8 @@ const Features = () => {
                         </div> */}
                     </section>
                     <section id="3" className="py-5">
-                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
-                            Chronic care management (SmartPlan)
+                        <h2 className="text-center sticky top-14 md:top-20 bg-white dark:bg-neutral-900 text-2xl lg:text-3xl pb-2">
+                            SmartPlan
                             <Divider className="mt-2" />
                         </h2>
                         <p>
@@ -134,8 +266,8 @@ const Features = () => {
                         </p>
                     </section>
                     <section id="4" className="py-5">
-                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
-                            Dictation (SmartVoice) <Divider className="mt-2" />
+                        <h2 className="text-center sticky top-14 md:top-20 bg-white dark:bg-neutral-900 text-2xl lg:text-3xl pb-2">
+                            SmartVoice <Divider className="mt-2" />
                         </h2>
                         <p>
                             Our AI powered dictation tool will transcribe your
@@ -179,8 +311,8 @@ const Features = () => {
                         </div> */}
                     </section>
                     <section id="5" className="py-5">
-                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
-                            Paperless Registration (SmartForm)
+                        <h2 className="text-center sticky top-14 md:top-20 bg-white dark:bg-neutral-900 text-2xl lg:text-3xl pb-2">
+                            SmartForm
                             <Divider className="mt-2" />
                         </h2>
                         <p>
@@ -198,7 +330,7 @@ const Features = () => {
                         </p>
                     </section>
                     <section id="6" className="py-5">
-                        <h2 className="text-center text-2xl lg:text-3xl pb-2">
+                        <h2 className="text-center sticky top-14 md:top-20 bg-white dark:bg-neutral-900 text-2xl lg:text-3xl pb-2">
                             Security and Compliance <Divider className="mt-2" />
                         </h2>
                         <p>

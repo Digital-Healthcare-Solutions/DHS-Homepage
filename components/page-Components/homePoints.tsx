@@ -1,6 +1,5 @@
 import { Container, ThemeIcon } from "@mantine/core"
 import { AiOutlineCloudUpload } from "react-icons/ai"
-import { RxCircleBackslash } from "react-icons/rx"
 import { BiCheckShield } from "react-icons/bi"
 import { BsCurrencyDollar } from "react-icons/bs"
 
