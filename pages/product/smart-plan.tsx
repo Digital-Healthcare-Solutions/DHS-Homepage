@@ -28,6 +28,7 @@ import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
 import { FaHandHoldingHeart } from "react-icons/fa"
 import { AiOutlineArrowUp } from "react-icons/ai"
+import Head from "next/head"
 
 const carePlans = [
     "Annual Wellness Visit",
@@ -173,6 +174,25 @@ const SmartPlan = () => {
 
     return (
         <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
+            <Head>
+                <title>Smart Plan | Digital Healthcare Solutions</title>
+                <meta
+                    name="description"
+                    content="Smart Plan is chronic care management software that helps physicians provide better care and earn recurring revenue to patients with chronic conditions."
+                />
+                <meta
+                    name="keywords"
+                    content="smart plan, smartplan, smartplan care, smart plan care, smart plan care management, smart plan care management software, smart plan software, smart plan chronic care management,chronic care management, 
+                    chronic care management software, chronic care management services, chronic care management program, chronic care management companies, chronic care management solutions, chronic care management companies, chronic care management services, chronic care management program, chronic care management solutions, chronic care management companies, chronic care management services, chronic care management program, chronic care management solutions, chronic care management companies, chronic care management services, chronic care management program, chronic care management solutions, chronic care management companies, chronic care management services, chronic care management program, chronic care management solutions, chronic care management companies, chronic care management services, chronic care management program, chronic care management solutions, chronic care management companies, chronic care management services, chronic care management program, chronic care management solutions, CCM, dementia care plans, dementia, alzheimers care pla, alzheimers, CPT, CPT-99483, 99483, 
+                    CPT99483
+                    "
+                />
+                <meta name="author" content="Smart Plan" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+            </Head>
             <Container size="lg">
                 <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
                     <Image

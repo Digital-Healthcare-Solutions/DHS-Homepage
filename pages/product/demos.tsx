@@ -4,10 +4,29 @@ import React from "react"
 import ProductCarousel from "../../components/mantine-Components/productCarousels"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
 import Image from "next/image"
+import Head from "next/head"
 
 const Features = () => {
     return (
         <div className="mt-12">
+            <Head>
+                <title>Product demos | Digital Healthcare Solutions</title>
+                <meta
+                    name="description"
+                    content="Digital Healthcare Solutions is a software company that provides innovative solutions for healthcare professionals. Check out our product demos here."
+                />
+                <link rel="icon" href="/favicon.ico" />
+                <meta name="author" content="Digital Healthcare Solutions" />
+                <meta
+                    name="keywords"
+                    content="Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+            </Head>
+
             <Container size="lg">
                 <ProductCarousel />{" "}
             </Container>

@@ -26,6 +26,7 @@ import { GiBattery100 } from "react-icons/gi"
 import { AiOutlineArrowUp } from "react-icons/ai"
 import { BiPhoneCall } from "react-icons/bi"
 import { RxCircleBackslash } from "react-icons/rx"
+import Head from "next/head"
 
 const features = [
     {
@@ -147,6 +148,34 @@ const IntelliCall = () => {
 
     return (
         <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
+            <Head>
+                <title>
+                    IntelliCall | Digital Healthcare Solutions | Cloud based
+                    medical phone system
+                </title>
+                <meta
+                    name="description"
+                    content="IntelliCall is a secure cloud based phone system for medical professionals that allows you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
+                />
+                <meta
+                    name="keywords"
+                    content="IntelliCall, IntelliCall Digital Healthcare Solutions, IntelliCall Digital Healthcare, IntelliCall Digital Health, IntelliCall Digital Health Solutions, IntelliCall Digital Health Company, IntelliCall Digital Health, Medical phone system, phone, phone system, phone system for doctors, phone system for medical practices, phone system for medical offices, phone system for medical clinics, phone system for medical professionals, phone system for healthcare, phone system for healthcare professionals, phone system for healthcare practices, phone system for healthcare offices, phone system for healthcare clinics, phone system for healthcare companies, phone system for healthcare companies, cloud phone system for medical professionals, cloud phone system for healthcare professionals, cloud phone system for doctors, cloud phone system for medical practices, cloud phone system for medical offices, cloud phone system for medical clinics, cloud phone system for medical companies"
+                />
+                <meta name="author" content="IntelliCall" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <meta
+                    property="og:title"
+                    content="IntelliCall | Digital Healthcare Solutions"
+                />
+                <meta
+                    property="og:description"
+                    content="IntelliCall is a secure cloud based phone system for medical professionals that allows you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
+                />
+                <meta property="og:type" content="website" />
+            </Head>
             <Container size="lg">
                 <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
                     <Image

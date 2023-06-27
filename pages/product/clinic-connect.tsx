@@ -33,6 +33,7 @@ import { RxCircleBackslash } from "react-icons/rx"
 import { FaRegClock, FaRegComments } from "react-icons/fa"
 import { FiTrendingUp } from "react-icons/fi"
 import { IoTrendingUpOutline, IoTrendingUp } from "react-icons/io5"
+import Head from "next/head"
 
 const features = [
     {
@@ -163,6 +164,35 @@ const ClinicConnect = () => {
 
     return (
         <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
+            <Head>
+                <title>
+                    Clinic-Connect | Digital Healthcare Solutions | Digital
+                    alternative to faxing
+                </title>
+
+                <meta
+                    name="description"
+                    content="Clinic Connect is a digital messaging platform that enables healthcare providers to send and receive referrals instantly."
+                />
+                <meta
+                    name="keywords"
+                    content="clinic connect, clinic, connect, digital, messaging, platform, healthcare, providers, send, receive, referrals, instantly, alternative, fax, machine, fax machine, faxing, faxing alternative, secure alternative to faxing"
+                />
+                <meta name="author" content="Clinic Connect" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <meta
+                    property="og:title"
+                    content="Clinic Connect | Digital Healthcare Solutions"
+                />
+                <meta
+                    property="og:description"
+                    content="Clinic Connect is a digital messaging platform that enables healthcare providers to send and receive referrals instantly."
+                />
+                <meta property="og:type" content="website" />
+            </Head>
             <Container size="lg">
                 <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
                     <Image

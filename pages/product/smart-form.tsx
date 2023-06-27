@@ -26,6 +26,7 @@ import { showNotification } from "@mantine/notifications"
 import { MdAccessTime } from "react-icons/md"
 import { GiOnTarget, GiHeartPlus } from "react-icons/gi"
 import { TfiTarget } from "react-icons/tfi"
+import Head from "next/head"
 
 const howItWorks = [
     {
@@ -185,6 +186,28 @@ const SmartForm = () => {
 
     return (
         <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
+            <Head>
+                <title>
+                    SmartForm | Digital Healthcare Solutions | Paperless
+                    Registration
+                </title>
+                <meta
+                    name="description"
+                    content="SmartForm allows your clinic to easily adopt a e-form where patients to fill out their registration online before their appointment. "
+                />
+                <meta
+                    name="keywords"
+                    content="paperless registration, digital healthcare solutions, e form, digital healthcare, smart form, smart paperwork, online medical paperwork, online medical forms, online medical registration"
+                />
+                <meta
+                    name="og:title"
+                    content="SmartForm | Digital Healthcare Solutions | Paperless Registration"
+                />
+                <meta
+                    name="og:description"
+                    content="SmartForm allows your clinic to easily adopt a e-form where patients to fill out their registration online before their appointment. "
+                />
+            </Head>
             <Container size="lg">
                 <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
                     <Image

@@ -101,13 +101,23 @@ export default function Home() {
             transition={{ duration: 0.6 }}
         >
             <Head>
-                <title>Digital Healthcare Solutions - Home</title>
+                <title>Digital Healthcare Solutions | Home</title>
                 <meta
                     name="description"
                     content="
-                Digital Healthcare Solutions is a healthcare software company that provides a cloud-based practice management platform for healthcare professionals.
+                    Level up your practice with our next-generation communication platform for healthcare providers.
                 "
                 />
+                <meta
+                    name="keywords"
+                    content="Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+                />
+                <meta name="author" content="Digital Healthcare Solutions" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <HeroHomePage />
