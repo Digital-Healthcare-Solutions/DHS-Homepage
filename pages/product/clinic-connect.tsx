@@ -363,6 +363,86 @@ const ClinicConnect = () => {
                         </h3>
                     </div>{" "}
                 </div> */}
+                <form
+                    className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl  py-8"
+                    onSubmit={formik.handleSubmit}
+                >
+                    <Title
+                        order={2}
+                        sx={(theme) => ({
+                            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+                            marginTop: "64px"
+                        })}
+                        className=" text-white font-black items-center justify-center flex flex-col h-full"
+                    >
+                        <span className="text-white text-4xl">
+                            Interested ?
+                        </span>{" "}
+                        <div className="flex text-xl justify-center items-center pt-3 text-white">
+                            Request a Demo
+                            <BsArrowDown className="ml-2 block lg:hidden" />
+                            <BsArrowRight className="ml-2 hidden lg:block" />
+                        </div>
+                        <p className="text-lg py-4 text-white">or</p>
+                        <div className="flex justify-center">
+                            <Link href="/#contact">
+                                <ButtonSecondary
+                                    onClick={() => console.log("clicked")}
+                                    className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
+                                >
+                                    Contact Us
+                                </ButtonSecondary>
+                            </Link>
+                        </div>
+                    </Title>
+                    <div className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl">
+                        <TextInput
+                            label="Name"
+                            placeholder="Your name"
+                            mt="md"
+                            name="name"
+                            withAsterisk
+                            value={formik.values.name}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.name && formik.errors.name}
+                        />
+                        <TextInput
+                            label="Email"
+                            placeholder="Your email"
+                            name="email"
+                            mt="md"
+                            withAsterisk
+                            value={formik.values.email}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={formik.touched.email && formik.errors.email}
+                        />{" "}
+                        <TextInput
+                            label="Business Name"
+                            placeholder="Your Business"
+                            name="businessName"
+                            mt="md"
+                            withAsterisk
+                            value={formik.values.businessName}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            error={
+                                formik.touched.businessName &&
+                                formik.errors.businessName
+                            }
+                        />{" "}
+                        <div className="flex justify-center pt-5">
+                            <ButtonPrimary
+                                type="submit"
+                                onClick={() => console.log("clicked")}
+                                className=""
+                            >
+                                Submit
+                            </ButtonPrimary>
+                        </div>
+                    </div>
+                </form>
                 <div className="py-10 mt-20 ">
                     <Container size="lg">
                         <Grid gutter={80}>
@@ -465,87 +545,7 @@ const ClinicConnect = () => {
                         </ButtonSecondary>
                     </Link>
                 </div>
-                <form
-                    className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl  py-8"
-                    onSubmit={formik.handleSubmit}
-                >
-                    <Title
-                        order={2}
-                        sx={(theme) => ({
-                            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-                            marginTop: "64px"
-                        })}
-                        className=" text-white font-black items-center justify-center flex flex-col h-full"
-                    >
-                        <span className="text-white text-4xl">
-                            Interested ?
-                        </span>{" "}
-                        <div className="flex text-xl justify-center items-center pt-3 text-white">
-                            Request a Demo
-                            <BsArrowDown className="ml-2 block lg:hidden" />
-                            <BsArrowRight className="ml-2 hidden lg:block" />
-                        </div>
-                        <p className="text-lg py-4 text-white">or</p>
-                        <div className="flex justify-center">
-                            <Link href="/#contact">
-                                <ButtonSecondary
-                                    onClick={() => console.log("clicked")}
-                                    className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
-                                >
-                                    Contact Us
-                                </ButtonSecondary>
-                            </Link>
-                        </div>
-                    </Title>
-                    <div className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl">
-                        <TextInput
-                            label="Name"
-                            placeholder="Your name"
-                            mt="md"
-                            name="name"
-                            withAsterisk
-                            value={formik.values.name}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={formik.touched.name && formik.errors.name}
-                        />
-                        <TextInput
-                            label="Email"
-                            placeholder="Your email"
-                            name="email"
-                            mt="md"
-                            withAsterisk
-                            value={formik.values.email}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={formik.touched.email && formik.errors.email}
-                        />{" "}
-                        <TextInput
-                            label="Business Name"
-                            placeholder="Your Business"
-                            name="businessName"
-                            mt="md"
-                            withAsterisk
-                            value={formik.values.businessName}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={
-                                formik.touched.businessName &&
-                                formik.errors.businessName
-                            }
-                        />{" "}
-                        <div className="flex justify-center pt-5">
-                            <ButtonPrimary
-                                type="submit"
-                                onClick={() => console.log("clicked")}
-                                className=""
-                            >
-                                Submit
-                            </ButtonPrimary>
-                        </div>
-                    </div>
-                </form>
-                <h2 className="py-6">
+                {/* <h2 className="py-6">
                     <div className="text-center text-xl">
                         You can always read more about Clinic-Connect on one of
                         our{" "}
@@ -558,7 +558,7 @@ const ClinicConnect = () => {
                         </Link>{" "}
                         posts.
                     </div>
-                </h2>
+                </h2> */}
             </Container>
         </div>
     )
