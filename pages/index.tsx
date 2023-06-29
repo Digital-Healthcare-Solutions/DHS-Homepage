@@ -148,7 +148,7 @@ export default function Home() {
                 className="rounded-2xl backdrop-blur-sm"
             >
                 <h1 className="text-center">
-                    <Title order={3}>Get notified when we launch !</Title>
+                    <Title order={3}>Request a demo</Title>
                 </h1>
                 <form
                     onSubmit={formik.handleSubmit}
@@ -196,7 +196,7 @@ export default function Home() {
                             onClick={() => console.log("clicked")}
                             className=""
                         >
-                            Notify Me
+                            Submit
                         </ButtonPrimary>
                     </div>
                 </form>
