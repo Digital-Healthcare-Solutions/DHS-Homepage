@@ -3,6 +3,7 @@ import React from "react"
 import AboutAvatar from "../../components/mantine-Components/aboutAvatar"
 import { useEffect, useState, useCallback } from "react"
 import Link from "next/link"
+import Head from "next/head"
 
 const AboutUs = () => {
     const [width, setWidth] = useState(window.innerWidth)
@@ -18,6 +19,19 @@ const AboutUs = () => {
 
     return (
         <div>
+            <Head>
+                <title>About Us</title>
+                <meta
+                    name="description"
+                    content="About Us - We are a family owned and operated business. We developed this platform in our own practice to solve some of the problems we were having. We were overwhelmed with the amount of time that we were spending on filling out prior authorization forms, responding to hundreds of phonecalls a day, manually writing multiple page long notes, and trying to manage all the complexities of our large amount of chronic care patients. There was no solution to these problems that we could find. So, we decided to develop our own. We hope you find it as useful as we do."
+                />
+                <meta
+                    name="keywords"
+                    content="Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+                />
+
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <Container size={width > 1024 ? "lg" : "md"}>
                 <section className="my-8">
                     <h1 className="text-3xl font-bold pb-4">

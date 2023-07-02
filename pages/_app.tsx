@@ -38,7 +38,7 @@ export default function App({ Component, pageProps }: AppProps) {
             colorScheme={colorScheme}
             toggleColorScheme={toggleColorScheme}
         >
-            <ThemeProvider attribute="class">
+            <ThemeProvider attribute="class" defaultTheme="dark">
                 <MantineProvider
                     theme={{
                         colorScheme:

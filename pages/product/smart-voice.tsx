@@ -16,6 +16,7 @@ import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
 import Link from "next/link"
 import styles from "../../styles/circle.module.css"
+import Head from "next/head"
 
 const SmartVoice = () => {
     const [loading, setLoading] = useState(false)
@@ -209,6 +210,25 @@ const SmartVoice = () => {
 
     return (
         <div className="py-10 bg-gradient-to-b to-blue-100 from-neutral-50 dark:from-neutral-900 dark:to-neutral-800">
+            <Head>
+                <title>
+                    SmartVoice | Digital Healthcare Solutions | Smart Dictation
+                    Software
+                </title>
+                <meta
+                    name="description"
+                    content="SmartVoice is a dictation tool that allows for easy and accurate transcriptions of medical notes. It is a HIPAA compliant, secure, and easy to use tool that can be used by doctors, nurses, and other healthcare professionals."
+                />
+                <meta
+                    name="keywords"
+                    content="smartvoice, smart voice, smartvoice dictation, smart voice dictation, smartvoice transcription, smart voice transcription, smartvoice dictation software, smart voice dictation software, smartvoice transcription software, smart voice transcription software, smartvoice healthcare, smart voice healthcare, smartvoice healthcare solutions, smart voice healthcare solutions, smartvoice digital healthcare, free dication software, free dictation software, free transcription software, free dictation software for doctors, free dictation software for nurses, free dictation software for healthcare professionals, free dictation software for healthcare, free dictation software for medical professionals, dictations, medical dictations, medical dictation software, medical dictation software for doctors, medical dictation software for nurses, medical dictation software for healthcare professionals, medical dictation software for healthcare, medical dictation software for medical professionals"
+                />
+                <meta name="author" content="SmartVoice" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+            </Head>
             <Container size="lg">
                 <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
                     <Image
