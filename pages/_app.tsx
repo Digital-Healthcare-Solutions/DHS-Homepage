@@ -39,10 +39,14 @@ export default function App({ Component, pageProps }: AppProps) {
             } else {
                 var d = document
                 var i = function () {
+                    // @ts-ignore
                     i.c(arguments)
                 }
+                // @ts-ignore
                 i.q = []
-                i.c = function (args) {
+                // @ts-ignore
+                i.c = function (args: any) {
+                    // @ts-ignore
                     i.q.push(args)
                 }
                 w.Intercom = i
