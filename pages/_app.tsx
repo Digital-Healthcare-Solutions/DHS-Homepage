@@ -11,6 +11,7 @@ import {
 import { NotificationsProvider } from "@mantine/notifications"
 import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
+import { useRouter } from "next/router"
 
 const raleway = Raleway({ subsets: ["latin"] })
 
@@ -23,6 +24,85 @@ export default function App({ Component, pageProps }: AppProps) {
     useEffect(() => {
         setMounted(true)
     }, [])
+
+    const router = useRouter()
+
+    //Intercom
+
+    useEffect(() => {
+        ;(function () {
+            var w = window as any
+            var ic = w.Intercom
+            if (typeof ic === "function") {
+                ic("reattach_activator")
+                ic("update", w.intercomSettings)
+            } else {
+                var d = document
+                var i = function () {
+                    i.c(arguments)
+                }
+                i.q = []
+                i.c = function (args) {
+                    i.q.push(args)
+                }
+                w.Intercom = i
+                var l = function () {
+                    var s = d.createElement("script")
+                    s.type = "text/javascript"
+                    s.async = true
+                    s.src = "https://widget.intercom.io/widget/g7yuh49e"
+                    var x = d.getElementsByTagName("script")[0]
+                    x.parentNode.insertBefore(s, x)
+                }
+                if (document.readyState === "complete") {
+                    l()
+                } else if (w.attachEvent) {
+                    w.attachEvent("onload", l)
+                } else {
+                    w.addEventListener("load", l, false)
+                }
+            }
+        })()
+
+        //Intercom boot
+        ;(window as any).Intercom("boot", {
+            api_base: "https://api-iam.intercom.io",
+            app_id: "g7yuh49e"
+            // name: me.user.first_name + " " + me.user.last_name, // Full name
+            // email: me.user.email, // Email address
+            // //fomrat timestamp to unix
+            // created_at: Math.floor(new Date(me.user.created_at).getTime() / 1000),
+            // user_id: me.user.id, // User ID
+            // user_hash: me.user.hash,
+            // custom_launcher_selector: "#intercom",
+            // company: {
+            //   id: me.user.my_entity.id,
+            //   name: me.user.my_entity.name,
+            //   created_at: Math.floor(
+            //     new Date(me.user.my_entity.created_at).getTime() / 1000
+            //   )
+            // }
+        })
+
+        return () => {
+            if ((window as any)?.Intercom) {
+                ;(window as any)?.Intercom("shutdown")
+            }
+        }
+    }, [])
+
+    //Intercom update
+    useEffect(() => {
+        const handleRouteChange = () => {
+            ;(window as any)?.Intercom("update")
+        }
+
+        router.events.on("routeChangeComplete", handleRouteChange)
+
+        return () => {
+            router.events.off("routeChangeComplete", handleRouteChange)
+        }
+    }, [router.events])
 
     if (!mounted) return null
 
