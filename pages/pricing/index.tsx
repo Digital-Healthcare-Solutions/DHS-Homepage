@@ -41,10 +41,10 @@ const Pricing = () => {
         <section className="bg-gradient-to-b from-white to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center py-20">
             {" "}
             <div className="flex flex-col items-center  drop-shadow-lg">
-                <h1 className="flex flex-col items-center mx-3">
-                    {/* <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-10 line tracking-wide">
+                {/* <h1 className="flex flex-col items-center mx-3">
+                    <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-10 line tracking-wide">
                     We offer a variety of plans to fit your business' needs.
-                </div> */}
+                </div> 
                     <Alert
                         icon={
                             window.innerWidth < 1024 ? (
@@ -61,12 +61,12 @@ const Pricing = () => {
                     >
                         <h2 className="flex flex-col items-center">
                             <div className="text-xl md:text-2xl w-fit max-w-3xl text-center font-bold">
-                                {/* Please use the code
-                        <span className="text-green-700 dark:text-green-500 font-sans">
-                            {" "}
-                            BETA2023{" "}
-                        </span>
-                        to get 50% off your first 6 months. Or you can */}
+                                Please use the code
+                                <span className="text-green-700 dark:text-green-500 font-sans">
+                                    {" "}
+                                    BETA2023{" "}
+                                </span>
+                                to get 50% off your first 6 months. Or you can
                                 <div>
                                     We are currently in beta. Contact us{" "}
                                     <Link
@@ -79,7 +79,7 @@ const Pricing = () => {
                                     beta discount code.
                                 </div>
                             </div>
-                            {/* <Paper
+                            <Paper
                                 withBorder
                                 p="md"
                                 radius="md"
@@ -121,18 +121,17 @@ const Pricing = () => {
                                     </Text>{" "}
                                     decreased from previous
                                 </Text>
-                            </Paper> */}
+                            </Paper> 
                         </h2>
                     </Alert>
-                </h1>
+                </h1> */}
 
                 <article className="flex flex-col lg:flex-row w-5/6 xl:w-3/4 text-white  mt-10">
-                    <section className="bg-[#3b82f6] rounded-xl p-6 xl:p-12 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
+                    <section className="bg-[#3b82f6] rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
                         <h1 className="text-3xl font-sans font-medium pb-4">
                             Base Plan
                         </h1>
-                        <p>
-                            {" "}
+                        <p className=" text-neutral-100">
                             We believe in a more connected healthcare system.
                             That&apos;s why all clinics can sign up for free
                             access to Clinic-Connect.
@@ -160,27 +159,27 @@ const Pricing = () => {
                                 </li>
                                 <li>Unlimited chatrooms</li>
                                 <li>
-                                    1 admin account (can create 2 additional
-                                    staff accounts)
+                                    1 admin account (can create 1 additional
+                                    staff account)
                                 </li>
                                 <li>
-                                    Up to 3 doctors listed under your clinic
+                                    Up to 3 providers listed under your clinic
                                 </li>{" "}
                             </ul>
                         </div>
                     </section>
-                    <section className="bg-[#3b83f6] bg- rounded-xl p-6 xl:p-12 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
+                    <section className="bg-[#3b83f6] bg- rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
                         <h1 className="text-3xl font-sans font-medium pb-4">
                             Premium Plan
                         </h1>
-                        <p>
-                            Our Premium plan expands on the features of
-                            Clinic-Connect as well as giving you access to our
-                            dictation tool and e-paperwork.
+                        <p className=" text-neutral-100">
+                            Our Premium plan is for clinics that want to
+                            supercharge their communication, automation, and
+                            productivity.
                         </p>
                         <div className="py-4 mb-2 flex flex-row items-center">
                             <span className="text-3xl pr-1 font-sans font-bold">
-                                $100
+                                $99
                             </span>
                             <span className="flex flex-col text-xs">
                                 <div>per</div>
@@ -204,17 +203,72 @@ const Pricing = () => {
                                 <li>
                                     Extra features of Clinic-Connect (custom
                                     clinic branding, custom referral forms,
-                                    scanner access, Ava (AI assistant), phone
-                                    and video chat with other clinics and more)
+                                    custom themes, scanner access, Ava (AI
+                                    assistant), phone and video chat with other
+                                    clinics and more)
                                 </li>
-                                <li>Unlimited staff accounts</li>
+                                <li>Up to 10 staff accounts</li>
                                 <li>
-                                    Up to 10 doctors listed under your clinic
-                                </li>{" "}
+                                    Up to 8 providers listed under your clinic
+                                </li>
                                 <li>Unlimited access to our dictation tool</li>
                                 <li>
                                     Access to SmartForm (our
                                     e-paperwork/registration tool)
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section className="bg-[#3b83f6] bg- rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
+                        <h1 className="text-3xl font-sans font-medium pb-4">
+                            Enterprise Plan
+                        </h1>
+                        <p className=" text-neutral-100">
+                            Our Enterprise plan is for large clinics and
+                            hospitals that need more access, customization and
+                            support. Get started by requesting a demo below.
+                        </p>
+                        <div className="py-4 mb-2 flex flex-row items-center">
+                            <span className="text-3xl pr-1 font-sans font-bold">
+                                Custom
+                            </span>
+                            {/* <span className="flex flex-col text-xs">
+                                <div>per</div>
+                                <div>month</div>{" "}
+                            </span> */}
+                        </div>
+                        <button
+                            onClick={() =>
+                                router.push(
+                                    "https://app.digitalhealthcaresolutions.io/login"
+                                )
+                            }
+                            className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 py-2 rounded-md"
+                        >
+                            Request a demo
+                        </button>
+                        <div className="pt-3">
+                            <p className="pb-1">This plan includes:</p>
+                            <ul className="list-disc pl-4">
+                                <li>Everything included in the premium plan</li>
+                                <li>
+                                    Custom features and integrations (custom EMR
+                                    integrations, dashboards, forms, security,
+                                    permissions, billing and more )
+                                </li>
+                                <li>
+                                    Unlimited staff accounts and providers
+                                    listed under your entity
+                                </li>
+                                <li>
+                                    Priority support and dedicated account
+                                    manager
+                                </li>
+                                <li>
+                                    Comes with Access to SmartPlan (our chronic
+                                    care management tool) and reduced token
+                                    pricing for Intellicall (our phone system
+                                    add-on)
                                 </li>
                             </ul>
                         </div>

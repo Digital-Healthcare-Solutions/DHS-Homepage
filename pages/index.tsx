@@ -18,13 +18,13 @@ import { showNotification } from "@mantine/notifications"
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    useEffect(() => {
-        if (localStorage.getItem("signUp") !== "true") {
-            setTimeout(() => {
-                setIsModalOpen(true)
-            }, 15000)
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (localStorage.getItem("signUp") !== "true") {
+    //         setTimeout(() => {
+    //             setIsModalOpen(true)
+    //         }, 15000)
+    //     }
+    // }, [])
 
     const handleCloseModal = () => {
         setIsModalOpen(false)

@@ -10,7 +10,7 @@ import {
 } from "@mantine/core"
 import { RiComputerLine } from "react-icons/ri"
 import { BsCashStack, BsMic } from "react-icons/bs"
-import { MdOutlinePhoneEnabled } from "react-icons/md"
+import { MdOutlineAutoAwesome, MdOutlinePhoneEnabled } from "react-icons/md"
 import { MdOutlinePersonOff } from "react-icons/md"
 import { BsChatLeftText } from "react-icons/bs"
 import { AiOutlineMessage } from "react-icons/ai"
@@ -101,6 +101,13 @@ export function FeaturesGrid({ title, description }) {
             title: "Dictation and transcription",
             description:
                 "Use our dictation and transcription service to save time writing your notes. We utilize the latest in speech recognition technology that is extemely accurate with medical terminology and can even remove background noise, 'umms' from speech and translate  any langauge to English. "
+        },
+        //AI powered automation. The AI can reach out to patients on your behalf and handle their appointment scheduling, prescription refills, testing reminders and more. It can handle inbound calls and answer the patient's questions or route them to the appropriate person if necesary. It can also handle outbound calls and send reminders to patients about their upcoming appointments, or follow up with them after their appointment to see how they are doing. Received a new referral? The AI can reach out to the patient and schedule their appointment for you.
+        {
+            icon: MdOutlineAutoAwesome,
+            title: "AI powered automation (coming soon)",
+            description:
+                "Supercharge your practice with Ava, our AI assistant! Ava effortlessly integrates with our other products and can be custom trained on data you provide. Ava can respond to patient calls and texts, cancel appointments, and route conversations to the appropriate person when needed. Received a new referral through Clinic-Connect? Ava can summarize PDF files and extract essential information for you. Ava can then reach out to the patient, schedule their appointment, and respond to the referring provider with the appointment details."
         }
 
         // {
