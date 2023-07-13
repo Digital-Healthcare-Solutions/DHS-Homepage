@@ -228,14 +228,11 @@ const NavLinks = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <ButtonPrimary
-                    onClick={() => {}}
-                    className="text-sm shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400"
-                >
+                <button className="text-sm shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-bold py-2 px-4 rounded-lg font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500">
                     {/* Launch<span className="hidden lg:block  md:ml-1"> App</span>{" "} */}
                     Login
                     {/* <FiExternalLink size={17} className="ml-1" /> */}
-                </ButtonPrimary>
+                </button>
             </a>
         </div>
     )
