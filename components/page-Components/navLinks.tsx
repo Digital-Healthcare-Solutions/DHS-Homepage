@@ -230,7 +230,7 @@ const NavLinks = () => {
             >
                 <ButtonPrimary
                     onClick={() => {}}
-                    className="text-sm shadow-[0_0px_12px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400  "
+                    className="text-sm shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400"
                 >
                     {/* Launch<span className="hidden lg:block  md:ml-1"> App</span>{" "} */}
                     Login
