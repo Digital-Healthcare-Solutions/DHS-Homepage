@@ -14,6 +14,7 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import ButtonPrimary from "../components/UI-Components/button-primary"
 import { showNotification } from "@mantine/notifications"
+import { HeroHomePage2 } from "../components/mantine-Components/heroHompage2"
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -95,10 +96,10 @@ export default function Home() {
 
     return (
         <motion.main
-            initial={{ x: -200, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
+        // initial={{ x: -200, opacity: 0 }}
+        // animate={{ x: 0, opacity: 1 }}
+        // exit={{ opacity: 0 }}
+        // transition={{ duration: 0.6 }}
         >
             <Head>
                 <title>Digital Healthcare Solutions | Home</title>
@@ -120,12 +121,14 @@ export default function Home() {
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <HeroHomePage />
-            <SmartPlanDescription />
+            <HeroHomePage2 />
             <FeaturesGrid
                 title="Our solutions"
                 description="We offer variety of features that can help you  run your practice more efficiently."
-            />
+            />{" "}
+            <section className="flex justify-center  bg-blue-50  dark:bg-neutral-800 ">
+                <SmartPlanDescription />
+            </section>
             <HomeCards />
             <section
                 id="contact"

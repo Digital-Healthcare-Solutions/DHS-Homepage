@@ -41,18 +41,6 @@ const useStyles = createStyles((theme) => ({
         paddingBottom: theme.spacing.xl * 4
     },
 
-    // title: {
-    //     fontFamily: "Raleway, sans-serif",
-    //     fontWeight: 700,
-    //     marginBottom: theme.spacing.md,
-    //     textAlign: "center",
-
-    //     [theme.fn.smallerThan("sm")]: {
-    //         fontSize: 28,
-    //         textAlign: "left"
-    //     }
-    // },
-
     description: {
         textAlign: "center",
 
@@ -64,12 +52,6 @@ const useStyles = createStyles((theme) => ({
 
 export function FeaturesGrid({ title, description }) {
     const MOCKDATA = [
-        // {
-        //     icon: BiDonateHeart,
-        //     title: "Provide evidence based and personalized care plans",
-        //     description:
-        //         "Smartplan allows anyone to create detailed care plans that cover all aspects of patient care, including disease specific symptom analysis, medication management, lifestyle modifications, education, and follow-up appointments."
-        // },
         {
             icon: AiOutlineMessage,
             title: "Realtime messaging and referrals",
@@ -102,72 +84,13 @@ export function FeaturesGrid({ title, description }) {
             description:
                 "Use our dictation and transcription service to save time writing your notes. We utilize the latest in speech recognition technology that is extemely accurate with medical terminology and can even remove background noise, 'umms' from speech and translate  any langauge to English. "
         },
-        //AI powered automation. The AI can reach out to patients on your behalf and handle their appointment scheduling, prescription refills, testing reminders and more. It can handle inbound calls and answer the patient's questions or route them to the appropriate person if necesary. It can also handle outbound calls and send reminders to patients about their upcoming appointments, or follow up with them after their appointment to see how they are doing. Received a new referral? The AI can reach out to the patient and schedule their appointment for you.
+
         {
             icon: MdOutlineAutoAwesome,
             title: "AI powered automation (coming soon)",
             description:
-                "Supercharge your practice with Ava, our AI assistant! Ava effortlessly integrates with our other products and can be custom trained on data you provide. Ava can respond to patient calls and texts, cancel appointments, and route conversations to the appropriate person when needed. Received a new referral through Clinic-Connect? Ava can summarize PDF files and extract essential information for you. Ava can then reach out to the patient, schedule their appointment, and respond to the referring provider with the appointment details."
+                "Supercharge your practice with Ava, our AI assistant! Ava effortlessly integrates with our other products and can be custom trained on data you provide. Ava can respond to patient calls and texts, cancel appointments, and route conversations to the appropriate person when needed. Ava can summarize referrals automatically, reach out to new patients, and even send a follow up message to the referring provider."
         }
-
-        // {
-        //     icon: MdOutlinePersonOff,
-        //     title: "Redact PHI in text, images and audio",
-        //     description: (
-        //         <span>
-        //             Anonymize your patients PHI in text, images, and audio to
-        //             ensure HIPAA compliance. We host our own NLP (Natural
-        //             Language Processing){" "}
-        //             {/* <a
-        //                 className="text-blue-500 hover:underline"
-        //                 target="_blank"
-        //                 rel="noopener noreferrer"
-        //                 href="https://www.turing.com/kb/a-comprehensive-guide-to-named-entity-recognition"
-        //             >
-        //                 {" "}
-        //                 named enity recogntion
-        //             </a>{" "} */}
-        //             model built by
-        //             <a
-        //                 className="text-blue-500 hover:underline mx-1"
-        //                 target="_blank"
-        //                 rel="noopener noreferrer"
-        //                 href="https://www.private-ai.com/"
-        //             >
-        //                 Private AI
-        //             </a>
-        //             that allows you to redact PHI in text, images, and videos.
-        //             Simply upload your desired document and it will return fully
-        //             anonymized.
-        //         </span>
-        //     )
-        // }
-
-        // {
-        //     icon: AiOutlineCloudUpload,
-        //     title: "Access anywhere",
-        //     description:
-        //         "Our web app is cloud based and can be accessed from anywhere. No need to download any annoying installers, just log in and you're ready to go."
-        // },
-        // {
-        //     icon: RxCircleBackslash,
-        //     title: "No limits",
-        //     description:
-        //         "We don't limit the number of patients you can bill CCMs for, the number of calls you can make, or the amount of data that flows through our system. Pay one monthly fee and you're good to go."
-        // },
-
-        // {
-        //     icon: ,
-        //     title: "24/7 Support",
-        //     description:
-        //         "Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail"
-        // },
-        // {
-        //     icon: BiCheckShield,
-        //     title: "Secure by default",
-        //     description:
-        //         "We utilize the latest in encryption technology to ensure that your patient's data is always safe and secure. We utilize a HIPAA compliant database, server, and hosting provider and require 2FA everytime for all of our users."
-        // }
     ]
 
     const { classes, theme } = useStyles()

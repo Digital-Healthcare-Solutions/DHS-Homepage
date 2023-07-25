@@ -83,7 +83,7 @@ function ContactUs() {
                 weight={900}
                 align="center"
             >
-                Get in touch
+                Request a Demo
             </Title>
 
             <SimpleGrid

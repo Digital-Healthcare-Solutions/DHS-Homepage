@@ -129,16 +129,20 @@ const Pricing = () => {
                 <article className="flex flex-col lg:flex-row w-5/6 xl:w-3/4 text-white  mt-10">
                     <section className="bg-[#3b82f6] rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
                         <h1 className="text-3xl font-sans font-medium pb-4">
-                            Base Plan
+                            Base
                         </h1>
                         <p className=" text-neutral-100">
-                            We believe in a more connected healthcare system.
-                            That&apos;s why all clinics can sign up for free
-                            access to Clinic-Connect.
+                            Our Base plan is for clinics that want to try out
+                            Clinic-Connect and see if it is a good fit for their
+                            clinic.
                         </p>
                         <div className="py-4 mb-2 flex flex-row items-center">
                             <span className="text-3xl pr-1 font-sans font-bold">
-                                FREE
+                                $39
+                            </span>
+                            <span className="flex flex-col text-xs">
+                                <div>per</div>
+                                <div>month</div>{" "}
                             </span>
                         </div>
                         <button
@@ -149,7 +153,7 @@ const Pricing = () => {
                             }
                             className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 py-2 rounded-md"
                         >
-                            Get Started today
+                            Start Free Trial
                         </button>
                         <div className="pt-3">
                             <p className="pb-1">This plan includes:</p>
@@ -165,12 +169,16 @@ const Pricing = () => {
                                 <li>
                                     Up to 3 providers listed under your clinic
                                 </li>{" "}
+                                <li>
+                                    Business Associate Agreement (BAA) signed
+                                    with your clinic
+                                </li>{" "}
                             </ul>
                         </div>
                     </section>
                     <section className="bg-[#3b83f6] bg- rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
                         <h1 className="text-3xl font-sans font-medium pb-4">
-                            Premium Plan
+                            Premium
                         </h1>
                         <p className=" text-neutral-100">
                             Our Premium plan is for clinics that want to
@@ -194,7 +202,7 @@ const Pricing = () => {
                             }
                             className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 py-2 rounded-md"
                         >
-                            Get Started today
+                            Start Free Trial
                         </button>
                         <div className="pt-3">
                             <p className="pb-1">This plan includes:</p>
@@ -221,7 +229,7 @@ const Pricing = () => {
                     </section>
                     <section className="bg-[#3b83f6] bg- rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
                         <h1 className="text-3xl font-sans font-medium pb-4">
-                            Enterprise Plan
+                            Enterprise
                         </h1>
                         <p className=" text-neutral-100">
                             Our Enterprise plan is for large clinics and
