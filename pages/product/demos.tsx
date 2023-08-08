@@ -299,8 +299,8 @@ const Features = () => {
                             terminology so you can be sure that your notes are
                             accurate. After you're done, you can save your
                             transcription to your notes so you can easily reuse
-                            it later. We guarantee once you try it, you'll never
-                            want to go back to Dragon again.
+                            it later. We guarantee once you try it, you&apos;ll
+                            never go back to typing notes again.
                         </p>
                         <div className="flex justify-center">
                             <Link href="/product/smart-voice">

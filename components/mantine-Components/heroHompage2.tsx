@@ -134,7 +134,7 @@ export function HeroHomePage2() {
                                     Get Started
                                 </button>
                             </Link>
-                            <Link href="/#contact">
+                            <Link href="/product/smart-plan#request-demo">
                                 <Button
                                     // component="a"
                                     // href="https://github.com/mantinedev/mantine"

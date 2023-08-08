@@ -18,9 +18,9 @@ const points = [
     },
     {
         icon: BsCurrencyDollar,
-        title: "Only pay for what you use",
+        title: "Flexible pricing",
         description:
-            "If you're a solo practitioner, you shouldn't have to pay the same as a large practice. We offer usage based pricing so you only pay for what you use."
+            "If you're a solo practitioner, you shouldn't have to pay the same as a large practice. We offer flexible pricing to ensure that you're only paying for what you need."
     }
 ]
 

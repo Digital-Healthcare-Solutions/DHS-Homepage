@@ -26,6 +26,7 @@ import {
     MdOutlineExpandMore,
     MdOutlinePhone
 } from "react-icons/md"
+import Head from "next/head"
 
 const Pricing = () => {
     const router = useRouter()
@@ -39,7 +40,23 @@ const Pricing = () => {
 
     return (
         <section className="bg-gradient-to-b from-white to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center py-20">
-            {" "}
+            <Head>
+                <title>Pricing | Digital Healthcare Solutions</title>
+                <meta
+                    name="description"
+                    content="Digital Healthcare Solutions is a software company that provides innovative solutions for healthcare professionals. We offer a variety of plans to fit your business' needs."
+                />
+                <link rel="icon" href="/favicon.ico" />
+                <meta name="author" content="Digital Healthcare Solutions" />
+                <meta
+                    name="keywords"
+                    content="Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+                />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+            </Head>
             <div className="flex flex-col items-center  drop-shadow-lg">
                 {/* <h1 className="flex flex-col items-center mx-3">
                     <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-10 line tracking-wide">
@@ -261,8 +278,8 @@ const Pricing = () => {
                                 <li>Everything included in the premium plan</li>
                                 <li>
                                     Custom features and integrations (custom EMR
-                                    integrations, dashboards, forms, security,
-                                    permissions, billing and more )
+                                    integrations, security, SAML, permissions,
+                                    billing and more )
                                 </li>
                                 <li>
                                     Unlimited staff accounts and providers
@@ -274,9 +291,8 @@ const Pricing = () => {
                                 </li>
                                 <li>
                                     Comes with Access to SmartPlan (our chronic
-                                    care management tool) and reduced token
-                                    pricing for Intellicall (our phone system
-                                    add-on)
+                                    care management tool) and reduced pricing
+                                    for Intellicall (our phone system add-on)
                                 </li>
                             </ul>
                         </div>

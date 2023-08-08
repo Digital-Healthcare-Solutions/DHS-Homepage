@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import BlogCard from "../../components/blog/blogCard"
 import { ImageActionBanner } from "../../components/blog/blogHome"
+import Head from "next/head"
 
 interface Props {
     posts: [Post]
@@ -13,6 +14,21 @@ const Blog = ({ posts }: Props) => {
     console.log({ posts })
     return (
         <div>
+            <Head>
+                <title>Blog | Digital Healthcare Solutions</title>
+                <meta
+                    name="description"
+                    content="Our content creators update weekly with new articles and videos. Subscribe to our newsletter to be notified of new content."
+                />
+                <meta
+                    property="og:description"
+                    content="Our content creators update weekly with new articles and videos. Subscribe to our newsletter to be notified of new content."
+                />
+                <meta
+                    name="keywords"
+                    content="Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+                />
+            </Head>
             <ImageActionBanner
                 image="/blogHome.jpg"
                 title=""
