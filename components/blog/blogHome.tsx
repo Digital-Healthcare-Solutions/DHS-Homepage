@@ -43,7 +43,7 @@ export function ImageActionBanner({
             radius="md"
             className={cx(
                 classes.card,
-                ` mb-8 h-52 md:h-96 rounded-none bg-cover bg-center bg-no-repeat hover:scale-[1.01] transition-all duration-300 ease-in-out relative overflow-hidden`
+                ` mb-8 h-52 md:h-96 rounded-none bg-cover bg-center bg-no-repeat  transition-all duration-300 ease-in-out relative overflow-hidden`
             )}
         >
             {" "}
