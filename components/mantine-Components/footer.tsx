@@ -121,7 +121,7 @@ const useStyles = createStyles((theme) => ({
 interface FooterLinksProps {
     data: {
         title: string
-        links: { label: string; link: string }[]
+        links: { label: string; link: string; func: () => void }[]
     }[]
 }
 
@@ -134,7 +134,7 @@ export function Footer({ data }: FooterLinksProps) {
                 key={index}
                 className={classes.link}
                 href={link.link}
-                // onClick={(event) => event.preventDefault()}
+                onClick={link.func}
             >
                 {link.label}
             </Link>

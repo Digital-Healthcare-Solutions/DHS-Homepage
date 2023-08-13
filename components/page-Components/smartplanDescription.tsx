@@ -13,8 +13,8 @@ const SmartPlanDescription = () => {
 
     return (
         <Container size="lg">
-            <div className="flex flex-col items-center mt-16 ">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-5 text-center">
+            <div className="flex flex-col items-center mb-20 ">
+                {/* <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-5 text-center">
                     What is Digital Healthcare Solutions ?
                 </h1>
 
@@ -22,7 +22,7 @@ const SmartPlanDescription = () => {
                     We are a healthcare software company that provides a
                     cloud-based practice management platform for medical
                     professionals.
-                </Text>
+                </Text> */}
 
                 {/* <div className="right-16 xl:right-24  translate-y-36  absolute maxRandom:hidden ">
                     <CiMedicalCross size={40} className=" text-blue-500" />
@@ -49,6 +49,22 @@ const SmartPlanDescription = () => {
                 <div className="left-32 xl:left-44  2xl:left-56 translate-y-[565px]  absolute maxRandom:hidden ">
                     <CiMedicalCase size={40} className=" text-blue-500" />
                 </div> */}
+
+                <div className="flex flex-col items-center mb-8">
+                    <h4 className="text-center pb-8 lg:w-1/2 text-lg md:text-2xl">
+                        See how our customized solutions can help you save time,
+                        cut costs, maximize revenue and increase patient
+                        satisfaction.
+                    </h4>
+                    <Link href="/product/demos">
+                        <ButtonPrimary
+                            onClick={() => console.log("")}
+                            className={""}
+                        >
+                            View Demos
+                        </ButtonPrimary>
+                    </Link>
+                </div>
                 <div
                     className={
                         theme === "light"
@@ -68,25 +84,6 @@ const SmartPlanDescription = () => {
                     {/* <p className="flex flex-row justify-end mr-2 text-xs text-gray-400">
                         Image by macrovector on Freepik
                     </p> */}
-                </div>
-
-                <div className="flex flex-col items-center">
-                    <h4 className="text-center py-8 lg:w-1/2 text-lg md:text-2xl">
-                        See how our customized solutions can help you save time,
-                        cut costs, maximize revenue and increase patient
-                        satisfaction.
-                        {/* Our web app provides everything you need to get started
-                        billing codes 99483, 99490, and 99491 in a user
-                        friendly, HIPPA compliant way. */}
-                    </h4>
-                    <Link href="/product/demos">
-                        <ButtonPrimary
-                            onClick={() => console.log("")}
-                            className={""}
-                        >
-                            View Demos
-                        </ButtonPrimary>
-                    </Link>
                 </div>
             </div>{" "}
         </Container>

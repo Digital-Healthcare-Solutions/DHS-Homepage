@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import BlogCard from "../../components/blog/blogCard"
 import { ImageActionBanner } from "../../components/blog/blogHome"
+import Head from "next/head"
 
 interface Props {
     posts: [Post]
@@ -13,6 +14,21 @@ const Blog = ({ posts }: Props) => {
     console.log({ posts })
     return (
         <div>
+            <Head>
+                <title>Blog | Digital Healthcare Solutions</title>
+                <meta
+                    name="description"
+                    content="Our content creators update weekly with new articles and videos. Subscribe to our newsletter to be notified of new content."
+                />
+                <meta
+                    property="og:description"
+                    content="Our content creators update weekly with new articles and videos. Subscribe to our newsletter to be notified of new content."
+                />
+                <meta
+                    name="keywords"
+                    content="Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+                />
+            </Head>
             <ImageActionBanner
                 image="/blogHome.jpg"
                 title=""
@@ -22,7 +38,7 @@ const Blog = ({ posts }: Props) => {
             <div className="flex flex-col items-center md:items-start md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-4 md:gap-8 p-2 mx-4 md:mx-8 pb-24 pt-12">
                 {posts.map((post) => (
                     <Link
-                        className="self-auto"
+                        className="w-fit"
                         key={post._id}
                         href={`/blog/${post.slug.current}`}
                     >

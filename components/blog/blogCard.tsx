@@ -84,7 +84,9 @@ function BlogCard({
                                 ? "bg-red-500 text-black dark:text-white mr-1"
                                 : category.title === "Updates"
                                 ? "bg-purple-500 text-black dark:text-white mr-1"
-                                : "bg-pink-500 text-black dark:text-white mr-1"
+                                : category.title === "Product Launch"
+                                ? "bg-pink-500 text-black dark:text-white mr-1"
+                                : "bg-gray-500 text-black dark:text-white mr-1"
                         }
                         key={category.title}
                     >

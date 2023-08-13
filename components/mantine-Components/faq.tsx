@@ -27,41 +27,58 @@ const useStyles = createStyles((theme) => ({
 export function FaqSimple() {
     const { classes } = useStyles()
     return (
-        <div className="bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-900 ">
+        <div className="bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-900 pb-10 ">
             <Container size="sm" className={classes.wrapper}>
                 <Title align="center" className={classes.title}>
                     Frequently Asked Questions
                 </Title>
 
                 <Accordion variant="separated">
+                    {" "}
                     <Accordion.Item
                         className={classes.item}
-                        value="reset-password"
+                        value="clinic-connect"
                     >
                         <Accordion.Control>
-                            What is CCM and how does it work?
+                            How does Clinic-Connect work?
                         </Accordion.Control>
                         <Accordion.Panel>
                             <p>
-                                CCM (Chronic Care Management) is a medicare
-                                benefit that allows you to bill for the time you
-                                spend managing the care of your chronic patients
-                                (more than 1 condition lasting longer than 12
-                                months).
+                                Clinic Connect is a peer to peer platform that
+                                allows you to connect with other healthcare
+                                professionals in a secure way. You can use our
+                                platform to refer patients, send messages, and
+                                share files with other healthcare professionals
+                                on our platform.
                             </p>
                             <p>
-                                We provide a platform that allows you to manage
-                                your patients, their care plans, and their
-                                appointments. We also provide a way for you to
-                                bill for your time spent managing their care
-                                whether it be via phone, text, or in person.
+                                We offer a free trial for 60 days. After that
+                                you can choose to continue using our service for
+                                39.99 per month or cancel at any time.
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
-
+                    <Accordion.Item className={classes.item} value="benefits">
+                        <Accordion.Control>
+                            What are the benefits of using Intellicall?
+                        </Accordion.Control>
+                        <Accordion.Panel>
+                            <p>
+                                Intellicall is a call center that helps you
+                                manage your incoming calls. We provide a
+                                dedicated phone number that you can use to
+                                forward voicemails and calls to. Our service
+                                transcribes voicemails into text and allows you
+                                to respond to them via text message. We also
+                                provide a way for you to manage your
+                                appointments and send appointment reminders to
+                                your patients.
+                            </p>
+                        </Accordion.Panel>
+                    </Accordion.Item>
                     <Accordion.Item
                         className={classes.item}
-                        value="another-account"
+                        value="integration"
                     >
                         <Accordion.Control>
                             How can I integrate your call center with my
@@ -85,36 +102,28 @@ export function FaqSimple() {
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
-                    {/* 
-                    <Accordion.Item className={classes.item} value="newsletter">
+                    <Accordion.Item className={classes.item} value="ccm">
                         <Accordion.Control>
-                            Do you offer discounts?
+                            What is CCM and how does it work?
                         </Accordion.Control>
                         <Accordion.Panel>
                             <p>
-                                Yes! Currently we are offering a 100% free trial
-                                for 6 months while we are in beta. After the 6
-                                months are up, we will be offering a 50%
-                                discount to our first customers for trying us
-                                out.
+                                CCM (Chronic Care Management) is a medicare
+                                benefit that allows you to bill for the time you
+                                spend managing the care of your chronic patients
+                                (more than 1 condition lasting longer than 12
+                                months).
                             </p>
                             <p>
-                                Check out the{" "}
-                                <Link
-                                    className="text-blue-500 hover:underline"
-                                    href="/pricing"
-                                >
-                                    pricing page
-                                </Link>{" "}
-                                for more information.
+                                We provide a platform that allows you to manage
+                                your patients, their care plans, and their
+                                appointments. We also provide a way for you to
+                                bill for your time spent managing their care
+                                whether it be via phone, text, or in person.
                             </p>
                         </Accordion.Panel>
-                    </Accordion.Item> */}
-
-                    <Accordion.Item
-                        className={classes.item}
-                        value="credit-card"
-                    >
+                    </Accordion.Item>
+                    <Accordion.Item className={classes.item} value="secure">
                         <Accordion.Control>
                             How do you keep my patients information secure?
                         </Accordion.Control>
@@ -149,29 +158,25 @@ export function FaqSimple() {
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
-
-                    <Accordion.Item className={classes.item} value="payment">
+                    <Accordion.Item
+                        className={classes.item}
+                        value="non-physician"
+                    >
                         <Accordion.Control>
                             Can I use your service if I am not a physician?
                         </Accordion.Control>
                         <Accordion.Panel>
                             <p>
-                                Yes! If you would like to use our service,
-                                please{" "}
-                                <Link
-                                    className="text-blue-500 hover:underline"
-                                    href=""
-                                >
-                                    contact us{" "}
-                                </Link>
-                                and we can discuss a custom plan for you.
+                                Yes! Any healthcare provider can use our
+                                service. We have many nurse practitioners, PA's,
+                                pharmacists, and other healthcare providers that
+                                use our service to manage their patients.
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
                     <Accordion.Item className={classes.item} value="academic">
                         <Accordion.Control>
-                            Do you offer discounts for research or academic
-                            purposes?
+                            Do you offer discounts for academic institutions?
                         </Accordion.Control>
                         <Accordion.Panel>
                             <p>

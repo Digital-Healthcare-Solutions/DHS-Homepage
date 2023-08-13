@@ -32,7 +32,7 @@ import Head from "next/head"
 
 const carePlans = [
     "Annual Wellness Visit",
-    "Dementia / Alzheimer's",
+    // "Dementia / Alzheimer's",
     "Depression and Anxiety",
     "Migraines",
     "Parkinson's disease",
