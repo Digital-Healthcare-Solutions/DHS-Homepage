@@ -37,9 +37,9 @@ export default function Home() {
                 />
 
                 <link rel="icon" href="/favicon.ico" />
-                {/* <script id="mcjs">
+                <script id="mcjs">
                     {
-                        // @ts-ignore
+                        //@ts-ignore
                         !(function (c, h, i, m, p) {
                             ;(m = c.createElement(h)),
                                 (p = c.getElementsByTagName(h)[0]),
@@ -52,8 +52,7 @@ export default function Home() {
                             "https://chimpstatic.com/mcjs-connected/js/users/1199c26ea58e1d8664b09730f/c963c98cd688240fb76253445.js"
                         )
                     }
-                    ;
-                </script> */}
+                </script>
             </Head>
             <HeroHomePage2 />
             <FeaturesGrid
