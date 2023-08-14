@@ -196,9 +196,11 @@ export function Footer({ data }: FooterLinksProps) {
                             </ActionIcon>
                         </Link>
                     </Tooltip>
-                    <ActionIcon size="lg">
-                        <BsLinkedin size={20} stroke={"1.5"} />
-                    </ActionIcon>
+                    <Link href="https://www.linkedin.com/company/digital-healthcare-sol/">
+                        <ActionIcon size="lg">
+                            <BsLinkedin size={20} stroke={"1.5"} />
+                        </ActionIcon>
+                    </Link>
                     <ActionIcon size="lg">
                         <BsTwitter size={20} stroke={"1.5"} />
                     </ActionIcon>
