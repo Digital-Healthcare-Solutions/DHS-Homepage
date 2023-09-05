@@ -31,7 +31,7 @@ const useStyles = createStyles((theme) => ({
         color: theme.colorScheme === "dark" ? "#fff" : "#000",
 
         [theme.fn.smallerThan("sm")]: {
-            fontSize: 36,
+            fontSize: 32,
             lineHeight: 1.2
         }
     },

@@ -291,7 +291,7 @@ const Pricing = () => {
                         </Button>
                     </Card> */}
 
-                    <Card className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400">
+                    <div className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
                             Premium
                         </h3>
@@ -322,13 +322,13 @@ const Pricing = () => {
                         <Button
                             onClick={() => setIsModalOpen(true)}
                             size="md"
-                            className="w-full bg-blue-500"
+                            fullWidth
                         >
                             Get Custom Quote
                         </Button>
-                    </Card>
+                    </div>
 
-                    <Card className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400">
+                    <div className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <h3 className="mb-2 font-semibold text-lg lg:text-2xl ">
                             Enterprise
                         </h3>
@@ -360,12 +360,12 @@ const Pricing = () => {
                             variant="default"
                             color="gray"
                             size="md"
-                            className="w-full"
+                            fullWidth
                             onClick={() => setIsModalOpen(true)}
                         >
                             Get Custom Quote
                         </Button>
-                    </Card>
+                    </div>
                 </Container>
                 <h2
                     className={`${classes.header2} text-xl lg:text-3xl mt-14 underline underline-offset-8 hidden md:block`}
