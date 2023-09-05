@@ -227,7 +227,7 @@ const Pricing = () => {
                     >
                         We provide personalized quotes tailored to each
                         customer's specific needs, size, and budget. All tiers
-                        come with custom onboarding, training, support, and
+                        come with custom onboarding, training and support, and
                         receive any new features we release at no additional
                         cost.
                         <br />
