@@ -22,7 +22,8 @@ import {
     Modal,
     Title,
     TextInput,
-    MultiSelect
+    MultiSelect,
+    NumberInput
 } from "@mantine/core"
 import { IoAlertCircleOutline } from "react-icons/io5"
 import {
@@ -47,6 +48,7 @@ const Pricing = () => {
     const router = useRouter()
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [features, setFeatures] = useState([])
+    const [providers, setProviders] = useState(1)
 
     const useStyles = createStyles((theme) => ({
         header: {
@@ -140,25 +142,41 @@ const Pricing = () => {
         initialValues: {
             name: "",
             email: "",
-            businessName: "",
-            providers: 1
+            businessName: ""
         },
         validationSchema: Yup.object({
             name: Yup.string().required("Required"),
             email: Yup.string()
                 .email("Invalid email address")
                 .required("Required"),
-            businessName: Yup.string().required("Required"),
-            providers: Yup.number().required("Required")
+            businessName: Yup.string().required("Required")
         }),
         onSubmit: () => {
-            getCustomQuote(
-                formik.values.name,
-                formik.values.email,
-                formik.values.businessName,
-                formik.values.providers,
-                features
-            )
+            if (!providers || providers < 1) {
+                showNotification({
+                    title: "Error",
+                    message: "Please enter a valid number of providers",
+                    color: "red",
+                    autoClose: 5000
+                })
+                return
+            } else if (features.length < 1) {
+                showNotification({
+                    title: "Error",
+                    message: "Please select at least one feature",
+                    color: "red",
+                    autoClose: 5000
+                })
+                return
+            } else {
+                getCustomQuote(
+                    formik.values.name,
+                    formik.values.email,
+                    formik.values.businessName,
+                    providers,
+                    features
+                )
+            }
         }
     })
 
@@ -233,22 +251,7 @@ const Pricing = () => {
                         <br />
                     </Text>
                 </Container>
-                {/* <Group className={classes.controls}>
-                    <Link href="https://app.digitalhealthcaresolutions.io/login">
-                        <button className="text-lg shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-bold py-[11px] px-6 rounded font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500">
-                            Get Custom Quote
-                        </button>
-                    </Link>
-                    <Link href="/product/smart-plan#request-demo">
-                        <Button
-                            size="lg"
-                            variant="default"
-                            className={classes.control}
-                        >
-                            Request Demo
-                        </Button>
-                    </Link>
-                </Group> */}
+
                 <Container
                     size={"lg"}
                     className="flex flex-col md:flex-row justify-around w-full gap-4 my-8"
@@ -643,17 +646,19 @@ const Pricing = () => {
                             formik.errors.businessName
                         }
                     />
-                    <TextInput
+                    <NumberInput
                         label="Number of Providers"
                         placeholder="Number of Providers"
                         name="providers"
                         mt="md"
+                        step={1}
                         withAsterisk
-                        value={formik.values.providers}
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
+                        value={providers}
+                        onChange={setProviders}
                         error={
-                            formik.touched.providers && formik.errors.providers
+                            !providers || providers < 1
+                                ? "Must be at least 1"
+                                : null
                         }
                     />
                     <MultiSelect
@@ -673,13 +678,8 @@ const Pricing = () => {
                         onChange={setFeatures}
                     />
                     <div className="flex justify-center pt-5">
-                        <ButtonPrimary
-                            type="submit"
-                            onClick={() => console.log("clicked")}
-                            className=""
-                        >
-                            Submit
-                        </ButtonPrimary>
+                        {/* @ts-ignore */}
+                        <ButtonPrimary type="submit">Submit</ButtonPrimary>
                     </div>
                 </form>
             </Modal>
