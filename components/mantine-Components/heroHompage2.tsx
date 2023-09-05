@@ -82,11 +82,13 @@ export function HeroHomePage2() {
                         gradient={{ from: "blue", to: "cyan" }}
                         inherit
                     >
-                        Modern
+                        {/* Modern */}
+                        Next-Gen
                     </Text>{" "}
                     <TypeAnimation
                         sequence={[
-                            "communication app for Healthcare Businesses",
+                            // "automation & communication app for Healthcare Businesses",
+                            "automation and communication platform for Healthcare Businesses",
                             1000,
                             () => setFirstFinished(true)
                         ]}
@@ -101,13 +103,14 @@ export function HeroHomePage2() {
                     {firstFinished && (
                         <TypeAnimation
                             sequence={[
-                                "Communicate in realtime with patients and providers through our AI-powered chat and phone solutions. Utilize automation features that streamline your workflow while ensuring HIPAA compliance.",
+                                // "Communicate in realtime with patients and providers through our chat and phone solutions. Utilize automation features that streamline your workflow while ensuring HIPAA compliance.",
+                                "Streamline routine administrative tasks, establish real-time patient communication and facilitate seamless collaboration with other providers, all while upholding HIPAA compliance.",
                                 () => setSecondFinished(true)
                             ]}
                             // className={classes.description}
                             speed={88}
                             repeat={0}
-                            cursor={true}
+                            cursor={false}
                         />
                     )}
                     {/* <Text

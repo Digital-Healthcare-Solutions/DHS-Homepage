@@ -157,7 +157,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     <NotificationsProvider
                         limit={3}
                         autoClose={3000}
-                        position="bottom-right"
+                        position="bottom-left"
                     >
                         <div className={raleway.className}>
                             <Layout>

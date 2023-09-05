@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/router"
 import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import { AnimatePresence, motion } from "framer-motion"
+
 import {
     Button,
     Alert,
@@ -12,12 +13,22 @@ import {
     ThemeIcon,
     Group,
     Tooltip,
-    ActionIcon
+    ActionIcon,
+    createStyles,
+    Table,
+    Card,
+    Container,
+    Divider,
+    Modal,
+    Title,
+    TextInput,
+    MultiSelect
 } from "@mantine/core"
 import { IoAlertCircleOutline } from "react-icons/io5"
 import {
     BsArrowDown,
     BsArrowDownRight,
+    BsCheck2,
     BsClipboardData,
     BsQuestionCircle
 } from "react-icons/bs"
@@ -27,19 +38,167 @@ import {
     MdOutlinePhone
 } from "react-icons/md"
 import Head from "next/head"
+import { FiSlash } from "react-icons/fi"
+import { useFormik } from "formik"
+import * as Yup from "yup"
+import { showNotification } from "@mantine/notifications"
 
 const Pricing = () => {
     const router = useRouter()
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [features, setFeatures] = useState([])
 
-    const [error, setError] = useState(null)
-    const [oneTimePayment, setOneTimePayment] = useState(false)
-    const [showIntellicall, setShowIntellicall] = useState(true)
-    const [showSmartPlan, setShowSmartPlan] = useState(true)
-    const [expandIntellicall, setExpandIntellicall] = useState(false)
-    const [expandSmartPlan, setExpandSmartPlan] = useState(false)
+    const useStyles = createStyles((theme) => ({
+        header: {
+            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+            textAlign: "center",
+            fontWeight: 900,
+            color: theme.colorScheme === "dark" ? "#fff" : "#000"
+        },
+        header2: {
+            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+            textAlign: "center",
+            fontWeight: 700,
+            color: theme.colorScheme === "dark" ? "#fff" : "#000"
+        },
+
+        controls: {
+            marginTop: `20px`,
+
+            [theme.fn.smallerThan("sm")]: {
+                marginTop: theme.spacing.xl
+            }
+        },
+
+        control: {
+            height: 54,
+            paddingLeft: 38,
+            paddingRight: 38,
+
+            [theme.fn.smallerThan("sm")]: {
+                height: 54,
+                paddingLeft: 18,
+                paddingRight: 18
+            }
+        }
+    }))
+
+    const { classes } = useStyles()
+
+    const getCustomQuote = async (
+        name: string,
+        email: string,
+        business: string,
+        providers: number,
+        // features is an array of strings
+        features: string[]
+    ) => {
+        const res = await fetch(
+            "https://api.digitalhealthcaresolutions.io/api:5iYyLrKQ/customQuote",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    business,
+                    providers,
+                    features
+                })
+            }
+        )
+        const data = await res.json()
+        if (res.ok) {
+            showNotification({
+                title: "Success",
+                message:
+                    "Thank you for your interest! We will be in touch soon.",
+                color: "green",
+                autoClose: 5000
+            })
+
+            setTimeout(() => {
+                setIsModalOpen(false)
+                formik.resetForm()
+                setFeatures([])
+            }, 1000)
+        } else {
+            showNotification({
+                title: "Error",
+                message: data.message,
+                color: "red",
+                autoClose: 5000
+            })
+        }
+
+        return data
+    }
+
+    const formik = useFormik({
+        initialValues: {
+            name: "",
+            email: "",
+            businessName: "",
+            providers: 1
+        },
+        validationSchema: Yup.object({
+            name: Yup.string().required("Required"),
+            email: Yup.string()
+                .email("Invalid email address")
+                .required("Required"),
+            businessName: Yup.string().required("Required"),
+            providers: Yup.number().required("Required")
+        }),
+        onSubmit: () => {
+            getCustomQuote(
+                formik.values.name,
+                formik.values.email,
+                formik.values.businessName,
+                formik.values.providers,
+                features
+            )
+        }
+    })
+
+    const included = (
+        <Tooltip label="Included in plan" position="top">
+            <ThemeIcon variant="light" radius="xl" size="lg">
+                <BsCheck2 />
+            </ThemeIcon>
+        </Tooltip>
+    )
+
+    const notIncluded = (
+        <Tooltip label="Not Included" position="top">
+            <ThemeIcon variant="light" radius="xl" size="lg">
+                <FiSlash className="text-red-500" />
+            </ThemeIcon>
+        </Tooltip>
+    )
+
+    const baseFeatures = [
+        "Premium Add-ons available",
+        "Limits on some data usage"
+    ]
+
+    const premiumFeatures = [
+        "Communication platform",
+        "Dictation software",
+        "Chronic Care Management platform",
+        "Automated workflows"
+    ]
+
+    const enterpriseFeatures = [
+        "Custom EMR integrations",
+        "Enhanced security and compliance",
+        "Tailored solutions for your organization",
+        "Unlimited staff accounts"
+    ]
 
     return (
-        <section className="bg-gradient-to-b from-white to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center py-20">
+        <section className="bg-gradient-to-b from-white to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center pb-20">
             <Head>
                 <title>Pricing | Digital Healthcare Solutions</title>
                 <meta
@@ -57,518 +216,473 @@ const Pricing = () => {
                     content="width=device-width, initial-scale=1.0"
                 />
             </Head>
-            <div className="flex flex-col items-center  drop-shadow-lg">
-                {/* <h1 className="flex flex-col items-center mx-3">
-                    <div className="text-2xl w-fit md:text-4xl max-w-5xl text-center pb-10 line tracking-wide">
-                    We offer a variety of plans to fit your business' needs.
-                </div> 
-                    <Alert
-                        icon={
-                            window.innerWidth < 1024 ? (
-                                ""
-                            ) : (
-                                <IoAlertCircleOutline size={25} />
-                            )
-                        }
-                        title="Good news!"
-                        radius="md"
-                        variant="outline"
-                        color="green"
-                        className="py-8"
+            <div className="flex flex-col items-center drop-shadow-lg pt-4">
+                <h1 className={`${classes.header} text-2xl lg:text-5xl`}>
+                    Pricing
+                </h1>
+                <Container size="lg" className="flex flex-col items-center">
+                    <Text
+                        className="text-center text-base md:text-xl my-6 max-w-2xl"
+                        color="dimmed"
                     >
-                        <h2 className="flex flex-col items-center">
-                            <div className="text-xl md:text-2xl w-fit max-w-3xl text-center font-bold">
-                                Please use the code
-                                <span className="text-green-700 dark:text-green-500 font-sans">
-                                    {" "}
-                                    BETA2023{" "}
-                                </span>
-                                to get 50% off your first 6 months. Or you can
-                                <div>
-                                    We are currently in beta. Contact us{" "}
-                                    <Link
-                                        className="text-blue-500  hover:underline"
-                                        href="/#contact"
-                                    >
-                                        here
-                                    </Link>{" "}
-                                    to talk to one of our sales reps to get a
-                                    beta discount code.
-                                </div>
-                            </div>
-                            <Paper
-                                withBorder
-                                p="md"
-                                radius="md"
-                                className="mt-5"
-                            >
-                                <Group position="apart">
-                                    <div>
-                                        <Text
-                                            color="dimmed"
-                                            transform="uppercase"
-                                            weight={700}
-                                            size="xs"
-                                        >
-                                            Positions left:{"  "}
-                                        </Text>
-                                        <Text weight={700} size="xl">
-                                            4
-                                        </Text>
-                                    </div>
-                                    <ThemeIcon
-                                        color="gray"
-                                        variant="light"
-                                        size={38}
-                                        radius="md"
-                                    >
-                                        <BsArrowDownRight
-                                            className="text-red-500"
-                                            size={28}
-                                        />
-                                    </ThemeIcon>
-                                </Group>
-                                <Text color="dimmed" size="sm" mt="md">
-                                    <Text
-                                        component="span"
-                                        color={"red"}
-                                        weight={700}
-                                    >
-                                        -20%
-                                    </Text>{" "}
-                                    decreased from previous
-                                </Text>
-                            </Paper> 
-                        </h2>
-                    </Alert>
-                </h1> */}
-
-                <article className="flex flex-col lg:flex-row w-5/6 xl:w-3/4 text-white  mt-10">
-                    <section className="bg-[#3b82f6] rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
-                        <h1 className="text-3xl font-sans font-medium pb-4">
-                            Base
-                        </h1>
-                        <p className=" text-neutral-100">
-                            Our Base plan is for clinics that want to try out
-                            Clinic-Connect and see if it is a good fit for their
-                            clinic.
-                        </p>
-                        <div className="py-4 mb-2 flex flex-row items-center">
-                            <span className="text-3xl pr-1 font-sans font-bold">
-                                $39
-                            </span>
-                            <span className="flex flex-col text-xs">
-                                <div>per</div>
-                                <div>month</div>{" "}
-                            </span>
-                        </div>
-                        <button
-                            onClick={() =>
-                                router.push(
-                                    "https://app.digitalhealthcaresolutions.io/login"
-                                )
-                            }
-                            className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 py-2 rounded-md"
-                        >
-                            Start Free Trial
+                        We provide personalized quotes tailored to each
+                        customer's specific needs, size, and budget. All tiers
+                        come with custom onboarding, training, support, and
+                        receive any new features we release at no additional
+                        cost.
+                        <br />
+                    </Text>
+                </Container>
+                {/* <Group className={classes.controls}>
+                    <Link href="https://app.digitalhealthcaresolutions.io/login">
+                        <button className="text-lg shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-bold py-[11px] px-6 rounded font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500">
+                            Get Custom Quote
                         </button>
-                        <div className="pt-3">
-                            <p className="pb-1">This plan includes:</p>
-                            <ul className="list-disc pl-4">
-                                <li>
-                                    Access to Clinic-Connect (limited features)
-                                </li>
-                                <li>Unlimited chatrooms</li>
-                                <li>
-                                    1 admin account (can create 1 additional
-                                    staff account)
-                                </li>
-                                <li>
-                                    Up to 3 providers listed under your clinic
-                                </li>{" "}
-                                <li>
-                                    Business Associate Agreement (BAA) signed
-                                    with your clinic
-                                </li>{" "}
-                            </ul>
-                        </div>
-                    </section>
-                    <section className="bg-[#3b83f6] bg- rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
-                        <h1 className="text-3xl font-sans font-medium pb-4">
+                    </Link>
+                    <Link href="/product/smart-plan#request-demo">
+                        <Button
+                            size="lg"
+                            variant="default"
+                            className={classes.control}
+                        >
+                            Request Demo
+                        </Button>
+                    </Link>
+                </Group> */}
+                <Container
+                    size={"lg"}
+                    className="flex flex-col md:flex-row justify-around w-full gap-4 my-8"
+                >
+                    {/* <Card className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400">
+                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl ">
                             Premium
-                        </h1>
-                        <p className=" text-neutral-100">
-                            Our Premium plan is for clinics that want to
-                            supercharge their communication, automation, and
-                            productivity.
+                        </h3>
+                        <Divider />
+                        <p className="my-5">
+                            A flexible plan for small healthcare businesses that
+                            can grow with you.
                         </p>
-                        <div className="py-4 mb-2 flex flex-row items-center">
-                            <span className="text-3xl pr-1 font-sans font-bold">
-                                $99
-                            </span>
-                            <span className="flex flex-col text-xs">
-                                <div>per</div>
-                                <div>month</div>{" "}
-                            </span>
-                        </div>
-                        <button
-                            onClick={() =>
-                                router.push(
-                                    "https://app.digitalhealthcaresolutions.io/login"
-                                )
-                            }
-                            className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 py-2 rounded-md"
-                        >
-                            Start Free Trial
-                        </button>
-                        <div className="pt-3">
-                            <p className="pb-1">This plan includes:</p>
-                            <ul className="list-disc pl-4">
-                                <li>Everything included in the free plan</li>
-                                <li>
-                                    Extra features of Clinic-Connect (custom
-                                    clinic branding, custom referral forms,
-                                    custom themes, scanner access, Ava (AI
-                                    assistant), phone and video chat with other
-                                    clinics and more)
-                                </li>
-                                <li>Up to 10 staff accounts</li>
-                                <li>
-                                    Up to 8 providers listed under your clinic
-                                </li>
-                                <li>Unlimited access to our dictation tool</li>
-                                <li>
-                                    Access to SmartForm (our
-                                    e-paperwork/registration tool)
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <section className="bg-[#3b83f6] bg- rounded-xl p-6 xl:p-8 text-base m-2 w-full lg:w-1/3 drop-shadow-menu">
-                        <h1 className="text-3xl font-sans font-medium pb-4">
-                            Enterprise
-                        </h1>
-                        <p className=" text-neutral-100">
-                            Our Enterprise plan is for large clinics and
-                            hospitals that need more access, customization and
-                            support. Get started by requesting a demo below.
-                        </p>
-                        <div className="py-4 mb-2 flex flex-row items-center">
-                            <span className="text-3xl pr-1 font-sans font-bold">
-                                Custom
-                            </span>
-                            {/* <span className="flex flex-col text-xs">
-                                <div>per</div>
-                                <div>month</div>{" "}
-                            </span> */}
-                        </div>
-                        <button
-                            onClick={() =>
-                                router.push(
-                                    "https://app.digitalhealthcaresolutions.io/login"
-                                )
-                            }
-                            className="bg-white text-[#3b82f6] hover:bg-[#e9e9ead2] w-full font-bold ring-1 ring-blue-500 py-2 rounded-md"
-                        >
-                            Request a demo
-                        </button>
-                        <div className="pt-3">
-                            <p className="pb-1">This plan includes:</p>
-                            <ul className="list-disc pl-4">
-                                <li>Everything included in the premium plan</li>
-                                <li>
-                                    Custom features and integrations (custom EMR
-                                    integrations, security, SAML, permissions,
-                                    billing and more )
-                                </li>
-                                <li>
-                                    Unlimited staff accounts and providers
-                                    listed under your entity
-                                </li>
-                                <li>
-                                    Priority support and dedicated account
-                                    manager
-                                </li>
-                                <li>
-                                    Comes with Access to SmartPlan (our chronic
-                                    care management tool) and reduced pricing
-                                    for Intellicall (our phone system add-on)
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <article className="flex flex-col w-full lg:w-1/3">
-                        <h1 className="text-2xl font-sans font-medium pb-3 text-center dark:text-neutral-200 text-neutral-700 underline underline-offset-8">
-                            Add-ons
-                        </h1>
-                        <section className="bg-[#3b82f6] rounded-xl p-3 text-sm m-2 drop-shadow-menu">
-                            <section>
-                                <h2 className="text-3xl font-sans font-medium pb-2 flex justify-center items-center">
-                                    Intellicall{" "}
-                                    <MdOutlinePhone
-                                        size={30}
-                                        className="ml-2"
-                                    />
-                                </h2>
-                                <AnimatePresence>
-                                    {showIntellicall && (
-                                        <motion.div
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{
-                                                opacity: 1,
-                                                height: "auto"
-                                            }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                        >
-                                            <h4 className="text-lg text-center pb-2">
-                                                Real-time patient communication
-                                            </h4>
-                                            <div>
-                                                Intellicall supercharges your
-                                                current phone system by
-                                                transcribing voicemails into
-                                                text, displaying them in a user
-                                                friendly interface and allowing
-                                                you to text patients back from
-                                                your clinic phone number. This
-                                                powerful add-on will save your
-                                                staff time, help you improve
-                                                no-show rates and improve
-                                                patient satisfaction by allowing
-                                                them to communicate with your
-                                                clinic the way they prefer.{" "}
-                                            </div>{" "}
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                                <div className="flex flex-row items-center justify-end mt-1">
-                                    <ButtonSecondary
-                                        onClick={() => {
-                                            setExpandIntellicall(
-                                                !expandIntellicall
-                                            )
-                                            setExpandSmartPlan(false)
-                                            setShowSmartPlan(!showSmartPlan)
-                                            setShowIntellicall(true)
-                                        }}
-                                        className="hover:bg-blue-600"
-                                    >
-                                        {expandIntellicall
-                                            ? "Hide"
-                                            : "Read More"}
-                                        {expandIntellicall ? (
-                                            <MdOutlineExpandLess />
-                                        ) : (
-                                            <MdOutlineExpandMore />
-                                        )}
-                                    </ButtonSecondary>
-                                </div>
-
-                                <AnimatePresence>
-                                    {expandIntellicall && (
-                                        <motion.section
-                                            initial={{ opacity: 0, height: 0 }}
-                                            animate={{
-                                                opacity: 1,
-                                                height: "auto"
-                                            }}
-                                            exit={{ opacity: 0, height: 0 }}
-                                        >
-                                            <div>
-                                                <p className="pb-1">
-                                                    This add-on includes:
-                                                </p>
-                                                <ul className="list-disc pl-4">
-                                                    <li>
-                                                        Easily read voicemails
-                                                        and respond to patients
-                                                        via text
-                                                    </li>
-                                                    <li>
-                                                        Call forwarding to your
-                                                        clinic phone number
-                                                    </li>
-                                                    <li>
-                                                        Call patients back right
-                                                        from the app
-                                                    </li>
-                                                    <li>
-                                                        Messages are categorized
-                                                        by call type and can be
-                                                        searched
-                                                    </li>
-                                                    <li>
-                                                        Ava (our AI assistant)
-                                                        helps your staff answer
-                                                        common medical questions
-                                                        and can be trained to
-                                                        answer questions
-                                                        specific to your clinic
-                                                    </li>
-                                                    <li>
-                                                        A variety of additional
-                                                        settings to customize
-                                                        your phone system
-                                                    </li>
-                                                </ul>{" "}
-                                                <div className="flex justify-start items-center">
-                                                    Intellicall pricing is based
-                                                    on usage.{" "}
-                                                    <Tooltip
-                                                        label='Our pricing is based on usage "tokens". Token usage is broken down as follows: Each text message sent or received counts as 0.33 tokens (2.5 cents), caller name lookups (new callers) are 0.13 tokens (1 cent) and every 1 minute of phone calls made or received count as 1 token (7.5 cents). Each token is billed as $0.075 for the first 2500 tokens, $0.07 for tokens 2500-5000 and $0.065 for each token after that. For example, if you send 200 text  messages and make 500 minutes of phone calls with 150 callers, you would be billed $57.45 ($0.075 x 200 x 0.33 + $0.075 x 500 + 0.01 x 150).'
-                                                        // transition="slide-down"
-                                                        position="bottom"
-                                                        multiline
-                                                        width={220}
-                                                        withArrow
-                                                        events={{
-                                                            hover: true,
-                                                            focus: true,
-                                                            touch: true
-                                                        }}
-                                                    >
-                                                        <ActionIcon className="text-xl text-white hover:bg-blue-100  hover:bg-opacity-10 flex justify-center rounded-md ml-2">
-                                                            <BsQuestionCircle />
-                                                        </ActionIcon>
-                                                    </Tooltip>
-                                                </div>
-                                            </div>
-                                        </motion.section>
-                                    )}
-                                </AnimatePresence>
-                            </section>
-                        </section>
-                        <section className="bg-[#3b82f6] rounded-xl p-3 text-sm m-2 drop-shadow-menu">
-                            <div className="text-3xl font-sans font-medium pb-3 flex justify-center items-center">
-                                SmartPlan
-                                <BsClipboardData size={28} className="ml-2" />
-                            </div>
-
-                            <AnimatePresence>
-                                {showSmartPlan && (
-                                    <motion.div
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: "auto" }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                    >
-                                        {" "}
-                                        <h4 className="text-lg text-center pb-2">
-                                            Chronic care management made easy
-                                        </h4>
-                                        <div>
-                                            SmartPlan is a simple way to manage
-                                            your chronic care patients and get
-                                            reimbursed for the work you are
-                                            already doing. SmartPlan does all
-                                            the work for you, from tracking time
-                                            spent on chronic care management to
-                                            generating the billing codes you
-                                            need to get paid.
-                                        </div>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                            <div className="flex flex-row items-center justify-end mt-1 ">
-                                <ButtonSecondary
-                                    onClick={() => {
-                                        setExpandIntellicall(false)
-                                        setExpandSmartPlan(!expandSmartPlan)
-                                        setShowSmartPlan(true)
-                                        setShowIntellicall(!showIntellicall)
-                                    }}
-                                    className="hover:bg-blue-600"
+                        <Divider />
+                        <div className="my-8">
+                            {baseFeatures.map((item, index) => (
+                                <div
+                                    className={`flex justify-start items-center text-base p-2 rounded-md ${
+                                        index % 2 === 1
+                                            ? "bg-transparent"
+                                            : "bg-neutral-100 dark:bg-neutral-800"
+                                    }`}
                                 >
-                                    {expandSmartPlan ? "Hide" : "Read More"}
-                                    {expandSmartPlan ? (
-                                        <MdOutlineExpandLess />
-                                    ) : (
-                                        <MdOutlineExpandMore />
-                                    )}
-                                </ButtonSecondary>
-                            </div>
-                            <AnimatePresence>
-                                {expandSmartPlan && (
-                                    <motion.section
-                                        initial={{ opacity: 0, height: 0 }}
-                                        animate={{ opacity: 1, height: "auto" }}
-                                        exit={{ opacity: 0, height: 0 }}
-                                    >
-                                        {" "}
-                                        <div>
-                                            <p className="pb-1">
-                                                This add-on includes:
-                                            </p>
-                                            <ul className="list-disc pl-4">
-                                                <li>
-                                                    Care plans for 20+ chronic
-                                                    conditions including
-                                                    Dementia, Parkinson&apos;s,
-                                                    Migraines, Annual Wellness
-                                                    Visits, Diabetes, COPD, CHF
-                                                    and more
-                                                </li>
-                                                <li>
-                                                    Automatically generate a
-                                                    report to submit for for
-                                                    reimbursement
-                                                </li>
-                                                <li>
-                                                    Automatically generate a
-                                                    patient handout
-                                                </li>
-                                                <li>
-                                                    Auto flag medications that
-                                                    may be causing side effects
-                                                </li>
-                                                <li>
-                                                    Automatically flag
-                                                    conditions that require
-                                                    additional attention such as
-                                                    suicidal ideation,
-                                                    depression, falling often,
-                                                    driving ability, and more
-                                                </li>
+                                    <BsCheck2
+                                        className="text-blue-500 mr-2"
+                                        size={18}
+                                    />
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
 
-                                                <li>
-                                                    Ability to send
-                                                    questionaires to patients to
-                                                    answer before their
-                                                    appointment
-                                                </li>
-                                                <li>
-                                                    Automatically remind you
-                                                    when patient is due for a
-                                                    follow-up care plan
-                                                </li>
-                                            </ul>
-                                            <div className="flex items-center justify-start py-1">
-                                                SmartPlan is billed as a monthly
-                                                subscription
-                                                <Tooltip
-                                                    label='"We charge $300 per month per practice. This includes unlimited care plans for all providers in each practice'
-                                                    position="bottom"
-                                                    multiline
-                                                    width={220}
-                                                    withArrow
-                                                    events={{
-                                                        hover: true,
-                                                        focus: true,
-                                                        touch: true
-                                                    }}
-                                                >
-                                                    <ActionIcon className="text-xl text-white hover:bg-blue-100  hover:bg-opacity-10 flex justify-center rounded-md ml-2">
-                                                        <BsQuestionCircle />
-                                                    </ActionIcon>
-                                                </Tooltip>
-                                            </div>
-                                        </div>
-                                    </motion.section>
-                                )}
-                            </AnimatePresence>
-                        </section>
-                    </article>
-                </article>
+                        <Button
+                            variant="default"
+                            color="gray"
+                            size="md"
+                            className="w-full"
+                        >
+                            Get Custom Quote
+                        </Button>
+                    </Card> */}
+
+                    <Card className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400">
+                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
+                            Premium
+                        </h3>
+                        <Divider />
+                        <p className="my-5">
+                            A plan for medium sized businesses with more data
+                            and customization needs.
+                        </p>
+                        <Divider />
+                        <div className="my-8">
+                            {premiumFeatures.map((item, index) => (
+                                <div
+                                    className={`flex justify-start items-center text-base p-2 rounded-md ${
+                                        index % 2 === 1
+                                            ? "bg-transparent"
+                                            : "bg-neutral-100  dark:bg-neutral-800 "
+                                    }`}
+                                >
+                                    <BsCheck2
+                                        className="text-blue-500 mr-2"
+                                        size={18}
+                                    />
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
+
+                        <Button
+                            onClick={() => setIsModalOpen(true)}
+                            size="md"
+                            className="w-full bg-blue-500"
+                        >
+                            Get Custom Quote
+                        </Button>
+                    </Card>
+
+                    <Card className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400">
+                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl ">
+                            Enterprise
+                        </h3>
+                        <Divider />
+                        <p className="my-5">
+                            All the bells and whistles for large organizations
+                            with complex requirements.
+                        </p>
+                        <Divider />
+                        <div className="my-8">
+                            {enterpriseFeatures.map((item, index) => (
+                                <div
+                                    className={`flex justify-start items-center text-base p-2 rounded-md ${
+                                        index % 2 === 1
+                                            ? "bg-transparent"
+                                            : "bg-neutral-100 dark:bg-neutral-800"
+                                    }`}
+                                >
+                                    <BsCheck2
+                                        className="text-blue-500 mr-2"
+                                        size={18}
+                                    />
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
+
+                        <Button
+                            variant="default"
+                            color="gray"
+                            size="md"
+                            className="w-full"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            Get Custom Quote
+                        </Button>
+                    </Card>
+                </Container>
+                <h2
+                    className={`${classes.header2} text-xl lg:text-3xl mt-14 underline underline-offset-8 hidden md:block`}
+                >
+                    All Features:
+                </h2>
+
+                <div className="md:flex flex-col items-center mt-4 hidden">
+                    <Table
+                        withBorder
+                        striped
+                        verticalSpacing="lg"
+                        fontSize="lg"
+                        className="w-full"
+                        horizontalSpacing="xl"
+                    >
+                        <caption>
+                            {" "}
+                            <p className="text-sm lg:text-base mt-3">
+                                * All plans include a 30-day free trial.
+                            </p>
+                        </caption>
+                        <thead className="sticky top-16 lg:top-[75px]  dark:bg-neutral-900 bg-neutral-100 dark:brightness-[1.22]">
+                            <tr>
+                                <th>Feature</th>
+                                {/* <th>Base</th> */}
+                                <th>Premium</th>
+                                <th>Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IntelliCall</td>
+                                {/* <td>
+                                    {included} <br />{" "}
+                                    <span className="text-sm">
+                                        (limited data)
+                                    </span>
+                                </td> */}
+                                <td>
+                                    {included}
+                                    {/* <br />{" "}
+                                    <span className="text-sm">(unlimited)</span> */}
+                                </td>
+                                <td>
+                                    {included}
+                                    {/* <br />{" "} */}
+                                    {/* <span className="text-sm">(unlimited)</span> */}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Clinic-Connect</td>
+                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    E-fax <br />
+                                    <span className="text-sm">
+                                        (coming soon)
+                                    </span>
+                                </td>
+                                {/* <td>
+                                    {included} <br />{" "}
+                                    <span className="text-sm">
+                                        (limited data)
+                                    </span>
+                                </td> */}
+                                <td>
+                                    {included}
+                                    {/* <br />{" "}
+                                    <span className="text-sm">(unlimited)</span> */}
+                                </td>
+                                <td>
+                                    {included}
+                                    {/* <br />{" "}
+                                    <span className="text-sm">(unlimited)</span> */}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Dictation Software</td>
+                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>Smartplan</td>
+                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            {/* <tr>
+                                <td>Automation workflow builder</td>
+                                <td>{included}</td>
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr> */}
+                            <tr>
+                                <td>Private Chatrom with our team</td>
+                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    In person or video guided
+                                    tutorials/walkthrough
+                                </td>
+                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>24/7 Customer Support</td>
+                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>BAA signed with your entity</td>
+                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            {/* <tr>
+                                <td>Easy Auth</td>
+                                <td>Available as add on</td>
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr> */}
+                            <tr>
+                                <td>Health Scribe</td>
+                                {/* <td>Available as add on</td> */}
+                                <td>Available as add on</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>Custom E-forms made for your Business</td>
+                                {/* <td>{notIncluded}</td> */}
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>Unlimited staff accounts</td>
+                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>Custom EMR integrations</td>
+                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr>
+                            {/* <tr>
+                                <td>
+                                    Compliance Center
+                                    <br />
+                                    <span className="text-sm">
+                                        ( Bird's eye view of all data and
+                                        activity of your organization )
+                                    </span>
+                                </td>
+                                <td>{notIncluded}</td>
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr> */}
+                            <tr>
+                                <td>30 day logging/request history</td>
+                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr>
+                            <tr>
+                                <td>IP allowlist</td>
+                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr>
+                            {/* <tr>
+                                <td>
+                                    Single Tenancy
+                                    <br />
+                                    <span className="text-sm">
+                                        ( dedicated server and database )
+                                    </span>
+                                </td>
+                                <td>{notIncluded}</td>
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr> */}
+                            <tr>
+                                <td>SSO/SAML</td>
+                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr>
+                            {/* <tr>
+                                <td>Custom dashboards</td>
+                                <td>{notIncluded}</td>
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr> */}
+                            {/* <tr>
+                                <td>Customized reporting and analytics</td>
+                                <td>{notIncluded}</td>
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr> */}
+                            <tr>
+                                <td>API access</td>
+                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
+                                <td>{included}</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </div>
             </div>
+            <Modal
+                opened={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                size="md"
+                centered
+                className="rounded-2xl backdrop-blur-sm"
+            >
+                <h1 className="text-center">
+                    <Title order={3}>
+                        Get a custom quote for your business
+                    </Title>
+                    <p className="text-gray-500">
+                        Thank you for your interest in our product! Please fill
+                        out the form below and we will get back to you as soon
+                        as possible.
+                    </p>
+                </h1>
+                <form
+                    onSubmit={formik.handleSubmit}
+                    className="flex flex-col justify-center px-4 rounded-2xl"
+                >
+                    <TextInput
+                        label="Name"
+                        placeholder="Your name"
+                        mt="md"
+                        name="name"
+                        withAsterisk
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.name && formik.errors.name}
+                    />
+                    <TextInput
+                        label="Email"
+                        placeholder="Your email"
+                        name="email"
+                        mt="md"
+                        withAsterisk
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={formik.touched.email && formik.errors.email}
+                    />{" "}
+                    <TextInput
+                        label="Business Name"
+                        placeholder="Your Business"
+                        name="businessName"
+                        mt="md"
+                        withAsterisk
+                        value={formik.values.businessName}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                            formik.touched.businessName &&
+                            formik.errors.businessName
+                        }
+                    />
+                    <TextInput
+                        label="Number of Providers"
+                        placeholder="Number of Providers"
+                        name="providers"
+                        mt="md"
+                        withAsterisk
+                        value={formik.values.providers}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        error={
+                            formik.touched.providers && formik.errors.providers
+                        }
+                    />
+                    <MultiSelect
+                        data={[
+                            "IntelliCall",
+                            "Clinic-Connect",
+                            "SmartPlan",
+                            "E-Fax",
+                            "Dictation Software"
+                        ]}
+                        label="What features are you interested in?"
+                        placeholder="Select features"
+                        name="features"
+                        mt="md"
+                        withAsterisk
+                        value={features}
+                        onChange={setFeatures}
+                    />
+                    <div className="flex justify-center pt-5">
+                        <ButtonPrimary
+                            type="submit"
+                            onClick={() => console.log("clicked")}
+                            className=""
+                        >
+                            Submit
+                        </ButtonPrimary>
+                    </div>
+                </form>
+            </Modal>
         </section>
     )
 }
