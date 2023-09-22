@@ -92,7 +92,6 @@ const useStyles = createStyles((theme) => ({
         marginBottom: theme.spacing.xs / 2,
         color: theme.colorScheme === "dark" ? theme.white : theme.black
     },
-
     afterFooter: {
         display: "flex",
         justifyContent: "space-between",
@@ -105,16 +104,23 @@ const useStyles = createStyles((theme) => ({
                 ? theme.colors.dark[4]
                 : theme.colors.gray[2]
         }`,
-
         [theme.fn.smallerThan("sm")]: {
             flexDirection: "column"
         }
     },
-
     social: {
         [theme.fn.smallerThan("sm")]: {
             marginTop: theme.spacing.xs
         }
+    },
+    status: {
+        display: "flex",
+        alignItems: "center",
+        marginTop: "0.75rem"
+    },
+    statusText: {
+        marginLeft: "0.5rem",
+        marginTop: "0.1rem"
     }
 }))
 
@@ -167,6 +173,16 @@ export function Footer({ data }: FooterLinksProps) {
                         Level up your practice with our next-generation
                         communication platform for healthcare providers.
                     </Text>
+                    <div className={classes.status}>
+                        <div className="rounded-full bg-green-500 w-1 h-1"></div>
+                        <Text
+                            size="sm"
+                            color="dimmed"
+                            className={classes.statusText}
+                        >
+                            All systems operational
+                        </Text>
+                    </div>
                 </div>
                 <div className={classes.groups}>{groups}</div>
             </Container>

@@ -43,6 +43,8 @@ import { FiSlash } from "react-icons/fi"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 import { showNotification } from "@mantine/notifications"
+import { RxQuestionMarkCircled } from "react-icons/rx"
+import { AiOutlineQuestion } from "react-icons/ai"
 
 const Pricing = () => {
     const router = useRouter()
@@ -300,8 +302,9 @@ const Pricing = () => {
                         </h3>
                         <Divider />
                         <p className="my-5">
-                            A plan for medium sized businesses with more data
-                            and customization needs.
+                            A plan designed for small to medium-sized businesses
+                            that can grow with you.{" "}
+                            <span className="text-xs">(1-10 providers)</span>
                         </p>
                         <Divider />
                         <div className="my-8">
@@ -338,7 +341,8 @@ const Pricing = () => {
                         <Divider />
                         <p className="my-5">
                             All the bells and whistles for large organizations
-                            with complex requirements.
+                            with complex requirements.{" "}
+                            <span className="text-xs">(10+ providers)</span>
                         </p>
                         <Divider />
                         <div className="my-8">
@@ -401,7 +405,26 @@ const Pricing = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>IntelliCall</td>
+                                <td>
+                                    IntelliCall <br />
+                                    <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
+                                        Includes:
+                                        <Tooltip
+                                            label="15,000 text messages per month,
+                                        15,000 minutes of call time per month
+                                           "
+                                            position="top"
+                                        >
+                                            <ThemeIcon
+                                                variant="default"
+                                                radius="xl"
+                                                size="sm"
+                                            >
+                                                <AiOutlineQuestion size={12} />
+                                            </ThemeIcon>
+                                        </Tooltip>
+                                    </div>
+                                </td>
                                 {/* <td>
                                     {included} <br />{" "}
                                     <span className="text-sm">

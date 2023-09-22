@@ -64,7 +64,7 @@ function AboutAvatar({
                     </Text>
 
                     <Text
-                        size={width > 1024 ? 28 : "md"}
+                        size={width > 1024 ? 24 : "md"}
                         weight={500}
                         className={classes.name}
                     >
@@ -73,10 +73,16 @@ function AboutAvatar({
 
                     <Group noWrap spacing={10} mt={3}>
                         {/* <HiAtSymbol size={16} className={classes.icon} /> */}
-                        <Text size={width > 1024 ? "md" : "sm"} color="dimmed">
-                            {email.length > 18
-                                ? email.slice(0, 18) + "\n" + email.slice(18)
-                                : email}
+                        <Text size={width > 1024 ? "sm" : "xs"} color="dimmed">
+                            <a
+                                href={`mailto:${email}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ textDecoration: "none" }}
+                                className="hover:text-blue-500"
+                            >
+                                {email}
+                            </a>
                         </Text>
                     </Group>
                     <Link href={`/about-us#${nameFirst}`}>

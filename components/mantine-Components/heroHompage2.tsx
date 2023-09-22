@@ -132,21 +132,19 @@ export function HeroHomePage2() {
                         transition={{ duration: 0.5 }}
                     >
                         <Group className={classes.controls}>
-                            <Link href="https://app.digitalhealthcaresolutions.io/login">
+                            <Link href="/product/smart-plan#request-demo">
                                 <button className="text-lg shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-bold py-[11px] px-6 rounded font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500">
-                                    Start Free Trial
+                                    Request Demo
                                 </button>
                             </Link>
-                            <Link href="/product/smart-plan#request-demo">
+                            <Link href="/blog">
                                 <Button
-                                    // component="a"
-                                    // href="https://github.com/mantinedev/mantine"
                                     size="lg"
                                     variant="default"
                                     className={classes.control}
                                     // leftIcon={<GithubIcon size={20} />}
                                 >
-                                    Request Demo
+                                    Learn More
                                 </Button>
                             </Link>
                         </Group>
