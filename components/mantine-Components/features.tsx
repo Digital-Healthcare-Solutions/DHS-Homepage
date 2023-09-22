@@ -54,9 +54,11 @@ export function FeaturesGrid({ title, description }) {
     const MOCKDATA = [
         {
             icon: AiOutlineMessage,
-            title: "Realtime messaging and referrals",
+            title: "Realtime messaging and referrals", //chat appp and efax built into one
             description:
-                "Ditch the fax machine, sign up on our Clinic-Connect network today for free! Clinic-Connect is a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about Slack, but for healthcare. Anyone who is part of the network can send referrals and communicate with each other in realtime."
+                "We know the struggle handling all of the documents and external communication with other healthcare providers. That's why we built Clinic-Connect, a realtime messaging and referral system that allows you to communicate with other providers in a multichannel, HIPAA compliant way. Whether through fax or instant messaging, we've got you covered."
+
+            // "Ditch the fax machine, sign up on our Clinic-Connect network today for free! Clinic-Connect is a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about Slack, but for healthcare. Anyone who is part of the network can send referrals and communicate with each other in realtime."
         },
 
         {
@@ -74,22 +76,22 @@ export function FeaturesGrid({ title, description }) {
         },
         {
             icon: RiComputerLine,
-            title: "Seamlessly add online pre-registration",
+            title: "Seamlessly add online forms to your website",
             description:
-                "We make it easy to add seamless online pre-registration to your practice. Simply embed the custom link we provide on your website  and instantly have a secure online registration flow for your patients."
+                "We make it easy to add seamless online pre-registration & intake forms to your practice's website. Simply embed the custom link we provide on your website and instantly have a secure online form flow for your patients."
         },
         {
             icon: BsMic,
-            title: "Dictation and transcription",
+            title: "Medical Dictation",
             description:
-                "Use our dictation and transcription service to save time writing your notes. We utilize the latest in speech recognition technology that is extemely accurate with medical terminology and can even remove background noise, 'umms' from speech and translate  any langauge to English. "
+                "Use our dictation service to save time & money writing your notes. We utilize the latest in AI speech recognition technology to provide accurate and fast results. Our service can even remove background noise, 'umms' from speech,  translate any langauge to English, and more."
         },
 
         {
             icon: MdOutlineAutoAwesome,
             title: "AI powered automation (coming soon)",
             description:
-                "Supercharge your practice with Ava, our AI assistant! Ava effortlessly integrates with our other products and can be custom trained on data you provide. Ava can respond to patient calls and texts, cancel appointments, and route conversations to the appropriate person when needed. Ava can summarize referrals automatically, reach out to new patients, and even send a follow up message to the referring provider."
+                "Supercharge your practice with Ava, our AI assistant! Ava effortlessly integrates with our other products and can be custom trained on data you provide. Ava can automate routine administrative tasks, such as scheduling appointments, sending reminders, summarizing new referrals, and more."
         }
     ]
 
