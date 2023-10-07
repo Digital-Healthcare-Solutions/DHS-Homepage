@@ -147,7 +147,14 @@ const PrivacyPolicy = () => {
                 <p className="pb-12">
                     If you have any questions, concerns, or requests regarding
                     this Privacy Policy or our data practices, please contact us
-                    at support@digitalhealthcaresolutions.io.
+                    at
+                    <a
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                        href="mailto:support@digitalhealthcaresolutions.io."
+                    >
+                        {" "}
+                        support@digitalhealthcaresolutions.io.
+                    </a>
                 </p>
             </Container>
         </div>

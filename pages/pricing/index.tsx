@@ -204,17 +204,19 @@ const Pricing = () => {
     ]
 
     const premiumFeatures = [
-        "Communication platform",
-        "Dictation software",
+        "Patient Communication platform",
+        "Provider Communication platform",
         "Chronic Care Management platform",
-        "Automated workflows"
+        "Dictation software",
+        "Custom e-forms branded for your business"
     ]
 
     const enterpriseFeatures = [
+        "Everything in Premium",
         "Custom EMR integrations",
         "Enhanced security and compliance",
         "Tailored solutions for your organization",
-        "Unlimited staff accounts"
+        "Unlimited staff and provider accounts"
     ]
 
     return (
@@ -411,7 +413,7 @@ const Pricing = () => {
                                         Includes:
                                         <Tooltip
                                             label="15,000 text messages per month,
-                                        15,000 minutes of call time per month
+                                        15,000 minutes of call time per month / provider
                                            "
                                             position="top"
                                         >
@@ -451,9 +453,22 @@ const Pricing = () => {
                             <tr>
                                 <td>
                                     E-fax <br />
-                                    <span className="text-sm">
-                                        (coming soon)
-                                    </span>
+                                    <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
+                                        Includes:
+                                        <Tooltip
+                                            label="2,500 pages per month / provider
+                                           "
+                                            position="top"
+                                        >
+                                            <ThemeIcon
+                                                variant="default"
+                                                radius="xl"
+                                                size="sm"
+                                            >
+                                                <AiOutlineQuestion size={12} />
+                                            </ThemeIcon>
+                                        </Tooltip>
+                                    </div>
                                 </td>
                                 {/* <td>
                                     {included} <br />{" "}
@@ -523,12 +538,12 @@ const Pricing = () => {
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr> */}
-                            <tr>
+                            {/* <tr>
                                 <td>Health Scribe</td>
-                                {/* <td>Available as add on</td> */}
+                     
                                 <td>Available as add on</td>
                                 <td>{included}</td>
-                            </tr>
+                            </tr> */}
                             <tr>
                                 <td>Custom E-forms made for your Business</td>
                                 {/* <td>{notIncluded}</td> */}
@@ -602,12 +617,12 @@ const Pricing = () => {
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr> */}
-                            <tr>
+                            {/* <tr>
                                 <td>API access</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
-                            </tr>
+                            </tr> */}
                         </tbody>
                     </Table>
                 </div>
