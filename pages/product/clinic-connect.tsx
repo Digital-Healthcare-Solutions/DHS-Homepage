@@ -176,7 +176,8 @@ const ClinicConnect = () => {
                 />
                 <meta
                     name="keywords"
-                    content="clinic connect, clinic, connect, digital, messaging, platform, healthcare, providers, send, receive, referrals, instantly, alternative, fax, machine, fax machine, faxing, faxing alternative, secure alternative to faxing"
+                    content="clinic connect, clinic, connect, digital, 
+                    e-fax, electronic fax, HIPPA compliant fax, HIPPA compliant E-fax, messaging, platform, healthcare, providers, send, receive, referrals, instantly, alternative, fax, machine, fax machine, faxing, faxing alternative, secure alternative to faxing"
                 />
                 <meta name="author" content="Clinic Connect" />
                 <meta
@@ -209,29 +210,20 @@ const ClinicConnect = () => {
                             <h2 className="text-blue-500 underline underline-offset-4 font-semibold mb-3">
                                 The Problem :
                             </h2>
-                            <ul className="list-disc list-inside">
-                                <li className="pb-2">
-                                    Fax machines are slow, unreliable, and error
-                                    prone
-                                </li>
-                                <li className="pb-2">
-                                    Fax machines are expensive to use and
-                                    maintain
-                                </li>
-                                <li className="pb-2">
-                                    High paper and ink usage are costly to the
-                                    environment
-                                </li>
-
-                                <li className="pb-2">
-                                    Hours of staff time are wasted on sorting
-                                    and filing faxes
-                                </li>
-
-                                {/* <li className="pb-2">
-                                    Faxes are often sent to the wrong number
-                                </li> */}
-                            </ul>
+                            <p>
+                                Old fashioned ways of communicating between
+                                healthcare providers get in the way of providing
+                                the best care for patients. Fax machines can be
+                                slow, unreliable, and error prone. Medical
+                                practices spend hundreds of dollars per month in
+                                paper and ink costs, waste hours of staff time
+                                on sorting and filing faxes, and risk losing
+                                important patient information. Many times, faxes
+                                are sent to the wrong number or the fax machine
+                                is out of paper and the fax is never received.
+                                This can lead to serious consequences for
+                                patients and providers.
+                            </p>
                         </div>{" "}
                         <Image
                             className="rounded-xl shadow-lg dark:shadow-gray-700"
@@ -247,27 +239,20 @@ const ClinicConnect = () => {
                             <h2 className="text-blue-500 underline underline-offset-4 font-semibold mb-3">
                                 Our Solution :
                             </h2>
-                            <ul className="list-disc list-inside">
-                                <li className="pb-2">
-                                    Send and receive referrals to any provider
-                                    instantly
-                                </li>{" "}
-                                <li className="pb-2">
-                                    Save hundreds of dollars on paper and ink
-                                </li>
-                                <li className="pb-2">
-                                    Paperless referrals are better for the
-                                    environment
-                                </li>
-                                <li className="pb-2">
-                                    All referrals are auto sorted and easily
-                                    accessible
-                                </li>
-                                {/* <li className="pb-2">
-                                    Be confident that your referrals are sent to
-                                    the right clinic
-                                </li> */}
-                            </ul>
+                            <p>
+                                Clinic-Connect serves as a cutting-edge
+                                communication platform, facilitating real-time
+                                patient referrals among healthcare providers via
+                                the internet. Our solution streamlines
+                                communication in a modern, efficient, and secure
+                                manner, eliminating the need for outdated fax
+                                machines. Whether through real-time chat or
+                                electronic fax, Clinic-Connect ensures HIPAA
+                                compliant, rapid , and reliable transmission of
+                                patient information. Experience the future of
+                                healthcare connectivity with Clinic-Connect,
+                                where innovation meets reliability.
+                            </p>
                         </div>{" "}
                         <Image
                             className="rounded-xl shadow-lg dark:shadow-gray-700"
@@ -452,8 +437,8 @@ const ClinicConnect = () => {
                                     again
                                 </Title>
                                 <Text className="py-6">
-                                    Sign up today for free experience the
-                                    benefits of Clinic-Connect for yourself.
+                                    Sign up today to experience the benefits of
+                                    Clinic-Connect for yourself.
                                 </Text>
                                 <a
                                     target="_blank"
