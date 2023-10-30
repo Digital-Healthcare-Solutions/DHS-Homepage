@@ -11,7 +11,6 @@ interface Props {
 }
 
 const Blog = ({ posts }: Props) => {
-    console.log({ posts })
     return (
         <div>
             <Head>
@@ -36,27 +35,34 @@ const Blog = ({ posts }: Props) => {
             />
 
             <div className="flex flex-col items-center md:items-start md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-4 md:gap-8 p-2 mx-4 md:mx-8 pb-24 pt-12">
-                {posts.map((post) => (
-                    <Link
-                        className="w-fit"
-                        key={post._id}
-                        href={`/blog/${post.slug.current}`}
-                    >
-                        <BlogCard
+                {posts
+                    .sort((a, b) => {
+                        return (
+                            new Date(b._createdAt).getTime() -
+                            new Date(a._createdAt).getTime()
+                        )
+                    })
+                    .map((post) => (
+                        <Link
+                            className="w-fit"
                             key={post._id}
-                            title={post.title}
-                            author={post.author}
-                            description={post.description}
-                            mainImage={post.mainImage}
-                            slug={post.slug}
-                            body={post.body}
-                            _id={post._id}
-                            _createdAt={post._createdAt}
-                            categories={post.categories}
-                            readTime={post.readTime}
-                        />
-                    </Link>
-                ))}
+                            href={`/blog/${post.slug.current}`}
+                        >
+                            <BlogCard
+                                key={post._id}
+                                title={post.title}
+                                author={post.author}
+                                description={post.description}
+                                mainImage={post.mainImage}
+                                slug={post.slug}
+                                body={post.body}
+                                _id={post._id}
+                                _createdAt={post._createdAt}
+                                categories={post.categories}
+                                readTime={post.readTime}
+                            />
+                        </Link>
+                    ))}
             </div>
         </div>
     )
