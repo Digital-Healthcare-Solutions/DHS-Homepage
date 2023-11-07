@@ -13,6 +13,7 @@ import { useTheme } from "next-themes"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 import Head from "next/head"
+import Script from "next/script"
 
 const raleway = Raleway({ subsets: ["latin"] })
 
@@ -142,7 +143,20 @@ export default function App({ Component, pageProps }: AppProps) {
                     }
                     ;
                 </script>
-            </Head>
+            </Head>{" "}
+            <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+                strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+        `}
+            </Script>
             <ThemeProvider attribute="class" defaultTheme="dark">
                 <MantineProvider
                     theme={{

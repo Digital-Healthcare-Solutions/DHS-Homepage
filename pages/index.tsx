@@ -9,6 +9,7 @@ import { motion } from "framer-motion"
 import SmartPlanDescription from "../components/page-Components/smartplanDescription"
 import HomePoints from "../components/page-Components/homePoints"
 import { HeroHomePage2 } from "../components/mantine-Components/heroHompage2"
+import Script from "next/script"
 
 export default function Home() {
     return (
@@ -37,22 +38,7 @@ export default function Home() {
                 />
 
                 <link rel="icon" href="/favicon.ico" />
-                <script id="mcjs">
-                    {
-                        //@ts-ignore
-                        !(function (c, h, i, m, p) {
-                            ;(m = c.createElement(h)),
-                                (p = c.getElementsByTagName(h)[0]),
-                                (m.async = 1),
-                                (m.src = i),
-                                p.parentNode.insertBefore(m, p)
-                        })(
-                            document,
-                            "script",
-                            "https://chimpstatic.com/mcjs-connected/js/users/1199c26ea58e1d8664b09730f/c963c98cd688240fb76253445.js"
-                        )
-                    }
-                </script>
+                {/* <!-- Google tag (gtag.js) --> */}
             </Head>
             <HeroHomePage2 />
             <FeaturesGrid
