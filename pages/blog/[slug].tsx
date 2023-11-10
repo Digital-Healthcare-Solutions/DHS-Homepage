@@ -9,6 +9,7 @@ import ButtonPrimary from "../../components/UI-Components/button-primary"
 import { Avatar, Text } from "@mantine/core"
 import { TableOfContentsFloating } from "../../components/blog/contents"
 import { useScroll, motion } from "framer-motion"
+import Head from "next/head"
 
 interface Props {
     post: Post
@@ -19,6 +20,15 @@ const Post = ({ post }: Props) => {
 
     return (
         <article>
+            <Head>
+                <title>{post.title} | Digital Healthcare Solutions</title>
+                <meta name="description" content={post.description} />
+                <meta property="og:description" content={post.description} />
+                <meta
+                    name="keywords"
+                    content="Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+                />
+            </Head>
             <motion.div
                 className={
                     "h-1 bg-gradient-to-r from-blue-400 to-purple-500 top-14 md:top-16 lg:top-20 sticky z-50 left-0 origin-top-left rounded-full "

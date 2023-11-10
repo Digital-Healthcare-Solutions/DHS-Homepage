@@ -93,7 +93,6 @@ publishedAt < now()] | order(publishedAt desc) {
             changefreq: "daily",
             priority: 0.7
         }))
-        console.log([...currentPages, ...finalBlogsPages])
         return [...currentPages, ...finalBlogsPages]
     }
 }
