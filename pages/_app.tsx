@@ -157,6 +157,17 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
         `}
             </Script>
+            {/* <!-- Google tag (gtag.js) --> */}
+            <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID2}`}
+            ></Script>
+            <Script>
+                {` window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID2}');`}
+            </Script>
             <ThemeProvider attribute="class" defaultTheme="dark">
                 <MantineProvider
                     theme={{
