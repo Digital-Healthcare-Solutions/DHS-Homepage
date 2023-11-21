@@ -89,13 +89,7 @@ export function TableOfContentsFloating({
     contents
 }: TableOfContentsFloatingProps) {
     const tableElems = contents.filter(
-        (item) =>
-            item.style == "h1" ||
-            item.style == "h2" ||
-            item.style == "h3" ||
-            item.style == "h4" ||
-            item.style == "h5" ||
-            item.style == "h6"
+        (item) => item.style == "h1" || item.style == "h2" || item.style == "h3"
     )
     console.log(
         tableElems.map((item) => {

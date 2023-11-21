@@ -1,3 +1,4 @@
+//
 import { GetStaticProps } from "next"
 import { client, urlFor } from "../../sanity"
 import { Post } from "../../typings"
@@ -6,9 +7,10 @@ import { PortableText } from "@portabletext/react"
 import Link from "next/link"
 import { RichTextComponents } from "../../components/blog/RichTextComponents"
 import ButtonPrimary from "../../components/UI-Components/button-primary"
-import { Avatar, Text } from "@mantine/core"
+import { Avatar, Container, Text } from "@mantine/core"
 import { TableOfContentsFloating } from "../../components/blog/contents"
 import { useScroll, motion } from "framer-motion"
+import { useState } from "react"
 
 interface Props {
     post: Post
@@ -19,6 +21,7 @@ const Post = ({ post }: Props) => {
 
     return (
         <article>
+            {/* @ts-ignore  */}
             <motion.div
                 className={
                     "h-1 bg-gradient-to-r from-blue-400 to-purple-500 top-14 md:top-16 lg:top-20 sticky z-50 left-0 origin-top-left rounded-full "
@@ -26,7 +29,7 @@ const Post = ({ post }: Props) => {
                 style={{ scaleX: scrollYProgress }}
                 initial={{ scaleX: 0 }}
             ></motion.div>
-
+            {/* @ts-ignore  */}
             <Image
                 src={urlFor(post.mainImage).url()!}
                 className="w-full h-40 lg:h-64 object-cover"
@@ -42,12 +45,14 @@ const Post = ({ post }: Props) => {
                     <TableOfContentsFloating contents={post.body} />
                 </div>
             </div>
-            <section className="max-w-3xl mx-auto p-5">
+            {/* @ts-ignore  */}
+            <Container className="mx-auto p-5">
                 <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
                 <h2 className="text-gray-600 dark:text-neutral-200 dark:font-light mb-2 text-xl">
                     {post.description}
                 </h2>
                 <h3 className="flex items-center space-x-2 border-b border-gray-300 dark:border-neutral-500 pb-2 w-fit">
+                    {/* @ts-ignore */}
                     <Avatar
                         src={urlFor(post.author.image).url()!}
                         size="lg"
@@ -63,32 +68,38 @@ const Post = ({ post }: Props) => {
                             </span>{" "}
                             - {new Date(post._createdAt).toLocaleDateString()}
                         </p>
+                        {/* @ts-ignore */}
+
                         <Text size="sm" color="dimmed">
                             Read time: {post.readTime} minutes
                         </Text>
                     </div>
                 </h3>
 
-                <section>
+                <section className="py-5">
+                    {/* @ts-ignore */}
                     <PortableText
                         //ignore type error for now
                         //@ts-ignore
                         value={post.body}
                         components={RichTextComponents}
                     />
+                    {/* @ts-ignore */}
 
                     <Link href="/blog">
+                        {/* @ts-ignore */}
+
                         <ButtonPrimary
                             onClick={() => {
                                 console.log("")
                             }}
-                            className="mt-10"
+                            className="mt-20"
                         >
-                            Go Back
+                            Back to Blog
                         </ButtonPrimary>
                     </Link>
                 </section>
-            </section>
+            </Container>
         </article>
     )
 }

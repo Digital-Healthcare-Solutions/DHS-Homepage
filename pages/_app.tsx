@@ -120,11 +120,12 @@ export default function App({ Component, pageProps }: AppProps) {
     console.log(Defaulttheme)
     console.log(theme)
     return (
+        // @ts-ignore
         <ColorSchemeProvider
             colorScheme={colorScheme}
             toggleColorScheme={toggleColorScheme}
         >
-            {" "}
+            {/* @ts-ignore */}
             <Head>
                 <script id="mcjs">
                     {
@@ -144,10 +145,12 @@ export default function App({ Component, pageProps }: AppProps) {
                     ;
                 </script>
             </Head>{" "}
+            {/* @ts-ignore */}
             <Script
                 src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
                 strategy="afterInteractive"
             />
+            {/* @ts-ignore */}
             <Script id="google-analytics" strategy="afterInteractive">
                 {`
           window.dataLayer = window.dataLayer || [];
@@ -157,7 +160,9 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
         `}
             </Script>
+            {/* @ts-ignore */}
             <ThemeProvider attribute="class" defaultTheme="dark">
+                {/* @ts-ignore */}
                 <MantineProvider
                     theme={{
                         colorScheme:
@@ -168,13 +173,16 @@ export default function App({ Component, pageProps }: AppProps) {
                                 : "light"
                     }}
                 >
+                    {/* @ts-ignore */}
                     <NotificationsProvider
                         limit={3}
                         autoClose={3000}
                         position="bottom-left"
                     >
                         <div className={raleway.className}>
+                            {/* @ts-ignore */}
                             <Layout>
+                                {/* @ts-ignore */}
                                 <Component {...pageProps} />
                             </Layout>
                         </div>

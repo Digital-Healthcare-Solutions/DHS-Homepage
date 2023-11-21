@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 import slugify from "slugify"
 import { toPlainText, PortableTextComponents } from "@portabletext/react"
+import CodeBlock from "./CodeBlock"
 
 const LinkableH1 = ({ children, value }: any) => {
     const slug = slugify(toPlainText(value), { lower: true })
@@ -53,14 +54,23 @@ export const RichTextComponents = {
     types: {
         image: ({ value }: any) => {
             return (
-                <div className="relative w-full h-96 md:my-10 mx-auto">
+                <div className="relative w-full h-96 lg:h-[32rem] md:my-10 mx-auto">
+                    {/* @ts-ignore */}
                     <Image
                         className="object-contain"
                         src={urlFor(value).url()}
                         alt={"Blog Image"}
                         fill
+                        quality={100}
+                        priority
                     />
                 </div>
+            )
+        },
+        code: ({ value }: any) => {
+            return (
+                // @ts-ignore
+                <CodeBlock code={value.language}>{value.code}</CodeBlock>
             )
         }
     },
@@ -99,6 +109,7 @@ export const RichTextComponents = {
                 ? "noopener noreferrer"
                 : undefined
             return (
+                // @ts-ignore
                 <Link
                     href={value.href}
                     rel={rel}
