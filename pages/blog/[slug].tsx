@@ -41,7 +41,7 @@ const Post = ({ post }: Props) => {
             {/* @ts-ignore  */}
             <Image
                 src={urlFor(post.mainImage).url()!}
-                className="w-full h-40 lg:h-64 object-cover"
+                className="w-full lg:w-3/4 xl:w-1/2 h-40 lg:h-[28rem] object-cover object-center mx-auto"
                 alt={post.title}
                 width={1000}
                 height={1000}
