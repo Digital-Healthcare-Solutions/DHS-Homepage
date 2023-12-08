@@ -204,8 +204,8 @@ const Pricing = () => {
     ]
 
     const premiumFeatures = [
-        "Patient Communication platform",
-        "Provider Communication platform",
+        "Communication platform (Call center, clinic-connect, e-fax)",
+        "AI powered clinical note automation",
         "Chronic Care Management platform",
         "Dictation software",
         "Custom e-forms branded for your business"
@@ -538,12 +538,12 @@ const Pricing = () => {
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr> */}
-                            {/* <tr>
-                                <td>Health Scribe</td>
-                     
-                                <td>Available as add on</td>
+                            <tr>
+                                <td>Echo</td>
+
                                 <td>{included}</td>
-                            </tr> */}
+                                <td>{included}</td>
+                            </tr>
                             <tr>
                                 <td>Custom E-forms made for your Business</td>
                                 {/* <td>{notIncluded}</td> */}
@@ -587,7 +587,7 @@ const Pricing = () => {
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr>
-                            {/* <tr>
+                            <tr>
                                 <td>
                                     Single Tenancy
                                     <br />
@@ -596,9 +596,9 @@ const Pricing = () => {
                                     </span>
                                 </td>
                                 <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
+                                {/* <td>{notIncluded}</td> */}
                                 <td>{included}</td>
-                            </tr> */}
+                            </tr>
                             <tr>
                                 <td>SSO/SAML</td>
                                 {/* <td>{notIncluded}</td> */}

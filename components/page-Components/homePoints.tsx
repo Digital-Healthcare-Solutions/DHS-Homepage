@@ -14,7 +14,7 @@ const points = [
         icon: BiCheckShield,
         title: "Secure by default",
         description:
-            "All data is encypted in transit and at rest to ensure that your patient's data is always safe and secure. We have a HIPAA compliant database and server and require 2FA everytime for all of our users."
+            "All data is encypted in transit and at rest to ensure that your data is always safe, secure, and HIPAA compliant."
     },
     {
         icon: BsCurrencyDollar,

@@ -91,30 +91,41 @@ const Layout = ({ children }) => {
             title: "Product",
             links: [
                 {
-                    label: "Clinic Connect",
+                    label: "Secure Chat",
                     link: "/product/clinic-connect"
                 },
                 {
-                    label: "Call Center",
-                    link: "/product/intellicall"
+                    label: "E-fax",
+                    link: "/product/e-fax"
                 },
                 {
-                    label: "Care Plans",
+                    label: "Automated phone system",
+                    link: "/product/intellicall"
+                },
+                // {
+                //     label: "SMS with patients",
+                //     link: "/product/intellicall"
+                // },
+                // {
+                //     label: "Appointment Reminders",
+                //     link: "/product/intellicall"
+                // },
+                {
+                    label: "Chronic Care Management",
                     link: "/product/smart-plan"
                 },
                 {
-                    label: "Dictation ",
+                    label: "Dictation Software",
                     link: "/product/smart-voice"
+                },
+                {
+                    label: "Note Generator",
+                    link: "/product/echo"
+                },
+                {
+                    label: "Intake Forms",
+                    link: "/product/smart-form"
                 }
-
-                // {
-                //     label: "Prior Authorization",
-                //     link: "/product/features"
-                // },
-                // {
-                //     label: "Online Paperwork",
-                //     link: "/product/features"
-                // }
             ]
         },
 
@@ -127,12 +138,12 @@ const Layout = ({ children }) => {
                 },
                 {
                     label: "Features",
+                    link: "/#features"
+                },
+                {
+                    label: "Demo",
                     link: "/product/demos"
                 },
-                // {
-                //     label: "Demo",
-                //     link: "/product/demo"
-                // },
                 {
                     label: "Pricing",
                     link: "/pricing"

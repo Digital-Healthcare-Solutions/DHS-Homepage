@@ -67,7 +67,7 @@ const useStyles = createStyles((theme) => ({
     },
 
     wrapper: {
-        width: 160
+        width: 190
     },
 
     link: {
@@ -147,7 +147,12 @@ export function Footer({ data }: FooterLinksProps) {
         ))
 
         return (
-            <div className={classes.wrapper} key={group.title}>
+            <div
+                className={
+                    group.title === "Product" ? "w-[200px]" : "w-[130px]"
+                }
+                key={group.title}
+            >
                 <Text className={classes.title}>{group.title}</Text>
                 {links}
             </div>

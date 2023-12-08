@@ -14,6 +14,7 @@ import { MdOutlineAutoAwesome, MdOutlinePhoneEnabled } from "react-icons/md"
 import { MdOutlinePersonOff } from "react-icons/md"
 import { BsChatLeftText } from "react-icons/bs"
 import { AiOutlineMessage } from "react-icons/ai"
+import Link from "next/link"
 
 export function Feature({ icon: Icon, title, description }) {
     const theme = useMantineTheme()
@@ -51,52 +52,135 @@ const useStyles = createStyles((theme) => ({
 }))
 
 export function FeaturesGrid({ title, description }) {
-    const MOCKDATA = [
+    const FeatureArray = [
         {
             icon: AiOutlineMessage,
-            title: "Realtime messaging and referrals", //chat appp and efax built into one
-            description:
-                "We know the struggle handling all of the documents and external communication with other healthcare providers. That's why we built Clinic-Connect, a realtime messaging and referral system that allows you to communicate with other providers in a multichannel, HIPAA compliant way. Whether through fax or instant messaging, we've got you covered."
+            title: "Realtime messaging and efax", //chat appp and efax built into one
+            description: (
+                <div>
+                    We know the struggle handling all of the documents and
+                    external communication with other healthcare providers.
+                    That's why we built{" "}
+                    <Link
+                        href={"/product/clinic-conect"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        Clinic-Connect
+                    </Link>
+                    , a realtime messaging and referral system that allows you
+                    to communicate with other providers in a multichannel, HIPAA
+                    compliant way. Whether through fax or instant messaging,
+                    we've got you covered.
+                </div>
+            )
 
             // "Ditch the fax machine, sign up on our Clinic-Connect network today for free! Clinic-Connect is a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about Slack, but for healthcare. Anyone who is part of the network can send referrals and communicate with each other in realtime."
         },
 
         {
             icon: MdOutlinePhoneEnabled,
-            title: "Handle communications in a modern way",
-            description:
-                "We built our call center (IntelliCall) with the goal of making it easier to communicate with our patients and other providers. Our product plugs in with your existing phone system and allows you to view call transcriptions, listen to voicemails, respond via text messages, make and receive calls, and more right from your computer."
+            title: "Automated phone calls",
+            description: (
+                <div>
+                    We built our call center,{" "}
+                    <Link
+                        href={"/product/intelliCall"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        IntelliCall
+                    </Link>
+                    , with the goal of making it easier to communicate with our
+                    patients and other providers. Our product plugs in with your
+                    existing phone system and allows you to view call
+                    transcriptions, listen to voicemails, respond via text
+                    messages, make and receive calls, and more right from your
+                    computer.
+                </div>
+            )
         },
 
         {
             icon: BsCashStack,
-            title: "Earn reccuring revenue",
-            description:
-                "Our product (SmartPlan) allows you to bill for Chronic Care Management (CCM) services, which is a reimbursable CPT code under Medicare. These services are perfomed on a recurring basis, and can be billed monthly, quarterly, or annually, depending on the CPT code."
+            title: "Chronic Care Management (CCM)",
+            description: (
+                <div>
+                    <Link
+                        href={"/product/smartplan"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        SmartPlan
+                    </Link>{" "}
+                    allows you to bill for CCM services, which is a reimbursable
+                    CPT code under Medicare. These services are perfomed on a
+                    recurring basis, and can be billed monthly, quarterly, or
+                    annually, depending on the CPT code.
+                </div>
+            )
         },
         {
             icon: RiComputerLine,
-            title: "Seamlessly add online forms to your website",
-            description:
-                "We make it easy to add seamless online pre-registration & intake forms to your practice's website. Simply embed the custom link we provide on your website and instantly have a secure online form flow for your patients."
+            title: "Online intake forms",
+            description: (
+                <div>
+                    <Link
+                        href={"/product/smartplan"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        SmartForm
+                    </Link>{" "}
+                    streamlines adding online pre-registration and intake forms
+                    to your practice's website. Simply embed our provided custom
+                    link to offer secure, streamlined form submissions for
+                    patients. Plus, our system allows for easy SMS sending of
+                    links and dashboard viewing of online paperwork links.
+                </div>
+            )
         },
         {
             icon: BsMic,
-            title: "Medical Dictation",
-            description:
-                "Use our dictation service to save time & money writing your notes. We utilize the latest in AI speech recognition technology to provide accurate and fast results. Our service can even remove background noise, 'umms' from speech,  translate any langauge to English, and more."
+            title: "Dictation software",
+            description: (
+                <div>
+                    Use{" "}
+                    <Link
+                        href="/smart-voice"
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        SmartVoice{" "}
+                    </Link>
+                    to save time & money writing your notes. We utilize the
+                    latest in AI speech recognition technology to provide
+                    accurate and fast results. Our service can even remove
+                    background noise, 'umms' from speech, translate any langauge
+                    to English, and more.
+                </div>
+            )
         },
 
         {
             icon: MdOutlineAutoAwesome,
-            title: "AI powered automation (coming soon)",
-            description:
-                "Supercharge your practice with Ava, our AI assistant! Ava effortlessly integrates with our other products and can be custom trained on data you provide. Ava can automate routine administrative tasks, such as scheduling appointments, sending reminders, summarizing new referrals, and more."
+            title: "Generate Clinical Notes With AI",
+            description: (
+                <div>
+                    <Link
+                        href="/echo"
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        Echo
+                    </Link>{" "}
+                    streamlines clinical documentation by converting
+                    provider-patient conversations into detailed clinical notes
+                    using AI. Choose between SOAP or nurse's note formats,
+                    customized to your specialty. Our service includes custom
+                    model training to tailor note formatting to your practice's
+                    specific requirements.
+                </div>
+            )
         }
     ]
 
     const { classes, theme } = useStyles()
-    const features = MOCKDATA.map((feature, index) => (
+    const features = FeatureArray.map((feature, index) => (
         <Feature {...feature} key={index} />
     ))
 
