@@ -277,7 +277,10 @@ const SmartPlan = () => {
                                     Solution for Chronic Care Management
                                 </Text>
                                 <Link href="/?dialog=getStarted">
-                                    <ButtonPrimary className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white">
+                                    <ButtonPrimary
+                                        onClick={() => console.log(``)}
+                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
+                                    >
                                         Get Started
                                     </ButtonPrimary>
                                 </Link>
