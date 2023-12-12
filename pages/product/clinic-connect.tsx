@@ -440,18 +440,11 @@ const ClinicConnect = () => {
                                     Sign up today to experience the benefits of
                                     Clinic-Connect for yourself.
                                 </Text>
-                                <a
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href="https://app.digitalhealthcaresolutions.io/login"
-                                >
-                                    <ButtonPrimary
-                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
-                                        onClick={console.log("")}
-                                    >
+                                <Link href="/?dialog=getStarted">
+                                    <ButtonPrimary className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white">
                                         Get Started
                                     </ButtonPrimary>
-                                </a>
+                                </Link>
                                 <div className="hidden lg:block pt-20">
                                     {/* <Image
                                         className="rounded-xl dark:brightness-150 "

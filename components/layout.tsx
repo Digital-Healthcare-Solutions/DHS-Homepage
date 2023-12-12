@@ -11,13 +11,13 @@ import { showNotification } from "@mantine/notifications"
 const Layout = ({ children }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    useEffect(() => {
-        if (localStorage.getItem("newsLetter") !== "true") {
-            setTimeout(() => {
-                setIsModalOpen(true)
-            }, 15000)
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (localStorage.getItem("newsLetter") !== "true") {
+    //         setTimeout(() => {
+    //             setIsModalOpen(true)
+    //         }, 15000)
+    //     }
+    // }, [])
 
     const handleCloseModal = () => {
         setIsModalOpen(false)
@@ -91,13 +91,13 @@ const Layout = ({ children }) => {
             title: "Product",
             links: [
                 {
-                    label: "Secure Chat",
+                    label: "Secure Chat & E-fax",
                     link: "/product/clinic-connect"
                 },
-                {
-                    label: "E-fax",
-                    link: "/product/e-fax"
-                },
+                // {
+                //     label: "E-fax",
+                //     link: "/product/e-fax"
+                // },
                 {
                     label: "Automated phone system",
                     link: "/product/intellicall"
@@ -115,15 +115,16 @@ const Layout = ({ children }) => {
                     link: "/product/smart-plan"
                 },
                 {
-                    label: "Dictation Software",
-                    link: "/product/smart-voice"
-                },
-                {
-                    label: "Note Generator",
+                    label: "AI Generated Notes",
                     link: "/product/echo"
                 },
                 {
-                    label: "Intake Forms",
+                    label: "Dictation Software",
+                    link: "/product/smart-voice"
+                },
+
+                {
+                    label: "Online Intake Forms",
                     link: "/product/smart-form"
                 }
             ]
@@ -151,7 +152,8 @@ const Layout = ({ children }) => {
                 {
                     label: "Privacy Policy",
                     link: "/privacy-policy"
-                }
+                },
+                { label: "Terms of Service", link: "/terms-of-service" }
             ]
         },
         {
@@ -190,7 +192,7 @@ const Layout = ({ children }) => {
             <Nav />
             {children}
             {/* @ts-ignore */}
-            <Footer data={data} />
+            <Footer setIsModalOpen={setIsModalOpen} data={data} />
             <Modal
                 opened={isModalOpen}
                 onClose={handleCloseModal}

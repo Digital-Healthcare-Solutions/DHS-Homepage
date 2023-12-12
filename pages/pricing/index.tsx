@@ -499,6 +499,12 @@ const Pricing = () => {
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
+                            <tr>
+                                <td>Echo</td>
+
+                                <td>{included}</td>
+                                <td>{included}</td>
+                            </tr>
                             {/* <tr>
                                 <td>Automation workflow builder</td>
                                 <td>{included}</td>
@@ -538,12 +544,7 @@ const Pricing = () => {
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr> */}
-                            <tr>
-                                <td>Echo</td>
 
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
                             <tr>
                                 <td>Custom E-forms made for your Business</td>
                                 {/* <td>{notIncluded}</td> */}
@@ -705,7 +706,8 @@ const Pricing = () => {
                             "Clinic-Connect",
                             "SmartPlan",
                             "E-Fax",
-                            "Dictation Software"
+                            "Dictation Software",
+                            "Echo"
                         ]}
                         label="What features are you interested in?"
                         placeholder="Select features"

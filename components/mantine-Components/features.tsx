@@ -62,7 +62,7 @@ export function FeaturesGrid({ title, description }) {
                     external communication with other healthcare providers.
                     That's why we built{" "}
                     <Link
-                        href={"/product/clinic-conect"}
+                        href={"/product/clinic-connect"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         Clinic-Connect
@@ -79,22 +79,41 @@ export function FeaturesGrid({ title, description }) {
 
         {
             icon: MdOutlinePhoneEnabled,
-            title: "Automated phone calls",
+            title: "Automated calls & patient texting",
             description: (
                 <div>
                     We built our call center,{" "}
                     <Link
-                        href={"/product/intelliCall"}
+                        href={"/product/intellicall"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         IntelliCall
                     </Link>
-                    , with the goal of making it easier to communicate with our
-                    patients and other providers. Our product plugs in with your
-                    existing phone system and allows you to view call
-                    transcriptions, listen to voicemails, respond via text
-                    messages, make and receive calls, and more right from your
-                    computer.
+                    , with the goal of making it easier to communicate with
+                    patients. Our product plugs in with your existing phone
+                    system and allows you to view call transcriptions, listen to
+                    voicemails, respond via text messages, make and receive
+                    calls, and more right from your computer.
+                </div>
+            )
+        },
+        {
+            icon: MdOutlineAutoAwesome,
+            title: "Generate Clinical Notes With AI",
+            description: (
+                <div>
+                    <Link
+                        href="product/echo"
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        Echo
+                    </Link>{" "}
+                    streamlines clinical documentation by converting
+                    provider-patient conversations into detailed clinical notes
+                    using AI. Choose between SOAP or nurse's note formats,
+                    customized to your specialty. Our service includes custom
+                    model training to tailor note formatting to your practice's
+                    specific requirements.
                 </div>
             )
         },
@@ -105,7 +124,7 @@ export function FeaturesGrid({ title, description }) {
             description: (
                 <div>
                     <Link
-                        href={"/product/smartplan"}
+                        href={"/product/smart-plan"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         SmartPlan
@@ -123,7 +142,7 @@ export function FeaturesGrid({ title, description }) {
             description: (
                 <div>
                     <Link
-                        href={"/product/smartplan"}
+                        href={"/product/smart-form"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         SmartForm
@@ -143,7 +162,7 @@ export function FeaturesGrid({ title, description }) {
                 <div>
                     Use{" "}
                     <Link
-                        href="/smart-voice"
+                        href="product/smart-voice"
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         SmartVoice{" "}
@@ -153,27 +172,6 @@ export function FeaturesGrid({ title, description }) {
                     accurate and fast results. Our service can even remove
                     background noise, 'umms' from speech, translate any langauge
                     to English, and more.
-                </div>
-            )
-        },
-
-        {
-            icon: MdOutlineAutoAwesome,
-            title: "Generate Clinical Notes With AI",
-            description: (
-                <div>
-                    <Link
-                        href="/echo"
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        Echo
-                    </Link>{" "}
-                    streamlines clinical documentation by converting
-                    provider-patient conversations into detailed clinical notes
-                    using AI. Choose between SOAP or nurse's note formats,
-                    customized to your specialty. Our service includes custom
-                    model training to tailor note formatting to your practice's
-                    specific requirements.
                 </div>
             )
         }

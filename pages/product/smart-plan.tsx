@@ -32,7 +32,7 @@ import Head from "next/head"
 
 const carePlans = [
     "Annual Wellness Visit",
-    // "Dementia / Alzheimer's",
+    "Dementia / Alzheimer's",
     "Depression and Anxiety",
     "Migraines",
     "Parkinson's disease",
@@ -276,23 +276,11 @@ const SmartPlan = () => {
                                     Revolutionize Your Practice with Our
                                     Solution for Chronic Care Management
                                 </Text>
-                                <a
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    href="https://app.digitalhealthcaresolutions.io/login"
-                                >
-                                    <ButtonPrimary
-                                        type="button"
-                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
-                                        onClick={() =>
-                                            window.open(
-                                                "https://app.digitalhealthcaresolutions.io/login"
-                                            )
-                                        }
-                                    >
+                                <Link href="/?dialog=getStarted">
+                                    <ButtonPrimary className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white">
                                         Get Started
                                     </ButtonPrimary>
-                                </a>
+                                </Link>
                                 <div className="hidden lg:block pt-20">
                                     {/* <Image
                                         className="rounded-xl dark:brightness-150 "

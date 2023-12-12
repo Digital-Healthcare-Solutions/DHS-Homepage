@@ -81,6 +81,7 @@ const useStyles = createStyles((theme) => ({
         paddingBottom: 3,
 
         "&:hover": {
+            cursor: "pointer",
             textDecoration: "underline"
         }
     },
@@ -129,22 +130,35 @@ interface FooterLinksProps {
         title: string
         links: { label: string; link: string; func: () => void }[]
     }[]
+    setIsModalOpen: (arg: boolean) => void
 }
 
-export function Footer({ data }: FooterLinksProps) {
+export function Footer({ data, setIsModalOpen }: FooterLinksProps) {
     const { classes } = useStyles()
 
     const groups = data.map((group) => {
-        const links = group.links.map((link, index) => (
-            <Link
-                key={index}
-                className={classes.link}
-                href={link.link}
-                onClick={link.func}
-            >
-                {link.label}
-            </Link>
-        ))
+        const links = group.links.map((link, index) =>
+            link.label === "NewsLetter" ? (
+                <div
+                    key={index}
+                    className={classes.link}
+                    onClick={() => {
+                        setIsModalOpen(true)
+                    }}
+                >
+                    {link.label}
+                </div>
+            ) : (
+                <Link
+                    key={index}
+                    className={classes.link}
+                    href={link.link}
+                    onClick={link.func}
+                >
+                    {link.label}
+                </Link>
+            )
+        )
 
         return (
             <div
@@ -175,8 +189,7 @@ export function Footer({ data }: FooterLinksProps) {
                         color="dimmed"
                         className={classes.description}
                     >
-                        Level up your practice with our next-generation
-                        communication platform for healthcare providers.
+                        Modern solutions for modern healthcare.
                     </Text>
                     <div className={classes.status}>
                         <div className="rounded-full bg-green-500 w-1 h-1"></div>
@@ -222,9 +235,9 @@ export function Footer({ data }: FooterLinksProps) {
                             <BsLinkedin size={20} stroke={"1.5"} />
                         </ActionIcon>
                     </Link>
-                    <ActionIcon size="lg">
+                    {/* <ActionIcon size="lg">
                         <BsTwitter size={20} stroke={"1.5"} />
-                    </ActionIcon>
+                    </ActionIcon> */}
                 </Group>
             </Container>
         </footer>
