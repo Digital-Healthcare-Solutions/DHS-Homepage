@@ -425,7 +425,7 @@ const Echo = () => {
                 </form>
                 <h2 className="py-6">
                     <div className="text-center text-xl">
-                        You can always read more about IntelliCall on one of our{" "}
+                        You can always read more about Echo on one of our{" "}
                         <Link
                             href="/blog"
                             className="text-blue-500 hover:underline"
