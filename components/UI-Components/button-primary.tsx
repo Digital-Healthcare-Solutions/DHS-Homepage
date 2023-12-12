@@ -1,4 +1,9 @@
-const ButtonPrimary = ({ children, onClick, className, ...props }) => {
+const ButtonPrimary = ({
+    children,
+    onClick = () => {},
+    className,
+    ...props
+}) => {
     return (
         <button
             onClick={onClick}
