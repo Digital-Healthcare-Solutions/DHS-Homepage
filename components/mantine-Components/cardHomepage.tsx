@@ -38,12 +38,7 @@ function CardHome({
     p2HrefText
 }) {
     return (
-        <Card
-            withBorder
-            shadow="sm"
-            radius="md"
-            className={"max-w-[400px] mt-5 md:mx-0 "}
-        >
+        <Card shadow="sm" radius="md" className={"max-w-[400px] h-96"}>
             <div className="flex justify-center pb-3 text-blue-500">{icon}</div>
             <Group position="center">
                 <h1 className={"text-xl"}>{title}</h1>

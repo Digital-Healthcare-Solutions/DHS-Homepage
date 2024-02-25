@@ -31,12 +31,18 @@ const HomePoints = () => {
             className="flex flex-col lg:flex-row justify-center items-center lg:items-start lg:gap-8 gap-20 mb-12 mt-14  rounded-xl px-6 pb-8"
         >
             {points.map((point) => (
-                <div className="flex flex-col items-center gap-4 lg:w-1/3">
+                <div className="flex flex-col items-center gap-4 lg:w-1/3 z-20 ">
                     <ThemeIcon variant="light" size={40} radius={40}>
                         <point.icon size={20} stroke={"1.5"} />
                     </ThemeIcon>
-                    <h3 className="text-2xl font-bold">{point.title}</h3>
-                    <p className="text-center">{point.description}</p>
+                    <h3 className="text-2xl font-bold bg-white dark:bg-neutral-900">
+                        {point.title}
+                    </h3>
+                    <p className="text-center rounded-2xl">
+                        <span className="bg-white dark:bg-neutral-900 px-2 py-1 rounded">
+                            {point.description}
+                        </span>
+                    </p>
                 </div>
             ))}
         </Container>

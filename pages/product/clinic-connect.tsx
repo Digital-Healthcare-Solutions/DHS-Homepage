@@ -34,6 +34,7 @@ import { FaRegClock, FaRegComments } from "react-icons/fa"
 import { FiTrendingUp } from "react-icons/fi"
 import { IoTrendingUpOutline, IoTrendingUp } from "react-icons/io5"
 import Head from "next/head"
+import FeatureHeaderSparkle from "../../components/page-Components/featureHeaderSparkle"
 
 const features = [
     {
@@ -163,7 +164,7 @@ const ClinicConnect = () => {
     }
 
     return (
-        <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
+        <div className="py-10 ">
             <Head>
                 <title>
                     Clinic-Connect | Digital Healthcare Solutions | Digital
@@ -195,15 +196,7 @@ const ClinicConnect = () => {
                 <meta property="og:type" content="website" />
             </Head>
             <Container size="lg">
-                <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
-                    <Image
-                        className="rounded-xl dark:brightness-150 "
-                        src="/clinic-connect.png"
-                        width={350}
-                        height={350}
-                        alt="Clinic Connect logo"
-                    />
-                </h1>
+                <FeatureHeaderSparkle title="Clinic-Connect" />
                 <section className="flex flex-col lg:flex-row items-start gap-20">
                     <div className="flex flex-col items-center justify-between gap-8">
                         <div className="text-lg max-w-lg">

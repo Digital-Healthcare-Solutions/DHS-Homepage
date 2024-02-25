@@ -3,15 +3,12 @@ import Link from "next/link"
 import { useState } from "react"
 import { TypeAnimation } from "react-type-animation"
 import { motion } from "framer-motion"
+import { SparklesCore } from "../ui/sparkles"
+import { useTheme } from "next-themes"
+import { BackgroundBeams } from "../ui/background-beams"
 
 const useStyles = createStyles((theme) => ({
-    wrapper: {
-        position: "relative",
-        boxSizing: "border-box"
-    },
-
     inner: {
-        position: "relative",
         paddingTop: 75,
         paddingBottom: 60,
 
@@ -71,11 +68,13 @@ export function HeroHomePage2({ setIsModalOpen }) {
     const [firstFinished, setFirstFinished] = useState(false)
     const [secondFinished, setSecondFinished] = useState(false)
 
+    const { theme } = useTheme()
+
     return (
-        <div className={classes.wrapper}>
+        <div>
             <Container size={900} className={classes.inner}>
                 <h1 className={classes.title}>
-                    A{" "}
+                    An{" "}
                     <Text
                         component="span"
                         variant="gradient"
@@ -83,12 +82,29 @@ export function HeroHomePage2({ setIsModalOpen }) {
                         inherit
                     >
                         {/* Modern */}
-                        Next-Gen
+                        AI powered
                     </Text>{" "}
                     <TypeAnimation
                         sequence={[
+                            "copilot ",
+                            firstFinished ? 2000 : 5000,
+                            () => setFirstFinished(true),
+                            "assistant ",
+                            4000,
+                            "operating system ",
+                            4000,
+                            "automation app ",
+                            4000
+                        ]}
+                        className={classes.title}
+                        speed={75}
+                        repeat={Infinity}
+                        cursor={false}
+                    />
+                    <TypeAnimation
+                        sequence={[
                             // "automation & communication app for Healthcare Businesses",
-                            "automation platform for Healthcare Businesses",
+                            "for Healthcare Businesses",
                             1000,
                             () => setFirstFinished(true)
                         ]}
@@ -107,7 +123,7 @@ export function HeroHomePage2({ setIsModalOpen }) {
                                 () => setSecondFinished(true)
                             ]}
                             // className={classes.description}
-                            speed={88}
+                            speed={90}
                             repeat={0}
                             cursor={false}
                         />
@@ -139,14 +155,21 @@ export function HeroHomePage2({ setIsModalOpen }) {
                             </button>
 
                             <Link href="/product/smart-plan#request-demo">
-                                <Button
+                                <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-400 bg-[linear-gradient(110deg,#ffffff,45%,#e2e8f0,55%,#ffffff)] dark:border-slate-700 dark:bg-[linear-gradient(110deg,#00000000,45%,#1e2631,55%,#00000000)] bg-[length:200%_100%] px-6 font-medium text-slate-800 dark:text-slate-200 transition-colors">
+                                    Request Demo
+                                </button>
+
+                                {/* <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#0f172a 45%,#111827 55%,#0f172a)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                                    Shimmer
+                                </button> */}
+                                {/* <Button
                                     size="lg"
                                     variant="default"
                                     className={classes.control}
                                     // leftIcon={<GithubIcon size={20} />}
                                 >
                                     Request Demo
-                                </Button>
+                                </Button> */}
                             </Link>
                         </Group>
                     </motion.div>

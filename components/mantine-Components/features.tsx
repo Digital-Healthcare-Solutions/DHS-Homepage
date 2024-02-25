@@ -15,6 +15,7 @@ import { MdOutlinePersonOff } from "react-icons/md"
 import { BsChatLeftText } from "react-icons/bs"
 import { AiOutlineMessage } from "react-icons/ai"
 import Link from "next/link"
+import { BackgroundGradient } from "../ui/background-gradient"
 
 export function Feature({ icon: Icon, title, description }) {
     const theme = useMantineTheme()
@@ -183,31 +184,30 @@ export function FeaturesGrid({ title, description }) {
     ))
 
     return (
-        <div
-            className="bg-gradient-to-b from-white to-blue-50 dark:from-neutral-900 dark:to-neutral-800 "
-            id="features"
-        >
-            <Container size={"lg"} className={classes.wrapper}>
+        <div className=" bg-white dark:bg-neutral-900 " id="features">
+            {" "}
+            <Container size={1500} className={classes.wrapper}>
                 <h1 className="text-4xl font-bold text-center mb-5">{title}</h1>
 
-                <Container size={560} p={0}>
+                <Container size={560} p={0} pb={30}>
                     <Text size="lg" className={classes.description}>
                         {description}
                     </Text>
                 </Container>
                 {/* <Divider mt={20} size={2} /> */}
-
-                <SimpleGrid
-                    mt={60}
-                    cols={3}
-                    spacing={theme.spacing.xl * 2}
-                    breakpoints={[
-                        { maxWidth: 980, cols: 2, spacing: "xl" },
-                        { maxWidth: 755, cols: 1, spacing: "xl" }
-                    ]}
-                >
-                    {features}
-                </SimpleGrid>
+                <BackgroundGradient className="rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-zinc-900">
+                    <SimpleGrid
+                        mt={20}
+                        cols={3}
+                        spacing={theme.spacing.xl * 2}
+                        breakpoints={[
+                            { maxWidth: 980, cols: 2, spacing: "xl" },
+                            { maxWidth: 755, cols: 1, spacing: "xl" }
+                        ]}
+                    >
+                        {features}
+                    </SimpleGrid>
+                </BackgroundGradient>
             </Container>
         </div>
     )
