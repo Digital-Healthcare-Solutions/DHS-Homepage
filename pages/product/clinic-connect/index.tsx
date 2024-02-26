@@ -135,6 +135,8 @@ const ClinicConnect = () => {
                     }
                     data={data}
                 />
+            </Container>
+            <section className="h-[800px] bg-neutral-100 dark:bg-neutral-800">
                 <VerticalTabsWithText
                     tabsList={[
                         {
@@ -168,7 +170,8 @@ const ClinicConnect = () => {
                         }
                     ]}
                 />
-                {/* <section className="flex flex-col lg:flex-row items-start gap-20">
+            </section>
+            {/* <section className="flex flex-col lg:flex-row items-start gap-20">
                     <div className="flex flex-col items-center justify-between gap-8">
                         <div className="text-lg max-w-lg">
                             <h2 className="text-blue-500 underline underline-offset-4 font-semibold mb-3">
@@ -228,66 +231,62 @@ const ClinicConnect = () => {
                         />
                     </div>
                 </section> */}
-
+            <Container size="lg">
                 <div className="py-10 mt-20 ">
-                    <Container size="lg">
-                        <Grid gutter={80}>
-                            <Col span={12} md={5}>
-                                <Title order={2} className="text-3xl">
-                                    Clinic-Connect makes communication easy
-                                    again
-                                </Title>
-                                <Text className="py-6">
-                                    Sign up today to experience the benefits of
-                                    Clinic-Connect for yourself.
-                                </Text>
-                                <Link href="/?dialog=getStarted">
-                                    <ButtonPrimary
-                                        onClick={() => console.log(``)}
-                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
-                                    >
-                                        Get Started
-                                    </ButtonPrimary>
-                                </Link>
-                                <div className="hidden lg:block pt-20"></div>
-                            </Col>
-                            <Col span={12} md={7}>
-                                <SimpleGrid
-                                    cols={2}
-                                    spacing={30}
-                                    breakpoints={[{ maxWidth: "md", cols: 1 }]}
+                    <Grid gutter={80}>
+                        <Col span={12} md={5}>
+                            <Title order={2} className="text-3xl">
+                                Clinic-Connect makes communication easy again
+                            </Title>
+                            <Text className="py-6">
+                                Sign up today to experience the benefits of
+                                Clinic-Connect for yourself.
+                            </Text>
+                            <Link href="/?dialog=getStarted">
+                                <ButtonPrimary
+                                    onClick={() => console.log(``)}
+                                    className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
                                 >
-                                    {features.map((feature) => (
-                                        <div key={feature.title}>
-                                            <ThemeIcon
-                                                size={44}
-                                                radius="md"
-                                                variant="gradient"
-                                                gradient={{
-                                                    deg: 133,
-                                                    from: "blue",
-                                                    to: "cyan"
-                                                }}
-                                            >
-                                                <feature.icon
-                                                    size={26}
-                                                    stroke={"1.5"}
-                                                />
-                                            </ThemeIcon>
-                                            <Text fz="lg" mt="sm" fw={500}>
-                                                {feature.title}
-                                            </Text>
-                                            <Text c="dimmed" fz="sm">
-                                                {feature.description}
-                                            </Text>
-                                        </div>
-                                    ))}
-                                </SimpleGrid>
-                            </Col>
-                        </Grid>
-                    </Container>
+                                    Get Started
+                                </ButtonPrimary>
+                            </Link>
+                            <div className="hidden lg:block pt-20"></div>
+                        </Col>
+                        <Col span={12} md={7}>
+                            <SimpleGrid
+                                cols={2}
+                                spacing={30}
+                                breakpoints={[{ maxWidth: "md", cols: 1 }]}
+                            >
+                                {features.map((feature) => (
+                                    <div key={feature.title}>
+                                        <ThemeIcon
+                                            size={44}
+                                            radius="md"
+                                            variant="gradient"
+                                            gradient={{
+                                                deg: 133,
+                                                from: "blue",
+                                                to: "cyan"
+                                            }}
+                                        >
+                                            <feature.icon
+                                                size={26}
+                                                stroke={"1.5"}
+                                            />
+                                        </ThemeIcon>
+                                        <Text fz="lg" mt="sm" fw={500}>
+                                            {feature.title}
+                                        </Text>
+                                        <Text c="dimmed" fz="sm">
+                                            {feature.description}
+                                        </Text>
+                                    </div>
+                                ))}
+                            </SimpleGrid>
+                        </Col>
+                    </Grid>
                 </div>
-
                 {/* <div className="flex justify-center mt-8">
                     <Link href="/product/demos">
                         <ButtonSecondary
@@ -298,7 +297,7 @@ const ClinicConnect = () => {
                         </ButtonSecondary>
                     </Link>
                 </div> */}
-                <RequestDemo />
+                <RequestDemo />{" "}
             </Container>
         </div>
     )
