@@ -9,7 +9,7 @@ export default function HomeCards() {
         <section className="flex flex-col items-center lg:items-start lg:flex-row justify-around px-4 gap-10 lg:gap-8 pb-10  bg-white dark:bg-neutral-900 ">
             <BackgroundGradient
                 animate={true}
-                className="rounded-[22px] bg-white dark:bg-neutral-800 p-2"
+                className="rounded-[22px] bg-white dark:bg-neutral-900 p-2"
             >
                 <CardHome
                     icon={<RiComputerLine size={25} />}
@@ -18,30 +18,32 @@ export default function HomeCards() {
                         "Wether you are a small or large practice, we have a solution that will fit your needs. We offer a full suite of products to help you manage your practice and your patients."
                     }
                     p2Text1={"Visit our"}
-                    p2Href="/product/demos"
-                    p2HrefText="demo"
-                    p2Text2={"page for more information on each product."}
+                    p2Href="/pricing"
+                    p2HrefText="pricing"
+                    p2Text2={
+                        "page for more information on our products and pricing."
+                    }
                 />
             </BackgroundGradient>
             <BackgroundGradient
                 animate={true}
-                className="rounded-[22px] bg-white dark:bg-neutral-800 p-2"
+                className="rounded-[22px] bg-white dark:bg-neutral-900 p-2"
             >
                 <CardHome
                     icon={<TfiBook size={25} />}
                     title="Our Story"
                     p1Text={
-                        "We are a family run business with two generations of medical experience. We developed Digital Healthcare Solutions to solve a specific need for us and we hope to solve those same needs for your practice."
+                        "We are a team of healthcare professionals and software engineers who are passionate about improving the healthcare industry. Our mission is to provide the best tools and resources to help you run your practice more efficiently."
                     }
-                    p2Text1={"You can read more on the"}
-                    p2Href="/about-us"
+                    p2Text1={"Read more"}
+                    p2Href="/about"
                     p2HrefText="about us"
-                    p2Text2={"page."}
+                    p2Text2={"and our mission."}
                 />
             </BackgroundGradient>
             <BackgroundGradient
                 animate={true}
-                className="rounded-[22px] bg-white dark:bg-neutral-800 p-2"
+                className="rounded-[22px] bg-white dark:bg-neutral-900 p-2"
             >
                 <CardHome
                     icon={<MdOutlineLightbulb size={25} />}

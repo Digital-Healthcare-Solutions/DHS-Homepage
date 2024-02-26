@@ -72,63 +72,68 @@ export function HeroHomePage2({ setIsModalOpen }) {
 
     return (
         <div>
-            <Container size={900} className={classes.inner}>
-                <h1 className={classes.title}>
-                    An{" "}
-                    <Text
-                        component="span"
-                        variant="gradient"
-                        gradient={{ from: "blue", to: "cyan" }}
-                        inherit
-                    >
-                        {/* Modern */}
-                        AI powered
-                    </Text>{" "}
-                    <TypeAnimation
-                        sequence={[
-                            "copilot ",
-                            firstFinished ? 2000 : 5000,
-                            () => setFirstFinished(true),
-                            "assistant ",
-                            4000,
-                            "operating system ",
-                            4000,
-                            "automation app ",
-                            4000
-                        ]}
-                        className={classes.title}
-                        speed={75}
-                        repeat={Infinity}
-                        cursor={false}
-                    />
-                    <TypeAnimation
-                        sequence={[
-                            // "automation & communication app for Healthcare Businesses",
-                            "for Healthcare Businesses",
-                            1000,
-                            () => setFirstFinished(true)
-                        ]}
-                        className={classes.title}
-                        speed={75}
-                        repeat={0}
-                        cursor={false}
-                    />
-                </h1>
+            {" "}
+            <div className="h-[40rem] w-full dark:bg-neutral-900 bg-white dark:bg-dot-white/[0.2] bg-dot-black/[0.2] relative flex items-center justify-center">
+                {/* Radial gradient for the container to give a faded look */}
+                <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-neutral-900 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_50%,#111111_100%)] lg:[mask-image:radial-gradient(ellipse_at_center,transparent_40%,#111111_80%)]"></div>
 
-                <Text className={classes.description} color="dimmed">
-                    {firstFinished && (
+                <Container size={900} className={classes.inner}>
+                    <h1 className={classes.title}>
+                        An{" "}
+                        <Text
+                            component="span"
+                            variant="gradient"
+                            gradient={{ from: "blue", to: "cyan" }}
+                            inherit
+                        >
+                            {/* Modern */}
+                            AI powered
+                        </Text>{" "}
                         <TypeAnimation
                             sequence={[
-                                "Automate routine tasks using AI, Streamline communication with patients & providers, and increase revenue with our suite of HIPAA compliant solutions.",
-                                () => setSecondFinished(true)
+                                "copilot ",
+                                firstFinished ? 2000 : 6000,
+                                () => setFirstFinished(true),
+                                "assistant ",
+                                6000,
+                                "operating system ",
+                                6000,
+                                "automation app ",
+                                6000
                             ]}
-                            // className={classes.description}
-                            speed={90}
+                            className={classes.title}
+                            speed={75}
+                            repeat={Infinity}
+                            cursor={false}
+                        />
+                        <TypeAnimation
+                            sequence={[
+                                // "automation & communication app for Healthcare Businesses",
+                                "for Healthcare Businesses",
+                                1000,
+                                () => setFirstFinished(true)
+                            ]}
+                            className={classes.title}
+                            speed={75}
                             repeat={0}
                             cursor={false}
                         />
-                    )}
-                    {/* <Text
+                    </h1>
+
+                    <Text className={classes.description} color="dimmed">
+                        {firstFinished && (
+                            <TypeAnimation
+                                sequence={[
+                                    "Automate routine tasks using AI, Streamline communication with patients & providers, and increase revenue with our suite of HIPAA compliant solutions.",
+                                    () => setSecondFinished(true)
+                                ]}
+                                // className={classes.description}
+                                speed={95}
+                                repeat={0}
+                                cursor={false}
+                            />
+                        )}
+                        {/* <Text
                         component="span"
                         variant="gradient"
                         gradient={{ from: "blue", to: "cyan" }}
@@ -138,31 +143,31 @@ export function HeroHomePage2({ setIsModalOpen }) {
                        
                     </Text>{" "}
                     solutions. */}
-                </Text>
+                    </Text>
 
-                {secondFinished && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.5 }}
-                    >
-                        <Group className={classes.controls}>
-                            <button
-                                className="text-lg shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-bold py-[11px] px-6 rounded font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500"
-                                onClick={() => setIsModalOpen(true)}
-                            >
-                                Get Started
-                            </button>
-
-                            <Link href="/product/smart-plan#request-demo">
-                                <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-400 bg-[linear-gradient(110deg,#ffffff,45%,#e2e8f0,55%,#ffffff)] dark:border-slate-700 dark:bg-[linear-gradient(110deg,#00000000,45%,#1e2631,55%,#00000000)] bg-[length:200%_100%] px-6 font-medium text-slate-800 dark:text-slate-200 transition-colors">
-                                    Request Demo
+                    {secondFinished && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <Group className={classes.controls}>
+                                <button
+                                    className="text-lg shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-bold py-[11px] px-6 rounded font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500"
+                                    onClick={() => setIsModalOpen(true)}
+                                >
+                                    Get Started Today
                                 </button>
 
-                                {/* <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#0f172a 45%,#111827 55%,#0f172a)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                                <Link href="/product/smart-plan#request-demo">
+                                    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-400 bg-[linear-gradient(110deg,#ffffff,45%,#e2e8f0,55%,#ffffff)] dark:border-slate-700 dark:bg-[linear-gradient(110deg,#00000000,45%,#1e2631,55%,#00000000)] bg-[length:200%_100%] px-6 font-medium text-slate-800 dark:text-slate-200 transition-colors">
+                                        Request Demo
+                                    </button>
+
+                                    {/* <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#0f172a 45%,#111827 55%,#0f172a)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
                                     Shimmer
                                 </button> */}
-                                {/* <Button
+                                    {/* <Button
                                     size="lg"
                                     variant="default"
                                     className={classes.control}
@@ -170,11 +175,15 @@ export function HeroHomePage2({ setIsModalOpen }) {
                                 >
                                     Request Demo
                                 </Button> */}
-                            </Link>
-                        </Group>
-                    </motion.div>
-                )}
-            </Container>
+                                </Link>
+                            </Group>
+                        </motion.div>
+                    )}
+                </Container>
+                {/* <p className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 py-8">
+                    Backgrounds
+                </p> */}
+            </div>
         </div>
     )
 }

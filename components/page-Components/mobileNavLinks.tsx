@@ -12,7 +12,8 @@ import { BsCashStack, BsChevronDown, BsMic } from "react-icons/bs"
 import NavMenuItem from "../UI-Components/navMenuItem"
 import { AiOutlineMessage } from "react-icons/ai"
 import { MdOutlineAutoAwesome, MdOutlinePhoneEnabled } from "react-icons/md"
-import { RiComputerLine } from "react-icons/ri"
+import { RiComputerLine, RiToolsFill } from "react-icons/ri"
+import { CgWebsite } from "react-icons/cg"
 
 const MobileNav = ({ open, setOpen }) => {
     const pathname = usePathname()
@@ -72,14 +73,14 @@ const MobileNav = ({ open, setOpen }) => {
                                     pathname === "/product/smart-voice" ||
                                     pathname === "/product/easy-auth" ||
                                     pathname === "/product/smart-form" ||
-                                    pathname === "/product/intellicall" ||
+                                    pathname === "/product/call-center" ||
                                     pathname === "/product/smart-plan" ||
                                     pathname === "/product/clinic-connect"
                                         ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 mx-1 flex items-center"
                                         : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 mx-1 flex items-center"
                                 }
                             >
-                                Features
+                                Products
                                 <BsChevronDown
                                     className="ml-2 text-black dark:text-white"
                                     size={12}
@@ -88,8 +89,8 @@ const MobileNav = ({ open, setOpen }) => {
                         </Menu.Target>
                         <Menu.Dropdown>
                             <section className="w-full">
-                                <div className="flex justify-between items-center px-4 pt-2">
-                                    <h1>Features</h1>
+                                {/* <div className="flex justify-between items-center px-4 pt-2">
+                                    <h1>Products</h1>
                                     <Link href="/product/demos">
                                         <Button
                                             size="xs"
@@ -100,7 +101,7 @@ const MobileNav = ({ open, setOpen }) => {
                                         </Button>
                                     </Link>
                                 </div>
-                                <Divider className="my-2" />
+                                <Divider className="my-2" /> */}
                                 <div className="grid grid-cols-1 gap-2">
                                     <NavMenuItem
                                         title="Clinic-Connect"
@@ -118,19 +119,19 @@ const MobileNav = ({ open, setOpen }) => {
                                         href="/product/clinic-connect"
                                     />{" "}
                                     <NavMenuItem
-                                        title="IntelliCall"
+                                        title="Call Center"
                                         description="Automated patient communication "
                                         icon={
                                             <MdOutlinePhoneEnabled
                                                 className={
                                                     pathname ==
-                                                    "/product/intellicall"
+                                                    "/product/call-center"
                                                         ? "text-blue-500"
                                                         : ""
                                                 }
                                             />
                                         }
-                                        href="/product/intellicall"
+                                        href="/product/call-center"
                                     />{" "}
                                     <NavMenuItem
                                         title="Echo"
@@ -191,6 +192,35 @@ const MobileNav = ({ open, setOpen }) => {
                                         }
                                         href="/product/smart-form"
                                     />{" "}
+                                    <NavMenuItem
+                                        title="Custom Web Development"
+                                        description="Professional site for your businesses"
+                                        icon={
+                                            <CgWebsite
+                                                className={
+                                                    pathname ==
+                                                    "/product/web-development"
+                                                        ? "text-blue-500"
+                                                        : ""
+                                                }
+                                            />
+                                        }
+                                        href="/product/web-development"
+                                    />
+                                    <NavMenuItem
+                                        title="Other Tools"
+                                        description="Miscellaneous tools for your business"
+                                        icon={
+                                            <RiToolsFill
+                                                className={
+                                                    pathname == "/product/tools"
+                                                        ? "text-blue-500"
+                                                        : ""
+                                                }
+                                            />
+                                        }
+                                        href="/product/tools"
+                                    />
                                 </div>
                                 {/* <div className="bg-neutral-900">
                             <Divider className="my-2" />

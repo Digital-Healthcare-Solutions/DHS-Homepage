@@ -8,7 +8,7 @@ import {
     createStyles,
     Divider
 } from "@mantine/core"
-import { RiComputerLine } from "react-icons/ri"
+import { RiComputerLine, RiToolsFill } from "react-icons/ri"
 import { BsCashStack, BsMic } from "react-icons/bs"
 import { MdOutlineAutoAwesome, MdOutlinePhoneEnabled } from "react-icons/md"
 import { MdOutlinePersonOff } from "react-icons/md"
@@ -16,6 +16,7 @@ import { BsChatLeftText } from "react-icons/bs"
 import { AiOutlineMessage } from "react-icons/ai"
 import Link from "next/link"
 import { BackgroundGradient } from "../ui/background-gradient"
+import { CgWebsite } from "react-icons/cg"
 
 export function Feature({ icon: Icon, title, description }) {
     const theme = useMantineTheme()
@@ -70,8 +71,28 @@ export function FeaturesGrid({ title, description }) {
                     </Link>
                     , a realtime messaging and referral system that allows you
                     to communicate with other providers in a multichannel, HIPAA
-                    compliant way. Whether through fax or instant messaging,
-                    we've got you covered.
+                    compliant way. Whether through{" "}
+                    <Link
+                        href={"/product/clinic-connect"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        e-fax
+                    </Link>
+                    ,{" "}
+                    <Link
+                        href={"/product/clinic-connect"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        instant messaging
+                    </Link>
+                    , or the{" "}
+                    <Link
+                        href={"/product/clinic-connect"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        web portal
+                    </Link>
+                    , we've got you covered.
                 </div>
             )
 
@@ -80,21 +101,21 @@ export function FeaturesGrid({ title, description }) {
 
         {
             icon: MdOutlinePhoneEnabled,
-            title: "Automated calls & patient texting",
+            title: "Streamlined Patient Communication",
             description: (
                 <div>
-                    We built our call center,{" "}
+                    We built our{" "}
                     <Link
-                        href={"/product/intellicall"}
+                        href={"/product/call-center"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
-                        IntelliCall
-                    </Link>
-                    , with the goal of making it easier to communicate with
+                        Call Center
+                    </Link>{" "}
+                    with the goal of making it easier to communicate with
                     patients. Our product plugs in with your existing phone
                     system and allows you to view call transcriptions, listen to
                     voicemails, respond via text messages, make and receive
-                    calls, and more right from your computer.
+                    calls, and more right from your computer or mobile device.
                 </div>
             )
         },
@@ -111,14 +132,55 @@ export function FeaturesGrid({ title, description }) {
                     </Link>{" "}
                     streamlines clinical documentation by converting
                     provider-patient conversations into detailed clinical notes
-                    using AI. Choose between SOAP or nurse's note formats,
-                    customized to your specialty. Our service includes custom
-                    model training to tailor note formatting to your practice's
-                    specific requirements.
+                    using our fine tuned AI. Choose between SOAP or nurse's note
+                    formats, customized to your specialty. Our service includes
+                    custom model training to tailor note formatting to your
+                    practice's specific requirements.
                 </div>
             )
         },
 
+        {
+            icon: RiComputerLine,
+            title: "Online intake forms",
+            description: (
+                <div>
+                    <Link
+                        href={"/product/smart-form"}
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        SmartForm
+                    </Link>{" "}
+                    streamlines adding online pre-registration and intake forms
+                    to your practice's website. Use our intuitive Drag and drop
+                    form builder to create custom forms for your practice. You
+                    can embed our provided custom link to offer secure and
+                    streamlined form submissions for patients. Plus, our system
+                    allows for SMS sending of form links and a convienent
+                    dashboard for viewing form submissions.
+                </div>
+            )
+        },
+        {
+            icon: BsMic,
+            title: "Dictation software",
+            description: (
+                <div>
+                    Use{" "}
+                    <Link
+                        href="product/smart-voice"
+                        className="text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        SmartVoice{" "}
+                    </Link>
+                    to save time writing your notes. We utilize the latest in AI
+                    speech recognition technology to provide accurate and fast
+                    results. Our service can even remove background noise,
+                    'umms' from speech, translate any langauge to English, and
+                    more.
+                </div>
+            )
+        },
         {
             icon: BsCashStack,
             title: "Chronic Care Management (CCM)",
@@ -138,41 +200,40 @@ export function FeaturesGrid({ title, description }) {
             )
         },
         {
-            icon: RiComputerLine,
-            title: "Online intake forms",
+            icon: CgWebsite,
+            title: "Custom Website Development",
             description: (
                 <div>
+                    We offer{" "}
                     <Link
-                        href={"/product/smart-form"}
+                        href={"/product/web-development"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
-                        SmartForm
+                        custom website development
                     </Link>{" "}
-                    streamlines adding online pre-registration and intake forms
-                    to your practice's website. Simply embed our provided custom
-                    link to offer secure, streamlined form submissions for
-                    patients. Plus, our system allows for easy SMS sending of
-                    links and dashboard viewing of online paperwork links.
+                    for your practice. We will work with you to design and
+                    develop a website that reflects your practice's brand and
+                    values. When we build your website, we also include a
+                    drop-in form for web referral submissions, and an AI chat
+                    widget for patient and provider Q&A on your website.
                 </div>
             )
         },
         {
-            icon: BsMic,
-            title: "Dictation software",
+            icon: RiToolsFill,
+            title: "Other Tools and Services",
             description: (
                 <div>
-                    Use{" "}
+                    We also offer a variety of other tools and services to help
+                    you manage your practice. You can view a full list of our
+                    services{" "}
                     <Link
-                        href="product/smart-voice"
+                        href={"/product/tools"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
-                        SmartVoice{" "}
+                        here
                     </Link>
-                    to save time & money writing your notes. We utilize the
-                    latest in AI speech recognition technology to provide
-                    accurate and fast results. Our service can even remove
-                    background noise, 'umms' from speech, translate any langauge
-                    to English, and more.
+                    .
                 </div>
             )
         }
@@ -180,13 +241,16 @@ export function FeaturesGrid({ title, description }) {
 
     const { classes, theme } = useStyles()
     const features = FeatureArray.map((feature, index) => (
-        <Feature {...feature} key={index} />
+        <div key={index}>
+            <Feature {...feature} />
+            <Divider mt={20} size={1} className="block md:hidden" />
+        </div>
     ))
 
     return (
         <div className=" bg-white dark:bg-neutral-900 " id="features">
             {" "}
-            <Container size={1500} className={classes.wrapper}>
+            <Container size={1700} className={classes.wrapper}>
                 <h1 className="text-4xl font-bold text-center mb-5">{title}</h1>
 
                 <Container size={560} p={0} pb={30}>
@@ -195,12 +259,13 @@ export function FeaturesGrid({ title, description }) {
                     </Text>
                 </Container>
                 {/* <Divider mt={20} size={2} /> */}
-                <BackgroundGradient className="rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-zinc-900">
+                <BackgroundGradient className="rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-neutral-900">
                     <SimpleGrid
                         mt={20}
-                        cols={3}
+                        cols={4}
                         spacing={theme.spacing.xl * 2}
                         breakpoints={[
+                            { maxWidth: 1200, cols: 3, spacing: "xl" },
                             { maxWidth: 980, cols: 2, spacing: "xl" },
                             { maxWidth: 755, cols: 1, spacing: "xl" }
                         ]}

@@ -16,8 +16,8 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import Image from "next/image"
 import { AiOutlineCloudUpload } from "react-icons/ai"
-import ButtonPrimary from "../../components/UI-Components/button-primary"
-import ButtonSecondary from "../../components/UI-Components/button-secondary"
+import ButtonPrimary from "../../../components/UI-Components/button-primary"
+import ButtonSecondary from "../../../components/UI-Components/button-secondary"
 import { BsArrowRight, BsArrowDown } from "react-icons/bs"
 import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
@@ -27,31 +27,33 @@ import { AiOutlineArrowUp } from "react-icons/ai"
 import { BiPhoneCall } from "react-icons/bi"
 import { RxCircleBackslash } from "react-icons/rx"
 import Head from "next/head"
+import FeatureHeaderSparkle from "../../../components/page-Components/featureHeaderSparkle"
+import RequestDemo from "../../../components/page-Components/requestDemo"
 
 const features = [
     {
         icon: BiPhoneCall,
         title: "Efficient Communication",
         description:
-            "IntelliCall is essentially your clinic's shared iPhone, allowing you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
+            "Our Call Center is essentially your clinic's shared iPhone, allowing you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
     },
     {
         icon: AiOutlineArrowUp,
         title: "Increase reimbursement",
         description:
-            "With IntelliCall, all phone communication is documented and kept until you delete it. This allows you to monitor all patient communication and ensure that you are reimbursed for extra time you spend on the phone with patients."
+            "With Our Call Center, all phone communication is documented and kept until you delete it. This allows you to monitor all patient communication and ensure that you are reimbursed for extra time you spend on the phone with patients."
     },
     {
         icon: RxCircleBackslash,
         title: "Cut costs and save time",
         description:
-            "Choose IntelliCall as your primary office phone number. Save an average of 50% on your phone bill. Respond to patients anywhere, anytime. No office constraints or sharing your personal phone number."
+            "Choose Our Call Center as your primary office phone number. Save an average of 50% on your phone bill. Respond to patients anywhere, anytime. No office constraints or sharing your personal phone number."
     },
     {
         icon: MdOutlinePersonPin,
         title: "Personalized Patient Experience:",
         description:
-            "Our solution allows you to communicate with patients in a way that feels more personal and engaging. By using IntelliCall, you can enhance your patient's experience and show them that you care about their needs."
+            "Our solution allows you to communicate with patients in a way that feels more personal and engaging. By using Our Call Center, you can enhance your patient's experience and show them that you care about their needs."
     }
 ]
 
@@ -59,7 +61,7 @@ const howItWorks = [
     {
         number: 1,
         description:
-            "Sign up for our platform and go to the settings page. Under the IntelliCall tab, you can register a new phone number and configure your call settings."
+            "Sign up for our platform and go to the settings page. Under the Our Call Center tab, you can register a new phone number and configure your call settings."
     },
     {
         number: 2,
@@ -74,118 +76,48 @@ const howItWorks = [
     {
         number: 4,
         description:
-            "Now when you visit the IntelliCall tab, you can see your call history. You can see the date and time of the call, the caller's phone number, the duration of the call, and the transcription of the voicemail. You can also listen to the voicemail by clicking the play button."
+            "Now when you visit the Call Center tab, you can see your call history. You can see the date and time of the call, the caller's phone number, the duration of the call, and the transcription of the voicemail. You can also listen to the voicemail by clicking the play button."
     },
     {
         number: 5,
         description:
-            "You can respond to the voicemail either by text or call. If you choose to respond by text, simply type your message and send it, IntelliCall works like a normal text messaging app. If you choose to respond by call, click the phone Icon and you can call the patient back."
+            "You can respond to the voicemail either by text or call. If you choose to respond by text, simply type your message and send it, The Call Center works like a normal text messaging app. If you choose to respond by call, click the phone Icon and you can call the patient back."
     }
 ]
 
 const IntelliCall = () => {
-    const formik = useFormik({
-        initialValues: {
-            name: "",
-            email: "",
-            businessName: ""
-        },
-        validationSchema: Yup.object({
-            name: Yup.string().required("Required"),
-            email: Yup.string()
-                .email("Invalid email address")
-                .required("Required"),
-            businessName: Yup.string().required("Required")
-        }),
-        onSubmit: () => {
-            subscribeToLaunch(
-                formik.values.name,
-                formik.values.email,
-                formik.values.businessName
-            )
-        }
-    })
-
-    const subscribeToLaunch = async (
-        name: string,
-        email: string,
-        business: string
-    ) => {
-        const res = await fetch(
-            "https://xmks-s250-ypw0.n7.xano.io/api:5iYyLrKQ/subscribeToLaunchList",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    name,
-                    email,
-                    business
-                })
-            }
-        )
-        const data = await res.json()
-        if (res.ok) {
-            showNotification({
-                title: "Success",
-                message:
-                    "Thanks for your interest! A representative will be in touch soon.",
-                color: "green",
-                autoClose: 5000
-            })
-            formik.resetForm()
-        } else {
-            showNotification({
-                title: "Error",
-                message: data.message,
-                color: "red",
-                autoClose: 5000
-            })
-        }
-        return data
-    }
-
     return (
-        <div className="py-10 bg-gradient-to-br to-blue-100 from-white dark:from-neutral-900 dark:to-neutral-800">
+        <div className="py-10 fr">
             <Head>
                 <title>
-                    IntelliCall | Digital Healthcare Solutions | Cloud based
+                    Call Center | Digital Healthcare Solutions | Cloud based
                     medical phone system
                 </title>
                 <meta
                     name="description"
-                    content="IntelliCall is a secure cloud based phone system for medical professionals that allows you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
+                    content="Our Call Center is a secure cloud based phone system for medical professionals that allows you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
                 />
                 <meta
                     name="keywords"
-                    content="IntelliCall, IntelliCall Digital Healthcare Solutions, IntelliCall Digital Healthcare, IntelliCall Digital Health, IntelliCall Digital Health Solutions, IntelliCall Digital Health Company, IntelliCall Digital Health, Medical phone system, phone, phone system, phone system for doctors, phone system for medical practices, phone system for medical offices, phone system for medical clinics, phone system for medical professionals, phone system for healthcare, phone system for healthcare professionals, phone system for healthcare practices, phone system for healthcare offices, phone system for healthcare clinics, phone system for healthcare companies, phone system for healthcare companies, cloud phone system for medical professionals, cloud phone system for healthcare professionals, cloud phone system for doctors, cloud phone system for medical practices, cloud phone system for medical offices, cloud phone system for medical clinics, cloud phone system for medical companies"
+                    content="Digital Healthcare Solutions, Call Center Digital Healthcare, Call Center Digital Health, Call Center Digital Health Solutions, Call Center Digital Health Company, Call Center Digital Health, Medical phone system, phone, phone system, phone system for doctors, phone system for medical practices, phone system for medical offices, phone system for medical clinics, phone system for medical professionals, phone system for healthcare, phone system for healthcare professionals, phone system for healthcare practices, phone system for healthcare offices, phone system for healthcare clinics, phone system for healthcare companies, phone system for healthcare companies, cloud phone system for medical professionals, cloud phone system for healthcare professionals, cloud phone system for doctors, cloud phone system for medical practices, cloud phone system for medical offices, cloud phone system for medical clinics, cloud phone system for medical companies"
                 />
-                <meta name="author" content="IntelliCall" />
+                <meta name="author" content="Call Center" />
                 <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
                 />
                 <meta
                     property="og:title"
-                    content="IntelliCall | Digital Healthcare Solutions"
+                    content="Call Center | Digital Healthcare Solutions"
                 />
                 <meta
                     property="og:description"
-                    content="IntelliCall is a secure cloud based phone system for medical professionals that allows you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
+                    content="Call Center is a secure cloud based phone system for medical professionals that allows you to communicate with patients in a way that is more efficient and convenient for both your staff and your patients."
                 />
                 <meta property="og:type" content="website" />
             </Head>
             <Container size="lg">
-                <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
-                    <Image
-                        className="rounded-xl dark:brightness-150 "
-                        src="/IntelliCallLogo.png"
-                        width={350}
-                        height={350}
-                        alt="IntelliCall Logo"
-                    />
-                </h1>
+                <FeatureHeaderSparkle title="Call Center" />
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
                     <div className="text-lg">
                         <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
@@ -348,86 +280,7 @@ const IntelliCall = () => {
                         </Grid>
                     </Container>
                 </div>
-                <form
-                    className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-10 lg:gap-20 my-24 bg-blue-500  rounded-xl  py-8"
-                    onSubmit={formik.handleSubmit}
-                >
-                    <Title
-                        order={2}
-                        sx={(theme) => ({
-                            fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-                            marginTop: "64px"
-                        })}
-                        className=" text-white font-black items-center justify-center flex flex-col h-full"
-                    >
-                        <span className="text-white text-4xl">
-                            Interested ?
-                        </span>{" "}
-                        <div className="flex text-xl justify-center items-center pt-3 text-white">
-                            Request a Demo
-                            <BsArrowDown className="ml-2 block lg:hidden" />
-                            <BsArrowRight className="ml-2 hidden lg:block" />
-                        </div>
-                        <p className="text-lg py-4 text-white">or</p>
-                        <div className="flex justify-center">
-                            <Link href="/#contact">
-                                <ButtonSecondary
-                                    onClick={() => console.log("clicked")}
-                                    className="text-lg bg-white text-blue-500 hover:bg-neutral-200"
-                                >
-                                    Contact Us
-                                </ButtonSecondary>
-                            </Link>
-                        </div>
-                    </Title>
-                    <div className="flex flex-col justify-center bg-white dark:bg-neutral-800 pb-8 py-6 px-16 rounded-2xl">
-                        <TextInput
-                            label="Name"
-                            placeholder="Your name"
-                            mt="md"
-                            name="name"
-                            withAsterisk
-                            value={formik.values.name}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={formik.touched.name && formik.errors.name}
-                        />
-                        <TextInput
-                            label="Email"
-                            placeholder="Your email"
-                            name="email"
-                            mt="md"
-                            withAsterisk
-                            value={formik.values.email}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={formik.touched.email && formik.errors.email}
-                        />{" "}
-                        <TextInput
-                            label="Business Name"
-                            placeholder="Your Business"
-                            name="businessName"
-                            mt="md"
-                            withAsterisk
-                            value={formik.values.businessName}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            error={
-                                formik.touched.businessName &&
-                                formik.errors.businessName
-                            }
-                        />{" "}
-                        <div className="flex justify-center pt-5">
-                            <ButtonPrimary
-                                type="submit"
-                                onClick={() => console.log("clicked")}
-                                className=""
-                            >
-                                Submit
-                            </ButtonPrimary>
-                        </div>
-                    </div>
-                </form>
+                <RequestDemo />
                 <h2 className="py-6">
                     <div className="text-center text-xl">
                         You can always read more about IntelliCall on one of our{" "}

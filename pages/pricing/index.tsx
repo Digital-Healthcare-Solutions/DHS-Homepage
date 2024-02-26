@@ -45,12 +45,15 @@ import * as Yup from "yup"
 import { showNotification } from "@mantine/notifications"
 import { RxQuestionMarkCircled } from "react-icons/rx"
 import { AiOutlineQuestion } from "react-icons/ai"
+import { useTheme } from "next-themes"
 
 const Pricing = () => {
     const router = useRouter()
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [features, setFeatures] = useState([])
     const [providers, setProviders] = useState(1)
+
+    const { theme } = useTheme()
 
     const useStyles = createStyles((theme) => ({
         header: {
@@ -220,7 +223,7 @@ const Pricing = () => {
     ]
 
     return (
-        <section className="bg-gradient-to-b from-white to-neutral-200 dark:to-neutral-800 dark:from-neutral-900 flex justify-center items-center pb-20">
+        <section className=" flex justify-center items-center pb-20">
             <Head>
                 <title>Pricing | Digital Healthcare Solutions</title>
                 <meta
@@ -257,7 +260,7 @@ const Pricing = () => {
                 </Container>
 
                 <Container
-                    size={"lg"}
+                    size={"xl"}
                     className="flex flex-col md:flex-row justify-around w-full gap-4 my-8"
                 >
                     {/* <Card className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400">
@@ -297,24 +300,23 @@ const Pricing = () => {
                             Get Custom Quote
                         </Button>
                     </Card> */}
-
-                    <div className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
+                    <div className="md:w-1/3 border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
-                            Premium
+                            Starter
                         </h3>
                         <Divider />
                         <p className="my-5">
                             A plan designed for small to medium-sized businesses
-                            that can grow with you.{" "}
-                            <span className="text-xs">(1-10 providers)</span>
+                            .
+                            {/* <span className="text-xs">(1-10 providers)</span> */}
                         </p>
                         <Divider />
                         <div className="my-8">
-                            {premiumFeatures.map((item, index) => (
+                            {baseFeatures.map((item, index) => (
                                 <div
-                                    className={`flex justify-start items-center text-base p-2 rounded-md ${
+                                    className={`flex justify-start items-center text-base p-2 rounded-md shadow-none ${
                                         index % 2 === 1
-                                            ? "bg-transparent"
+                                            ? ""
                                             : "bg-neutral-100  dark:bg-neutral-800 "
                                     }`}
                                 >
@@ -336,7 +338,45 @@ const Pricing = () => {
                         </Button>
                     </div>
 
-                    <div className="md:w-1/2 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
+                    <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
+                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
+                            Premium
+                        </h3>
+                        <Divider />
+                        <p className="my-5">
+                            A plan designed for small to medium-sized businesses
+                            that can grow with you.{" "}
+                            <span className="text-xs">(1-10 providers)</span>
+                        </p>
+                        <Divider />
+                        <div className="my-8">
+                            {premiumFeatures.map((item, index) => (
+                                <div
+                                    className={`flex justify-start items-center text-base p-2 rounded-md shadow-none ${
+                                        index % 2 === 1
+                                            ? "bg-transparent"
+                                            : "bg-neutral-50  dark:bg-neutral-800 "
+                                    }`}
+                                >
+                                    <BsCheck2
+                                        className="text-blue-500 mr-2"
+                                        size={18}
+                                    />
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
+
+                        <Button
+                            onClick={() => setIsModalOpen(true)}
+                            size="md"
+                            fullWidth
+                        >
+                            Get Custom Quote
+                        </Button>
+                    </div>
+
+                    <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <h3 className="mb-2 font-semibold text-lg lg:text-2xl ">
                             Enterprise
                         </h3>
@@ -385,7 +425,8 @@ const Pricing = () => {
                 <div className="md:flex flex-col items-center mt-4 hidden">
                     <Table
                         withBorder
-                        striped
+                        striped={theme === "dark"}
+                        withColumnBorders={theme === "light"}
                         verticalSpacing="lg"
                         fontSize="lg"
                         className="w-full"
@@ -397,10 +438,12 @@ const Pricing = () => {
                                 * All plans include a 30-day free trial.
                             </p>
                         </caption>
-                        <thead className="sticky top-16 lg:top-[75px]  dark:bg-neutral-900 bg-neutral-100 dark:brightness-[1.22]">
+                        <thead
+                        // className="sticky top-16 lg:top-[75px]  dark:bg-neutral-900 bg-neutral-100 dark:brightness-[1.22]"
+                        >
                             <tr>
                                 <th>Feature</th>
-                                {/* <th>Base</th> */}
+                                <th>Starter</th>
                                 <th>Premium</th>
                                 <th>Enterprise</th>
                             </tr>
@@ -408,7 +451,7 @@ const Pricing = () => {
                         <tbody>
                             <tr>
                                 <td>
-                                    IntelliCall <br />
+                                    Call Center <br />
                                     <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
                                         Includes:
                                         <Tooltip
@@ -427,12 +470,12 @@ const Pricing = () => {
                                         </Tooltip>
                                     </div>
                                 </td>
-                                {/* <td>
+                                <td>
                                     {included} <br />{" "}
-                                    <span className="text-sm">
+                                    {/* <span className="text-sm">
                                         (limited data)
-                                    </span>
-                                </td> */}
+                                    </span> */}
+                                </td>
                                 <td>
                                     {included}
                                     {/* <br />{" "}
@@ -446,7 +489,7 @@ const Pricing = () => {
                             </tr>
                             <tr>
                                 <td>Clinic-Connect</td>
-                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
@@ -454,10 +497,9 @@ const Pricing = () => {
                                 <td>
                                     E-fax <br />
                                     <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
-                                        Includes:
+                                        Starting at 0.035$ per page
                                         <Tooltip
-                                            label="2,500 pages per month / provider
-                                           "
+                                            label="0.045 per page for inbound faxes when OCR is enabled"
                                             position="top"
                                         >
                                             <ThemeIcon
@@ -470,12 +512,13 @@ const Pricing = () => {
                                         </Tooltip>
                                     </div>
                                 </td>
-                                {/* <td>
-                                    {included} <br />{" "}
+                                <td>
+                                    {included}
+                                    {/* <br />{" "}
                                     <span className="text-sm">
                                         (limited data)
-                                    </span>
-                                </td> */}
+                                    </span> */}
+                                </td>
                                 <td>
                                     {included}
                                     {/* <br />{" "}
@@ -489,19 +532,19 @@ const Pricing = () => {
                             </tr>
                             <tr>
                                 <td>Dictation Software</td>
-                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>Smartplan</td>
-                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>Echo</td>
-
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
@@ -513,7 +556,7 @@ const Pricing = () => {
                             </tr> */}
                             <tr>
                                 <td>Private Chatrom with our team</td>
-                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
@@ -522,19 +565,19 @@ const Pricing = () => {
                                     In person or video guided
                                     tutorials/walkthrough
                                 </td>
-                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>24/7 Customer Support</td>
-                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>BAA signed with your entity</td>
-                                {/* <td>{included}</td> */}
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
@@ -546,20 +589,20 @@ const Pricing = () => {
                             </tr> */}
 
                             <tr>
-                                <td>Custom E-forms made for your Business</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>SmartForm</td>
+                                <td>{included}</td>
                                 <td>{included}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>Unlimited staff accounts</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>Custom EMR integrations</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr>
@@ -578,13 +621,13 @@ const Pricing = () => {
                             </tr> */}
                             <tr>
                                 <td>30 day logging/request history</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>IP allowlist</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr>
@@ -597,12 +640,12 @@ const Pricing = () => {
                                     </span>
                                 </td>
                                 <td>{notIncluded}</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr>
                             <tr>
                                 <td>SSO/SAML</td>
-                                {/* <td>{notIncluded}</td> */}
+                                <td>{notIncluded}</td>
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr>
@@ -618,12 +661,12 @@ const Pricing = () => {
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
                             </tr> */}
-                            {/* <tr>
+                            <tr>
                                 <td>API access</td>
                                 <td>{notIncluded}</td>
                                 <td>{notIncluded}</td>
                                 <td>{included}</td>
-                            </tr> */}
+                            </tr>
                         </tbody>
                     </Table>
                 </div>
@@ -702,7 +745,7 @@ const Pricing = () => {
                     />
                     <MultiSelect
                         data={[
-                            "IntelliCall",
+                            "Call Center",
                             "Clinic-Connect",
                             "SmartPlan",
                             "E-Fax",

@@ -18,6 +18,7 @@ import {
     Modal,
     MultiSelect,
     NumberInput,
+    Text,
     TextInput,
     Title
 } from "@mantine/core"
@@ -30,7 +31,11 @@ import { cn } from "../utils/cn"
 import { InfiniteMovingCards } from "../components/ui/infinite-moving-cards"
 import { BackgroundBeams } from "../components/ui/background-beams"
 import { BentoGrid, BentoGridItem } from "../components/ui/bento-grid"
-import { LuClipboard } from "react-icons/lu"
+import { LuClipboard, LuFileText } from "react-icons/lu"
+import StatCard from "../components/UI-Components/statCard"
+import { MdOutlineRecordVoiceOver, MdPhone } from "react-icons/md"
+import { TfiMoney } from "react-icons/tfi"
+import { FiClock } from "react-icons/fi"
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -39,55 +44,93 @@ export default function Home() {
 
     const router = useRouter()
 
-    const Skeleton = () => (
-        <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
-    )
     const items = [
         {
-            title: "The Dawn of Innovation",
+            title: "Patient Growth",
             description:
-                "Explore the birth of groundbreaking ideas and inventions.",
-            header: "Innovation",
+                "The impact of our solutions on the growth of your patient base.",
+            header: (
+                <StatCard
+                    title="New Patients"
+                    diff={20}
+                    value={25}
+                    valueText={"New Patients per month"}
+                />
+            ),
+
             icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
         },
         {
-            title: "The Digital Revolution",
-            description: "Dive into the transformative power of technology.",
-            header: <Skeleton />,
-            icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
-        },
-        {
-            title: "The Art of Design",
+            title: "Call Center Impact",
             description:
-                "Discover the beauty of thoughtful and functional design.",
-            header: <Skeleton />,
-            icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
+                "The impact of our intuitive call center on your business.",
+            header: (
+                <StatCard
+                    title="Time spent on phones"
+                    diff={-50}
+                    value={16}
+                    valueText={"less hours spent on the phone per month"}
+                />
+            ),
+            icon: <MdPhone className="h-4 w-4 text-neutral-500" />
         },
         {
-            title: "The Power of Communication",
+            title: "Clinical Efficiency",
             description:
-                "Understand the impact of effective communication in our lives.",
-            header: <Skeleton />,
-            icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
+                "The impact of our speech-to-text solutions on the efficiency of your clinical notes.",
+            header: (
+                <StatCard
+                    title="Time Spent writing notes"
+                    diff={-25}
+                    value={10}
+                    valueText={"less hours spent writing clinical notes"}
+                />
+            ),
+            icon: (
+                <MdOutlineRecordVoiceOver className="h-4 w-4 text-neutral-500" />
+            )
         },
         {
-            title: "The Pursuit of Knowledge",
-            description: "Join the quest for understanding and enlightenment.",
-            header: <Skeleton />,
-            icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
+            title: "Financial Growth",
+            description: "Based on 1 year long case study.",
+            header: (
+                <StatCard
+                    title="Revenue Increase"
+                    diff={10}
+                    value={"$100,000"}
+                    valueText={"Dollar increase in revenue"}
+                />
+            ),
+            icon: <TfiMoney className="h-4 w-4 text-neutral-500" />
         },
+
         {
-            title: "The Joy of Creation",
-            description: "Experience the thrill of bringing ideas to life.",
-            header: <Skeleton />,
-            icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
-        },
-        {
-            title: "The Spirit of Adventure",
+            title: "Patient Satisfaction",
             description:
-                "Embark on exciting journeys and thrilling discoveries.",
-            header: <Skeleton />,
-            icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
+                "The impact of our solutions on patient satisfaction and engagement",
+            header: (
+                <StatCard
+                    title="Time patients have to wait"
+                    diff={-15}
+                    value={"15"}
+                    valueText={"minutes"}
+                />
+            ),
+            icon: <FiClock className="h-4 w-4 text-neutral-500" />
+        },
+        {
+            title: "Paperwork Reduction",
+            description:
+                "The impact of our solutions on the time spent on paperwork.",
+            header: (
+                <StatCard
+                    title="Time Spent sorting through paperwork (forms, faxes, etc)"
+                    diff={-25}
+                    value={12}
+                    valueText={"less hours spent on paperwork per month"}
+                />
+            ),
+            icon: <LuFileText className="h-4 w-4 text-neutral-500" />
         }
     ]
 
@@ -236,7 +279,6 @@ export default function Home() {
             }
         }
     })
-    console.log(router.query.dialog)
 
     useEffect(() => {
         if (router.query.dialog === "getStarted") {
@@ -283,7 +325,7 @@ export default function Home() {
             </section> */}
             <WaveComponent />
             {/* testimonials */}
-            <div className="h-[45rem] rounded-md flex flex-col antialiased bg-white dark:bg-neutral-900 items-center justify-center relative overflow-hidden">
+            <div className="h-[45rem] rounded-md flex flex-col antialiased bg-white dark:bg-neutral-900 items-center justify-center relative overflow-hidden my-12">
                 <InfiniteMovingCards
                     items={testimonials1}
                     direction="right"
@@ -303,10 +345,36 @@ export default function Home() {
                     // speed="slow"
                 />
             </div>
+            <h2 className="text-5xl font-bold text-center mt-14">
+                The{" "}
+                <Text
+                    component="span"
+                    variant="gradient"
+                    gradient={{ from: "blue", to: "cyan" }}
+                    inherit
+                >
+                    impact
+                </Text>{" "}
+                of our solutions
+            </h2>
+            <BentoGrid className="my-10 pb-20 px-3">
+                {items.map((item, i) => (
+                    <BentoGridItem
+                        key={i}
+                        title={item.title}
+                        description={item.description}
+                        header={item.header}
+                        icon={item.icon}
+                        className={
+                            i === 1 || i === 2 || i === 5 ? "md:col-span-2" : ""
+                        }
+                    />
+                ))}
+            </BentoGrid>
             <HomeCards />
             <div className="relative lg:h-[600px] my-12 lg:my-2 w-full overflow-hidden bg-white dark:bg-neutral-900 flex flex-col items-center justify-center rounded-lg">
                 <div className="absolute inset-0 w-full h-full bg-white dark:bg-neutral-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-                <Boxes />
+                {/* <Boxes /> */}
                 <h1
                     className={cn(
                         "md:text-4xl text-3xl relative z-20 bg-white dark:bg-neutral-900"
@@ -319,21 +387,6 @@ export default function Home() {
             {/* <section className="mt-14">
                 <h1 className="text-4xl font-bold text-center"></h1>
             </section>{" "} */}
-            <h2 className="text-4xl font-bold text-center mt-14">
-                The impact of our solutions
-            </h2>
-            <BentoGrid className="my-10">
-                {items.map((item, i) => (
-                    <BentoGridItem
-                        key={i}
-                        title={item.title}
-                        description={item.description}
-                        header={item.header}
-                        icon={item.icon}
-                        className={i === 3 || i === 6 ? "md:col-span-2" : ""}
-                    />
-                ))}
-            </BentoGrid>
             <section
                 id="contact"
                 className="flex justify-center  bg-white dark:bg-neutral-900"
@@ -415,7 +468,7 @@ export default function Home() {
                     />
                     <MultiSelect
                         data={[
-                            "IntelliCall",
+                            "Call Center",
                             "Clinic-Connect",
                             "SmartPlan",
                             "E-Fax",

@@ -104,12 +104,12 @@ export const WavyBackground = ({
     return (
         <div
             className={cn(
-                "h-96 md:h-[500px] flex flex-col items-center justify-center",
+                "h-96 md:h-[500px]  flex flex-col items-center justify-center",
                 containerClassName
             )}
         >
             <canvas
-                className="inset-0 z-0"
+                className="inset-0 z-0 w-[99.5vw]"
                 ref={canvasRef}
                 id="canvas"
             ></canvas>

@@ -1,11 +1,14 @@
 import { Container, Title, Accordion, createStyles } from "@mantine/core"
 import Link from "next/link"
+import { BackgroundBeams } from "../ui/background-beams"
 
 const useStyles = createStyles((theme) => ({
     wrapper: {
         paddingTop: theme.spacing.xl * 2,
         // paddingBottom: theme.spacing.xl * 2,
-        minHeight: 650
+        minHeight: 650,
+        // minWidth: 700,
+        zIndex: 10
     },
 
     title: {
@@ -27,8 +30,11 @@ const useStyles = createStyles((theme) => ({
 export function FaqSimple() {
     const { classes } = useStyles()
     return (
-        <div className="bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-900 pb-10 ">
-            <Container size="sm" className={classes.wrapper}>
+        <div className=" bg-white  dark:bg-neutral-900 pb-10 relative antialiased flex flex-col w-[99vw]">
+            <Container
+                size="sm"
+                className={"pt-10 min-h-96 z-10 lg:min-w-[720px]"}
+            >
                 <Title align="center" className={classes.title}>
                     Frequently Asked Questions
                 </Title>
@@ -40,39 +46,63 @@ export function FaqSimple() {
                         value="clinic-connect"
                     >
                         <Accordion.Control>
-                            How does Clinic-Connect work?
+                            What is Clinic Connect?
                         </Accordion.Control>
                         <Accordion.Panel>
                             <p>
-                                Clinic Connect is a peer to peer platform that
-                                allows you to connect with other healthcare
-                                professionals in a secure way. You can use our
-                                platform to refer patients, send messages, and
-                                share files with other healthcare professionals
-                                on our platform.
+                                Clinic Connect is a multichannel, secure
+                                communication platform. Clinic-Connect has 3
+                                main channels: 1. Instant Messaging 2.
+                                Electronic Faxes and 3. A Secure referral web
+                                portal.
+                                {/* portal. The instant messaging platform is a peer
+                                to peer platform that allows you to connect with
+                                other healthcare professionals in a secure way.
+                                You can use our platform to refer patients, send
+                                messages, and share files with your team and
+                                other healthcare professionals on our platform.  */}
                             </p>
+                            <br />
                             <p>
-                                We offer a free trial for 60 days. After that
+                                {/* We offer a free trial for 60 days. After that
                                 you can choose to continue using our service for
-                                39.99 per month or cancel at any time.
+                                39.99 per month or cancel at any time. */}
+                                For more information, visit the{" "}
+                                <Link
+                                    className="text-blue-500 hover:underline"
+                                    href="/product/clinic-connect"
+                                >
+                                    Clinic Connect
+                                </Link>{" "}
+                                page.
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
                     <Accordion.Item className={classes.item} value="benefits">
                         <Accordion.Control>
-                            What are the benefits of using Intellicall?
+                            What are the benefits of using the Call Center?
                         </Accordion.Control>
                         <Accordion.Panel>
                             <p>
-                                Intellicall is a call center that helps you
-                                manage your incoming calls. We provide a
+                                Our Call center helps you manage your incoming
+                                calls and texts from patients. We provide a
                                 dedicated phone number that you can use to
                                 forward voicemails and calls to. Our service
                                 transcribes voicemails into text and allows you
-                                to respond to them via text message. We also
-                                provide a way for you to manage your
-                                appointments and send appointment reminders to
-                                your patients.
+                                to respond to them via text message from the web
+                                app or mobile app. You can also set up calls to
+                                attempt to forward to your office employees
+                                phones via the mobile app and if they don't
+                                answer, it will forward to us. For a more
+                                detailed view of benefits and possible call
+                                flows, visit the{" "}
+                                <Link
+                                    className="text-blue-500 hover:underline"
+                                    href="/prouct/call-center/call-flow"
+                                >
+                                    Call Flow
+                                </Link>{" "}
+                                page.
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
@@ -103,9 +133,7 @@ export function FaqSimple() {
                         </Accordion.Panel>
                     </Accordion.Item>
                     <Accordion.Item className={classes.item} value="ccm">
-                        <Accordion.Control>
-                            What is CCM and how does it work?
-                        </Accordion.Control>
+                        <Accordion.Control>What is CCM?</Accordion.Control>
                         <Accordion.Panel>
                             <p>
                                 CCM (Chronic Care Management) is a medicare
@@ -116,10 +144,11 @@ export function FaqSimple() {
                             </p>
                             <p>
                                 We provide a platform that allows you to manage
-                                your patients, their care plans, and their
-                                appointments. We also provide a way for you to
-                                bill for your time spent managing their care
-                                whether it be via phone, text, or in person.
+                                your patients and bill for CCM services. We
+                                automatically track the time you spend managing
+                                your patients and provide you with a report that
+                                you can use to bill medicare for your services
+                                with the appropriate CPT codes.
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
@@ -133,19 +162,10 @@ export function FaqSimple() {
                                 information very seriously. We utilize a variety
                                 of technologies to ensure that your patients
                                 information is secure. All data is encrypted in
-                                transit and at rest. We also host our own NLP
-                                (Natural Language Processing) model from{" "}
-                                <Link
-                                    className="text-blue-500 hover:underline"
-                                    href="https://www.private-ai.com/"
-                                >
-                                    Private AI
-                                </Link>{" "}
-                                to remove any PHI (Protected Health Information)
-                                from the data we receive from patients before
-                                running it through any machine learning models.
-                                This ensures that your patient's data is never
-                                sent to any third party vendors.
+                                transit and at rest. We also have a variety of
+                                access controls in place to ensure that only
+                                authorized personnel can access your patients
+                                information.
                             </p>
                             <p>
                                 Read more about our{" "}
@@ -174,26 +194,9 @@ export function FaqSimple() {
                             </p>
                         </Accordion.Panel>
                     </Accordion.Item>
-                    <Accordion.Item className={classes.item} value="academic">
-                        <Accordion.Control>
-                            Do you offer discounts for academic institutions?
-                        </Accordion.Control>
-                        <Accordion.Panel>
-                            <p>
-                                Yes! If you are a researcher or academic
-                                institution, please{" "}
-                                <Link
-                                    className="text-blue-500 hover:underline"
-                                    href=""
-                                >
-                                    contact us{" "}
-                                </Link>
-                                and we can discuss a discounted plan.
-                            </p>
-                        </Accordion.Panel>
-                    </Accordion.Item>
                 </Accordion>
             </Container>{" "}
+            <BackgroundBeams />
         </div>
     )
 }

@@ -64,7 +64,7 @@ const data = [
     {
         image: "/AI.png",
         title: "Use AI to automate your phone system ",
-        category: "IntelliCall",
+        category: "Call Center",
         id: 2
     },
     {

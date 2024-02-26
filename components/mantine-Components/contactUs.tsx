@@ -73,11 +73,11 @@ function ContactUs() {
         <form
             onSubmit={formik.handleSubmit}
             className="px-8 w-full py-12 h-[40rem] rounded-md
-            relative flex flex-col items-center justify-center antialiased"
+            relative antialiased mb-20 md:mb-0"
         >
             {" "}
             {/* <div className="   bg-neutral-950 "> */}
-            <div id="contact" className="max-w-2xl mx-auto p-4 z-10">
+            <div id="contact" className="max-w-3xl mx-auto p-4 z-10">
                 {/* <h1 className="relative z-10 text-lg md:text-7xl  ">
                     Join the waitlist
                 </h1> */}

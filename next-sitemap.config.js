@@ -52,7 +52,7 @@ publishedAt < now()] | order(publishedAt desc) {
                 priority: 0.8
             },
             {
-                loc: "/product/intellicall",
+                loc: "/product/call-center",
                 lastmod: new Date().toISOString(),
                 changefreq: "daily",
                 priority: 0.8

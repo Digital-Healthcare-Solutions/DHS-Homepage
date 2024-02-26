@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Button, Divider, Menu } from "@mantine/core"
+import { Alert, Button, Divider, Menu } from "@mantine/core"
 import { FiExternalLink } from "react-icons/fi"
 import DarkMode from "./darkMode"
 import ButtonPrimary from "../UI-Components/button-primary"
@@ -8,7 +8,8 @@ import { BsCashStack, BsChevronDown, BsMic } from "react-icons/bs"
 import NavMenuItem from "../UI-Components/navMenuItem"
 import { AiOutlineMessage } from "react-icons/ai"
 import { MdOutlineAutoAwesome, MdOutlinePhoneEnabled } from "react-icons/md"
-import { RiComputerLine } from "react-icons/ri"
+import { RiComputerLine, RiToolsFill } from "react-icons/ri"
+import { CgWebsite } from "react-icons/cg"
 
 const NavLinks = () => {
     const pathname = usePathname()
@@ -26,16 +27,6 @@ const NavLinks = () => {
             >
                 Home
             </Link>
-            {/* <Link
-                href="/about-us"
-                className={
-                    pathname === "/about-us"
-                        ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:font-normal active:ring-2  "
-                        : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
-                }
-            >
-                About<span className="maxMd:hidden ml-1">Us</span>
-            </Link> */}
             <Menu
                 transition="scale-y"
                 transitionDuration={250}
@@ -55,14 +46,14 @@ const NavLinks = () => {
                             pathname === "/product/smart-voice" ||
                             pathname === "/product/easy-auth" ||
                             pathname === "/product/smart-form" ||
-                            pathname === "/product/intellicall" ||
+                            pathname === "/product/call-center" ||
                             pathname === "/product/smart-plan" ||
                             pathname === "/product/clinic-connect"
                                 ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 cursor-pointer flex items-center"
                                 : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 cursor-pointer flex items-center"
                         }
                     >
-                        Features{" "}
+                        Products{" "}
                         <BsChevronDown
                             className="ml-2 text-black dark:text-white"
                             size={12}
@@ -72,8 +63,8 @@ const NavLinks = () => {
                 <Menu.Dropdown>
                     <section className="w-[600px]">
                         <div className="flex justify-between items-center px-4 pt-2">
-                            <h1>Features</h1>
-                            <Link href="/product/demos">
+                            <h1 className="font-semibold text-lg">Products</h1>
+                            {/* <Link href="/product/demos">
                                 <Button
                                     size="xs"
                                     variant="subtle"
@@ -81,7 +72,7 @@ const NavLinks = () => {
                                 >
                                     View Demos
                                 </Button>
-                            </Link>
+                            </Link> */}
                         </div>
                         <Divider className="my-2" />
                         <div className="grid grid-cols-2 gap-2">
@@ -101,18 +92,18 @@ const NavLinks = () => {
                                 href="/product/clinic-connect"
                             />{" "}
                             <NavMenuItem
-                                title="IntelliCall"
-                                description="Automated patient communication "
+                                title="Call Center"
+                                description="Streamlined patient communication "
                                 icon={
                                     <MdOutlinePhoneEnabled
                                         className={
-                                            pathname == "/product/intellicall"
+                                            pathname == "/product/call-center"
                                                 ? "text-blue-500"
                                                 : ""
                                         }
                                     />
                                 }
-                                href="/product/intellicall"
+                                href="/product/call-center"
                             />{" "}
                             <NavMenuItem
                                 title="Echo"
@@ -129,6 +120,34 @@ const NavLinks = () => {
                                 href="/product/echo"
                             />{" "}
                             <NavMenuItem
+                                title="SmartForm"
+                                description="Customizable patient intake forms"
+                                icon={
+                                    <RiComputerLine
+                                        className={
+                                            pathname == "/product/smart-form"
+                                                ? "text-blue-500"
+                                                : ""
+                                        }
+                                    />
+                                }
+                                href="/product/smart-form"
+                            />
+                            <NavMenuItem
+                                title="SmartVoice"
+                                description="Dictation & translation software"
+                                icon={
+                                    <BsMic
+                                        className={
+                                            pathname == "/product/smart-voice"
+                                                ? "text-blue-500"
+                                                : ""
+                                        }
+                                    />
+                                }
+                                href="/product/smart-voice"
+                            />{" "}
+                            <NavMenuItem
                                 title="SmartPlan"
                                 description="Chronic care management platform"
                                 icon={
@@ -143,47 +162,52 @@ const NavLinks = () => {
                                 href="/product/smart-plan"
                             />{" "}
                             <NavMenuItem
-                                title="SmartVoice"
-                                description="Dictation software for healthcare providers"
+                                title="Custom Web Development"
+                                description="Professional site for your businesses"
                                 icon={
-                                    <BsMic
+                                    <CgWebsite
                                         className={
-                                            pathname == "/product/smart-voice"
+                                            pathname ==
+                                            "/product/web-development"
                                                 ? "text-blue-500"
                                                 : ""
                                         }
                                     />
                                 }
-                                href="/product/smart-voice"
-                            />{" "}
+                                href="/product/web-development"
+                            />
                             <NavMenuItem
-                                title="SmartForm"
-                                description="Customizable patient intake forms"
+                                title="Other Tools"
+                                description="Miscellaneous tools for your business"
                                 icon={
-                                    <RiComputerLine
+                                    <RiToolsFill
                                         className={
-                                            pathname == "/product/smart-form"
+                                            pathname == "/product/tools"
                                                 ? "text-blue-500"
                                                 : ""
                                         }
                                     />
                                 }
-                                href="/product/smart-form"
-                            />{" "}
+                                href="/product/tools"
+                            />
                         </div>
-                        {/* <div className="bg-neutral-900">
-                            <Divider className="my-2" />
+                        <Divider />
+                        <div className="dark:bg-neutral-900 py-3">
                             <div className="flex justify-between items-center px-4 pb-2">
-                                <h1>New Signups get 1 month free! </h1>
-                                <Button
-                                    size="xs"
-                                    variant="subtle"
-                                    className="text-blue-400"
-                                >
-                                    Learn More
-                                </Button>
+                                <h1 className="text-sm font-sans">
+                                    Get started today and get 1 month free!
+                                </h1>
+                                <Link href="/?dialog=getStarted">
+                                    <Button
+                                        size="xs"
+                                        variant="subtle"
+                                        className="text-blue-400"
+                                    >
+                                        Get Started
+                                    </Button>
+                                </Link>
                             </div>
-                        </div> */}
+                        </div>
                     </section>
                     {/* <Menu.Item
                         sx={

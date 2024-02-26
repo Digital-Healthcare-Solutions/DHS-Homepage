@@ -193,7 +193,7 @@ const Features = () => {
                             className="text-center sticky top-14 md:top-20 bg-white dark:bg-neutral-900
                          text-2xl lg:text-3xl pb-2"
                         >
-                            IntelliCall
+                            Call Center
                             <Divider className="mt-2" />
                         </h2>
                         <p>

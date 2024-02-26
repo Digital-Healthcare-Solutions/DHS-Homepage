@@ -100,15 +100,15 @@ const Layout = ({ children }) => {
                 // },
                 {
                     label: "Automated phone system",
-                    link: "/product/intellicall"
+                    link: "/product/call-center"
                 },
                 // {
                 //     label: "SMS with patients",
-                //     link: "/product/intellicall"
+                //     link: "/product/call-center"
                 // },
                 // {
                 //     label: "Appointment Reminders",
-                //     link: "/product/intellicall"
+                //     link: "/product/call-center"
                 // },
                 {
                     label: "Chronic Care Management",

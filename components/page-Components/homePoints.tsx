@@ -20,7 +20,7 @@ const points = [
         icon: BsCurrencyDollar,
         title: "Flexible pricing",
         description:
-            "If you're a solo practitioner, you shouldn't have to pay the same as a large practice. We offer flexible pricing to ensure that you're only paying for what you need."
+            "If you're a solo practitioner, you shouldn't have to pay the same as a large practice. We offer usage based pricing to ensure that you're only paying for what you need."
     }
 ]
 
@@ -28,7 +28,7 @@ const HomePoints = () => {
     return (
         <Container
             size="lg"
-            className="flex flex-col lg:flex-row justify-center items-center lg:items-start lg:gap-8 gap-20 mb-12 mt-14  rounded-xl px-6 pb-8"
+            className="flex flex-col lg:flex-row justify-center items-center lg:items-start lg:gap-8 gap-20  mt-14  rounded-xl px-6 "
         >
             {points.map((point) => (
                 <div className="flex flex-col items-center gap-4 lg:w-1/3 z-20 ">

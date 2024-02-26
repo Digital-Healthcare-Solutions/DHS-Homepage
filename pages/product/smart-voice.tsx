@@ -17,6 +17,7 @@ import ButtonPrimary from "../../components/UI-Components/button-primary"
 import Link from "next/link"
 import styles from "../../styles/circle.module.css"
 import Head from "next/head"
+import FeatureHeaderSparkle from "../../components/page-Components/featureHeaderSparkle"
 
 const SmartVoice = () => {
     const [loading, setLoading] = useState(false)
@@ -209,7 +210,7 @@ const SmartVoice = () => {
     }
 
     return (
-        <div className="py-10 bg-gradient-to-b to-blue-100 from-neutral-50 dark:from-neutral-900 dark:to-neutral-800">
+        <div className="py-10 ">
             <Head>
                 <title>
                     SmartVoice | Digital Healthcare Solutions | Smart Dictation
@@ -230,18 +231,8 @@ const SmartVoice = () => {
                 />
             </Head>
             <Container size="lg">
-                <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
-                    <Image
-                        className="rounded-xl dark:brightness-150 mt-4 mb-2 "
-                        src="/SmartVoiceLogo.png"
-                        width={330}
-                        height={330}
-                        alt="Smart Voice Logo"
-                    />
-                    {/* <span className=" w-fit text-5xl ml-2 flex items-center text-transparent bg-clip-text bg-gradient-to-r  to-[#194767] from-[#518cba] font-semibold">
-            IntelliCall
-        </span> */}
-                </h1>
+                <FeatureHeaderSparkle title="SmartVoice" />
+
                 <section className="flex flex-col lg:flex-row items-start gap-20">
                     <div className="flex flex-col items-center justify-between gap-8">
                         <div className="text-lg max-w-lg">
