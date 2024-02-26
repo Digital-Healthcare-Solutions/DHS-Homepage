@@ -353,7 +353,7 @@ export default function Home() {
                     gradient={{ from: "blue", to: "cyan" }}
                     inherit
                 >
-                    impact
+                    Impact
                 </Text>{" "}
                 of our solutions
             </h2>

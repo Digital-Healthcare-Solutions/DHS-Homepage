@@ -10,27 +10,27 @@ type Tab = {
     title: string
 }
 
-type TabPanel = {
-    value: string
-    contentMain: ReactNode | string
-    //optional list of content
-    contentList?: string[]
-    image?: string
-}
+// type TabPanel = {
+//     value: string
+//     contentMain: ReactNode | string
+//     //optional list of content
+//     contentList?: string[]
+//     image?: string
+// }
 
-type VerticalTabsWithTextProps = {
+type HorizontalTabsProps = {
     tabsList: Tab[]
-    tabsPanel: TabPanel[]
+    // tabsPanel: TabPanel[]
 }
 
-const VerticalTabsWithText = ({
-    tabsList = [],
-    tabsPanel = []
-}: VerticalTabsWithTextProps) => {
+const HorizontalTabs = ({
+    tabsList = []
+}: // tabsPanel = []
+HorizontalTabsProps) => {
     return (
         <Tabs
             variant="pills"
-            orientation="vertical"
+            orientation="horizontal"
             defaultValue={tabsList[0].value}
             className="flex flex-col lg:flex-row items-start gap-5 lg:gap-20"
         >
@@ -46,7 +46,7 @@ const VerticalTabsWithText = ({
                     </Tabs.Tab>
                 ))}
             </Tabs.List>
-            <section className="pl-5 text-base lg:text-lg">
+            {/* <section className="pl-5 text-base lg:text-lg">
                 {tabsPanel.map((panel, index) => (
                     <Tabs.Panel
                         value={panel.value}
@@ -88,9 +88,9 @@ const VerticalTabsWithText = ({
                         </section>
                     </Tabs.Panel>
                 ))}
-            </section>
+            </section> */}
         </Tabs>
     )
 }
 
-export default VerticalTabsWithText
+export default HorizontalTabs

@@ -18,8 +18,8 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import Image from "next/image"
 import { AiOutlineCloudUpload } from "react-icons/ai"
-import ButtonPrimary from "../../components/UI-Components/button-primary"
-import ButtonSecondary from "../../components/UI-Components/button-secondary"
+import ButtonPrimary from "../../../components/UI-Components/button-primary"
+import ButtonSecondary from "../../../components/UI-Components/button-secondary"
 import { BsArrowRight, BsArrowDown } from "react-icons/bs"
 import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
@@ -27,8 +27,9 @@ import { MdAccessTime } from "react-icons/md"
 import { GiOnTarget, GiHeartPlus } from "react-icons/gi"
 import { TfiTarget } from "react-icons/tfi"
 import Head from "next/head"
-import FeatureHeaderSparkle from "../../components/page-Components/featureHeaderSparkle"
-import RequestDemo from "../../components/page-Components/requestDemo"
+import FeatureHeaderSparkle from "../../../components/page-Components/featureHeaderSparkle"
+import RequestDemo from "../../../components/page-Components/requestDemo"
+import ThreeCardProductCopy from "../../../components/UI-Components/threeCardProductCopy"
 
 const howItWorks = [
     {
@@ -56,19 +57,19 @@ const howItWorks = [
 
 const features = [
     {
-        icon: MdAccessTime,
+        icon: <MdAccessTime size={25} className="text-blue-600" />,
         title: "Save time for patients and staff",
         description:
             "By using our paperless pre-registration system, you can reduce wait times and eliminate the need for manual data entry. Patients can complete forms in advance, allowing staff to review and process information ahead of time, reducing delays and saving time for both patients and staff."
     },
     {
-        icon: TfiTarget,
+        icon: <TfiTarget size={25} className="text-blue-600" />,
         title: "Improve data accuracy",
         description:
             "Our system automatically checks for errors and ensures that all required fields are completed, reducing the likelihood of errors in patient data. This feature can help improve the accuracy of patient information and reduce the risk of errors in medical records."
     },
     {
-        icon: GiHeartPlus,
+        icon: <GiHeartPlus size={25} className="text-blue-600" />,
         title: "Enhanced Patient Satisfaction",
         description:
             "By offering paperless pre-registration, you can provide patients with a more convenient and streamlined experience, allowing them to avoid long wait times and complete forms at their convenience. This feature can improve patient satisfaction and show patients that you value their time and comfort."
@@ -218,64 +219,12 @@ const SmartForm = () => {
                     />
                 </div>
 
-                <Container size="lg" py="xl">
-                    <Group position="center">
-                        <Badge variant="filled" size="lg">
-                            Efficient Registration
-                        </Badge>
-                    </Group>
-
-                    <Title
-                        order={2}
-                        className={classes.title}
-                        ta="center"
-                        mt="sm"
-                    >
-                        SmartForm makes paperwork suck less
-                    </Title>
-
-                    <Text
-                        c="dimmed"
-                        className={classes.description}
-                        ta="center"
-                        mt="md"
-                    >
-                        Improve your practice's new patient flow and save time
-                        and money for your business.
-                    </Text>
-
-                    <SimpleGrid
-                        cols={3}
-                        spacing="xl"
-                        mt={50}
-                        breakpoints={[{ maxWidth: "md", cols: 1 }]}
-                    >
-                        {features.map((feature) => (
-                            <Card
-                                key={feature.title}
-                                shadow="md"
-                                radius="md"
-                                className={classes.card}
-                            >
-                                <feature.icon
-                                    size={30}
-                                    color={theme.fn.primaryColor()}
-                                />
-                                <Text
-                                    fz="lg"
-                                    fw={500}
-                                    className={classes.cardTitle}
-                                    mt="md"
-                                >
-                                    {feature.title}
-                                </Text>
-                                <Text fz="sm" c="dimmed" mt="sm">
-                                    {feature.description}
-                                </Text>
-                            </Card>
-                        ))}
-                    </SimpleGrid>
-                </Container>
+                <ThreeCardProductCopy
+                    features={features}
+                    title="SmartForm makes paperwork suck less"
+                    subtitle="Efficient Registration"
+                    tagline="Improve your practice's new patient flow and save time and money for your business."
+                />
 
                 <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 lg:mt-12">
                     How it works :

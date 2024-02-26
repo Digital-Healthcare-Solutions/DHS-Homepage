@@ -49,6 +49,10 @@ module.exports = {
                         transform: "translate(calc(-50% - 0.5rem))"
                     }
                 }
+            },
+            fontFamily: {
+                raleway: ["var(--font-Raleway)"],
+                rubik: ["var(--font-Rubik)"]
             }
         }
     },

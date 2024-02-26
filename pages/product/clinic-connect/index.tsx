@@ -124,7 +124,7 @@ const ClinicConnect = () => {
                 <meta property="og:type" content="website" />
             </Head>
             <Container size="lg">
-                <FeatureHeaderSparkle title="Clinic-Connect" />
+                {/* <FeatureHeaderSparkle title="Clinic-Connect" /> */}
                 <ProductCopy
                     title={
                         "Clinic Connect is a multichannel platform that connects healthcare professionals"
@@ -136,12 +136,15 @@ const ClinicConnect = () => {
                     data={data}
                 />
             </Container>
-            <section className="h-[800px] bg-neutral-100 dark:bg-neutral-800">
+            <section className="h-fit min-h-[50rem] bg-neutral-100 dark:bg-neutral-800 flex flex-col items-start lg:items-center justify-start lg:justify-around lg:items-center p-4 md:px-20">
+                {/* <Text className="text-center text-3xl font-semibold">
+                    Clinic-Connect's features
+                </Text> */}
                 <VerticalTabsWithText
                     tabsList={[
                         {
-                            title: "Instant Messaging",
-                            value: "Instant Messaging",
+                            title: "Realtime Chat",
+                            value: "Realtime Chat",
                             icon: <MdOutlineTrendingUp />
                         },
                         {
@@ -157,80 +160,44 @@ const ClinicConnect = () => {
                     ]}
                     tabsPanel={[
                         {
-                            value: "Instant Messaging",
-                            content: "Instant Messaging Content"
+                            value: "Realtime Chat",
+                            contentMain:
+                                "Our real-time chat feature revolutionizes communication among healthcare professionals, offering a secure and compliant platform for instant messaging. Designed with the healthcare industry in mind, it's akin to Slack but tailored for the unique needs of medical communication. This feature allows you to effortlessly share files, images, and other media with your team or any healthcare professional registered on the platform. Whether it's for quick consultations, sharing patient reports, or collaborative discussions, our chat system ensures your communications are efficient, secure, and in complete compliance with industry standards.",
+                            contentList: [
+                                "Offers a secure and compliant instant messaging platform for healthcare professionals to communicate in real time, ensuring privacy and adherence to healthcare regulations.",
+                                "Enables the sharing of files, images, and other media within the team or with any healthcare professional on the platform, facilitating efficient information exchange.",
+                                "Designed as a healthcare-centric alternative to Slack, it provides a tailored environment for healthcare professionals to collaborate and share critical information seamlessly."
+                            ],
+                            image: "/clinic-connect.jpeg"
                         },
                         {
                             value: "Electronic Fax",
-                            content: "Electronic Fax Content"
+                            contentMain:
+                                "Our Electronic Faxing system leverages advanced AI, including Optical Character Recognition (OCR) and Natural Language Processing (NLP), to revolutionize fax management by automatically extracting, categorizing, and intelligently processing fax content. It's smart routing system achieves a 97% success rate on initial fax attempts, it also features a robust retry mechanism, attempting up to seven additional sends through various channels for unmatched transmission reliability. Instant failure notifications also ensure prompt user response. Particularly beneficial for healthcare providers, the system automatically extracts patient information, such as names and birth dates, streamlining patient data management for future lookup. ",
+                            contentList: [
+                                "Achieves a 97% success rate on initial fax sends, with up to seven retry attempts across various channels for unparalleled reliability.",
+                                "Provides immediate alerts for any transmission issues, ensuring prompt attention and resolution.",
+                                "Utilizes Optical Character Recognition (OCR) and Natural Language Processing (NLP) to automatically categorize faxes, extract sender, and patient information, enhancing data management.",
+                                "Optimized for healthcare providers, our system efficiently captures essential patient details for accurate and future-proof data handling."
+                            ],
+                            image: "/efax-sc.jpeg"
                         },
                         {
                             value: "Web Portal",
-                            content: "Web Portal Content"
+                            contentMain:
+                                "Our web portal enables providers to securely upload patient information and referrals directly to your practice through your website, facilitated by our service's secure connection to the site we create for you. This streamlined approach not only saves time and money for both your practice and referring providers but also enhances your marketing efforts. Moreover, all new referrals can be conveniently viewed and managed from the Clinic Connect dashboard right beside your other referrals, simplifying the referral process and improving overall practice efficiency.",
+                            contentList: [
+                                "Providers can securely upload patient information and referrals to your practice via a web portal on your website, ensuring data security and privacy.",
+                                "Our service seamlessly connects with the website we build for you, allowing for a direct and efficient communication channel that saves time and resources.",
+                                "All referrals received through the web portal are easily accessible from the Clinic Connect dashboard, streamlining the management process and enhancing marketing strategies.",
+                                "Referrals submitted through the portal also receive the same OCR and NLP processing as faxes, ensuring that all patient information is accurately captured and categorized."
+                            ],
+                            image: "/cloud-computing.jpg"
                         }
                     ]}
                 />
             </section>
-            {/* <section className="flex flex-col lg:flex-row items-start gap-20">
-                    <div className="flex flex-col items-center justify-between gap-8">
-                        <div className="text-lg max-w-lg">
-                            <h2 className="text-blue-500 underline underline-offset-4 font-semibold mb-3">
-                                The Problem :
-                            </h2>
-                            <p>
-                                Old fashioned ways of communicating between
-                                healthcare providers get in the way of providing
-                                the best care for patients. Fax machines can be
-                                slow, unreliable, and error prone. Medical
-                                practices spend hundreds of dollars per month in
-                                paper and ink costs, waste hours of staff time
-                                on sorting and filing faxes, and risk losing
-                                important patient information. Many times, faxes
-                                are sent to the wrong number or the fax machine
-                                is out of paper and the fax is never received.
-                                This can lead to serious consequences for
-                                patients and providers.
-                            </p>
-                        </div>{" "}
-                        <Image
-                            className="rounded-xl shadow-lg dark:shadow-gray-700"
-                            src="/faxing-sucks.jpeg"
-                            width={300}
-                            height={300}
-                            alt="Fax machine"
-                            priority={true}
-                        />
-                    </div>
-                    <div className="flex flex-col items-center justify-between gap-8 ">
-                        <div className="text-lg max-w-lg">
-                            <h2 className="text-blue-500 underline underline-offset-4 font-semibold mb-3">
-                                Our Solution :
-                            </h2>
-                            <p>
-                                Clinic-Connect serves as a cutting-edge
-                                communication platform, facilitating real-time
-                                patient referrals among healthcare providers via
-                                the internet. Our solution streamlines
-                                communication in a modern, efficient, and secure
-                                manner, eliminating the need for outdated fax
-                                machines. Whether through real-time chat or
-                                electronic fax, Clinic-Connect ensures HIPAA
-                                compliant, rapid , and reliable transmission of
-                                patient information. Experience the future of
-                                healthcare connectivity with Clinic-Connect,
-                                where innovation meets reliability.
-                            </p>
-                        </div>{" "}
-                        <Image
-                            className="rounded-xl shadow-lg dark:shadow-gray-700"
-                            src="/cloud-computing.jpg"
-                            width={360}
-                            height={360}
-                            alt="Cloud computing"
-                            priority={true}
-                        />
-                    </div>
-                </section> */}
+
             <Container size="lg">
                 <div className="py-10 mt-20 ">
                     <Grid gutter={80}>

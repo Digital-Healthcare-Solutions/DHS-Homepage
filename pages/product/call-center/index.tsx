@@ -29,6 +29,12 @@ import { RxCircleBackslash } from "react-icons/rx"
 import Head from "next/head"
 import FeatureHeaderSparkle from "../../../components/page-Components/featureHeaderSparkle"
 import RequestDemo from "../../../components/page-Components/requestDemo"
+import ThreeCardProductCopy from "../../../components/UI-Components/threeCardProductCopy"
+import { LampContainer } from "../../../components/ui/lamp"
+import { motion } from "framer-motion"
+import VerticalAccordionsWithImage from "../../../components/UI-Components/verticalAccordionsWithImage"
+import HorizontalTabs from "../../../components/UI-Components/horizontalTabs"
+import SimpleFlow from "../../../components/react-flow/simple-flow"
 
 const features = [
     {
@@ -56,32 +62,51 @@ const features = [
             "Our solution allows you to communicate with patients in a way that feels more personal and engaging. By using Our Call Center, you can enhance your patient's experience and show them that you care about their needs."
     }
 ]
+const features2 = [
+    {
+        icon: <GiBattery100 size={25} className="text-blue-600" />,
+        title: "Revolutionary Call Management",
+        description:
+            "Elevate your communication with our state-of-the-art call management system. Powered by cutting-edge AI, it transcribes, categorizes calls by subject, and delivers actionable insights to streamline your operations."
+    },
 
-const howItWorks = [
     {
-        number: 1,
+        icon: <AiOutlineCloudUpload size={25} className="text-blue-600" />,
+        title: "Seamless Patient Communication",
         description:
-            "Sign up for our platform and go to the settings page. Under the Our Call Center tab, you can register a new phone number and configure your call settings."
+            "Empower your healthcare practice with the ability to engage patients directly from your browser or mobile device. Our intuitive software ensures timely, efficient communication, eliminating the need for costly call centers and reducing patient wait times."
     },
     {
-        number: 2,
+        icon: <BsArrowRight size={25} className="text-blue-600" />,
+        title: "Automated AI Assistance",
         description:
-            "You have several options to choose from. You can select whether you want your call to forward to your clinic's phone number, or go stright to voicemail transcription. You can also input your greeting message and select options to identify which provider the caller is calling about. Lastly choose whether you want to enable AI or disable AI for message analysis."
+            "Transform your customer service with AI-powered agents designed to handle routine inquiries. This innovative solution not only enhances patient experience but also allows your team to concentrate on critical care aspects, optimizing your workflow."
+    }
+]
+const features3 = [
+    {
+        image: "/phoneRinging.jpg",
+        title: "Revolutionize Clinic Calls with AI",
+        description:
+            "Upgrade your clinic's phone capabilities with AI-driven call transcription and intelligent labeling. Capture every detail and categorize calls for streamlined follow-up, ensuring no patient query is ever lost or overlooked."
     },
     {
-        number: 3,
+        image: "/cloudPhone.jpg",
+        title: "Mobile App Integration",
         description:
-            "Once you have configured your initial settings you can click 'Register' and your phone number will be registered. Go ahead and test your call forwarding by calling your new phone number and leaving a voicemail."
+            " Break free from office constraints with our system that forwards calls directly to your mobile app. Provide timely responses and maintain patient communication flexibility, all from the palm of your hand."
     },
     {
-        number: 4,
+        image: "/phoneRinging.jpg",
+        title: "24/7 AI Virtual Assistant",
         description:
-            "Now when you visit the Call Center tab, you can see your call history. You can see the date and time of the call, the caller's phone number, the duration of the call, and the transcription of the voicemail. You can also listen to the voicemail by clicking the play button."
+            "Implement an AI Virtual Assistant to handle after-hours inquiries, cancel appointments, and answer common questions. It's your clinic's front desk, upgraded for 24/7 responsiveness without the need for constant human oversight."
     },
     {
-        number: 5,
+        image: "/cloudPhone.jpg",
+        title: "Enhanced Patient Interaction with Automated Call Forwarding",
         description:
-            "You can respond to the voicemail either by text or call. If you choose to respond by text, simply type your message and send it, The Call Center works like a normal text messaging app. If you choose to respond by call, click the phone Icon and you can call the patient back."
+            "Revolutionize how your clinic handles calls with advanced call forwarding that intelligently directs patient inquiries. Ensure that every call is attended to promptly, whether it's for urgent care or routine questions, enhancing overall patient satisfaction."
     }
 ]
 
@@ -116,9 +141,72 @@ const IntelliCall = () => {
                 />
                 <meta property="og:type" content="website" />
             </Head>
-            <Container size="lg">
+            <Container size="xl">
                 <FeatureHeaderSparkle title="Call Center" />
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
+                <ThreeCardProductCopy
+                    subtitle="Call Center"
+                    title="Intelligent Call Management Solution"
+                    tagline="Streamline Patient Communication and Boost Efficiency with Our Intelligent Call Management Solution"
+                    features={features2}
+                />{" "}
+            </Container>
+            <LampContainer>
+                <motion.h1
+                    initial={{ opacity: 0.5, y: 100 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                        delay: 0.3,
+                        duration: 0.8,
+                        ease: "easeInOut"
+                    }}
+                    className="bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+                >
+                    A better Way <br /> to Communicate
+                </motion.h1>
+            </LampContainer>
+            <section className="h-fit min-h-[50rem] bg-blue-500 dark:bg-blue-500 flex flex-col items-start lg:flex-row lg:items-center justify-start lg:justify-between lg:items-center p-4 ">
+                <VerticalAccordionsWithImage accordionItems={features3} />
+            </section>
+            <section className="h-fit min-h-[50rem] flex flex-col items-center justify-start p-4 md:px-20 mt-20">
+                <Text
+                    className="text-center text-2xl pb-5"
+                    fw={500}
+                    c="neutral-800"
+                    mb="md"
+                >
+                    Choose the flow that best suits your needs
+                </Text>
+                <div className="pb-4">
+                    <HorizontalTabs
+                        tabsList={[
+                            {
+                                title: "Simple Flow",
+                                value: "simple-flow",
+                                icon: <BsArrowDown />
+                            },
+                            {
+                                title: "Flow with AI Agent",
+                                value: "flow-with-agent",
+                                icon: <BsArrowDown />
+                            },
+                            {
+                                title: "Flow with call forwarding",
+                                value: "flow-with-call-forwarding",
+                                icon: <BsArrowDown />
+                            },
+                            {
+                                title: "Flow with both",
+                                value: "flow-with-both",
+                                icon: <BsArrowDown />
+                            }
+                        ]}
+                    />
+                </div>
+                <div className="border border-neutral-500 dark:border-neutral-700">
+                    <SimpleFlow />
+                </div>
+            </section>
+            {/* <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
                     <div className="text-lg">
                         <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
                             The Problem :
@@ -147,8 +235,8 @@ const IntelliCall = () => {
                         alt="Phone ringing"
                         priority={true}
                     />
-                </div>
-                <div className="flex flex-col lg:flex-row justify-between gap-8 py-20 items-center">
+                </div> */}
+            {/* <div className="flex flex-col lg:flex-row justify-between gap-8 py-20 items-center">
                     {" "}
                     <Image
                         className="rounded-xl shadow-lg dark:shadow-gray-700"
@@ -180,120 +268,67 @@ const IntelliCall = () => {
                             money and provide a better patient experience.
                         </h3>
                     </div>{" "}
-                </div>
-                <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 ">
-                    How it works :
-                </h2>
-                {howItWorks.map((item) => (
-                    <div className="py-6">
-                        <div className="flex items-center">
-                            <ThemeIcon
-                                size={44}
-                                radius="md"
-                                variant="gradient"
-                                gradient={{
-                                    deg: 50,
-                                    from: "rgb(59 130 246)",
-                                    to: "rgb(59 130 246)"
-                                }}
+                </div> */}
+            <div className="py-10 mt-20 ">
+                <Container size="lg">
+                    <Grid gutter={80}>
+                        <Col span={12} md={7}>
+                            <SimpleGrid
+                                cols={2}
+                                spacing={30}
+                                breakpoints={[{ maxWidth: "md", cols: 1 }]}
                             >
-                                {item.number}
-                            </ThemeIcon>
-                            <p className="ml-3">{item.description}</p>
-                        </div>
-                    </div>
-                ))}{" "}
-                <div className="flex justify-center mt-8">
-                    <Link href="/product/demos">
-                        <ButtonSecondary
-                            onClick={() => console.log(``)}
-                            className=" bg-neutral-100 dark:bg-blue-500 ring-1 dark:ring-blue-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-blue-600 "
-                        >
-                            Read more
-                        </ButtonSecondary>
-                    </Link>
-                </div>
-                <div className="py-10 mt-20 ">
-                    <Container size="lg">
-                        <Grid gutter={80}>
-                            <Col span={12} md={7}>
-                                <SimpleGrid
-                                    cols={2}
-                                    spacing={30}
-                                    breakpoints={[{ maxWidth: "md", cols: 1 }]}
-                                >
-                                    {features.map((feature) => (
-                                        <div key={feature.title}>
-                                            <ThemeIcon
-                                                size={44}
-                                                radius="md"
-                                                variant="gradient"
-                                                gradient={{
-                                                    deg: 133,
-                                                    from: "blue",
-                                                    to: "cyan"
-                                                }}
-                                            >
-                                                <feature.icon
-                                                    size={26}
-                                                    stroke={"1.5"}
-                                                />
-                                            </ThemeIcon>
-                                            <Text fz="lg" mt="sm" fw={500}>
-                                                {feature.title}
-                                            </Text>
-                                            <Text c="dimmed" fz="sm">
-                                                {feature.description}
-                                            </Text>
-                                        </div>
-                                    ))}
-                                </SimpleGrid>
-                            </Col>
-                            <Col span={12} md={5}>
-                                <Title order={2} className="text-3xl">
-                                    IntelliCall makes communication flow.
-                                </Title>
-                                <Text className="py-6">
-                                    Streamline Patient Communication and Boost
-                                    Efficiency with Our Intelligent Call
-                                    Management Solution
-                                </Text>
+                                {features.map((feature) => (
+                                    <div key={feature.title}>
+                                        <ThemeIcon
+                                            size={44}
+                                            radius="md"
+                                            variant="gradient"
+                                            gradient={{
+                                                deg: 133,
+                                                from: "blue",
+                                                to: "cyan"
+                                            }}
+                                        >
+                                            <feature.icon
+                                                size={26}
+                                                stroke={"1.5"}
+                                            />
+                                        </ThemeIcon>
+                                        <Text fz="lg" mt="sm" fw={500}>
+                                            {feature.title}
+                                        </Text>
+                                        <Text c="dimmed" fz="sm">
+                                            {feature.description}
+                                        </Text>
+                                    </div>
+                                ))}
+                            </SimpleGrid>
+                        </Col>
+                        <Col span={12} md={5}>
+                            <Title order={2} className="text-3xl">
+                                Our Call Center makes communication flow.
+                            </Title>
+                            <Text className="py-6">
+                                Streamline Patient Communication and Boost
+                                Efficiency with Our Intelligent Call Management
+                                Solution
+                            </Text>
 
-                                <Link href="/?dialog=getStarted">
-                                    <ButtonPrimary
-                                        onClick={() => console.log(``)}
-                                        className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
-                                    >
-                                        Get Started
-                                    </ButtonPrimary>
-                                </Link>
-                                <div className="hidden lg:block pt-20">
-                                    {/* <Image
-                                        className="rounded-xl dark:brightness-150 "
-                                        src="/IntelliCallLogo.png"
-                                        alt="IntelliCall"
-                                        width={300}
-                                        height={300}
-                                    /> */}
-                                </div>
-                            </Col>
-                        </Grid>
-                    </Container>
-                </div>
-                <RequestDemo />
-                <h2 className="py-6">
-                    <div className="text-center text-xl">
-                        You can always read more about IntelliCall on one of our{" "}
-                        <Link
-                            href="/blog"
-                            className="text-blue-500 hover:underline"
-                        >
-                            {" "}
-                            blog
-                        </Link>{" "}
-                        posts.
-                    </div>
-                </h2>
+                            <Link href="/?dialog=getStarted">
+                                <ButtonPrimary
+                                    onClick={() => console.log(``)}
+                                    className=" bg-gradient-to-tr from-blue-500 to-cyan-400 hover:shadow-lg hover:from-blue-600 hover:to-cyan-500 hover:text-white"
+                                >
+                                    Get Started
+                                </ButtonPrimary>
+                            </Link>
+                        </Col>
+                    </Grid>
+                </Container>
+            </div>{" "}
+            <Container size="lg">
+                <RequestDemo />{" "}
             </Container>
         </div>
     )

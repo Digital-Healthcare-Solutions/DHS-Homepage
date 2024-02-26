@@ -1,7 +1,7 @@
 import "../styles/globals.css"
 import type { AppProps } from "next/app"
 import Layout from "../components/layout"
-import { Raleway } from "@next/font/google"
+import { Raleway, Rubik } from "@next/font/google"
 import { ThemeProvider } from "next-themes"
 import {
     MantineProvider,
@@ -15,7 +15,16 @@ import { useRouter } from "next/router"
 import Head from "next/head"
 import Script from "next/script"
 
-const raleway = Raleway({ subsets: ["latin"] })
+const raleway = Raleway({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-Raleway"
+})
+const rubik = Rubik({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-Rubik"
+})
 
 export default function App({ Component, pageProps }: AppProps) {
     const { theme, setTheme, systemTheme } = useTheme()
@@ -201,7 +210,9 @@ export default function App({ Component, pageProps }: AppProps) {
                         autoClose={3000}
                         position="bottom-left"
                     >
-                        <div className={raleway.className}>
+                        <div
+                            className={`${raleway.className} ${rubik.variable}`}
+                        >
                             {/* @ts-ignore */}
                             <Layout>
                                 {/* @ts-ignore */}
