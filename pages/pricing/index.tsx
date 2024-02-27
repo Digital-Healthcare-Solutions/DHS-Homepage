@@ -207,7 +207,8 @@ const Pricing = () => {
         "SMS starting at $0.05 per message",
         "Calls starting at $0.05 per minute",
         "E-fax starting at $0.04 per page",
-        "Echo notes starting at $0.15 per note"
+        "Echo notes starting at $0.15 per note",
+        "Support 9-5 M-F"
     ]
 
     const premiumFeatures = [
@@ -215,7 +216,8 @@ const Pricing = () => {
         "Unlimited SMS",
         "Unlimited Calls",
         "Unlimited E-fax",
-        "Unlimited Echo notes"
+        "Unlimited Echo notes",
+        "24/7 customer support"
     ]
 
     const enterpriseFeatures = [
@@ -223,7 +225,8 @@ const Pricing = () => {
         "Custom EMR integrations",
         "Enhanced security and compliance",
         "Custom solutions for your organization",
-        "Unlimited staff and provider accounts"
+        "Unlimited staff and provider accounts",
+        "Dedicated account manager"
     ]
 
     return (
@@ -258,9 +261,8 @@ const Pricing = () => {
                         have to pay the same as large organizations for the same
                         services. That's why we offer usage based pricing for
                         all the services we offer. All tiers also come with
-                        custom onboarding, training and 24/7 support, and
-                        receive any new features we release at no additional
-                        cost.
+                        custom onboarding, training, and receive any new
+                        features we release at no additional cost.
                         <br />
                     </Text>
                 </Container>
@@ -269,43 +271,6 @@ const Pricing = () => {
                     size={"xl"}
                     className="flex flex-col md:flex-row justify-around w-full gap-4 my-8"
                 >
-                    {/* <Card className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400">
-                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl ">
-                            Premium
-                        </h3>
-                        <Divider />
-                        <p className="my-5">
-                            A flexible plan for small healthcare businesses that
-                            can grow with you.
-                        </p>
-                        <Divider />
-                        <div className="my-8">
-                            {baseFeatures.map((item, index) => (
-                                <div
-                                    className={`flex justify-start items-center text-base p-2 rounded-md ${
-                                        index % 2 === 1
-                                            ? "bg-transparent"
-                                            : "bg-neutral-100 dark:bg-neutral-800"
-                                    }`}
-                                >
-                                    <BsCheck2
-                                        className="text-blue-500 mr-2"
-                                        size={18}
-                                    />
-                                    {item}
-                                </div>
-                            ))}
-                        </div>
-
-                        <Button
-                            variant="default"
-                            color="gray"
-                            size="md"
-                            className="w-full"
-                        >
-                            Get Custom Quote
-                        </Button>
-                    </Card> */}
                     <div className="md:w-1/3 border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <div className="flex items-center justify-between font-rubik">
                             <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
@@ -319,9 +284,8 @@ const Pricing = () => {
                         </div>
                         <Divider />
                         <p className="my-5">
-                            A plan designed for small to medium-sized businesses
-                            .
-                            {/* <span className="text-xs">(1-10 providers)</span> */}
+                            A usage based plan with zero fixed monthly costs for
+                            small healthcare businesses.
                         </p>
                         <Divider />
                         <div className="my-8">
@@ -365,8 +329,8 @@ const Pricing = () => {
                         </div>
                         <Divider />
                         <p className="my-5">
-                            A plan designed for small to medium-sized businesses
-                            that can grow with you.{" "}
+                            A premium plan for growing healthcare businesses
+                            that need more features and support.
                         </p>
                         <Divider />
                         <div className="my-8">
@@ -409,7 +373,7 @@ const Pricing = () => {
                         <Divider />
                         <p className="my-5">
                             All the bells and whistles for large organizations
-                            with complex requirements.{" "}
+                            with complex requirements and custom solutions.
                         </p>
                         <Divider />
                         <div className="my-8">
@@ -456,7 +420,8 @@ const Pricing = () => {
                 <div className="md:flex flex-col items-center mt-4 hidden">
                     <Table
                         withBorder
-                        striped={theme === "dark"}
+                        // striped={theme === "dark"}
+                        striped
                         withColumnBorders={theme === "light"}
                         verticalSpacing="lg"
                         fontSize="lg"
@@ -483,7 +448,7 @@ const Pricing = () => {
                             <tr>
                                 <td>
                                     Call Center <br />
-                                    <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
+                                    {/* <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
                                         Includes:
                                         <Tooltip
                                             label="15,000 text messages per month,
@@ -499,7 +464,7 @@ const Pricing = () => {
                                                 <AiOutlineQuestion size={12} />
                                             </ThemeIcon>
                                         </Tooltip>
-                                    </div>
+                                    </div> */}
                                 </td>
                                 <td>
                                     {included} <br />{" "}
@@ -527,7 +492,7 @@ const Pricing = () => {
                             <tr>
                                 <td>
                                     E-fax <br />
-                                    <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
+                                    {/* <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
                                         Starting at 0.035$ per page
                                         <Tooltip
                                             label="0.045 per page for inbound faxes when OCR is enabled"
@@ -541,7 +506,7 @@ const Pricing = () => {
                                                 <AiOutlineQuestion size={12} />
                                             </ThemeIcon>
                                         </Tooltip>
-                                    </div>
+                                    </div> */}
                                 </td>
                                 <td>
                                     {included}

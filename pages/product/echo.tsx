@@ -263,6 +263,10 @@ const Echo = () => {
     const text =
         "The patient reports experiencing migraines for about six months, describing the pain as throbbing, mostly on one side of the head, and sometimes feeling like a tight band around the forehead. The pain severity is usually around 7 or 8 on a scale of 1 to 10. These headaches can last for hours or even a day or two, occurring about twice a week. Resting in a dark, quiet room provides some relief, while stress and bright lights exacerbate the pain. The patient has not undergone any imaging tests like MRI or CT scans. Currently, the patient is taking ibuprofen and sometimes sumatriptan for the migraines. A different prescription was tried a few months ago without significant improvement, but the patient does not recall its name."
 
+        //basically turn this into a review of systems 
+        const textSOAPversoin = ""
+
+
     return (
         <>
             <div className="py-10 ">
