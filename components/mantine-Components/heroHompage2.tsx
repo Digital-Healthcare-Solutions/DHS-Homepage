@@ -159,7 +159,7 @@ export function HeroHomePage2({ setIsModalOpen }) {
                                     Get Started Today
                                 </button>
 
-                                <Link href="/product/smart-plan#request-demo">
+                                <Link href="/#request-demo">
                                     <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-400 bg-[linear-gradient(110deg,#ffffff,45%,#e2e8f0,55%,#ffffff)] dark:border-slate-700 dark:bg-[linear-gradient(110deg,#00000000,45%,#1e2631,55%,#00000000)] bg-[length:200%_100%] px-6 font-medium text-slate-800 dark:text-slate-200 transition-colors">
                                         Request Demo
                                     </button>

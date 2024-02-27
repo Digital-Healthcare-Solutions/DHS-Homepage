@@ -15,6 +15,7 @@ import * as Yup from "yup"
 import { showNotification } from "@mantine/notifications"
 import { useEffect, useState } from "react"
 import {
+    Container,
     Modal,
     MultiSelect,
     NumberInput,
@@ -36,6 +37,7 @@ import StatCard from "../components/UI-Components/statCard"
 import { MdOutlineRecordVoiceOver, MdPhone } from "react-icons/md"
 import { TfiMoney } from "react-icons/tfi"
 import { FiClock } from "react-icons/fi"
+import RequestDemo from "../components/page-Components/requestDemo"
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -288,11 +290,10 @@ export default function Home() {
 
     return (
         <motion.main
-            className="flex flex-col"
-            // initial={{ x: -200, opacity: 0 }}
-            // animate={{ x: 0, opacity: 1 }}
-            // exit={{ opacity: 0 }}
-            // transition={{ duration: 0.6 }}
+        // initial={{ x: -200, opacity: 0 }}
+        // animate={{ x: 0, opacity: 1 }}
+        // exit={{ opacity: 0 }}
+        // transition={{ duration: 0.6 }}
         >
             <Head>
                 <title>Digital Healthcare Solutions | Home</title>
@@ -394,6 +395,11 @@ export default function Home() {
                 <ContactUs />
             </section>{" "}
             <FaqSimple />
+            <Container size="lg" id="request-demo">
+                <section className="my-20">
+                    <RequestDemo />
+                </section>
+            </Container>
             <Modal
                 opened={isModalOpen}
                 onClose={() => setIsModalOpen(false)}

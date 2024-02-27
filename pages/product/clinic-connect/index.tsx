@@ -136,7 +136,7 @@ const ClinicConnect = () => {
                     data={data}
                 />
             </Container>
-            <section className="h-fit min-h-[50rem] bg-neutral-100 dark:bg-neutral-800 flex flex-col items-start lg:items-center justify-start lg:justify-around lg:items-center p-4 md:px-20">
+            <section className="h-fit min-h-[50rem] bg-neutral-100 dark:bg-neutral-800 flex flex-col items-start justify-start lg:justify-around lg:items-center p-4 md:px-20">
                 {/* <Text className="text-center text-3xl font-semibold">
                     Clinic-Connect's features
                 </Text> */}

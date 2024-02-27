@@ -165,7 +165,7 @@ const Layout = ({ children }) => {
                 },
                 {
                     label: "Request a Demo",
-                    link: "/product/smart-plan#request-demo"
+                    link: "/#request-demo"
                 },
 
                 {

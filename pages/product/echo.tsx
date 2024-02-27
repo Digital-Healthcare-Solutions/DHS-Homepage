@@ -22,12 +22,12 @@ import ButtonSecondary from "../../components/UI-Components/button-secondary"
 import { BsArrowRight, BsArrowDown, BsMic } from "react-icons/bs"
 import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
-import { MdOutlinePersonPin, MdSpeed } from "react-icons/md"
+import { MdOutlinePersonPin, MdSettings, MdSpeed } from "react-icons/md"
 import { GiBattery100, GiBullseye } from "react-icons/gi"
-import { BiPhoneCall } from "react-icons/bi"
+import { BiPhoneCall, BiSolidCategoryAlt } from "react-icons/bi"
 import { RxCircleBackslash } from "react-icons/rx"
 import Head from "next/head"
-import { FaHospitalUser, FaUserMd } from "react-icons/fa"
+import { FaHospitalUser, FaLock, FaUserMd } from "react-icons/fa"
 import FeatureHeaderSparkle from "../../components/page-Components/featureHeaderSparkle"
 import RequestDemo from "../../components/page-Components/requestDemo"
 import { useEffect, useState } from "react"
@@ -35,139 +35,172 @@ import styles from "../../styles/circle.module.css"
 import { TypeAnimation } from "react-type-animation"
 import VerticalAccordionsWithImage from "../../components/UI-Components/verticalAccordionsWithImage"
 import FeaturesGrid from "../../components/UI-Components/threeIconComponet"
+import ThreeIconComponent from "../../components/UI-Components/threeIconComponet"
+import { FiUserCheck } from "react-icons/fi"
+import HorizontalTabs from "../../components/UI-Components/horizontalTabs"
 
 const features = [
     {
-        icon: BsMic,
-        title: "Easy to use",
+        icon: BiSolidCategoryAlt,
+        title: "Specialty Agnostic",
         description:
-            "Echo can be used by anyone. All you need to do is click the microphone icon and start talking. Echo will do the rest."
+            "Echo is designed to work across all medical specialties. Whether you're a primary care physician or a specialist, Echo can help you with your clinical documentation."
     },
     {
-        icon: MdSpeed,
-        title: "Fast",
+        icon: FaLock,
+        title: "Privacy focused",
         description:
-            "Echo is fast. It can generate a note in seconds, allowing you to spend more time with your patients."
+            "We understand the importance of patient privacy. Echo is designed to ensure that all patient data is kept secure and confidential. No data is stored by default."
     },
+    {
+        icon: MdSettings,
+        title: "Customizable",
+        description:
+            "We understand that every clinic is different. Echo is designed to be customizable to fit the unique needs of your clinic. Need a note format that's different from the default? No problem."
+    },
+
     {
         icon: GiBullseye,
         title: "Accurate",
         description:
             "Echo is accurate. It uses advanced speech recognition technology to ensure that your transcripts and notes are accurate."
+    }
+]
+
+const features2 = [
+    {
+        icon: <BsMic size={22} />,
+        title: "Easy to use",
+        description:
+            "Echo can be used by anyone. All you need to do is click the microphone icon and start talking. Echo will do the rest."
     },
     {
-        icon: FaUserMd,
+        icon: <MdSpeed size={22} />,
+        title: "Fast",
+        description:
+            "Echo is fast. It can generate a note in seconds, allowing you to spend more time with your patients and less time on documentation."
+    },
+    {
+        icon: <FaUserMd size={22} />,
         title: "Professional",
         description:
             "Echo was trained by medical professionals to ensure that it generates professional notes that are ready to be signed."
     }
 ]
 
+const features3 = [
+    {
+        title: "Intuitive user interface",
+        description:
+            "Echo is designed to be easy to use. Whether you're a medical assisstant, nurse, or a provider, you can start using Echo with minimal training.",
+        image: "/echoSC.png"
+    },
+
+    {
+        title: "Custom formatting options",
+        description:
+            "Echo is designed to be customizable to fit the unique needs of your clinic. Use our drag and drop interface to create your own custom note format. Our AI will automatically analyze notes to see if the condition matches a custom format. If it does, it will automatically create a second draft in the format you specified.",
+        image: "/customFormat.png"
+    },
+    {
+        title: "Works for Nurses or Providers",
+        description:
+            "Echo can be used by both nurses and providers to generate clinical notes. It's designed to be easy to use and can be used by anyone.",
+        image: "/staff.jpg"
+    },
+    // {
+    //     title: "Patient Record Linking",
+    //     description:
+    //         "Easily link a patient record to give our model access to the patient's medications, conditions, and other health data. This will provide better context for the note and help the model generate a more accurate note.",
+    //     image: "/patientRecord2.jpg"
+    // },
+    {
+        title: "Record from your phone, tablet, or desktop",
+        description:
+            "Echo can be used on any device. Whether you're on the go or in the office, Echo can be used to generate clinical notes.",
+        image: "/devices.jpg"
+    }
+]
+
+const patientConversation = {
+    conversation: [
+        {
+            role: "Nurse",
+            text: "Good morning, I understand you've been experiencing migraines. Can you tell me how long this has been going on?"
+        },
+        { role: "Patient", text: "It's been about six months now." },
+        {
+            role: "Nurse",
+            text: "Can you describe what the headache feels like?"
+        },
+        {
+            role: "Patient",
+            text: "It's a throbbing pain, mostly on one side of my head. Sometimes it feels like a tight band around my forehead."
+        },
+        {
+            role: "Nurse",
+            text: "On a scale from 1 to 10, how would you rate the pain severity?"
+        },
+        { role: "Patient", text: "It usually ranges around 7 or 8." },
+        {
+            role: "Nurse",
+            text: "How long do these headaches last, and how often do you experience them?"
+        },
+        {
+            role: "Patient",
+            text: "They can last for hours, sometimes even a day or two. It happens about twice a week."
+        },
+        {
+            role: "Nurse",
+            text: "Are there any factors that relieve the pain or make it worse?"
+        },
+        {
+            role: "Patient",
+            text: "Resting in a dark, quiet room helps a bit. Stress and bright lights definitely make it worse."
+        },
+        {
+            role: "Nurse",
+            text: "Have you had any imaging done, like an MRI or CT scan?"
+        },
+        {
+            role: "Patient",
+            text: "No, I haven't had any imaging tests done yet."
+        },
+        {
+            role: "Nurse",
+            text: "What medications are you currently taking for your migraines?"
+        },
+        {
+            role: "Patient",
+            text: "I've been taking ibuprofen and sometimes sumatriptan when it gets really bad."
+        },
+        {
+            role: "Nurse",
+            text: "Have you tried any other medications or treatments for your migraines?"
+        },
+        {
+            role: "Patient",
+            text: "I tried a different prescription a few months back, but it didn't help much. I can't remember its name, though."
+        },
+        {
+            role: "Nurse",
+            text: "Thank you for sharing this information. We'll discuss the next steps in managing your migraines effectively."
+        }
+    ]
+}
+
 const Echo = () => {
     const [recording, setRecording] = useState(false)
     const [loading, setLoading] = useState(false)
     const [step, setStep] = useState(
-        "Click the Microphone button to show the demo"
+        "Click the Microphone button to start the demo"
     )
     const [showDemo, setShowDemo] = useState(false)
     const [conversation, setConversation] = useState([])
     const [transcriptionFinished, setTranscriptionFinished] = useState(false)
     const [beginStreamingNote, setBeginStreamingNote] = useState(false)
     const [noteFinished, setNoteFinished] = useState(false)
-
-    const features3 = [
-        {
-            image: "/phoneRinging.jpg",
-            title: "Label and sort Clinic Calls with AI",
-            description:
-                "Upgrade your clinic's phone capabilities with AI-driven call transcription and intelligent labeling. Capture every detail and categorize calls for streamlined follow-up, ensuring no patient query is ever lost or overlooked."
-        },
-        {
-            image: "/cloudPhone.jpg",
-            title: "Mobile App Integration",
-            description:
-                " Break free from office constraints with our system that forwards calls directly to your mobile app. Provide timely responses and maintain patient communication flexibility, all from the palm of your hand."
-        },
-        {
-            image: "/AI-virtual-call-assisstant.jpg",
-            title: "24/7 AI Virtual Assistant",
-            description:
-                "Implement an AI Virtual Assistant to handle after-hours inquiries, cancel appointments, and answer common questions. It's your clinic's front desk, upgraded for 24/7 responsiveness without the need for constant human oversight."
-        },
-        {
-            image: "/Intelligent-Call-Routing-Distribution.png",
-            title: "Enhanced Patient Interaction with Automated Call Forwarding",
-            description:
-                "Revolutionize how your clinic handles calls with advanced call forwarding that intelligently directs patient inquiries. Ensure that every call is attended to promptly, whether it's for urgent care or routine questions, enhancing overall patient satisfaction."
-        }
-    ]
-
-    const patientConversation = {
-        conversation: [
-            {
-                role: "Nurse",
-                text: "Good morning, I understand you've been experiencing migraines. Can you tell me how long this has been going on?"
-            },
-            { role: "Patient", text: "It's been about six months now." },
-            {
-                role: "Nurse",
-                text: "Can you describe what the headache feels like?"
-            },
-            {
-                role: "Patient",
-                text: "It's a throbbing pain, mostly on one side of my head. Sometimes it feels like a tight band around my forehead."
-            },
-            {
-                role: "Nurse",
-                text: "On a scale from 1 to 10, how would you rate the pain severity?"
-            },
-            { role: "Patient", text: "It usually ranges around 7 or 8." },
-            {
-                role: "Nurse",
-                text: "How long do these headaches last, and how often do you experience them?"
-            },
-            {
-                role: "Patient",
-                text: "They can last for hours, sometimes even a day or two. It happens about twice a week."
-            },
-            {
-                role: "Nurse",
-                text: "Are there any factors that relieve the pain or make it worse?"
-            },
-            {
-                role: "Patient",
-                text: "Resting in a dark, quiet room helps a bit. Stress and bright lights definitely make it worse."
-            },
-            {
-                role: "Nurse",
-                text: "Have you had any imaging done, like an MRI or CT scan?"
-            },
-            {
-                role: "Patient",
-                text: "No, I haven't had any imaging tests done yet."
-            },
-            {
-                role: "Nurse",
-                text: "What medications are you currently taking for your migraines?"
-            },
-            {
-                role: "Patient",
-                text: "I've been taking ibuprofen and sometimes sumatriptan when it gets really bad."
-            },
-            {
-                role: "Nurse",
-                text: "Have you tried any other medications or treatments for your migraines?"
-            },
-            {
-                role: "Patient",
-                text: "I tried a different prescription a few months back, but it didn't help much. I can't remember its name, though."
-            },
-            {
-                role: "Nurse",
-                text: "Thank you for sharing this information. We'll discuss the next steps in managing your migraines effectively."
-            }
-        ]
-    }
+    const [selectedTab, setSelectedTab] = useState("nurse")
 
     useEffect(() => {
         if (showDemo) {
@@ -249,9 +282,13 @@ const Echo = () => {
 
                     <meta property="og:type" content="website" />
                 </Head>
-                <FeatureHeaderSparkle title="Echo" />
+                {/* <FeatureHeaderSparkle title="Echo" /> */}
                 <Container size="lg" className="mb-20">
-                    <FeaturesGrid />
+                    <ThreeIconComponent
+                        title="Echo makes clinical documentation easy."
+                        tagline="Stop spending your free time finishing up clinical notes. Let Echo do the work for you in seconds."
+                        features={features2}
+                    />
                 </Container>
 
                 <section className="h-fit min-h-[50rem] border-y border-neutral-300 dark:border-neutral-700 py-20 flex flex-col items-start lg:flex-row lg:items-center justify-start lg:justify-between p-4 mb-20">
@@ -264,6 +301,25 @@ const Echo = () => {
                     <Text className="text-center text-3xl font-semibold pb-2">
                         Check out our demo below
                     </Text>
+                    <div className="flex flex-row justify-center items-center py-4">
+                        <HorizontalTabs
+                            selectedTab={selectedTab}
+                            setSelectedTab={setSelectedTab}
+                            tabsList={[
+                                {
+                                    title: "Nurse Note Example",
+                                    value: "nurse",
+                                    icon: ""
+                                },
+                                {
+                                    title: "SOAP Note Example",
+                                    value: "soap",
+                                    icon: ""
+                                }
+                            ]}
+                        />
+                    </div>
+
                     <section className="border border-neutral-500 dark:border-neutral-700 h-full md:h-[45rem] min-h-[45rem] rounded-md flex flex-col md:flex-row ">
                         <main className="flex flex-col md:w-1/2 py-2 min-h-[25rem] md:h-full">
                             <header className="w-full text-center">
@@ -348,6 +404,15 @@ const Echo = () => {
                         </div>
                         <main className="md:w-1/2 py-2 h-1/2 md:h-full">
                             <header className="w-full text-center">
+                                <span
+                                    className={
+                                        selectedTab === "soap"
+                                            ? "uppercase"
+                                            : `capitalize`
+                                    }
+                                >
+                                    {selectedTab}{" "}
+                                </span>{" "}
                                 Note{" "}
                             </header>
 

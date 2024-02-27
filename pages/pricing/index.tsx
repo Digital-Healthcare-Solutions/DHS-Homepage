@@ -46,6 +46,7 @@ import { showNotification } from "@mantine/notifications"
 import { RxQuestionMarkCircled } from "react-icons/rx"
 import { AiOutlineQuestion } from "react-icons/ai"
 import { useTheme } from "next-themes"
+import { BackgroundGradient } from "../../components/ui/background-gradient"
 
 const Pricing = () => {
     const router = useRouter()
@@ -202,23 +203,26 @@ const Pricing = () => {
     )
 
     const baseFeatures = [
-        "Premium Add-ons available",
-        "Limits on some data usage"
+        "$0 setup fee",
+        "SMS starting at $0.05 per message",
+        "Calls starting at $0.05 per minute",
+        "E-fax starting at $0.04 per page",
+        "Echo notes starting at $0.15 per note"
     ]
 
     const premiumFeatures = [
-        "Communication platform (Call center, clinic-connect, e-fax)",
-        "AI powered clinical note automation",
-        "Chronic Care Management platform",
-        "Dictation software",
-        "Custom e-forms branded for your business"
+        "EMR integration included",
+        "Unlimited SMS",
+        "Unlimited Calls",
+        "Unlimited E-fax",
+        "Unlimited Echo notes"
     ]
 
     const enterpriseFeatures = [
         "Everything in Premium",
         "Custom EMR integrations",
         "Enhanced security and compliance",
-        "Tailored solutions for your organization",
+        "Custom solutions for your organization",
         "Unlimited staff and provider accounts"
     ]
 
@@ -250,9 +254,11 @@ const Pricing = () => {
                         className="text-center text-base md:text-xl my-6 max-w-2xl"
                         color="dimmed"
                     >
-                        We provide personalized quotes tailored to each
-                        customer's specific needs, size, and budget. All tiers
-                        come with custom onboarding, training and support, and
+                        We believe small to medium-sized businesses should not
+                        have to pay the same as large organizations for the same
+                        services. That's why we offer usage based pricing for
+                        all the services we offer. All tiers also come with
+                        custom onboarding, training and 24/7 support, and
                         receive any new features we release at no additional
                         cost.
                         <br />
@@ -301,9 +307,16 @@ const Pricing = () => {
                         </Button>
                     </Card> */}
                     <div className="md:w-1/3 border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
-                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
-                            Starter
-                        </h3>
+                        <div className="flex items-center justify-between font-rubik">
+                            <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
+                                Starter
+                            </h3>
+                            <p>
+                                <span className="text-sm">
+                                    starting at $0 / mo
+                                </span>
+                            </p>
+                        </div>
                         <Divider />
                         <p className="my-5">
                             A plan designed for small to medium-sized businesses
@@ -314,10 +327,10 @@ const Pricing = () => {
                         <div className="my-8">
                             {baseFeatures.map((item, index) => (
                                 <div
-                                    className={`flex justify-start items-center text-base p-2 rounded-md shadow-none ${
+                                    className={`flex justify-start items-center text-base p-2 shadow-none border dark:border-neutral-700 border-neutral-300 ${
                                         index % 2 === 1
-                                            ? ""
-                                            : "bg-neutral-100  dark:bg-neutral-800 "
+                                            ? "bg-white border-y  dark:bg-[#25262b] "
+                                            : "bg-neutral-100  dark:bg-neutral-900"
                                     }`}
                                 >
                                     <BsCheck2
@@ -333,29 +346,36 @@ const Pricing = () => {
                             onClick={() => setIsModalOpen(true)}
                             size="md"
                             fullWidth
+                            className="bg-blue-500"
                         >
-                            Get Custom Quote
+                            Get Started
                         </Button>
                     </div>
 
                     <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
-                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
-                            Premium
-                        </h3>
+                        <div className="flex items-center justify-between font-rubik">
+                            <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
+                                Premuim
+                            </h3>
+                            <p>
+                                <span className="text-sm">
+                                    starting at $500 / mo
+                                </span>
+                            </p>
+                        </div>
                         <Divider />
                         <p className="my-5">
                             A plan designed for small to medium-sized businesses
                             that can grow with you.{" "}
-                            <span className="text-xs">(1-10 providers)</span>
                         </p>
                         <Divider />
                         <div className="my-8">
                             {premiumFeatures.map((item, index) => (
                                 <div
-                                    className={`flex justify-start items-center text-base p-2 rounded-md shadow-none ${
+                                    className={`flex justify-start items-center text-base p-2 shadow-none border dark:border-neutral-700 border-neutral-300 ${
                                         index % 2 === 1
-                                            ? "bg-transparent"
-                                            : "bg-neutral-50  dark:bg-neutral-800 "
+                                            ? "bg-white border-y  dark:bg-[#25262b] "
+                                            : "bg-neutral-100  dark:bg-neutral-900"
                                     }`}
                                 >
                                     <BsCheck2
@@ -371,29 +391,34 @@ const Pricing = () => {
                             onClick={() => setIsModalOpen(true)}
                             size="md"
                             fullWidth
+                            className="bg-blue-500"
                         >
-                            Get Custom Quote
+                            Get Started
                         </Button>
                     </div>
 
                     <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
-                        <h3 className="mb-2 font-semibold text-lg lg:text-2xl ">
-                            Enterprise
-                        </h3>
+                        <div className="flex items-center justify-between font-rubik">
+                            <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
+                                Enterprise
+                            </h3>
+                            <p>
+                                <span className="text-sm">custom pricing</span>
+                            </p>
+                        </div>
                         <Divider />
                         <p className="my-5">
                             All the bells and whistles for large organizations
                             with complex requirements.{" "}
-                            <span className="text-xs">(10+ providers)</span>
                         </p>
                         <Divider />
                         <div className="my-8">
                             {enterpriseFeatures.map((item, index) => (
                                 <div
-                                    className={`flex justify-start items-center text-base p-2 rounded-md ${
+                                    className={`flex justify-start items-center text-base p-2 shadow-none border dark:border-neutral-700 border-neutral-300 ${
                                         index % 2 === 1
-                                            ? "bg-transparent"
-                                            : "bg-neutral-100 dark:bg-neutral-800"
+                                            ? "bg-white border-y  dark:bg-[#25262b] "
+                                            : "bg-neutral-100  dark:bg-neutral-900"
                                     }`}
                                 >
                                     <BsCheck2
@@ -405,15 +430,21 @@ const Pricing = () => {
                             ))}
                         </div>
 
-                        <Button
-                            variant="default"
-                            color="gray"
-                            size="md"
-                            fullWidth
-                            onClick={() => setIsModalOpen(true)}
+                        <BackgroundGradient
+                            rounded={false}
+                            className="rounded-md max-w-sm bg-white dark:bg-zinc-900"
                         >
-                            Get Custom Quote
-                        </Button>
+                            <Button
+                                variant="default"
+                                color="gray"
+                                size="md"
+                                fullWidth
+                                onClick={() => setIsModalOpen(true)}
+                                className="rounded-md"
+                            >
+                                Get Custom Quote
+                            </Button>
+                        </BackgroundGradient>
                     </div>
                 </Container>
                 <h2

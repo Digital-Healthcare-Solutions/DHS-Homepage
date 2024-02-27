@@ -88,16 +88,16 @@ const features2 = [
 
 const features3 = [
     {
-        image: "/phoneRinging.jpg",
-        title: "Label and sort Clinic Calls with AI",
+        image: "/call-center.jpeg",
+        title: "Manage All your patient messaging in a central dashboard",
         description:
-            "Upgrade your clinic's phone capabilities with AI-driven call transcription and intelligent labeling. Capture every detail and categorize calls for streamlined follow-up, ensuring no patient query is ever lost or overlooked."
+            "Our platform consolidates all patient communications into a single, centralized dashboard, enabling healthcare providers to track, categorize, and respond to patient messages with ease through text right from the app. Whether it's a medication inquiry or a routine check-up request, you can quickly manage conversations efficiently and effectively."
     },
     {
         image: "/cloudPhone.jpg",
         title: "Mobile App Integration",
         description:
-            " Break free from office constraints with our system that forwards calls directly to your mobile app. Provide timely responses and maintain patient communication flexibility, all from the palm of your hand."
+            "Break free from office constraints with our system that forwards calls directly to your mobile app. Provide timely responses and maintain patient communication flexibility, all from the palm of your hand."
     },
     {
         image: "/AI-virtual-call-assisstant.jpg",
