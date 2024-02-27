@@ -16,10 +16,11 @@ import {
     initialEdgesSimple,
     initialNodesSimple
 } from "../../utils/simpleFlowNodes"
+import { initialNodesAgent, initialEdgesAgent } from "../../utils/agentCallFlow"
 
-const SimpleFlow = () => {
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodesSimple)
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdgesSimple)
+const FlowWithAgent = () => {
+    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodesAgent)
+    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdgesAgent)
     const [isOverlayVisible, setIsOverlayVisible] = useState(true) // Overlay visibility state
 
     const onConnect = useCallback(
@@ -33,6 +34,20 @@ const SimpleFlow = () => {
     const handleOverlayClick = () => {
         setIsOverlayVisible(false)
     }
+
+    const addNode = () => {
+        const newNode = {
+            id: (nodes.length + 1).toString(),
+            type: "default",
+            position: { x: 0, y: 0 },
+            data: { label: `New Node ${nodes.length + 1}` }
+        }
+        setNodes([...nodes, newNode])
+        console.log("Node added")
+    }
+
+    console.log("Nodes", nodes)
+    console.log("Edges", edges)
 
     return (
         <div className="h-[80vh] w-[80vw] border border-neutral-500 dark:border-neutral-700 rounded-md relative">
@@ -58,11 +73,26 @@ const SimpleFlow = () => {
                 fitView
             >
                 <Controls />
+                {/* @ts-ignore */}
                 <Background variant="dots" gap={[12, 12]} size={1} />
                 <NodeToolbar />
-            </ReactFlow>
+                {/* <MiniMap
+                    nodeColor={(n) => {
+                        if (n.type === "input") return "blue"
+                        if (n.type === "output") return "red"
+                        if (n.type === "default") return "green"
+                        return "yellow"
+                    }}
+                /> */}
+            </ReactFlow>{" "}
+            <button
+                className=" bg-primary-500 text-white p-2 rounded-md"
+                onClick={addNode}
+            >
+                Add Node
+            </button>
         </div>
     )
 }
 
-export default SimpleFlow
+export default FlowWithAgent

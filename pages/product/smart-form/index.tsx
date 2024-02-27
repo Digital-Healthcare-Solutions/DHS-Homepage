@@ -30,6 +30,7 @@ import Head from "next/head"
 import FeatureHeaderSparkle from "../../../components/page-Components/featureHeaderSparkle"
 import RequestDemo from "../../../components/page-Components/requestDemo"
 import ThreeCardProductCopy from "../../../components/UI-Components/threeCardProductCopy"
+import { BackgroundGradient } from "../../../components/ui/background-gradient"
 
 const howItWorks = [
     {
@@ -151,25 +152,24 @@ const SmartForm = () => {
             </Head>
             <Container size="lg">
                 <FeatureHeaderSparkle title="SmartForm" />
+                <ThreeCardProductCopy
+                    features={features}
+                    title="SmartForm makes paperwork suck less"
+                    subtitle="Efficient Registration"
+                    tagline="Improve your practice's new patient flow and save time and money for your business."
+                />
 
-                <h1 className="flex justify-center pb-8 w-full text-2xl md:text-3xl mb-6">
-                    <Image
-                        className="rounded-xl dark:brightness-150 "
-                        src="/SmartFormLogo.png"
-                        alt="Smart Plan"
-                        width={315}
-                        height={300}
-                    />
-                </h1>
-                <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-32 ">
-                    <Image
-                        className="rounded-xl shadow-lg dark:shadow-gray-700 "
-                        src="/registration.jpg"
-                        width={300}
-                        height={300}
-                        alt="Analog registration on paper"
-                        priority={true}
-                    />
+                <div className="flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-32 mt-36">
+                    <BackgroundGradient className="rounded-xl bg-white dark:bg-neutral-900">
+                        <Image
+                            className="bg-transparent rounded-xl "
+                            src="/registration.jpg"
+                            width={300}
+                            height={300}
+                            alt="Analog registration on paper"
+                            priority={true}
+                        />
+                    </BackgroundGradient>
 
                     <div className="text-lg w-fit lg:w-[30rem]">
                         <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2 flex justify-center">
@@ -209,22 +209,17 @@ const SmartForm = () => {
                             patient data.
                         </h3>
                     </div>{" "}
-                    <Image
-                        className="rounded-xl shadow-lg dark:shadow-gray-700"
-                        src="/online.jpg"
-                        width={400}
-                        height={400}
-                        alt="Online Registration graphic"
-                        priority={true}
-                    />
+                    <BackgroundGradient className="rounded-xl bg-white dark:bg-neutral-900">
+                        <Image
+                            className="rounded-xl shadow-lg dark:shadow-gray-700"
+                            src="/online.jpg"
+                            width={400}
+                            height={400}
+                            alt="Online Registration graphic"
+                            priority={true}
+                        />
+                    </BackgroundGradient>
                 </div>
-
-                <ThreeCardProductCopy
-                    features={features}
-                    title="SmartForm makes paperwork suck less"
-                    subtitle="Efficient Registration"
-                    tagline="Improve your practice's new patient flow and save time and money for your business."
-                />
 
                 <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 lg:mt-12">
                     How it works :
@@ -248,16 +243,6 @@ const SmartForm = () => {
                         </div>
                     </div>
                 ))}
-                <div className="flex justify-center mt-8">
-                    <Link href="/product/demos">
-                        <ButtonSecondary
-                            onClick={() => console.log(``)}
-                            className=" bg-neutral-100 dark:bg-blue-500 ring-1 dark:ring-blue-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-blue-600 "
-                        >
-                            Read more
-                        </ButtonSecondary>
-                    </Link>
-                </div>
 
                 <RequestDemo />
             </Container>

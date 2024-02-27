@@ -35,6 +35,8 @@ import { motion } from "framer-motion"
 import VerticalAccordionsWithImage from "../../../components/UI-Components/verticalAccordionsWithImage"
 import HorizontalTabs from "../../../components/UI-Components/horizontalTabs"
 import SimpleFlow from "../../../components/react-flow/simple-flow"
+import { useState } from "react"
+import ReactFlowSection from "../../../components/page-Components/reactFlowSection"
 
 const features = [
     {
@@ -83,10 +85,11 @@ const features2 = [
             "Transform your customer service with AI-powered agents designed to handle routine inquiries. This innovative solution not only enhances patient experience but also allows your team to concentrate on critical care aspects, optimizing your workflow."
     }
 ]
+
 const features3 = [
     {
         image: "/phoneRinging.jpg",
-        title: "Revolutionize Clinic Calls with AI",
+        title: "Label and sort Clinic Calls with AI",
         description:
             "Upgrade your clinic's phone capabilities with AI-driven call transcription and intelligent labeling. Capture every detail and categorize calls for streamlined follow-up, ensuring no patient query is ever lost or overlooked."
     },
@@ -97,13 +100,13 @@ const features3 = [
             " Break free from office constraints with our system that forwards calls directly to your mobile app. Provide timely responses and maintain patient communication flexibility, all from the palm of your hand."
     },
     {
-        image: "/phoneRinging.jpg",
+        image: "/AI-virtual-call-assisstant.jpg",
         title: "24/7 AI Virtual Assistant",
         description:
             "Implement an AI Virtual Assistant to handle after-hours inquiries, cancel appointments, and answer common questions. It's your clinic's front desk, upgraded for 24/7 responsiveness without the need for constant human oversight."
     },
     {
-        image: "/cloudPhone.jpg",
+        image: "/Intelligent-Call-Routing-Distribution.png",
         title: "Enhanced Patient Interaction with Automated Call Forwarding",
         description:
             "Revolutionize how your clinic handles calls with advanced call forwarding that intelligently directs patient inquiries. Ensure that every call is attended to promptly, whether it's for urgent care or routine questions, enhancing overall patient satisfaction."
@@ -164,111 +167,13 @@ const IntelliCall = () => {
                     A better Way <br /> to Communicate
                 </motion.h1>
             </LampContainer>
-            <section className="h-fit min-h-[50rem] bg-blue-500 dark:bg-blue-500 flex flex-col items-start lg:flex-row lg:items-center justify-start lg:justify-between lg:items-center p-4 ">
-                <VerticalAccordionsWithImage accordionItems={features3} />
+            <section className="h-fit min-h-[50rem] bg-blue-500 dark:bg-blue-500 flex flex-col items-start lg:flex-row lg:items-center justify-start lg:justify-between p-4 ">
+                <VerticalAccordionsWithImage
+                    accordionItems={features3}
+                    direction="right"
+                />
             </section>
-            <section className="h-fit min-h-[50rem] flex flex-col items-center justify-start p-4 md:px-20 mt-20">
-                <Text
-                    className="text-center text-2xl pb-5"
-                    fw={500}
-                    c="neutral-800"
-                    mb="md"
-                >
-                    Choose the flow that best suits your needs
-                </Text>
-                <div className="pb-4">
-                    <HorizontalTabs
-                        tabsList={[
-                            {
-                                title: "Simple Flow",
-                                value: "simple-flow",
-                                icon: <BsArrowDown />
-                            },
-                            {
-                                title: "Flow with AI Agent",
-                                value: "flow-with-agent",
-                                icon: <BsArrowDown />
-                            },
-                            {
-                                title: "Flow with call forwarding",
-                                value: "flow-with-call-forwarding",
-                                icon: <BsArrowDown />
-                            },
-                            {
-                                title: "Flow with both",
-                                value: "flow-with-both",
-                                icon: <BsArrowDown />
-                            }
-                        ]}
-                    />
-                </div>
-                <div className="border border-neutral-500 dark:border-neutral-700">
-                    <SimpleFlow />
-                </div>
-            </section>
-            {/* <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
-                    <div className="text-lg">
-                        <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
-                            The Problem :
-                        </h2>
-                        <h3>
-                            Constant phone calls and voicemails can be
-                            overwhelming and time-consuming for medical
-                            practices. The volume of incoming calls often can be
-                            difficult to manage, leading to long hold times and
-                            frustrated patients. The need to listen to and
-                            respond to voicemails can consume a significant
-                            portion of staff time, making it difficult to keep
-                            up with other important tasks. These communication
-                            challenges can lead to decreased patient
-                            satisfaction, reduced staff efficiency, and even
-                            lost revenue. Many practices even resort to spending
-                            thousands of dollars on call centers to help manage
-                            their call volume.
-                        </h3>
-                    </div>{" "}
-                    <Image
-                        className="rounded-xl shadow-lg dark:shadow-gray-700"
-                        src="/phoneRinging.jpg"
-                        width={300}
-                        height={300}
-                        alt="Phone ringing"
-                        priority={true}
-                    />
-                </div> */}
-            {/* <div className="flex flex-col lg:flex-row justify-between gap-8 py-20 items-center">
-                    {" "}
-                    <Image
-                        className="rounded-xl shadow-lg dark:shadow-gray-700"
-                        src="/cloudPhone.jpg"
-                        width={300}
-                        height={300}
-                        alt="Cloud Phone system"
-                        priority={true}
-                    />
-                    <div className="text-lg">
-                        <h2 className="text-blue-500 underline underline-offset-4 font-semibold text-xl pb-2">
-                            Our Solution :
-                        </h2>
-                        <h3>
-                            IntelliCall makes it easy to manage your
-                            communication with patients. Our intelligent call
-                            management software uses advanced AI technology to
-                            transcribe calls, sort them by topic, and provide
-                            actionable insights. With our solution, you can
-                            quickly identify the purpose of each call and
-                            prioritize them accordingly, without the need to
-                            listen to long voicemail messages. Our software
-                            allows you to text and call back patients directly
-                            from your browser, giving you the ability to respond
-                            to patients quickly and efficiently without long
-                            wait times or needing to spend thousands on a call
-                            center. By using IntelliCall, medical practices can
-                            streamline communication management, save time,
-                            money and provide a better patient experience.
-                        </h3>
-                    </div>{" "}
-                </div> */}
+            <ReactFlowSection />
             <div className="py-10 mt-20 ">
                 <Container size="lg">
                     <Grid gutter={80}>

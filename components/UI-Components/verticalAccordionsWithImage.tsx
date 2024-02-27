@@ -10,10 +10,12 @@ type AccordionItem = {
 
 type VerticalAccordionsWithImageProps = {
     accordionItems: AccordionItem[]
+    direction?: "left" | "right"
 }
 
 const VerticalAccordionsWithImage = ({
-    accordionItems
+    accordionItems,
+    direction
 }: VerticalAccordionsWithImageProps) => {
     const useStyles = createStyles((theme) => ({
         root: {
@@ -72,7 +74,11 @@ const VerticalAccordionsWithImage = ({
     )
 
     return (
-        <section className="flex flex-col-reverse lg:flex-row items-center justify-around gap-12 md:gap-8 w-full pt-5 lg:py-0 lg:px-5">
+        <section
+            className={`flex flex-col-reverse ${
+                direction === "left" ? "lg:flex-row-reverse" : "lg:flex-row"
+            } items-center justify-around gap-12 md:gap-8 w-full pt-5 lg:py-0 lg:px-5`}
+        >
             {/* //render large image here based on whatever accordion is selected */}
             <div className="">
                 <Image
@@ -84,7 +90,7 @@ const VerticalAccordionsWithImage = ({
                     alt={selectedAccordion}
                     width={700}
                     height={700}
-                    className="rounded-lg shadow-xl transition duration-300 ease-in-out transform hover:scale-110"
+                    className="rounded-lg shadow-xl transition duration-300 ease-in-out transform hover:scale-110 bg-white"
                 />
             </div>
 
@@ -96,7 +102,9 @@ const VerticalAccordionsWithImage = ({
                 classNames={classes}
                 className={classes.root}
                 value={selectedAccordion}
-                onChange={(value) => setSelectedAccordion(value)}
+                onChange={(value) => {
+                    if (typeof value === "string") setSelectedAccordion(value)
+                }}
             >
                 {accordionItems.map((item, index) => (
                     <Accordion.Item value={item.title} key={index}>
@@ -107,6 +115,7 @@ const VerticalAccordionsWithImage = ({
                                     alt={item.title}
                                     width={40}
                                     height={40}
+                                    className="bg-white"
                                 />
                                 <span>{item.title}</span>
                             </div>

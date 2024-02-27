@@ -31,7 +31,15 @@ body::-webkit-scrollbar-thumb {
     background: #ffffff;
 }
 
-.loading {
+/* .loadingText {
     clip-path: inset(0 1.4ch 0 0);
     animation: l 1s steps(4) infinite;
+} */
+
+.loadingText:after {
+    position: absolute;
+    margin-left: 0.1rem;
+    content: "...";
+    animation: dots steps(4) 1s infinite;
+    clip: rect(auto, 0px, auto, auto);
 }
