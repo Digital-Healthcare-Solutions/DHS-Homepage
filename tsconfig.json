@@ -22,13 +22,13 @@
         "name": "next"
       }
     ]
-  }, 
+  },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts", 
     "**/*.tsx"
-, "sanity.js"  ],
+, "sanity.js", "components/react-flow/simple-flow.jsx"  ],
   "exclude": [
     "node_modules"
   ]
