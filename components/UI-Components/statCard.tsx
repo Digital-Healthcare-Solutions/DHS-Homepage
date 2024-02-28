@@ -26,6 +26,7 @@ const StatCard = ({ title, value, valueText, diff }) => {
                     </Text>
                 </div>
                 <ThemeIcon
+                    color="gray"
                     variant="light"
                     className={diff > 0 ? "text-teal-500" : "text-red-500"}
                     size={38}
