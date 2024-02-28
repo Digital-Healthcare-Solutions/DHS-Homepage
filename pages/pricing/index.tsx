@@ -31,12 +31,17 @@ import {
     BsArrowDownRight,
     BsCheck2,
     BsClipboardData,
+    BsMic,
     BsQuestionCircle
 } from "react-icons/bs"
 import {
+    MdInfoOutline,
+    MdOutlineAutoAwesome,
     MdOutlineExpandLess,
     MdOutlineExpandMore,
-    MdOutlinePhone
+    MdOutlinePhone,
+    MdOutlinePhoneEnabled,
+    MdPhone
 } from "react-icons/md"
 import Head from "next/head"
 import { FiSlash } from "react-icons/fi"
@@ -44,9 +49,11 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import { showNotification } from "@mantine/notifications"
 import { RxQuestionMarkCircled } from "react-icons/rx"
-import { AiOutlineQuestion } from "react-icons/ai"
+import { AiOutlineMessage, AiOutlineQuestion } from "react-icons/ai"
 import { useTheme } from "next-themes"
 import { BackgroundGradient } from "../../components/ui/background-gradient"
+import PricingTableSection from "../../components/UI-Components/pricingTableSection"
+import { RiComputerLine, RiToolsFill } from "react-icons/ri"
 
 const Pricing = () => {
     const router = useRouter()
@@ -188,7 +195,11 @@ const Pricing = () => {
 
     const included = (
         <Tooltip label="Included in plan" position="top">
-            <ThemeIcon variant="light" radius="xl" size="lg">
+            <ThemeIcon
+                variant={theme === "dark" ? "light" : "filled"}
+                radius="xl"
+                size="md"
+            >
                 <BsCheck2 />
             </ThemeIcon>
         </Tooltip>
@@ -196,14 +207,18 @@ const Pricing = () => {
 
     const notIncluded = (
         <Tooltip label="Not Included" position="top">
-            <ThemeIcon variant="light" radius="xl" size="lg">
+            <ThemeIcon
+                variant={theme === "dark" ? "light" : "default"}
+                radius="xl"
+                size="md"
+            >
                 <FiSlash className="text-red-500" />
             </ThemeIcon>
         </Tooltip>
     )
 
     const baseFeatures = [
-        "$0 setup fee",
+        "$0 fixed monthly cost",
         "SMS starting at $0.05 per message",
         "Calls starting at $0.05 per minute",
         "E-fax starting at $0.04 per page",
@@ -213,16 +228,17 @@ const Pricing = () => {
 
     const premiumFeatures = [
         "EMR integration included",
-        "Unlimited SMS",
-        "Unlimited Calls",
-        "Unlimited E-fax",
-        "Unlimited Echo notes",
-        "24/7 customer support"
+        "SMS starting at $0.035 per message",
+        "Calls starting at $0.035 per minute",
+        "E-fax starting at $0.03 per page",
+        "Echo notes starting at $0.18 per note",
+        "24/7 Support"
     ]
 
     const enterpriseFeatures = [
         "Everything in Premium",
-        "Custom EMR integrations",
+        // "Custom EMR integrations",
+        "Dedicated server and database",
         "Enhanced security and compliance",
         "Custom solutions for your organization",
         "Unlimited staff and provider accounts",
@@ -254,7 +270,7 @@ const Pricing = () => {
                 </h1>
                 <Container size="lg" className="flex flex-col items-center">
                     <Text
-                        className="text-center text-base md:text-xl my-6 max-w-2xl"
+                        className="text-center text-base md:text-xl my-6 max-w-3xl"
                         color="dimmed"
                     >
                         We believe small to medium-sized businesses should not
@@ -271,17 +287,30 @@ const Pricing = () => {
                     size={"xl"}
                     className="flex flex-col md:flex-row justify-around w-full gap-4 my-8"
                 >
-                    <div className="md:w-1/3 border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
-                        <div className="flex items-center justify-between font-rubik">
+                    <div className="md:w-1/3 border rounded-lg dark:border-neutral-800 border-neutral-400 p-4 font-rubik shadow-lg">
+                        <div className="flex items-center justify-between ">
                             <h3 className="mb-2 font-semibold text-lg lg:text-3xl flex justify-between ">
                                 Starter
                             </h3>
-                            <p>
-                                <span className="text-sm lg:text-base">
-                                    starting at $0 / mo
-                                </span>
-                            </p>
                         </div>
+                        <Divider />
+                        <p className="my-5">
+                            <span className="text-3xl lg:text-4xl flex items-center gap-1">
+                                <span className="text-xs -translate-y-2">
+                                    *
+                                </span>
+                                <Tooltip
+                                    label="* indicates minimum per provider"
+                                    position="top"
+                                >
+                                    <div>$0</div>
+                                </Tooltip>
+                                <div className="flex flex-col gap-0 ">
+                                    <span className="text-xs">per</span>
+                                    <span className="text-xs">month</span>
+                                </div>
+                            </span>
+                        </p>
                         <Divider />
                         <p className="my-5">
                             A usage based plan with zero fixed monthly costs for
@@ -316,21 +345,34 @@ const Pricing = () => {
                         </Button>
                     </div>
 
-                    <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
+                    <div className="md:w-1/3 bg-transparent border rounded-lg dark:border-neutral-800 border-neutral-400 p-4 font-rubik shadow-lg">
                         <div className="flex items-center justify-between font-rubik">
                             <h3 className="mb-2 font-semibold text-lg lg:text-3xl flex justify-between ">
                                 Premium
                             </h3>
-                            <p>
-                                <span className="text-sm lg:text-base">
-                                    starting at $500 / mo
-                                </span>
-                            </p>
                         </div>
                         <Divider />
                         <p className="my-5">
-                            A premium plan for growing healthcare businesses
-                            that need more features and support.
+                            <span className="text-3xl lg:text-4xl flex items-center gap-1">
+                                <span className="text-xs -translate-y-2">
+                                    *
+                                </span>{" "}
+                                <Tooltip
+                                    label="* indicates minimum per provider"
+                                    position="top"
+                                >
+                                    <div>$200</div>
+                                </Tooltip>
+                                <div className="flex flex-col gap-0 ">
+                                    <span className="text-xs">per</span>
+                                    <span className="text-xs">month</span>
+                                </div>
+                            </span>
+                        </p>
+                        <Divider />
+                        <p className="my-5">
+                            A usage based plan with a fixed monthly cost in
+                            exchange for lower usage rates.
                         </p>
                         <Divider />
                         <div className="my-8">
@@ -361,21 +403,22 @@ const Pricing = () => {
                         </Button>
                     </div>
 
-                    <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
+                    <div className="md:w-1/3 bg-transparent border rounded-lg dark:border-neutral-800 border-neutral-400 p-4 font-rubik shadow-lg">
                         <div className="flex items-center justify-between font-rubik">
                             <h3 className="mb-2 font-semibold text-lg lg:text-3xl flex justify-between ">
                                 Enterprise
                             </h3>
-                            <p>
-                                <span className="text-sm lg:text-base">
-                                    custom pricing
-                                </span>
-                            </p>
                         </div>
                         <Divider />
                         <p className="my-5">
+                            <span className="text-3xl lg:text-4xl flex items-center gap-1">
+                                Custom
+                            </span>
+                        </p>
+                        <Divider />
+                        <p className="my-5">
                             All the bells and whistles for large organizations
-                            with complex requirements and custom solutions.
+                            with complex requirements.
                         </p>
                         <Divider />
                         <div className="my-8">
@@ -412,261 +455,415 @@ const Pricing = () => {
                         </div>
                     </div>
                 </Container>
-                <h2
-                    className={`${classes.header2} text-xl lg:text-3xl mt-14 underline underline-offset-8 hidden md:block`}
-                >
-                    All Features:
-                </h2>
-
-                <div className="md:flex flex-col items-center mt-4 hidden">
-                    <Table
-                        withBorder
-                        // striped={theme === "dark"}
-                        striped
-                        withColumnBorders={theme === "light"}
-                        verticalSpacing="lg"
-                        fontSize="lg"
-                        className="w-full"
-                        horizontalSpacing="xl"
+                <Container size={"xl"}>
+                    <h2
+                        className={`${classes.header2} text-xl lg:text-3xl mt-14 underline underline-offset-8 hidden md:block`}
                     >
-                        <caption>
-                            {" "}
-                            <p className="text-sm lg:text-base mt-3">
-                                * All plans include a 30-day free trial.
-                            </p>
-                        </caption>
-                        <thead
-                        // className="sticky top-16 lg:top-[75px]  dark:bg-neutral-900 bg-neutral-100 dark:brightness-[1.22]"
-                        >
-                            <tr>
-                                <th>Feature</th>
-                                <th>Starter</th>
-                                <th>Premium</th>
-                                <th>Enterprise</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    Call Center <br />
-                                    {/* <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
-                                        Includes:
-                                        <Tooltip
-                                            label="15,000 text messages per month,
-                                        15,000 minutes of call time per month / provider
-                                           "
-                                            position="top"
-                                        >
-                                            <ThemeIcon
-                                                variant="default"
-                                                radius="xl"
-                                                size="sm"
-                                            >
-                                                <AiOutlineQuestion size={12} />
-                                            </ThemeIcon>
+                        All Features:{" "}
+                    </h2>{" "}
+                    <caption className={`${classes.header2} hidden md:block`}>
+                        <p className="text-sm lg:text-base mt-3 font-normal">
+                            * All plans include a 30-day free trial.
+                        </p>
+                    </caption>{" "}
+                    <div className="hidden md:flex flex-col gap-6">
+                        <PricingTableSection
+                            icon={<MdPhone className="mr-2" size={24} />}
+                            title="Call Center"
+                            description="The core of our platform. Make and receive calls, send and receive text messages, and more."
+                            borderColor="border-l-cyan-500"
+                            tableRows={[
+                                {
+                                    feature: "SMS",
+                                    starter: (
+                                        <div className="font-rubik text-sm">
+                                            $0.05 per message
+                                        </div>
+                                    ),
+                                    premium: (
+                                        <div className="font-rubik text-sm">
+                                            $0.035 per message
+                                        </div>
+                                    ),
+                                    enterprise: (
+                                        <div className="font-rubik text-sm">
+                                            Custom
+                                        </div>
+                                    )
+                                },
+                                {
+                                    feature: "Calls",
+                                    starter: (
+                                        <div className="font-rubik text-sm">
+                                            $0.05 per minute
+                                        </div>
+                                    ),
+                                    premium: (
+                                        <div className="font-rubik text-sm">
+                                            $0.035 per minute
+                                        </div>
+                                    ),
+                                    enterprise: (
+                                        <div className="font-rubik text-sm">
+                                            Custom
+                                        </div>
+                                    )
+                                },
+                                {
+                                    feature: "Collaborative inbox",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Assign Messages to team members",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Appointment Reminders",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Import Contacts",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "SMS templates",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Unlimited Voicemails",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Voicemail Transcription",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "AI powered call labeling",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Calller name & line type lookup",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Mobile App integration",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Intelligent call routing",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "AI powered voice assisstant",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Custom route tree",
+                                    starter: notIncluded,
+                                    premium: notIncluded,
+                                    enterprise: included
+                                }
+                            ]}
+                        />
+                        <PricingTableSection
+                            icon={
+                                <AiOutlineMessage className="mr-2" size={24} />
+                            }
+                            title="Clinic-Connect"
+                            description="Connect with your staff and other providers through our secure messaging and E-fax platform."
+                            borderColor="border-l-violet-600"
+                            tableRows={[
+                                {
+                                    feature: "Secure Messaging Platform",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "E-fax",
+                                    starter: (
+                                        <Tooltip label="$0.05 per page on inbound faxes when OCR is enabled">
+                                            <div className="font-rubik text-sm flex items-center gap-1">
+                                                $0.04 per page <MdInfoOutline />
+                                            </div>
                                         </Tooltip>
-                                    </div> */}
-                                </td>
-                                <td>
-                                    {included} <br />{" "}
-                                    {/* <span className="text-sm">
-                                        (limited data)
-                                    </span> */}
-                                </td>
-                                <td>
-                                    {included}
-                                    {/* <br />{" "}
-                                    <span className="text-sm">(unlimited)</span> */}
-                                </td>
-                                <td>
-                                    {included}
-                                    {/* <br />{" "} */}
-                                    {/* <span className="text-sm">(unlimited)</span> */}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Clinic-Connect</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    E-fax <br />
-                                    {/* <div className="mt-1 flex items-center text-sm gap-2 dark:text-neutral-400">
-                                        Starting at 0.035$ per page
-                                        <Tooltip
-                                            label="0.045 per page for inbound faxes when OCR is enabled"
-                                            position="top"
-                                        >
-                                            <ThemeIcon
-                                                variant="default"
-                                                radius="xl"
-                                                size="sm"
-                                            >
-                                                <AiOutlineQuestion size={12} />
-                                            </ThemeIcon>
+                                    ),
+                                    premium: (
+                                        <Tooltip label="$0.04 per page on inbound faxes when OCR is enabled">
+                                            <div className="font-rubik text-sm flex items-center gap-1">
+                                                $0.03 per page <MdInfoOutline />
+                                            </div>
                                         </Tooltip>
-                                    </div> */}
-                                </td>
-                                <td>
-                                    {included}
-                                    {/* <br />{" "}
-                                    <span className="text-sm">
-                                        (limited data)
-                                    </span> */}
-                                </td>
-                                <td>
-                                    {included}
-                                    {/* <br />{" "}
-                                    <span className="text-sm">(unlimited)</span> */}
-                                </td>
-                                <td>
-                                    {included}
-                                    {/* <br />{" "}
-                                    <span className="text-sm">(unlimited)</span> */}
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Dictation Software</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>Smartplan</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>Echo</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            {/* <tr>
-                                <td>Automation workflow builder</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr> */}
-                            <tr>
-                                <td>Private Chatrom with our team</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    In person or video guided
-                                    tutorials/walkthrough
-                                </td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>24/7 Customer Support</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>BAA signed with your entity</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            {/* <tr>
-                                <td>Easy Auth</td>
-                                <td>Available as add on</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr> */}
+                                    ),
+                                    enterprise: (
+                                        <div className="font-rubik text-sm">
+                                            Custom
+                                        </div>
+                                    )
+                                },
+                                {
+                                    feature:
+                                        "Optical Character Recognition (OCR)",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Auto labeling",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Auto summarization",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Customizable cover pages",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Bring your fax number",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Unlimited fax storage",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Web Referral portal",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                }
+                            ]}
+                        />
+                        <PricingTableSection
+                            icon={
+                                <MdOutlineAutoAwesome
+                                    className="mr-2"
+                                    size={24}
+                                />
+                            }
+                            title="Clinical Note automation"
+                            description="Transcribe your notes and records with ease using our custom trained AI models"
+                            borderColor="border-l-blue-500"
+                            tableRows={[
+                                {
+                                    feature: "Dictation Software",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Echo",
+                                    starter: (
+                                        <div className="font-rubik text-sm">
+                                            $0.25 per note
+                                        </div>
+                                    ),
+                                    premium: (
+                                        <div className="font-rubik text-sm">
+                                            $0.18 per note
+                                        </div>
+                                    ),
+                                    enterprise: (
+                                        <div className="font-rubik text-sm">
+                                            Custom
+                                        </div>
+                                    )
+                                },
+                                {
+                                    feature: "Custom auto formatting",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Questionaire template builder",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Record from mobile app",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Customizable templates",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Unlimited note history storage",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Fine Tuning a model",
+                                    starter: notIncluded,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Custom AI models",
+                                    starter: notIncluded,
+                                    premium: notIncluded,
+                                    enterprise: included
+                                }
+                            ]}
+                        />
+                        <PricingTableSection
+                            icon={<RiComputerLine className="mr-2" size={24} />}
+                            title="Paperwork automation"
+                            description="Automate your forms, questionaires, and paperwork."
+                            borderColor="border-l-teal-500"
+                            tableRows={[
+                                {
+                                    feature: "Chronic care management platform",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "SmartForm dashboard",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Drag and drop form builder",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Branding on forms",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "Send form link via SMS",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                }
+                            ]}
+                        />
+                        <PricingTableSection
+                            icon={<RiToolsFill className="mr-2" size={24} />}
+                            title="Other features"
+                            description="Other features that come with our platform."
+                            borderColor="border-l-pink-500"
+                            tableRows={[
+                                {
+                                    feature: "Private Chatrom with our team",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature:
+                                        "In person or video guided tutorials / walkthrough",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "BAA signed with your entity",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "24/7 Customer Support",
+                                    starter: notIncluded,
+                                    premium: included,
+                                    enterprise: included
+                                },
 
-                            <tr>
-                                <td>SmartForm</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>Unlimited staff accounts</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>Custom EMR integrations</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr>
-                            {/* <tr>
-                                <td>
-                                    Compliance Center
-                                    <br />
-                                    <span className="text-sm">
-                                        ( Bird's eye view of all data and
-                                        activity of your organization )
-                                    </span>
-                                </td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr> */}
-                            <tr>
-                                <td>30 day logging/request history</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>IP allowlist</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Single Tenancy
-                                    <br />
-                                    <span className="text-sm">
-                                        ( dedicated server and database )
-                                    </span>
-                                </td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr>
-                            <tr>
-                                <td>SSO/SAML</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr>
-                            {/* <tr>
-                                <td>Custom dashboards</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr> */}
-                            {/* <tr>
-                                <td>Customized reporting and analytics</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr> */}
-                            <tr>
-                                <td>API access</td>
-                                <td>{notIncluded}</td>
-                                <td>{notIncluded}</td>
-                                <td>{included}</td>
-                            </tr>
-                        </tbody>
-                    </Table>
-                </div>
+                                {
+                                    feature: "Custom EMR integrations",
+                                    starter: notIncluded,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "30 day logging/request history",
+                                    starter: notIncluded,
+                                    premium: notIncluded,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "IP allowlist",
+                                    starter: notIncluded,
+                                    premium: notIncluded,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: (
+                                        <div>
+                                            Single Tenancy
+                                            <br />
+                                            <span className="text-sm">
+                                                ( dedicated server and database
+                                                )
+                                            </span>
+                                        </div>
+                                    ),
+                                    starter: notIncluded,
+                                    premium: notIncluded,
+                                    enterprise: included
+                                },
+                                {
+                                    feature: "SSO/SAML",
+                                    starter: notIncluded,
+                                    premium: notIncluded,
+                                    enterprise: included
+                                }
+                            ]}
+                        />
+                    </div>
+                </Container>
+
+                <div className="md:flex flex-col items-center mt-4 hidden"></div>
             </div>
             <Modal
                 opened={isModalOpen}

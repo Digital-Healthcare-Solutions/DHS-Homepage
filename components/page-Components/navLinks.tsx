@@ -7,9 +7,14 @@ import ButtonPrimary from "../UI-Components/button-primary"
 import { BsCashStack, BsChevronDown, BsMic } from "react-icons/bs"
 import NavMenuItem from "../UI-Components/navMenuItem"
 import { AiOutlineMessage } from "react-icons/ai"
-import { MdOutlineAutoAwesome, MdOutlinePhoneEnabled } from "react-icons/md"
+import {
+    MdOutlineAutoAwesome,
+    MdOutlinePhoneEnabled,
+    MdPhone
+} from "react-icons/md"
 import { RiComputerLine, RiToolsFill } from "react-icons/ri"
 import { CgWebsite } from "react-icons/cg"
+import { LuUser } from "react-icons/lu"
 
 const NavLinks = () => {
     const pathname = usePathname()
@@ -95,7 +100,7 @@ const NavLinks = () => {
                                 title="Call Center"
                                 description="Streamlined patient communication "
                                 icon={
-                                    <MdOutlinePhoneEnabled
+                                    <MdPhone
                                         className={
                                             pathname == "/product/call-center"
                                                 ? "text-blue-500"
@@ -151,7 +156,7 @@ const NavLinks = () => {
                                 title="SmartPlan"
                                 description="Chronic care management platform"
                                 icon={
-                                    <BsCashStack
+                                    <LuUser
                                         className={
                                             pathname == "/product/smart-plan"
                                                 ? "text-blue-500"

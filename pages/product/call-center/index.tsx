@@ -18,10 +18,10 @@ import Image from "next/image"
 import { AiOutlineCloudUpload } from "react-icons/ai"
 import ButtonPrimary from "../../../components/UI-Components/button-primary"
 import ButtonSecondary from "../../../components/UI-Components/button-secondary"
-import { BsArrowRight, BsArrowDown } from "react-icons/bs"
+import { BsArrowRight, BsArrowDown, BsChatText } from "react-icons/bs"
 import Link from "next/link"
 import { showNotification } from "@mantine/notifications"
-import { MdOutlinePersonPin } from "react-icons/md"
+import { MdOutlinePersonPin, MdPhone } from "react-icons/md"
 import { GiBattery100 } from "react-icons/gi"
 import { AiOutlineArrowUp } from "react-icons/ai"
 import { BiPhoneCall } from "react-icons/bi"
@@ -37,6 +37,7 @@ import HorizontalTabs from "../../../components/UI-Components/horizontalTabs"
 import SimpleFlow from "../../../components/react-flow/simple-flow"
 import { useState } from "react"
 import ReactFlowSection from "../../../components/page-Components/reactFlowSection"
+import { PiLightning } from "react-icons/pi"
 
 const features = [
     {
@@ -66,20 +67,20 @@ const features = [
 ]
 const features2 = [
     {
-        icon: <GiBattery100 size={25} className="text-blue-600" />,
+        icon: <MdPhone size={25} className="text-blue-600" />,
         title: "Revolutionary Call Management",
         description:
             "Elevate your communication with our state-of-the-art call management system. Powered by cutting-edge AI, it transcribes, categorizes calls by subject, and delivers actionable insights to streamline your operations."
     },
 
     {
-        icon: <AiOutlineCloudUpload size={25} className="text-blue-600" />,
+        icon: <BsChatText size={25} className="text-blue-600" />,
         title: "Seamless Patient Communication",
         description:
-            "Empower your healthcare practice with the ability to engage patients directly from your browser or mobile device. Our intuitive software ensures timely, efficient communication, eliminating the need for costly call centers and reducing patient wait times."
+            "Empower your healthcare practice with the ability to message patients directly from your browser or mobile device. Our intuitive software ensures timely, efficient communication, eliminating the need for costly call centers and reducing patient wait times."
     },
     {
-        icon: <BsArrowRight size={25} className="text-blue-600" />,
+        icon: <PiLightning size={25} className="text-blue-600" />,
         title: "Automated AI Assistance",
         description:
             "Transform your customer service with AI-powered agents designed to handle routine inquiries. This innovative solution not only enhances patient experience but also allows your team to concentrate on critical care aspects, optimizing your workflow."
