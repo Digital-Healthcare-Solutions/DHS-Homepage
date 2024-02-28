@@ -31,7 +31,11 @@ const StatCard = ({ title, value, valueText, diff }) => {
                     size={38}
                     radius="md"
                 >
-                    <DiffIcon size="1.8rem" />
+                    {diff > 0 ? (
+                        <GoArrowUpRight size={28} className="text-teal-500" />
+                    ) : (
+                        <GoArrowDownRight size={28} className="text-red-500" />
+                    )}
                 </ThemeIcon>
             </Group>
             <Text c="dimmed" fz="md">
