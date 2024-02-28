@@ -26,7 +26,6 @@ const StatCard = ({ title, value, valueText, diff }) => {
                     </Text>
                 </div>
                 <ThemeIcon
-                    color="gray"
                     variant="light"
                     className={diff > 0 ? "text-teal-500" : "text-red-500"}
                     size={38}
@@ -36,13 +35,15 @@ const StatCard = ({ title, value, valueText, diff }) => {
                 </ThemeIcon>
             </Group>
             <Text c="dimmed" fz="md">
-                <Text
-                    component="span"
-                    className={diff > 0 ? "text-teal-500" : "text-red-500"}
-                    fw={700}
+                <div
+                    className={
+                        diff > 0
+                            ? "text-teal-500 font-bold"
+                            : "text-red-500 font-bold"
+                    }
                 >
                     {diff}%
-                </Text>{" "}
+                </div>{" "}
                 {diff > 0 ? "increase" : "decrease"} from before
             </Text>
         </Paper>
