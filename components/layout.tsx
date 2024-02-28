@@ -102,6 +102,10 @@ const Layout = ({ children }) => {
                     label: "Automated phone system",
                     link: "/product/call-center"
                 },
+                {
+                    label: "AI Generated Notes",
+                    link: "/product/echo"
+                },
                 // {
                 //     label: "SMS with patients",
                 //     link: "/product/call-center"
@@ -111,12 +115,8 @@ const Layout = ({ children }) => {
                 //     link: "/product/call-center"
                 // },
                 {
-                    label: "Chronic Care Management",
-                    link: "/product/smart-plan"
-                },
-                {
-                    label: "AI Generated Notes",
-                    link: "/product/echo"
+                    label: "Customizable Intake Forms",
+                    link: "/product/smart-form"
                 },
                 {
                     label: "Dictation Software",
@@ -124,8 +124,8 @@ const Layout = ({ children }) => {
                 },
 
                 {
-                    label: "Online Intake Forms",
-                    link: "/product/smart-form"
+                    label: "Chronic Care Management",
+                    link: "/product/smart-plan"
                 }
             ]
         },
@@ -141,10 +141,7 @@ const Layout = ({ children }) => {
                     label: "Features",
                     link: "/#features"
                 },
-                {
-                    label: "Demo",
-                    link: "/product/demos"
-                },
+
                 {
                     label: "Pricing",
                     link: "/pricing"

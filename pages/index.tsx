@@ -476,10 +476,13 @@ export default function Home() {
                         data={[
                             "Call Center",
                             "Clinic-Connect",
+                            "SmartForm",
                             "SmartPlan",
                             "E-Fax",
                             "Dictation Software",
-                            "Echo"
+                            "Echo",
+                            "Web Development",
+                            "Custom Solution"
                         ]}
                         label="What features are you interested in?"
                         placeholder="Select features"

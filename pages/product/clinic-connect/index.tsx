@@ -124,7 +124,7 @@ const ClinicConnect = () => {
                 <meta property="og:type" content="website" />
             </Head>
             <Container size="lg">
-                {/* <FeatureHeaderSparkle title="Clinic-Connect" /> */}
+                <FeatureHeaderSparkle title="Clinic-Connect" />
                 <ProductCopy
                     title={
                         "Clinic Connect is a multichannel platform that connects healthcare professionals"
@@ -177,8 +177,8 @@ const ClinicConnect = () => {
                             contentList: [
                                 "Achieves a 97% success rate on initial fax sends, with up to seven retry attempts across various channels for unparalleled reliability.",
                                 "Provides immediate alerts for any transmission issues, ensuring prompt attention and resolution.",
-                                "Utilizes Optical Character Recognition (OCR) and Natural Language Processing (NLP) to automatically categorize faxes, extract sender, and patient information, enhancing data management.",
-                                "Optimized for healthcare providers, our system efficiently captures essential patient details for accurate and future-proof data handling."
+                                "Utilizes Optical Character Recognition (OCR) and Natural Language Processing (NLP) to automatically categorize faxes, extract sender, and patient information, enhancing data management."
+                                // "Optimized for healthcare providers, our system efficiently captures essential patient details for accurate and future-proof data handling."
                             ],
                             image: "/efax-sc.jpeg"
                         },

@@ -293,52 +293,7 @@ const SmartPlan = () => {
                     </Container>
                 </div>
 
-                <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 lg:mt-12">
-                    How it works :
-                </h2>
-                {howItWorks.map((item) => (
-                    <div className="py-6">
-                        <div className="flex items-center">
-                            <ThemeIcon
-                                size={44}
-                                radius="md"
-                                variant="gradient"
-                                gradient={{
-                                    deg: 50,
-                                    from: "rgb(59 130 246)",
-                                    to: "rgb(59 130 246)"
-                                }}
-                            >
-                                {item.number}
-                            </ThemeIcon>
-                            <p className="ml-3">{item.description}</p>
-                        </div>
-                    </div>
-                ))}
-                <div className="flex justify-center mt-8">
-                    <Link href="/product/demos">
-                        <ButtonSecondary
-                            onClick={() => console.log(``)}
-                            className=" bg-neutral-100 dark:bg-blue-500 ring-1 dark:ring-blue-500 ring-blue-500  text-blue-500 dark:text-white hover:shadow-lg hover:bg-neutral-200 dark:hover:bg-blue-600 "
-                        >
-                            Read more
-                        </ButtonSecondary>
-                    </Link>
-                </div>
                 <RequestDemo />
-                <h2 className="py-6">
-                    <div className="text-center text-xl">
-                        You can always read more about Smartplan on one of our{" "}
-                        <Link
-                            href="/blog"
-                            className="text-blue-500 hover:underline"
-                        >
-                            {" "}
-                            blog
-                        </Link>{" "}
-                        posts.
-                    </div>
-                </h2>
             </Container>
         </div>
     )

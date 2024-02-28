@@ -263,9 +263,9 @@ const Echo = () => {
     const text =
         "The patient reports experiencing migraines for about six months, describing the pain as throbbing, mostly on one side of the head, and sometimes feeling like a tight band around the forehead. The pain severity is usually around 7 or 8 on a scale of 1 to 10. These headaches can last for hours or even a day or two, occurring about twice a week. Resting in a dark, quiet room provides some relief, while stress and bright lights exacerbate the pain. The patient has not undergone any imaging tests like MRI or CT scans. Currently, the patient is taking ibuprofen and sometimes sumatriptan for the migraines. A different prescription was tried a few months ago without significant improvement, but the patient does not recall its name."
 
-        //basically turn this into a review of systems 
-        const textSOAPversoin = ""
-
+    //basically turn this into a review of systems
+    const textSOAPversoin =
+        "Subjective:\nThe patient reports experiencing migraines for approximately six months.\nDescribes the pain as throbbing, predominantly on one side of the head, occasionally feeling like a tight band around the forehead.\nPain severity is rated as 7 or 8 out of 10.\nHeadaches last for hours or sometimes a day or two, with an occurrence of about twice a week.\nIdentifies that resting in a dark, quiet room provides some relief.\nNotes that stress and bright lights exacerbate the pain.\nNo history of imaging tests (MRI or CT scans) performed.\nCurrently taking ibuprofen and sometimes sumatriptan; a different prescription was tried a few months ago without significant improvement, but the name is not recalled.\n\n   Objective:\nNo objective data provided (e.g., vital signs, physical examination findings).\n\n   Assessment:\n\nChronic migraines, characterized by unilateral throbbing pain with a high severity level, exacerbated by stress and bright lights, and partially alleviated by rest in a dark, quiet room.\nThe patient's response to current medication (ibuprofen and sumatriptan) is noted.\n\n Plan:\n\nConsider referral for neurology consultation to explore further diagnostic evaluation, including MRI or CT scans, to rule out other causes of headaches.\nReview and possibly adjust current medication for migraine management, considering the patient's report of limited relief from current treatments.\nExplore the addition of a preventive migraine medication or adjustments in current treatment to reduce frequency and severity of migraines.\nRecommend lifestyle modifications and stress management techniques to help mitigate triggers.\nSchedule a follow-up appointment to assess response to any changes in treatment and to monitor for any new or worsening symptoms."
 
     return (
         <>
@@ -422,17 +422,28 @@ const Echo = () => {
 
                             <Divider orientation="horizontal" />
                             <div className="p-2">
-                                {beginStreamingNote && (
-                                    <TypeAnimation
-                                        sequence={[
-                                            text,
-                                            () => setNoteFinished(true)
-                                        ]}
-                                        speed={90}
-                                        repeat={0}
-                                        cursor={false}
-                                    />
-                                )}
+                                {beginStreamingNote &&
+                                    (selectedTab === "soap" ? (
+                                        <TypeAnimation
+                                            sequence={[
+                                                textSOAPversoin,
+                                                () => setNoteFinished(true)
+                                            ]}
+                                            speed={90}
+                                            repeat={0}
+                                            cursor={false}
+                                        />
+                                    ) : (
+                                        <TypeAnimation
+                                            sequence={[
+                                                text,
+                                                () => setNoteFinished(true)
+                                            ]}
+                                            speed={90}
+                                            repeat={0}
+                                            cursor={false}
+                                        />
+                                    ))}
                             </div>
                         </main>
                     </section>

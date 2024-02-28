@@ -32,30 +32,6 @@ import RequestDemo from "../../../components/page-Components/requestDemo"
 import ThreeCardProductCopy from "../../../components/UI-Components/threeCardProductCopy"
 import { BackgroundGradient } from "../../../components/ui/background-gradient"
 
-const howItWorks = [
-    {
-        number: 1,
-        description:
-            "You configure some settings on the SmartForm settings dashboard. You can add your logo, add your own custom fields, and more."
-    },
-
-    {
-        number: 2,
-        description:
-            "We generate a unique link for you to share with your patients. You add that link to your website, social media, or anywhere else you want."
-    },
-    {
-        number: 3,
-        description:
-            "The patient visits the secure page on their mobile phone or computer, fills out the form and submits it. You can then view the form in the SmartForm dashboard."
-    },
-    {
-        number: 4,
-        description:
-            "That's it! You now have paperless pre registration integrated in your practice. "
-    }
-]
-
 const features = [
     {
         icon: <MdAccessTime size={25} className="text-blue-600" />,
@@ -220,29 +196,6 @@ const SmartForm = () => {
                         />
                     </BackgroundGradient>
                 </div>
-
-                <h2 className="text-black dark:text-white text-3xl font-semibold text-center py-6 lg:mt-12">
-                    How it works :
-                </h2>
-                {howItWorks.map((item) => (
-                    <div className="py-6">
-                        <div className="flex items-center">
-                            <ThemeIcon
-                                size={44}
-                                radius="md"
-                                variant="gradient"
-                                gradient={{
-                                    deg: 50,
-                                    from: "rgb(59 130 246)",
-                                    to: "rgb(59 130 246)"
-                                }}
-                            >
-                                {item.number}
-                            </ThemeIcon>
-                            <p className="ml-3">{item.description}</p>
-                        </div>
-                    </div>
-                ))}
 
                 <RequestDemo />
             </Container>

@@ -51,10 +51,10 @@ const VerticalTabsWithText = ({
                     <Tabs.Panel
                         value={panel.value}
                         key={index}
-                        className="transition-all duration-300 ease-in-out transform hover:scale-105 font-rubik"
+                        className="transition-all duration-300 ease-in-out transform  font-rubik"
                     >
                         <section className="flex flex-col lg:flex-row items-start gap-8 lg:gap-20">
-                            <div className="w-full lg:w-2/3 space-y-4">
+                            <div className="w-full lg:w-1/2 space-y-4">
                                 <p className="text-lg lg:text-xl font-light text-neutral-950 dark:text-gray-200 leading-relaxed">
                                     {panel.contentMain}
                                 </p>
@@ -74,12 +74,12 @@ const VerticalTabsWithText = ({
                                 )}
                             </div>
                             {panel.image && (
-                                <div className="w-full lg:w-1/3 flex justify-center items-center mt-4 lg:mt-0">
+                                <div className="w-full lg:w-1/2 flex justify-center items-center mt-4 lg:mt-0">
                                     <Image
                                         src={panel.image}
                                         alt="Panel image"
-                                        width={500}
-                                        height={500}
+                                        width={700}
+                                        height={700}
                                         className="rounded-lg shadow-xl transition duration-300 ease-in-out transform hover:scale-110"
                                         // Enhanced visual effects for the image
                                     />

@@ -87,8 +87,8 @@ const VerticalAccordionsWithImage = ({
                         )?.image
                     }
                     alt={selectedAccordion}
-                    width={700}
-                    height={700}
+                    width={800}
+                    height={500}
                     className="rounded-lg shadow-xl transition duration-300 ease-in-out transform hover:scale-110 bg-white"
                 />
             </div>

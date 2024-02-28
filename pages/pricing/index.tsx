@@ -207,7 +207,7 @@ const Pricing = () => {
         "SMS starting at $0.05 per message",
         "Calls starting at $0.05 per minute",
         "E-fax starting at $0.04 per page",
-        "Echo notes starting at $0.15 per note",
+        "Echo notes starting at $0.25 per note",
         "Support 9-5 M-F"
     ]
 
@@ -273,11 +273,11 @@ const Pricing = () => {
                 >
                     <div className="md:w-1/3 border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <div className="flex items-center justify-between font-rubik">
-                            <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
+                            <h3 className="mb-2 font-semibold text-lg lg:text-3xl flex justify-between ">
                                 Starter
                             </h3>
                             <p>
-                                <span className="text-sm">
+                                <span className="text-sm lg:text-base">
                                     starting at $0 / mo
                                 </span>
                             </p>
@@ -318,11 +318,11 @@ const Pricing = () => {
 
                     <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <div className="flex items-center justify-between font-rubik">
-                            <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
-                                Premuim
+                            <h3 className="mb-2 font-semibold text-lg lg:text-3xl flex justify-between ">
+                                Premium
                             </h3>
                             <p>
-                                <span className="text-sm">
+                                <span className="text-sm lg:text-base">
                                     starting at $500 / mo
                                 </span>
                             </p>
@@ -363,11 +363,13 @@ const Pricing = () => {
 
                     <div className="md:w-1/3 bg-transparent border md:border-0 dark:border-neutral-800 border-neutral-400 p-4">
                         <div className="flex items-center justify-between font-rubik">
-                            <h3 className="mb-2 font-semibold text-lg lg:text-2xl flex justify-between ">
+                            <h3 className="mb-2 font-semibold text-lg lg:text-3xl flex justify-between ">
                                 Enterprise
                             </h3>
                             <p>
-                                <span className="text-sm">custom pricing</span>
+                                <span className="text-sm lg:text-base">
+                                    custom pricing
+                                </span>
                             </p>
                         </div>
                         <Divider />
@@ -394,21 +396,20 @@ const Pricing = () => {
                             ))}
                         </div>
 
-                        <BackgroundGradient
-                            rounded={false}
-                            className="rounded-md max-w-sm bg-white dark:bg-zinc-900"
-                        >
+                        <div className="relative group">
+                            <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-blue-600 via-violet-600 to-purple-600 opacity-20 group-hover:opacity-60 blur duration-500 transition-opacity" />
+
                             <Button
                                 variant="default"
                                 color="gray"
                                 size="md"
                                 fullWidth
                                 onClick={() => setIsModalOpen(true)}
-                                className="rounded-md"
+                                className="relative z-10 rounded-md bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:brightness-105 px-4 py-2"
                             >
                                 Get Custom Quote
                             </Button>
-                        </BackgroundGradient>
+                        </div>
                     </div>
                 </Container>
                 <h2
@@ -746,7 +747,10 @@ const Pricing = () => {
                             "SmartPlan",
                             "E-Fax",
                             "Dictation Software",
-                            "Echo"
+                            "Echo",
+                            "SmartForm",
+                            "Web Development",
+                            "Custom Solutions"
                         ]}
                         label="What features are you interested in?"
                         placeholder="Select features"
