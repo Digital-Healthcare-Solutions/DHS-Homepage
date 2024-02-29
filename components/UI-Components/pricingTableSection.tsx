@@ -1,4 +1,4 @@
-import { Table } from "@mantine/core"
+import { Table, createStyles } from "@mantine/core"
 import React, { ReactNode } from "react"
 import { useTheme } from "next-themes"
 
@@ -22,6 +22,34 @@ const PricingTableSection = ({
     tableRows,
     borderColor = "border-l-blue-500"
 }: PricingTableSectionProps) => {
+    const styles = createStyles((theme) => ({
+        table: {
+            "& thead": {
+                backgroundColor:
+                    theme.colorScheme === "dark"
+                        ? theme.colors.dark[7]
+                        : theme.colors.gray[0],
+                color:
+                    theme.colorScheme === "dark"
+                        ? theme.colors.dark[0]
+                        : theme.colors.gray[7],
+                "& th": {
+                    fontWeight: 600,
+                    fontSize: theme.fontSizes.sm,
+                    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+                    textAlign: "left"
+                }
+            },
+            "& tbody": {
+                "& tr": {
+                    "& td": {
+                        padding: `${theme.spacing.xs} ${theme.spacing.md}`,
+                        fontSize: theme.fontSizes.sm
+                    }
+                }
+            }
+        }
+    }))
     const { theme } = useTheme()
     return (
         <main>
@@ -36,37 +64,40 @@ const PricingTableSection = ({
                     </div>
                 </section>
             </div>
-            <Table
-                withBorder
-                fontSize="lg"
-                horizontalSpacing="xl"
-                highlightOnHover
-                className={`border-l-4 ${borderColor}`}
-            >
-                <thead className="sticky top-16 lg:top-[75px]  dark:bg-neutral-900 bg-white ">
-                    <tr>
-                        <th>Feature</th>
-                        <th>Starter</th>
-                        <th>Premium</th>
-                        <th>Enterprise</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableRows.map((row, index) => (
-                        <tr
-                            key={index}
-                            className={theme === "light" && "bg-white"}
-                        >
-                            <td className="w-1/4">
-                                <span className="text-base">{row.feature}</span>
-                            </td>
-                            <td className="w-1/4">{row.starter}</td>
-                            <td className="w-1/4">{row.premium}</td>
-                            <td className="w-1/4">{row.enterprise}</td>
+            <section className={`border-l-4 ${borderColor}`}>
+                <Table
+                    withBorder
+                    fontSize="lg"
+                    horizontalSpacing="xl"
+                    highlightOnHover
+                >
+                    <thead className="sticky top-16 lg:top-[75px]  dark:bg-neutral-900 bg-white ">
+                        <tr>
+                            <th>Feature</th>
+                            <th>Starter</th>
+                            <th>Premium</th>
+                            <th>Enterprise</th>
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {tableRows.map((row, index) => (
+                            <tr
+                                key={index}
+                                className={theme === "light" && "bg-white"}
+                            >
+                                <td className="w-1/4">
+                                    <span className="text-base">
+                                        {row.feature}
+                                    </span>
+                                </td>
+                                <td className="w-1/4">{row.starter}</td>
+                                <td className="w-1/4">{row.premium}</td>
+                                <td className="w-1/4">{row.enterprise}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </section>
         </main>
     )
 }
