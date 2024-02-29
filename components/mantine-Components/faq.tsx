@@ -196,7 +196,7 @@ export function FaqSimple() {
                     </Accordion.Item>
                 </Accordion>
             </Container>{" "}
-            <BackgroundBeams />
+            {/* <BackgroundBeams /> */}
         </div>
     )
 }

@@ -286,7 +286,7 @@ const Echo = () => {
 
                     <meta property="og:type" content="website" />
                 </Head>
-                {/* <FeatureHeaderSparkle title="Echo" /> */}
+                <FeatureHeaderSparkle title="Echo" />
                 <Container size="lg" className="mb-20">
                     <ThreeIconComponent
                         title="Echo makes clinical documentation easy."
