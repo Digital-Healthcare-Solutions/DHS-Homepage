@@ -22,34 +22,6 @@ const PricingTableSection = ({
     tableRows,
     borderColor = "border-l-blue-500"
 }: PricingTableSectionProps) => {
-    const styles = createStyles((theme) => ({
-        table: {
-            "& thead": {
-                backgroundColor:
-                    theme.colorScheme === "dark"
-                        ? theme.colors.dark[7]
-                        : theme.colors.gray[0],
-                color:
-                    theme.colorScheme === "dark"
-                        ? theme.colors.dark[0]
-                        : theme.colors.gray[7],
-                "& th": {
-                    fontWeight: 600,
-                    fontSize: theme.fontSizes.sm,
-                    padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-                    textAlign: "left"
-                }
-            },
-            "& tbody": {
-                "& tr": {
-                    "& td": {
-                        padding: `${theme.spacing.xs} ${theme.spacing.md}`,
-                        fontSize: theme.fontSizes.sm
-                    }
-                }
-            }
-        }
-    }))
     const { theme } = useTheme()
     return (
         <main>
