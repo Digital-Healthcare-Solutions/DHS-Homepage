@@ -29,9 +29,11 @@ const PricingTableSection = ({
                 <section className="flex flex-col">
                     <div className=" flex items-center">
                         {icon}
-                        <h1 className="text-xl font-semibold">{title}</h1>
+                        <h1 className="text-xl font-semibold dark:text-neutral-200">
+                            {title}
+                        </h1>
                     </div>
-                    <div className="text-sm text-neutral-600 dark:text-neutral-500 py-2">
+                    <div className="text-sm text-neutral-600 dark:text-gray-400 py-2">
                         {description}
                     </div>
                 </section>

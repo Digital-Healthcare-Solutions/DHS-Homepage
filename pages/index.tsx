@@ -324,9 +324,9 @@ export default function Home() {
             {/* <section className="flex justify-center  bg-blue-50  dark:bg-neutral-800 ">
                 <SmartPlanDescription />
             </section> */}
-            <WaveComponent />
+            {/* <WaveComponent /> */}
             {/* testimonials */}
-            <div className="h-[45rem] rounded-md flex flex-col antialiased bg-white dark:bg-neutral-900 items-center justify-center relative overflow-hidden my-12">
+            {/* <div className="h-[45rem] rounded-md flex flex-col antialiased bg-white dark:bg-neutral-900 items-center justify-center relative overflow-hidden my-12">
                 <InfiniteMovingCards
                     items={testimonials1}
                     direction="right"
@@ -345,7 +345,7 @@ export default function Home() {
                     speed="slow"
                     // speed="slow"
                 />
-            </div>
+            </div> */}
             <h2 className="text-5xl font-bold text-center mt-14">
                 The{" "}
                 <Text

@@ -30,12 +30,14 @@ const useStyles = createStyles((theme) => ({
 
     logo: {
         maxWidth: 225,
-
-        [theme.fn.smallerThan("sm")]: {
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center"
-        }
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+        // [theme.fn.smallerThan("sm")]: {
+        //     display: "flex",
+        //     flexDirection: "column",
+        //     alignItems: "start"
+        // }
     },
 
     description: {
@@ -62,7 +64,11 @@ const useStyles = createStyles((theme) => ({
         flexWrap: "wrap",
 
         [theme.fn.smallerThan("sm")]: {
-            display: "none"
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: theme.spacing.xl,
+            marginTop: theme.spacing.xl
         }
     },
 
@@ -162,9 +168,9 @@ export function Footer({ data, setIsModalOpen }: FooterLinksProps) {
 
         return (
             <div
-                className={
+                className={` ${
                     group.title === "Product" ? "w-[200px]" : "w-[130px]"
-                }
+                } flex flex-col items-center md:items-start`}
                 key={group.title}
             >
                 <Text className={classes.title}>{group.title}</Text>
@@ -201,6 +207,18 @@ export function Footer({ data, setIsModalOpen }: FooterLinksProps) {
                             All systems operational
                         </Text>
                     </div>
+                    <a
+                        href="https://compliancy-group.com/hipaa-compliance-verification/"
+                        className="mt-5"
+                    >
+                        <Image
+                            src="https://compliancy-group.com/wp-content/uploads/2022/10/HIPAA-Seal-of-Compliance-Hi-res.png"
+                            alt="HIPAA Seal of Compliance"
+                            width={100}
+                            height={100}
+                            priority
+                        />
+                    </a>{" "}
                 </div>
                 <div className={classes.groups}>{groups}</div>
             </Container>

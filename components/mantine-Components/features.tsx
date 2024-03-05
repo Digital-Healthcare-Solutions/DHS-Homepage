@@ -198,45 +198,45 @@ export function FeaturesGrid({ title, description }) {
                     annually, depending on the CPT code.
                 </div>
             )
-        },
-        {
-            icon: CgWebsite,
-            title: "Custom Website Development",
-            description: (
-                <div>
-                    We offer{" "}
-                    <Link
-                        href={"/product/web-development"}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        custom website development
-                    </Link>{" "}
-                    for your practice. We will work with you to design and
-                    develop a website that reflects your practice's brand and
-                    values. When we build your website, we also include a
-                    drop-in form for web referral submissions, and an AI chat
-                    widget for patient and provider Q&A on your website.
-                </div>
-            )
-        },
-        {
-            icon: RiToolsFill,
-            title: "Other Tools and Services",
-            description: (
-                <div>
-                    We also offer a variety of other tools and services to help
-                    you manage your practice. You can view a full list of our
-                    services{" "}
-                    <Link
-                        href={"/product/tools"}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        here
-                    </Link>
-                    .
-                </div>
-            )
         }
+        // {
+        //     icon: CgWebsite,
+        //     title: "Custom Website Development",
+        //     description: (
+        //         <div>
+        //             We offer{" "}
+        //             <Link
+        //                 href={"/product/web-development"}
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 custom website development
+        //             </Link>{" "}
+        //             for your practice. We will work with you to design and
+        //             develop a website that reflects your practice's brand and
+        //             values. When we build your website, we also include a
+        //             drop-in form for web referral submissions, and an AI chat
+        //             widget for patient and provider Q&A on your website.
+        //         </div>
+        //     )
+        // },
+        // {
+        //     icon: RiToolsFill,
+        //     title: "Other Tools and Services",
+        //     description: (
+        //         <div>
+        //             We also offer a variety of other tools and services to help
+        //             you manage your practice. You can view a full list of our
+        //             services{" "}
+        //             <Link
+        //                 href={"/product/tools"}
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 here
+        //             </Link>
+        //             .
+        //         </div>
+        //     )
+        // }
     ]
 
     const { classes, theme } = useStyles()
@@ -250,7 +250,7 @@ export function FeaturesGrid({ title, description }) {
     return (
         <div className=" bg-white dark:bg-neutral-900 " id="features">
             {" "}
-            <Container size={1700} className={classes.wrapper}>
+            <Container size={1400} className={classes.wrapper}>
                 <h1 className="text-4xl font-bold text-center mb-5">{title}</h1>
 
                 <Container size={560} p={0} pb={30}>
@@ -262,7 +262,7 @@ export function FeaturesGrid({ title, description }) {
                 <BackgroundGradient className="rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-neutral-900">
                     <SimpleGrid
                         mt={20}
-                        cols={4}
+                        cols={3}
                         spacing={theme.spacing.xl * 2}
                         breakpoints={[
                             { maxWidth: 1200, cols: 3, spacing: "xl" },

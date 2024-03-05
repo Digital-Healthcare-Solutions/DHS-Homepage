@@ -23,7 +23,8 @@ import {
     Title,
     TextInput,
     MultiSelect,
-    NumberInput
+    NumberInput,
+    Accordion
 } from "@mantine/core"
 import { IoAlertCircleOutline } from "react-icons/io5"
 import {
@@ -515,24 +516,19 @@ const Pricing = () => {
                                     premium: included,
                                     enterprise: included
                                 },
-                                {
-                                    feature: "Assign Messages to team members",
-                                    starter: included,
-                                    premium: included,
-                                    enterprise: included
-                                },
+                                // {
+                                //     feature: "Assign Messages to team members",
+                                //     starter: included,
+                                //     premium: included,
+                                //     enterprise: included
+                                // },
                                 {
                                     feature: "Appointment Reminders",
                                     starter: included,
                                     premium: included,
                                     enterprise: included
                                 },
-                                {
-                                    feature: "Import Contacts",
-                                    starter: included,
-                                    premium: included,
-                                    enterprise: included
-                                },
+
                                 {
                                     feature: "SMS templates",
                                     starter: included,
@@ -540,7 +536,7 @@ const Pricing = () => {
                                     enterprise: included
                                 },
                                 {
-                                    feature: "Unlimited Voicemails",
+                                    feature: "Unlimited Voicemail inbox",
                                     starter: included,
                                     premium: included,
                                     enterprise: included
@@ -576,8 +572,14 @@ const Pricing = () => {
                                     enterprise: included
                                 },
                                 {
+                                    feature: "Import Contacts",
+                                    starter: notIncluded,
+                                    premium: included,
+                                    enterprise: included
+                                },
+                                {
                                     feature: "AI powered voice assisstant",
-                                    starter: included,
+                                    starter: notIncluded,
                                     premium: included,
                                     enterprise: included
                                 },
@@ -664,12 +666,46 @@ const Pricing = () => {
                                 },
                                 {
                                     feature: "Web Referral portal",
-                                    starter: included,
+                                    starter: notIncluded,
                                     premium: included,
                                     enterprise: included
                                 }
                             ]}
                         />
+                        <section className="border-l-4 border-cyan-700">
+                            <Accordion variant="contained">
+                                <Accordion.Item
+                                    value={"Custom Web Development"}
+                                    // className="bg-white dark:bg-zinc-800"
+                                >
+                                    <Accordion.Control>
+                                        {"Custom Web Development"}
+                                    </Accordion.Control>
+                                    <Accordion.Panel>
+                                        <div className="flex flex-col gap-4">
+                                            <p>
+                                                We can build custom web
+                                                applications and websites for
+                                                your business.
+                                            </p>
+                                            <p>
+                                                <span className="font-semibold">
+                                                    Starting at $1000{" "}
+                                                    <span className="text-xs text-neutral-500">
+                                                        (quoted price may vary
+                                                        based on requirements)
+                                                    </span>
+                                                </span>
+                                                <br />
+                                                <span className="text-sm">
+                                                    ( one time fee )
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </Accordion.Panel>
+                                </Accordion.Item>
+                            </Accordion>
+                        </section>
                         <PricingTableSection
                             icon={
                                 <MdOutlineAutoAwesome
@@ -762,6 +798,24 @@ const Pricing = () => {
                                     enterprise: included
                                 },
                                 {
+                                    feature: "SmartForm",
+                                    starter: (
+                                        <div className="font-rubik text-sm">
+                                            $0.15 per form submission
+                                        </div>
+                                    ),
+                                    premium: (
+                                        <div className="font-rubik text-sm">
+                                            $0.10 per form submission
+                                        </div>
+                                    ),
+                                    enterprise: (
+                                        <div className="font-rubik text-sm">
+                                            Custom
+                                        </div>
+                                    )
+                                },
+                                {
                                     feature: "SmartForm dashboard",
                                     starter: included,
                                     premium: included,
@@ -773,6 +827,13 @@ const Pricing = () => {
                                     premium: included,
                                     enterprise: included
                                 },
+
+                                {
+                                    feature: "Send form link via SMS",
+                                    starter: included,
+                                    premium: included,
+                                    enterprise: included
+                                },
                                 {
                                     feature: "Branding on forms",
                                     starter: included,
@@ -780,8 +841,9 @@ const Pricing = () => {
                                     enterprise: included
                                 },
                                 {
-                                    feature: "Send form link via SMS",
-                                    starter: included,
+                                    feature:
+                                        "Driver's license and insurance card OCR",
+                                    starter: notIncluded,
                                     premium: included,
                                     enterprise: included
                                 }
