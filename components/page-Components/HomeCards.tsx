@@ -1,8 +1,9 @@
-import { RiComputerLine } from "react-icons/ri"
+import { RiArrowRightUpLine, RiComputerLine } from "react-icons/ri"
 import { TfiBook } from "react-icons/tfi"
-import { MdOutlineLightbulb } from "react-icons/md"
+import { MdOutlineLightbulb, MdPhone, MdUploadFile } from "react-icons/md"
 import CardHome from "../mantine-Components/cardHomepage"
 import { BackgroundGradient } from "../ui/background-gradient"
+import { GrOptimize } from "react-icons/gr"
 
 export default function HomeCards() {
     return (
@@ -12,14 +13,14 @@ export default function HomeCards() {
                 className="rounded-[22px] bg-white dark:bg-neutral-900 p-2"
             >
                 <CardHome
-                    icon={<RiComputerLine size={25} />}
-                    title="Our Product"
+                    icon={<GrOptimize size={50} />}
+                    title="Optimize your practice"
                     p1Text={
-                        "Wether you are a small or large practice, we have a solution that will fit your needs. We offer a full suite of products to help you manage your practice and your patients."
+                        "Streamline front desk operations with automations that help practices save time and see more patients."
                     }
                     p2Text1={"Visit our"}
-                    p2Href="/pricing"
-                    p2HrefText="pricing"
+                    p2Href="/pricing#pricing-table"
+                    p2HrefText="Learn more"
                     p2Text2={
                         "page for more information on our products and pricing."
                     }
@@ -30,14 +31,14 @@ export default function HomeCards() {
                 className="rounded-[22px] bg-white dark:bg-neutral-900 p-2"
             >
                 <CardHome
-                    icon={<TfiBook size={25} />}
-                    title="Our Story"
+                    icon={<MdUploadFile size={50} />}
+                    title="Automate patient intake"
                     p1Text={
-                        "We are a team of healthcare professionals and software engineers who are passionate about improving the healthcare industry. Our mission is to provide the best tools and resources to help you run your practice more efficiently."
+                        "Enhance data accuracy and save your team's valuable time by pre-sending digital intake forms to patients before their appointment."
                     }
                     p2Text1={"Read more"}
-                    p2Href="/about"
-                    p2HrefText="about us"
+                    p2Href="/pricing#pricing-table"
+                    p2HrefText="Learn more"
                     p2Text2={"and our mission."}
                 />
             </BackgroundGradient>
@@ -46,14 +47,14 @@ export default function HomeCards() {
                 className="rounded-[22px] bg-white dark:bg-neutral-900 p-2"
             >
                 <CardHome
-                    icon={<MdOutlineLightbulb size={25} />}
-                    title="Learn more"
+                    icon={<MdPhone size={50} />}
+                    title="Elevate patient experience"
                     p1Text={
-                        "If you are interested in learning more about our products or how to implement it in your practice, you can read some of our blog posts. If you have any questions, feel free to contact us using the form below."
+                        "No more missed calls, voicemails, or phone tag. Give patients different communication options to make their experience more enjoyable."
                     }
                     p2Text1={"Click"}
-                    p2Href="/blog"
-                    p2HrefText="here"
+                    p2Href="/pricing#pricing-table"
+                    p2HrefText="Learn more"
                     p2Text2={"to see some of our featured blog posts."}
                 />
             </BackgroundGradient>

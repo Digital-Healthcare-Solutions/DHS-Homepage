@@ -55,56 +55,56 @@ const useStyles = createStyles((theme) => ({
 
 export function FeaturesGrid({ title, description }) {
     const FeatureArray = [
-        {
-            icon: AiOutlineMessage,
-            title: "Realtime messaging and efax", //chat appp and efax built into one
-            description: (
-                <div>
-                    We know the struggle handling all of the documents and
-                    external communication with other healthcare providers.
-                    That's why we built{" "}
-                    <Link
-                        href={"/product/clinic-connect"}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        Clinic-Connect
-                    </Link>
-                    , a realtime messaging and referral system that allows you
-                    to communicate with other providers in a multichannel, HIPAA
-                    compliant way. Whether through{" "}
-                    <Link
-                        href={"/product/clinic-connect"}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        e-fax
-                    </Link>
-                    ,{" "}
-                    <Link
-                        href={"/product/clinic-connect"}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        instant messaging
-                    </Link>
-                    , or the{" "}
-                    <Link
-                        href={"/product/clinic-connect"}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        web portal
-                    </Link>
-                    , we've got you covered.
-                </div>
-            )
+        // {
+        //     icon: AiOutlineMessage,
+        //     title: "Realtime messaging and efax", //chat appp and efax built into one
+        //     description: (
+        //         <div>
+        //             We know the struggle handling all of the documents and
+        //             external communication with other healthcare providers.
+        //             That's why we built{" "}
+        //             <Link
+        //                 href={"/product/clinic-connect"}
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 Clinic-Connect
+        //             </Link>
+        //             , a realtime messaging and referral system that allows you
+        //             to communicate with other providers in a multichannel, HIPAA
+        //             compliant way. Whether through{" "}
+        //             <Link
+        //                 href={"/product/clinic-connect"}
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 e-fax
+        //             </Link>
+        //             ,{" "}
+        //             <Link
+        //                 href={"/product/clinic-connect"}
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 instant messaging
+        //             </Link>
+        //             , or the{" "}
+        //             <Link
+        //                 href={"/product/clinic-connect"}
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 web portal
+        //             </Link>
+        //             , we've got you covered.
+        //         </div>
+        //     )
 
-            // "Ditch the fax machine, sign up on our Clinic-Connect network today for free! Clinic-Connect is a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about Slack, but for healthcare. Anyone who is part of the network can send referrals and communicate with each other in realtime."
-        },
+        //     // "Ditch the fax machine, sign up on our Clinic-Connect network today for free! Clinic-Connect is a realtime messaging and referral system that allows you to communicate with other providers in a HIPAA compliant way. Think about Slack, but for healthcare. Anyone who is part of the network can send referrals and communicate with each other in realtime."
+        // },
 
         {
             icon: MdOutlinePhoneEnabled,
             title: "Streamlined Patient Communication",
             description: (
                 <div>
-                    We built our{" "}
+                    {/* We built our{" "}
                     <Link
                         href={"/product/call-center"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
@@ -115,7 +115,12 @@ export function FeaturesGrid({ title, description }) {
                     patients. Our product plugs in with your existing phone
                     system and allows you to view call transcriptions, listen to
                     voicemails, respond via text messages, make and receive
-                    calls, and more right from your computer or mobile device.
+                    calls, and more right from your computer or mobile device. */}
+                    Let our autonomous call system streamline your calls,
+                    offering instant call transcriptions and seamless text
+                    communication with patients. Effortlessly manage
+                    interactions, enhancing care while focusing on what matters
+                    most.
                 </div>
             )
         },
@@ -124,7 +129,7 @@ export function FeaturesGrid({ title, description }) {
             title: "Generate Clinical Notes With AI",
             description: (
                 <div>
-                    <Link
+                    {/* <Link
                         href="product/echo"
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
@@ -135,7 +140,11 @@ export function FeaturesGrid({ title, description }) {
                     using our fine tuned AI. Choose between SOAP or nurse's note
                     formats, customized to your specialty. Our service includes
                     custom model training to tailor note formatting to your
-                    practice's specific requirements.
+                    practice's specific requirements. */}
+                    Our AI-driven solution records conversations with patients
+                    then transcribes accurate clinical notes in seconds.
+                    Maximize free time and minimize manual work—less typing,
+                    less paperwork, more care.
                 </div>
             )
         },
@@ -145,7 +154,7 @@ export function FeaturesGrid({ title, description }) {
             title: "Online intake forms",
             description: (
                 <div>
-                    <Link
+                    {/* <Link
                         href={"/product/smart-form"}
                         className="text-blue-600 dark:text-blue-500 hover:underline"
                     >
@@ -157,48 +166,52 @@ export function FeaturesGrid({ title, description }) {
                     can embed our provided custom link to offer secure and
                     streamlined form submissions for patients. Plus, our system
                     allows for SMS sending of form links and a convienent
-                    dashboard for viewing form submissions.
-                </div>
-            )
-        },
-        {
-            icon: BsMic,
-            title: "Dictation software",
-            description: (
-                <div>
-                    Use{" "}
-                    <Link
-                        href="product/smart-voice"
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        SmartVoice{" "}
-                    </Link>
-                    to save time writing your notes. We utilize the latest in AI
-                    speech recognition technology to provide accurate and fast
-                    results. Our service can even remove background noise,
-                    'umms' from speech, translate any langauge to English, and
-                    more.
-                </div>
-            )
-        },
-        {
-            icon: BsCashStack,
-            title: "Chronic Care Management (CCM)",
-            description: (
-                <div>
-                    <Link
-                        href={"/product/smart-plan"}
-                        className="text-blue-600 dark:text-blue-500 hover:underline"
-                    >
-                        SmartPlan
-                    </Link>{" "}
-                    allows you to bill for CCM services, which is a reimbursable
-                    CPT code under Medicare. These services are perfomed on a
-                    recurring basis, and can be billed monthly, quarterly, or
-                    annually, depending on the CPT code.
+                    dashboard for viewing form submissions. */}
+                    Our efax system streamlines your workflow with a 97% fax
+                    success rate, while our intuitive online form builder
+                    simplifies patient paperwork. Efficiently manage faxes and
+                    patient forms, freeing up time for care, not clerical work.
                 </div>
             )
         }
+        // {
+        //     icon: BsMic,
+        //     title: "Dictation software",
+        //     description: (
+        //         <div>
+        //             Use{" "}
+        //             <Link
+        //                 href="product/smart-voice"
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 SmartVoice{" "}
+        //             </Link>
+        //             to save time writing your notes. We utilize the latest in AI
+        //             speech recognition technology to provide accurate and fast
+        //             results. Our service can even remove background noise,
+        //             'umms' from speech, translate any langauge to English, and
+        //             more.
+        //         </div>
+        //     )
+        // },
+        // {
+        //     icon: BsCashStack,
+        //     title: "Chronic Care Management (CCM)",
+        //     description: (
+        //         <div>
+        //             <Link
+        //                 href={"/product/smart-plan"}
+        //                 className="text-blue-600 dark:text-blue-500 hover:underline"
+        //             >
+        //                 SmartPlan
+        //             </Link>{" "}
+        //             allows you to bill for CCM services, which is a reimbursable
+        //             CPT code under Medicare. These services are perfomed on a
+        //             recurring basis, and can be billed monthly, quarterly, or
+        //             annually, depending on the CPT code.
+        //         </div>
+        //     )
+        // }
         // {
         //     icon: CgWebsite,
         //     title: "Custom Website Development",
@@ -249,7 +262,6 @@ export function FeaturesGrid({ title, description }) {
 
     return (
         <div className=" bg-white dark:bg-neutral-900 " id="features">
-            {" "}
             <Container size={1400} className={classes.wrapper}>
                 <h1 className="text-4xl font-bold text-center mb-5">{title}</h1>
 
@@ -259,20 +271,20 @@ export function FeaturesGrid({ title, description }) {
                     </Text>
                 </Container>
                 {/* <Divider mt={20} size={2} /> */}
-                <BackgroundGradient className="rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-neutral-900">
-                    <SimpleGrid
-                        mt={20}
-                        cols={3}
-                        spacing={theme.spacing.xl * 2}
-                        breakpoints={[
-                            { maxWidth: 1200, cols: 3, spacing: "xl" },
-                            { maxWidth: 980, cols: 2, spacing: "xl" },
-                            { maxWidth: 755, cols: 1, spacing: "xl" }
-                        ]}
-                    >
-                        {features}
-                    </SimpleGrid>
-                </BackgroundGradient>
+                {/* <BackgroundGradient className="rounded-[22px]  p-4 sm:p-10 bg-white dark:bg-neutral-900"> */}
+                <SimpleGrid
+                    mt={20}
+                    cols={3}
+                    spacing={theme.spacing.xl * 2}
+                    breakpoints={[
+                        { maxWidth: 1200, cols: 3, spacing: "xl" },
+                        { maxWidth: 980, cols: 2, spacing: "xl" },
+                        { maxWidth: 755, cols: 1, spacing: "xl" }
+                    ]}
+                >
+                    {features}
+                </SimpleGrid>
+                {/* </BackgroundGradient> */}
             </Container>
         </div>
     )

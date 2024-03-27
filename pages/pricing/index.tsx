@@ -456,6 +456,7 @@ const Pricing = () => {
                         </div>
                     </div>
                 </Container>
+                <p id="pricing-table" className="pb-10"></p>
                 <Container size={"xl"}>
                     <h2
                         className={`${classes.header2} text-xl lg:text-3xl mt-14 underline underline-offset-8 hidden md:block`}

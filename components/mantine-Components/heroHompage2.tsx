@@ -89,33 +89,44 @@ export function HeroHomePage2({ setIsModalOpen }) {
                             {/* Modern */}
                             AI powered
                         </Text>{" "}
-                        <TypeAnimation
+                        <Text component="span" inherit>
+                            copilot for
+                        </Text>{" "}
+                        <br />
+                        {/* <TypeAnimation
                             sequence={[
-                                "copilot ",
-                                firstFinished ? 2000 : 6000,
-                                () => setFirstFinished(true),
-                                "assistant ",
-                                6000,
-                                "operating system ",
-                                6000,
-                                "automation app ",
-                                6000
-                            ]}
-                            className={classes.title}
-                            speed={75}
-                            repeat={Infinity}
-                            cursor={false}
-                        />
-                        <TypeAnimation
-                            sequence={[
-                                // "automation & communication app for Healthcare Businesses",
-                                "for Healthcare Businesses",
-                                1000,
+                                "copilot for",
+                                2000,
                                 () => setFirstFinished(true)
+                                // "assistant ",
+                                // 6000,
+                                // "operating system ",
+                                // 6000,
+                                // "automation app ",
+                                // 6000
                             ]}
                             className={classes.title}
                             speed={75}
                             repeat={0}
+                            cursor={false}
+                        />
+                       */}
+                        <p></p>
+                        <TypeAnimation
+                            sequence={[
+                                // "automation & communication app for Healthcare Businesses",
+                                " Independent Practices",
+                                1000,
+                                () => setFirstFinished(true),
+                                3000,
+                                " Specialty Practices",
+                                4000,
+                                " New Practices",
+                                4000
+                            ]}
+                            className={classes.title}
+                            speed={75}
+                            repeat={Infinity}
                             cursor={false}
                         />
                     </h1>

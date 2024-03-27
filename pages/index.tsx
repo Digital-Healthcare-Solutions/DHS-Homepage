@@ -38,6 +38,7 @@ import { MdOutlineRecordVoiceOver, MdPhone } from "react-icons/md"
 import { TfiMoney } from "react-icons/tfi"
 import { FiClock } from "react-icons/fi"
 import RequestDemo from "../components/page-Components/requestDemo"
+import Features2 from "../components/mantine-Components/features2"
 
 export default function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -47,21 +48,21 @@ export default function Home() {
     const router = useRouter()
 
     const items = [
-        {
-            title: "Patient Growth",
-            description:
-                "The impact of our solutions on the growth of your patient base.",
-            header: (
-                <StatCard
-                    title="New Patients"
-                    diff={20}
-                    value={25}
-                    valueText={"New Patients per month"}
-                />
-            ),
+        // {
+        //     title: "Patient Growth",
+        //     description:
+        //         "The impact of our solutions on the growth of your patient base.",
+        //     header: (
+        //         <StatCard
+        //             title="New Patients"
+        //             diff={20}
+        //             value={25}
+        //             valueText={"New Patients per month"}
+        //         />
+        //     ),
 
-            icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
-        },
+        //     icon: <LuClipboard className="h-4 w-4 text-neutral-500" />
+        // },
         {
             title: "Call Center Impact",
             description:
@@ -71,7 +72,7 @@ export default function Home() {
                     title="Time spent on phones"
                     diff={-50}
                     value={16}
-                    valueText={"less hours spent on the phone per month"}
+                    valueText={"less hrs spent on the phone per month"}
                 />
             ),
             icon: <MdPhone className="h-4 w-4 text-neutral-500" />
@@ -79,7 +80,7 @@ export default function Home() {
         {
             title: "Clinical Efficiency",
             description:
-                "The impact of our speech-to-text solutions on the efficiency of your clinical notes.",
+                "The impact of our speech-to-text solutions on clinical efficiency.",
             header: (
                 <StatCard
                     title="Time Spent writing notes"
@@ -92,48 +93,48 @@ export default function Home() {
                 <MdOutlineRecordVoiceOver className="h-4 w-4 text-neutral-500" />
             )
         },
-        {
-            title: "Financial Growth",
-            description: "Based on 1 year long case study.",
-            header: (
-                <StatCard
-                    title="Revenue Increase"
-                    diff={10}
-                    value={"$100,000"}
-                    valueText={"Dollar increase in revenue"}
-                />
-            ),
-            icon: <TfiMoney className="h-4 w-4 text-neutral-500" />
-        },
-
-        {
-            title: "Patient Satisfaction",
-            description:
-                "The impact of our solutions on patient satisfaction and engagement",
-            header: (
-                <StatCard
-                    title="Time patients have to wait"
-                    diff={-15}
-                    value={"15"}
-                    valueText={"minutes"}
-                />
-            ),
-            icon: <FiClock className="h-4 w-4 text-neutral-500" />
-        },
+        // {
+        //     title: "Financial Growth",
+        //     description: "Based on 1 year long case study.",
+        //     header: (
+        //         <StatCard
+        //             title="Revenue Increase"
+        //             diff={10}
+        //             value={"$100,000"}
+        //             valueText={"Dollar increase in revenue"}
+        //         />
+        //     ),
+        //     icon: <TfiMoney className="h-4 w-4 text-neutral-500" />
+        // },
         {
             title: "Paperwork Reduction",
             description:
                 "The impact of our solutions on the time spent on paperwork.",
             header: (
                 <StatCard
-                    title="Time Spent sorting through paperwork (forms, faxes, etc)"
+                    title="Time Spent on paperwork "
                     diff={-25}
                     value={12}
-                    valueText={"less hours spent on paperwork per month"}
+                    valueText={"less hrs spent on paperwork per month"}
                 />
             ),
             icon: <LuFileText className="h-4 w-4 text-neutral-500" />
         }
+
+        // {
+        //     title: "Patient Satisfaction",
+        //     description:
+        //         "The impact of our solutions on patient satisfaction and engagement",
+        //     header: (
+        //         <StatCard
+        //             title="Time patients have to wait"
+        //             diff={-15}
+        //             value={"15"}
+        //             valueText={"minutes"}
+        //         />
+        //     ),
+        //     icon: <FiClock className="h-4 w-4 text-neutral-500" />
+        // },
     ]
 
     const testimonials1 = [
@@ -317,10 +318,11 @@ export default function Home() {
                 {/* <!-- Google tag (gtag.js) --> */}
             </Head>
             <HeroHomePage2 setIsModalOpen={setIsModalOpen} />
-            <FeaturesGrid
+            {/* <FeaturesGrid
                 title="Our solutions"
                 description="We offer variety of products that can help you  run your practice more efficiently."
-            />
+            /> */}
+            <Features2 />
             {/* <section className="flex justify-center  bg-blue-50  dark:bg-neutral-800 ">
                 <SmartPlanDescription />
             </section> */}
@@ -358,7 +360,7 @@ export default function Home() {
                 </Text>{" "}
                 of our solutions
             </h2>
-            <BentoGrid className="my-10 pb-20 px-3">
+            <BentoGrid className="my-10 pb-28 md:pb-48 px-3">
                 {items.map((item, i) => (
                     <BentoGridItem
                         key={i}
@@ -366,16 +368,14 @@ export default function Home() {
                         description={item.description}
                         header={item.header}
                         icon={item.icon}
-                        className={
-                            i === 1 || i === 2 || i === 5 ? "md:col-span-2" : ""
-                        }
+                        className={i === 0 || i === 3 ? "" : ""}
                     />
                 ))}
             </BentoGrid>
+            <h3 className="text-center text-5xl font-rubik pb-12">Why us</h3>
             <HomeCards />
-            <div className="relative lg:h-[600px] my-12 lg:my-2 w-full overflow-hidden bg-white dark:bg-neutral-900 flex flex-col items-center justify-center rounded-lg">
+            {/* <div className="relative lg:h-[600px] my-12 lg:my-2 w-full overflow-hidden bg-white dark:bg-neutral-900 flex flex-col items-center justify-center rounded-lg">
                 <div className="absolute inset-0 w-full h-full bg-white dark:bg-neutral-900 z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
-                {/* <Boxes /> */}
                 <h1
                     className={cn(
                         "md:text-4xl text-3xl relative z-20 bg-white dark:bg-neutral-900"
@@ -384,13 +384,13 @@ export default function Home() {
                     You're in good hands
                 </h1>
                 <HomePoints />
-            </div>
+            </div> */}
             {/* <section className="mt-14">
                 <h1 className="text-4xl font-bold text-center"></h1>
             </section>{" "} */}
             <section
                 id="contact"
-                className="flex justify-center  bg-white dark:bg-neutral-900"
+                className="flex justify-center pt-12 bg-white dark:bg-neutral-900"
             >
                 <ContactUs />
             </section>{" "}
