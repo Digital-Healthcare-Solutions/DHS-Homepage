@@ -802,12 +802,12 @@ const Pricing = () => {
                                     feature: "SmartForm",
                                     starter: (
                                         <div className="font-rubik text-sm">
-                                            $1 per form submission
+                                            $1.50 per form submission
                                         </div>
                                     ),
                                     premium: (
                                         <div className="font-rubik text-sm">
-                                            $0.85 per form submission
+                                            $1.00 per form submission
                                         </div>
                                     ),
                                     enterprise: (
