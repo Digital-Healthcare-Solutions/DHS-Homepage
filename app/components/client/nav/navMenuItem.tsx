@@ -1,6 +1,6 @@
 "use client"
 
-import { Text, ThemeIcon } from "@mantine/core"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import React from "react"
 
@@ -12,16 +12,16 @@ const NavMenuItem = ({ title, description, icon, href }) => {
         >
             <div className="flex items-start ">
                 <div className="mt-1">
-                    <ThemeIcon variant="default" size={"lg"}>
+                    <Button variant={"ghost"} size={"icon"}>
                         {icon}
-                    </ThemeIcon>
+                    </Button>
                 </div>
                 <div>
                     <div className="ml-3">
-                        <Text size={"md"}>{title}</Text>
-                        <Text size="sm" color="dimmed">
+                        <div>{title}</div>
+                        <div className="text-muted-foreground">
                             {description}
-                        </Text>
+                        </div>
                     </div>
                 </div>
             </div>

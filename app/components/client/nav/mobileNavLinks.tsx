@@ -1,12 +1,8 @@
 "use client"
 
-import { Paper, Menu, Button, Divider } from "@mantine/core"
-import NavLinks from "./navLinks"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import DarkMode from "./darkMode"
-import ButtonPrimary from "../../../../components/UI-Components/button-primary"
-import { useEffect } from "react"
+import { DarkMode } from "./darkMode"
 import { motion } from "framer-motion"
 import { BsCashStack, BsChevronDown, BsMic } from "react-icons/bs"
 import NavMenuItem from "./navMenuItem"
@@ -14,6 +10,8 @@ import { AiOutlineMessage } from "react-icons/ai"
 import { MdOutlineAutoAwesome, MdOutlinePhoneEnabled } from "react-icons/md"
 import { RiComputerLine, RiToolsFill } from "react-icons/ri"
 import { CgWebsite } from "react-icons/cg"
+import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 
 const MobileNav = ({ open, setOpen }) => {
     const pathname = usePathname()
@@ -31,10 +29,7 @@ const MobileNav = ({ open, setOpen }) => {
             transition={{ duration: 0.2 }}
             className="absolute  top-14 md:hidden w-full h-fit"
         >
-            <Paper
-                withBorder
-                className=" bg-white dark:bg-neutral-900  rounded-none "
-            >
+            <Card className=" bg-white dark:bg-neutral-900 rounded-none ">
                 <motion.section key={"section"} className="flex flex-col">
                     <Link
                         href="/"
@@ -46,17 +41,8 @@ const MobileNav = ({ open, setOpen }) => {
                     >
                         Home
                     </Link>
-                    {/* <Link
-                        href="/about-us"
-                        className={
-                            pathname === "/about-us"
-                                ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:font-normal active:ring-2  mx-1"
-                                : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 mx-1"
-                        }
-                    >
-                        About Us
-                    </Link> */}
-                    <Menu
+
+                    {/* <Menu
                         transition="scale-y"
                         transitionDuration={250}
                         position="bottom-start"
@@ -65,7 +51,6 @@ const MobileNav = ({ open, setOpen }) => {
                     >
                         <Menu.Target>
                             <div
-                                // href="/product"
                                 className={
                                     pathname === "/product/demos" ||
                                     pathname === "/product/smart-voice" ||
@@ -87,19 +72,7 @@ const MobileNav = ({ open, setOpen }) => {
                         </Menu.Target>
                         <Menu.Dropdown>
                             <section className="w-full">
-                                {/* <div className="flex justify-between items-center px-4 pt-2">
-                                    <h1>Products</h1>
-                                    <Link href="/product/demos">
-                                        <Button
-                                            size="xs"
-                                            variant="subtle"
-                                            className="text-blue-400"
-                                        >
-                                            View Demos
-                                        </Button>
-                                    </Link>
-                                </div>
-                                <Divider className="my-2" /> */}
+                              
                                 <div className="grid grid-cols-1 gap-2">
                                     <NavMenuItem
                                         title="Clinic-Connect"
@@ -220,32 +193,11 @@ const MobileNav = ({ open, setOpen }) => {
                                         href="/product/tools"
                                     />
                                 </div>
-                                {/* <div className="bg-neutral-900">
-                            <Divider className="my-2" />
-                            <div className="flex justify-between items-center px-4 pb-2">
-                                <h1>New Signups get 1 month free! </h1>
-                                <Button
-                                    size="xs"
-                                    variant="subtle"
-                                    className="text-blue-400"
-                                >
-                                    Learn More
-                                </Button>
-                            </div>
-                        </div> */}
+                              
                             </section>
                         </Menu.Dropdown>
-                    </Menu>
-                    {/* <Link
-                        href="/product"
-                        className={
-                            pathname === "/product"
-                                ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 mx-1"
-                                : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 mx-1"
-                        }
-                    >
-                        Product
-                    </Link> */}
+                    </Menu> */}
+
                     <Link
                         href="/pricing"
                         className={
@@ -275,18 +227,15 @@ const MobileNav = ({ open, setOpen }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <ButtonPrimary
+                        <Button
                             onClick={() => {}}
                             className="text-sm mb-3 ml-2"
                         >
-                            {/* Launch
-                            <span className="ml-1"> App</span>{" "} */}
                             Login
-                            {/* <FiExternalLink size={15} className="ml-1" /> */}
-                        </ButtonPrimary>
+                        </Button>
                     </a>
                 </motion.section>
-            </Paper>{" "}
+            </Card>{" "}
         </motion.div>
     )
 }

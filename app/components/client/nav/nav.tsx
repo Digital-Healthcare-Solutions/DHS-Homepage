@@ -4,7 +4,6 @@ import Link from "next/link"
 import { useState } from "react"
 import Burger from "./burger"
 import NavLinks from "./navLinks"
-import { Popover, Text, Button, Paper } from "@mantine/core"
 import MobileNav from "./mobileNavLinks"
 import { AnimatePresence } from "framer-motion"
 import Image from "next/image"
@@ -19,13 +18,13 @@ const Nav = () => {
                     href="/"
                     className=" font-semibold text-base md:text-lg lg:text-2xl ml-3 lg:ml-4 hover:text-blue-500 tracking-wide dark:font-normal "
                 >
-                    {/* <Image
-                        src="/dhs.svg"
+                    <Image
+                        src="/AxonLogoWhiteTextNoBG-condensed.png"
                         alt="DHS Logo"
-                        width={500}
-                        height={500}
+                        width={200}
+                        height={200}
                         className="stroke-blue-500 fill-blue-500"
-                    /> */}
+                    />
                 </Link>
             </div>
 

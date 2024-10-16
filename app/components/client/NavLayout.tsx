@@ -1,13 +1,11 @@
 "use client"
 
-import { Footer } from "../../../components/mantine-Components/footer"
 import Nav from "./nav/nav"
 import { useState } from "react"
-import { Modal, TextInput, Title } from "@mantine/core"
 import { useFormik } from "formik"
 import * as Yup from "yup"
-import ButtonPrimary from "../../../components/UI-Components/button-primary"
-import { showNotification } from "@mantine/notifications"
+import { toast } from "sonner"
+import { Footer } from "./nav/footer"
 
 const NavLayout = ({ children }: { children: React.ReactNode }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -38,22 +36,12 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
         )
         const data = await res.json()
         if (res.ok) {
-            showNotification({
-                title: "Success",
-                message: "You have been added to our newsletter!",
-                color: "green"
-            })
+            toast.success("You have been added to our newsletter!")
             localStorage.setItem("newsLetter", "true")
             setIsModalOpen(false)
         } else {
-            showNotification({
-                title: "Error",
-                message: data.message,
-                color: "red",
-                autoClose: 5000
-            })
+            toast.error(data.message || "An error occurred")
         }
-
         return data
     }
 
@@ -169,10 +157,6 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
                         setIsModalOpen(true)
                     }
                 }
-                // {
-                //     label: "Releases",
-                //     link: "#"
-                // }
             ]
         }
     ]
@@ -181,9 +165,8 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
         <div>
             <Nav />
             {children}
-            {/* @ts-ignore */}
             <Footer setIsModalOpen={setIsModalOpen} data={data} />
-            <Modal
+            {/* <Modal
                 opened={isModalOpen}
                 onClose={handleCloseModal}
                 size="md"
@@ -240,7 +223,7 @@ const NavLayout = ({ children }: { children: React.ReactNode }) => {
                         </ButtonPrimary>
                     </div>
                 </form>
-            </Modal>
+            </Modal> */}
         </div>
     )
 }

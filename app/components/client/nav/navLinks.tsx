@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Alert, Button, Divider, Menu } from "@mantine/core"
-import DarkMode from "./darkMode"
+import { DarkMode } from "./darkMode"
 import { BsCashStack, BsChevronDown, BsMic } from "react-icons/bs"
 import NavMenuItem from "./navMenuItem"
 import { AiOutlineMessage } from "react-icons/ai"
@@ -18,19 +17,18 @@ const NavLinks = () => {
     const pathname = usePathname()
 
     return (
-        <div className="hidden md:flex md:items-center mr-5 gap-0 lg:gap-3">
-            {" "}
+        <div className="hidden md:flex md:items-center mr-5 gap-0 md:gap-3">
             <Link
                 href="/"
                 className={
                     pathname === "/"
-                        ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700                        dark:font-normal active:ring-2 "
-                        : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
+                        ? "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700                        dark:font-normal active:ring-2 "
+                        : "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
                 }
             >
                 Home
             </Link>
-            <Menu
+            {/* <Menu
                 transition="scale-y"
                 transitionDuration={250}
                 trigger="hover"
@@ -52,8 +50,8 @@ const NavLinks = () => {
                             pathname === "/product/call-center" ||
                             pathname === "/product/smart-plan" ||
                             pathname === "/product/clinic-connect"
-                                ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 cursor-pointer flex items-center"
-                                : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 cursor-pointer flex items-center"
+                                ? "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 cursor-pointer flex items-center"
+                                : "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 cursor-pointer flex items-center"
                         }
                     >
                         Products{" "}
@@ -67,15 +65,6 @@ const NavLinks = () => {
                     <section className="w-[600px]">
                         <div className="flex justify-between items-center px-4 pt-2">
                             <h1 className="font-semibold text-lg">Products</h1>
-                            {/* <Link href="/product/demos">
-                                <Button
-                                    size="xs"
-                                    variant="subtle"
-                                    className="text-blue-400"
-                                >
-                                    View Demos
-                                </Button>
-                            </Link> */}
                         </div>
                         <Divider className="my-2" />
                         <div className="grid grid-cols-2 gap-2">
@@ -212,31 +201,14 @@ const NavLinks = () => {
                             </div>
                         </div>
                     </section>
-                    {/* <Menu.Item
-                        sx={
-                            pathname == "/product/demos"
-                                ? {
-                                      color: "rgb(59 130 246)",
-                                      fontSize: "1rem"
-                                  }
-                                : {
-                                      color: "inherit",
-                                      fontSize: "1rem"
-                                  }
-                        }
-                        component={Link}
-                        href="/product/demos"
-                    >
-                        Demos
-                    </Menu.Item> */}
                 </Menu.Dropdown>
-            </Menu>
+            </Menu> */}
             <Link
                 href="/pricing"
                 className={
                     pathname === "/pricing"
-                        ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700  dark:font-normal active:ring-2 "
-                        : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
+                        ? "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700  dark:font-normal active:ring-2 "
+                        : "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
                 }
             >
                 Pricing
@@ -245,23 +217,20 @@ const NavLinks = () => {
                 href="/blog"
                 className={
                     pathname === "/blog"
-                        ? "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 "
-                        : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
+                        ? "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 text-blue-500 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700   dark:font-normal active:ring-2 "
+                        : "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
                 }
             >
                 Blog
             </Link>
-            {/* <DarkMode /> */}
             <DarkMode />
             <a
                 href="https://app.digitalhealthcaresolutions.io/login"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <button className="text-sm shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-bold py-2 px-4 rounded-lg font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500">
-                    {/* Launch<span className="hidden lg:block  md:ml-1"> App</span>{" "} */}
+                <button className="text-sm shadow-[0_0px_11px_3px_rgb(0,0,0,0.1)] dark:shadow-neutral-500 shadow-blue-400 bg-blue-500 hover:bg-white hover:ring-1 ring-blue-500 text-white hover:text-blue-500 font-semibold py-2 px-4 rounded-lg font-sans flex items-center active:bg-white active:text-blue-500 active:ring-1 active:ring-blue-500">
                     Login
-                    {/* <FiExternalLink size={17} className="ml-1" /> */}
                 </button>
             </a>
         </div>

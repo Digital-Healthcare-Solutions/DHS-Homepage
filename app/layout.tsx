@@ -1,8 +1,9 @@
 import { Metadata } from "next"
 import { Raleway, Rubik } from "next/font/google"
 import "../styles/globals.css"
-import ProviderWrapper from "../components/providers/ProviderWrapper"
+import ProviderWrapper from "./components/client/providers/ProviderWrapper"
 import NavLayout from "./components/client/NavLayout"
+import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
     title: "Axon AI",
@@ -27,7 +28,8 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${raleway.className} ${rubik.variable}`}>
+            <body className={`${rubik.variable}`}>
+                <Toaster />
                 <ProviderWrapper>
                     <NavLayout>{children}</NavLayout>
                 </ProviderWrapper>

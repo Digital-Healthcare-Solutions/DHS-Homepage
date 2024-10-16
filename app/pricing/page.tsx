@@ -1,6 +1,6 @@
 import { Text, Container } from "@mantine/core"
 import { Metadata } from "next"
-import PricingSection from "../components/client/pricing/PricingSection"
+// import PricingSection from "../components/client/pricing/PricingSection"
 
 export const metadata: Metadata = {
     title: "Pricing",
@@ -24,7 +24,7 @@ const Pricing = () => {
                             providers of all sizes. All plans include custom
                             onboarding, training, and access to new features.
                         </Text>
-                        <PricingSection />
+                        {/* <PricingSection /> */}
                     </Container>
                 </div>
             </div>

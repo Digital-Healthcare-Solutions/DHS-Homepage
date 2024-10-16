@@ -1,54 +1,43 @@
 "use client"
 
-import { IoSunny } from "react-icons/io5"
-import { BsFillMoonStarsFill } from "react-icons/bs"
+import * as React from "react"
+import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import { useState, useEffect } from "react"
-import { useMantineColorScheme } from "@mantine/core"
+import { Button } from "@/components/ui/button"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu"
 
-const DarkMode = () => {
-    const [mounted, setMounted] = useState(false)
-    const { theme, setTheme, systemTheme } = useTheme()
+export function DarkMode() {
+    const { setTheme } = useTheme()
 
-    const { toggleColorScheme } = useMantineColorScheme()
-
-    const currentTheme = theme === "system" ? systemTheme : theme
-
-    useEffect(() => setMounted(true), [])
-
-    if (!mounted) return null
-
-    const handleDarkMode = () => {
-        toggleColorScheme("dark")
-        setTheme("dark")
-    }
-
-    const handleLightMode = () => {
-        toggleColorScheme("light")
-        setTheme("light")
-    }
-
-    if (currentTheme === "dark") {
-        return (
-            <button
-                onClick={handleLightMode}
-                className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mx-3  
-        `}
-            >
-                <IoSunny />
-            </button>
-        )
-    } else {
-        return (
-            <button
-                onClick={handleDarkMode}
-                className={`bg-gray-200 hover:bg-gray-300 p-2 hover:ring-1 ring-gray-200 text-gray-600 font-bold rounded-lg mx-3  
-        `}
-            >
-                <BsFillMoonStarsFill />
-            </button>
-        )
-    }
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+                <Button
+                    variant="outline"
+                    size="icon"
+                    className="dark:bg-neutral-900 dark:hover:bg-black"
+                >
+                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                    <span className="sr-only">Toggle theme</span>
+                </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+                    Light
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                    Dark
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}>
+                    System
+                </DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    )
 }
-
-export default DarkMode
