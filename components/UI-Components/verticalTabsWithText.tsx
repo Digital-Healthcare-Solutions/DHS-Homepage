@@ -1,3 +1,5 @@
+"use client"
+
 import { Tabs } from "@mantine/core"
 import { MdSettings } from "react-icons/md"
 import { ReactNode } from "react"

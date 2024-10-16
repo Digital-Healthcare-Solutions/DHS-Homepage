@@ -1,3 +1,5 @@
+"use client"
+
 import { Group, Paper, Text, ThemeIcon } from "@mantine/core"
 import React from "react"
 import { MdOutlineArrowOutward } from "react-icons/md"

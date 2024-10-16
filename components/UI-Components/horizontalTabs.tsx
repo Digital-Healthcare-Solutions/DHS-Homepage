@@ -1,3 +1,5 @@
+"use client"
+
 import { Tabs } from "@mantine/core"
 import { MdSettings } from "react-icons/md"
 import { FormEvent, ReactNode } from "react"
@@ -28,7 +30,7 @@ const HorizontalTabs = ({
                 orientation="horizontal"
                 className="flex flex-col lg:flex-row items-start gap-5 lg:gap-20"
                 value={selectedTab}
-                onTabChange={(value) => setSelectedTab(value)}
+                onTabChange={(value) => setSelectedTab(value ?? "defaultTab")}
             >
                 <Tabs.List grow>
                     {tabsList.map((tab, index) => (

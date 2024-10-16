@@ -1,3 +1,5 @@
+"use client"
+
 import { Table, createStyles } from "@mantine/core"
 import React, { ReactNode } from "react"
 import { useTheme } from "next-themes"

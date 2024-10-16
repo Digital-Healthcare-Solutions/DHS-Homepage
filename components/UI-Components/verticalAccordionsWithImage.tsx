@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react"
 import { Accordion, createStyles } from "@mantine/core"
 import Image from "next/image"
@@ -84,7 +86,7 @@ const VerticalAccordionsWithImage = ({
                     src={
                         accordionItems.find(
                             (item) => item.title === selectedAccordion
-                        )?.image
+                        )?.image || ""
                     }
                     alt={selectedAccordion}
                     width={800}

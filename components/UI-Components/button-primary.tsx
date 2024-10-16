@@ -1,4 +1,23 @@
-const ButtonPrimary = ({ children, onClick, className, ...props }) => {
+"use client"
+
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react"
+
+interface ButtonPrimaryProps
+    extends DetailedHTMLProps<
+        ButtonHTMLAttributes<HTMLButtonElement>,
+        HTMLButtonElement
+    > {
+    children: React.ReactNode
+    onClick?: React.MouseEventHandler<HTMLButtonElement>
+    className?: string
+}
+
+const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
+    children,
+    onClick,
+    className,
+    ...props
+}) => {
     return (
         <button
             onClick={

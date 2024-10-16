@@ -1,3 +1,5 @@
+"use client"
+
 import { ThemeIcon, Text, Title, Container, SimpleGrid } from "@mantine/core"
 import { MdSettings } from "react-icons/md"
 
