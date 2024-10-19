@@ -13,6 +13,7 @@ async function getPost(slug: string) {
     const query = `*[_type == "post" && slug.current == $slug][0]{
     _id,
     _createdAt,
+    keywords,
     title,
     author-> {
         name,
@@ -28,6 +29,7 @@ async function getPost(slug: string) {
       readTime
   }`
     const post = await client.fetch(query, { slug })
+    // console.log(post.keywords)
     return post
 }
 export async function generateMetadata({
@@ -38,22 +40,26 @@ export async function generateMetadata({
     const post = await getPost(params.slug)
 
     const keywords = [
-        ...(post.seoKeywords || []),
-        "Digital Healthcare Solutions",
-        "Healthcare Solutions",
-        "Healthcare",
-        "Digital Healthcare",
-        "Healthcare Communication",
-        "Healthcare Communication Platform",
-        "Medical Phone System",
-        "Medical Phone",
-        "Alternative to faxing",
-        "Secure alternative to faxing medical records",
-        "Medical communication",
-        "Medical communication platform",
-        "Medical communication system",
-        "Medical communication software",
-        "Medical communication solution",
+        ...(post.keywords || []),
+        "Axon AI",
+        "AI Scribe",
+        "Medical Transcription",
+        "Healthcare AI",
+        "Clinical Documentation",
+        "Electronic Health Records",
+        "EHR Integration",
+        "Medical Dictation",
+        "Voice-to-Text for Healthcare",
+        "Automated Medical Notes",
+        "Healthcare Productivity Tool",
+        "Doctor's Assistant AI",
+        "Nurse's Documentation Aid",
+        "Medical Workflow Optimization",
+        "Patient Encounter Documentation",
+        "Real-time Medical Transcription",
+        "AI for Healthcare Professionals",
+        "Medical Language Processing",
+        "Healthcare Data Entry Automation",
         ...post.categories.map((category: { title: string }) => category.title)
     ]
 
