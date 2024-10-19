@@ -17,18 +17,22 @@
     "@codemirror/state": "6.3.1"
   },
   "dependencies": {
+    "@sanity/cli": "^3.61.0",
     "@sanity/code-input": "^4.1.1",
     "@sanity/vision": "^3.0.0",
     "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
-    "sanity": "^3.0.0",
+    "sanity": "^3.61.0",
     "styled-components": "^5.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
     "@sanity/eslint-config-studio": "^2.0.1",
     "eslint": "^8.6.0",
+    "eslint-config-next": "^14.2.15",
     "prettier": "^2.8.4",
     "typescript": "^4.0.0"
   },
