@@ -7,6 +7,7 @@ import { TableOfContentsFloating } from "../../../components/blog/contents"
 import { RichTextComponents } from "../../../components/blog/RichTextComponents"
 import { Button } from "@/components/ui/button"
 import { ScrollProgressBar } from "@/components/blog/ScrollProgressBar"
+import { Metadata } from "next"
 
 async function getPost(slug: string) {
     const query = `*[_type == "post" && slug.current == $slug][0]{
@@ -29,24 +30,55 @@ async function getPost(slug: string) {
     const post = await client.fetch(query, { slug })
     return post
 }
-
 export async function generateMetadata({
     params
 }: {
     params: { slug: string }
-}) {
+}): Promise<Metadata> {
     const post = await getPost(params.slug)
+
+    const keywords = [
+        ...(post.seoKeywords || []),
+        "Digital Healthcare Solutions",
+        "Healthcare Solutions",
+        "Healthcare",
+        "Digital Healthcare",
+        "Healthcare Communication",
+        "Healthcare Communication Platform",
+        "Medical Phone System",
+        "Medical Phone",
+        "Alternative to faxing",
+        "Secure alternative to faxing medical records",
+        "Medical communication",
+        "Medical communication platform",
+        "Medical communication system",
+        "Medical communication software",
+        "Medical communication solution",
+        ...post.categories.map((category: { title: string }) => category.title)
+    ]
+
     return {
         title: `${post.title} | Digital Healthcare Solutions`,
         description: post.description,
         openGraph: {
-            description: post.description
+            title: `${post.title} | Digital Healthcare Solutions`,
+            description: post.description,
+            type: "article",
+            publishedTime: post._createdAt,
+            authors: [post.author.name],
+            images: {
+                url: urlFor(post.mainImage).url()!,
+                secureUrl: urlFor(post.mainImage).url()!,
+                alt: post.title,
+                type: "image/jpeg",
+                width: "1200",
+                height: "630"
+            }
         },
-        keywords:
-            "Digital Healthcare Solutions, Healthcare Solutions, Healthcare, Digital Healthcare, Healthcare Communication, Healthcare Communication Platform, Medical Phone System, Medical Phone, Alternative to faxing, Secure alternative to faxing medical records, Medical communication, Medical communication platform, Medical communication system, Medical communication software, Medical communication solution"
+        keywords: keywords.join(", "),
+        authors: post.author.name
     }
 }
-
 export default async function Post({ params }: { params: { slug: string } }) {
     const post = await getPost(params.slug)
 
