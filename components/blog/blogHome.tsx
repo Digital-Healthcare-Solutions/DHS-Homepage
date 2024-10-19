@@ -1,81 +1,41 @@
-import {
-    createStyles,
-    Card,
-    Overlay,
-    CardProps,
-    Button,
-    Text
-} from "@mantine/core"
-
-const useStyles = createStyles((theme) => ({
-    card: {
-        backgroundImage: `url(/blogHome.jpg)`
-    },
-
-    title: {
-        marginBottom: theme.spacing.xs / 2
-    },
-
-    description: {
-        maxWidth: 220
-    }
-}))
+import React from "react"
 
 interface ImageActionBannerProps {
     title: React.ReactNode
     description: React.ReactNode
     image: string
+    className?: string
+    style?: React.CSSProperties
 }
 
 export function ImageActionBanner({
     title,
     description,
     image,
-    style,
     className,
+    style,
     ...others
-}: ImageActionBannerProps &
-    Omit<CardProps, keyof ImageActionBannerProps | "children">) {
-    const { classes, cx, theme } = useStyles()
-
+}: ImageActionBannerProps) {
     return (
-        <Card
-            radius="md"
-            className={cx(
-                classes.card,
-                ` mb-8 h-52 md:h-96 rounded-none bg-cover bg-center bg-no-repeat  transition-all duration-300 ease-in-out relative overflow-hidden`
-            )}
+        <div
+            className={`relative mb-8 h-52 md:h-96 bg-cover bg-center bg-no-repeat overflow-hidden transition-all duration-300 ease-in-out ${className}`}
+            style={{
+                backgroundImage: `url(${image})`,
+                ...style
+            }}
+            {...others}
         >
-            {" "}
-            <Overlay
-                gradient={`linear-gradient(105deg, ${theme.black} 20%, #312f2f 50%, ${theme.colors.gray[4]} 100%)`}
-                opacity={0.65}
-                zIndex={0}
-                blur={4}
-            />
-            <div
-                className={
-                    "absolute -translate-x-4 text-white dark:text-black  flex flex-col items-center md:justify-center w-full h-full z-10 "
-                }
-            >
+            <div className="absolute inset-0 bg-gradient-to-br from-black via-neutral-800 to-gray-400 opacity-65 backdrop-blur-sm" />
+            <div className="absolute inset-0 flex flex-col items-center md:justify-center z-10 p-4">
                 <div className="max-w-[550px] md:max-w-[700px] p-5 md:p-12 rounded-lg bg-neutral-700 bg-opacity-40 dark:bg-neutral-400 dark:bg-opacity-30 shadow-sm shadow-black mx-5">
-                    <Text
-                        className={
-                            "mb-2 text-xl md:text-2xl lg:text-2xl font-light dark:font-normal"
-                        }
-                    >
+                    <h2 className="mb-2 text-xl md:text-2xl lg:text-2xl font-light dark:font-normal text-white dark:text-black">
                         {title}
-                    </Text>
-
-                    <div
-                        className={
-                            " text-lg md:text-xl lg:text-2xl font-semibold mx-2"
-                        }
-                    >
+                    </h2>
+                    <div className="text-lg md:text-xl lg:text-2xl font-semibold mx-2 text-white dark:text-black">
                         {description}
                     </div>
                 </div>
-            </div>{" "}
-        </Card>
+            </div>
+        </div>
     )
 }

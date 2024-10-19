@@ -1,66 +1,12 @@
-import { useState } from "react"
-import { createStyles, Box, Text, Group } from "@mantine/core"
-// import { IconListSearch } from '@tabler/icons';
+"use client"
+
+import { useCallback, useState } from "react"
 import slugify from "slugify"
 import Link from "next/link"
 
 const LINK_HEIGHT = 38
 const INDICATOR_SIZE = 10
 const INDICATOR_OFFSET = (LINK_HEIGHT - INDICATOR_SIZE) / 2
-
-const useStyles = createStyles((theme) => ({
-    link: {
-        ...theme.fn.focusStyles(),
-        display: "block",
-        textDecoration: "none",
-        color:
-            theme.colorScheme === "dark" ? theme.colors.dark[0] : theme.black,
-        lineHeight: `${LINK_HEIGHT}px`,
-        fontSize: theme.fontSizes.sm,
-        height: LINK_HEIGHT,
-        borderTopRightRadius: theme.radius.sm,
-        borderBottomRightRadius: theme.radius.sm,
-        borderLeft: `2px solid ${
-            theme.colorScheme === "dark"
-                ? theme.colors.dark[4]
-                : theme.colors.gray[2]
-        }`,
-
-        "&:hover": {
-            backgroundColor:
-                theme.colorScheme === "dark"
-                    ? theme.colors.dark[6]
-                    : theme.colors.gray[1]
-        }
-    },
-
-    linkActive: {
-        fontWeight: 500,
-        color: theme.colors[theme.primaryColor][
-            theme.colorScheme === "dark" ? 3 : 7
-        ]
-    },
-
-    links: {
-        position: "relative"
-    },
-
-    indicator: {
-        transition: "transform 150ms ease",
-        border: `2px solid ${
-            theme.colors[theme.primaryColor][
-                theme.colorScheme === "dark" ? 3 : 7
-            ]
-        }`,
-        backgroundColor:
-            theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
-        height: INDICATOR_SIZE,
-        width: INDICATOR_SIZE,
-        borderRadius: INDICATOR_SIZE,
-        position: "absolute",
-        left: -INDICATOR_SIZE / 2 + 1
-    }
-}))
 
 interface ContentTypes {
     _key: string
@@ -77,10 +23,6 @@ interface ContentTypes {
     markDefs: []
 }
 
-type Content = {
-    contents: ContentTypes[]
-}
-
 interface TableOfContentsFloatingProps {
     contents: ContentTypes[]
 }
@@ -91,60 +33,65 @@ export function TableOfContentsFloating({
     const tableElems = contents.filter(
         (item) => item.style == "h1" || item.style == "h2" || item.style == "h3"
     )
-    console.log(
-        tableElems.map((item) => {
-            return item.children.map((child) => {
-                return child.text
-            })
-        })
-    )
-
-    console.log(tableElems)
-
-    const { classes, cx } = useStyles()
     const [active, setActive] = useState(0)
 
+    const handleScroll = useCallback(
+        (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, index: number) => {
+            e.preventDefault()
+            const href = e.currentTarget.getAttribute("href")
+            if (href) {
+                const targetId = href.replace("#", "")
+                const elem = document.getElementById(targetId)
+                if (elem) {
+                    const rect = elem.getBoundingClientRect()
+                    const absoluteTop = rect.top + window.pageYOffset
+                    window.scrollTo({
+                        top: absoluteTop - 60, // Scroll to 20px above the element
+                        behavior: "smooth"
+                    })
+                }
+            }
+            setActive(index)
+        },
+        []
+    )
+
     const items = tableElems.map((item, index) => (
-        <Box
-            className={cx(classes.link, {
-                [classes.linkActive]: active === index
-            })}
-            sx={(theme) => ({
-                paddingLeft: theme.spacing.lg
-                // paddingRight: theme.spacing.lg
-            })}
+        <div
+            key={item._key}
+            className={`block pl-4 text-sm h-[38px] leading-[38px] border-l-2 border-neutral-200 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-r-sm transition-colors duration-150 ease-in-out ${
+                active === index
+                    ? "font-medium text-blue-600 dark:text-blue-400"
+                    : "text-black dark:text-white"
+            }`}
         >
-            {item.children.map((child) => {
-                return (
-                    <Link
-                        onClick={() => setActive(index)}
-                        key={item._key}
-                        href={`#${slugify(child.text, {
-                            lower: true
-                        })}`}
-                        scroll={false}
-                        onScroll={() => setActive(index)}
-                    >
-                        {child.text}
-                    </Link>
-                )
-            })}
-        </Box>
+            {item.children.map((child) => (
+                <Link
+                    key={child._key}
+                    onClick={(e) => handleScroll(e, index)}
+                    href={`#${slugify(child.text, { lower: true })}`}
+                    className="block w-full h-full"
+                >
+                    {child.text}
+                </Link>
+            ))}
+        </div>
     ))
 
     return (
         <div>
-            <Group mb="md">
-                {/* <IconListSearch size={18} stroke={1.5} /> */}
-                <Text size={"lg"}>Table of contents</Text>
-            </Group>
-            <div className={classes.links}>
+            <div className="flex items-center mb-4">
+                {/* If you want to add an icon, you can do so here */}
+                <span className="text-lg">Table of contents</span>
+            </div>
+            <div className="relative">
                 <div
-                    className={classes.indicator}
+                    className="absolute w-2.5 h-2.5 rounded-full bg-white dark:bg-gray-800 border-2 border-blue-600 dark:border-blue-400 transition-transform duration-150 ease-in-out"
                     style={{
                         transform: `translateY(${
                             active * LINK_HEIGHT + INDICATOR_OFFSET
-                        }px)`
+                        }px)`,
+                        left: "-5px"
                     }}
                 />
                 {items}

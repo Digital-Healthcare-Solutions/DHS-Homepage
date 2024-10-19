@@ -1,8 +1,8 @@
 import { Metadata } from "next"
 import { Raleway, Rubik } from "next/font/google"
 import "../styles/globals.css"
-import ProviderWrapper from "./components/client/providers/ProviderWrapper"
-import NavLayout from "./components/client/NavLayout"
+import ProviderWrapper from "../components/client/providers/ProviderWrapper"
+import NavLayout from "../components/client/nav/NavLayout"
 import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
