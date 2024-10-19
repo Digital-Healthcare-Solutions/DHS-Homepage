@@ -1,7 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Suspense } from "react"
-import { ErrorBoundary } from "react-error-boundary"
 import { BsLinkedin, BsTwitterX, BsMeta } from "react-icons/bs"
 
 interface FooterLinksProps {

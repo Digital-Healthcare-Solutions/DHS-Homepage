@@ -3,7 +3,7 @@
 const { createClient, groq } = require("next-sanity")
 
 module.exports = {
-    siteUrl: process.env.SITE_URL || "https://digitalhealthcaresolutions.io/",
+    siteUrl: process.env.SITE_URL || "https://getaxon.ai/",
     generateRobotsTxt: true, // (optional)
     additionalPaths: async (config) => {
         const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production"

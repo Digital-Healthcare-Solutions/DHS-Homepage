@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://digitalhealthcaresolutions.io/
+Host: https://getaxon.ai/
 
 # Sitemaps
-Sitemap: https://digitalhealthcaresolutions.io/sitemap.xml
+Sitemap: https://getaxon.ai/sitemap.xml

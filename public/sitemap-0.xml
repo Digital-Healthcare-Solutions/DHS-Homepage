@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://digitalhealthcaresolutions.io/privacy-policy</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/terms-of-service</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/pricing</loc><lastmod>2024-10-19T03:22:04.484Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/about-us</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/product/demos</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/product/call-center</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/product/smart-form</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/product/smart-plan</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/product/smart-voice</loc><lastmod>2024-10-19T03:22:04.683Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/blog/fine-tuning-llms-to-save-time-for-medical-personnel</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/blog/introducing-smartvoice</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/blog/introducing-intellicall</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/blog/introducing-smartplan</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://digitalhealthcaresolutions.io/blog/introducing-clinic-connect</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://getaxon.ai/privacy-policy</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/terms-of-service</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/pricing</loc><lastmod>2024-10-19T03:40:39.338Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://getaxon.ai</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>1</priority></url>
+<url><loc>https://getaxon.ai/about-us</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/product/demos</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/product/call-center</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/product/smart-form</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/product/smart-plan</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/product/smart-voice</loc><lastmod>2024-10-19T03:40:39.553Z</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+<url><loc>https://getaxon.ai/blog/fine-tuning-llms-to-save-time-for-medical-personnel</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://getaxon.ai/blog/introducing-smartvoice</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://getaxon.ai/blog/introducing-intellicall</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://getaxon.ai/blog/introducing-smartplan</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://getaxon.ai/blog/introducing-clinic-connect</loc><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
