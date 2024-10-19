@@ -17,6 +17,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags',
+      },
+      validation: (Rule) => Rule.unique(),
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
