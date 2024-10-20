@@ -123,6 +123,7 @@ const GetCustomQuote = ({
                 >
                     <Input
                         label="Name"
+                        labelWithAsterisk
                         placeholder="Your name"
                         name="name"
                         value={formik.values.name}
@@ -141,6 +142,7 @@ const GetCustomQuote = ({
                     />
                     <Input
                         label="Email"
+                        labelWithAsterisk
                         placeholder="Your email"
                         name="email"
                         value={formik.values.email}
@@ -159,6 +161,7 @@ const GetCustomQuote = ({
                     />
                     <Input
                         label="Business Name"
+                        labelWithAsterisk
                         placeholder="Your Business"
                         name="businessName"
                         value={formik.values.businessName}
@@ -179,6 +182,7 @@ const GetCustomQuote = ({
                     />
                     <Input
                         label="Number of Providers"
+                        labelWithAsterisk
                         type="number"
                         placeholder="Number of Providers"
                         name="providers"
@@ -191,14 +195,26 @@ const GetCustomQuote = ({
                                 : ""
                         }
                     />
+
                     <MultiSelect
+                        label="Select Features"
+                        labelWithAsterisk
                         placeholder="Select features"
+                        variant="secondary"
                         value={features}
                         onValueChange={(value) => setFeatures(value)}
+                        modalPopover
                         options={[
                             { label: "Echo", value: "Echo1", icon: User },
                             { label: "Echo2", value: "Echo2", icon: User },
-                            { label: "Echo3", value: "Echo3", icon: User }
+                            { label: "Echo3", value: "Echo3", icon: User },
+                            { label: "Echo4", value: "Echo4", icon: User },
+                            { label: "Echo5", value: "Echo5", icon: User },
+                            { label: "Echo6", value: "Echo6", icon: User },
+                            { label: "Echo7", value: "Echo7", icon: User },
+                            { label: "Echo8", value: "Echo8", icon: User },
+                            { label: "Echo9", value: "Echo9", icon: User },
+                            { label: "Echo10", value: "Echo10", icon: User }
                         ]}
                     />
 

@@ -3,11 +3,74 @@ import Link from "next/link"
 import { BsLinkedin, BsTwitterX, BsMeta } from "react-icons/bs"
 
 interface FooterLinksProps {
-    data: {
-        title: string
-        links: { label: string; link: string; func?: () => void }[]
-    }[]
+    title: string
+    links: { label: string; link: string; func?: () => void }[]
 }
+
+const data: FooterLinksProps[] = [
+    {
+        title: "Features",
+        links: [
+            {
+                label: "Live Transcription",
+                link: "/product/echo"
+            },
+
+            {
+                label: "Drap and Drop Template Builder",
+                link: "/product/echo"
+            },
+            {
+                label: "Advanced Editor",
+                link: "/product/echo"
+            },
+            {
+                label: "Team Collaboration",
+                link: "/product/echo"
+            }
+        ]
+    },
+
+    {
+        title: "About",
+        links: [
+            {
+                label: "Pricing",
+                link: "/pricing"
+            },
+            {
+                label: "Privacy Policy",
+                link: "/privacy-policy"
+            },
+            {
+                label: "Security",
+                link: "/security"
+            },
+            { label: "Terms of Service", link: "/terms-of-service" }
+        ]
+    },
+    {
+        title: "Learn More",
+        links: [
+            {
+                label: "Blog",
+                link: "/blog"
+            },
+            {
+                label: "Request a Demo",
+                link: "/#request-demo"
+            },
+            {
+                label: "FAQ",
+                link: "/#faq"
+            },
+            {
+                label: "Contact us",
+                link: "/#contact"
+            }
+        ]
+    }
+]
 
 interface StatusResponse {
     page: {
@@ -71,7 +134,7 @@ function StatusIndicator({ status }: { status: StatusResponse | null }) {
     )
 }
 
-export async function Footer({ data }: FooterLinksProps) {
+export async function Footer() {
     const systemStatus = await getSystemStatus()
 
     const groups = data.map((group) => {
