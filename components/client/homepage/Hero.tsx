@@ -49,7 +49,7 @@ export function Hero() {
                         {firstFinished && (
                             <TypeAnimation
                                 sequence={[
-                                    "Automate routine tasks using AI, Streamline communication with patients & providers, and increase revenue with our suite of HIPAA compliant solutions.",
+                                    "Free yourself from documentation, reclaim your weekends, and focus on patient care, not paperwork.",
                                     () => setSecondFinished(true)
                                 ]}
                                 speed={95}
