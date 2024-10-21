@@ -38,7 +38,7 @@ export function Hero() {
                                 " New Practices",
                                 4000
                             ]}
-                            className="text-5xl sm:text-6xl font-black"
+                            className="text-4xl sm:text-6xl font-black"
                             speed={75}
                             repeat={Infinity}
                             cursor={true}

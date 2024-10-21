@@ -63,12 +63,12 @@ const RequestDemo = () => {
                     </div>
                     <p className="text-lg py-4">or</p>
                     <div className="flex justify-center">
-                        <Link href="/#contact">
+                        <Link href="https://app.getaxon.ai/signup">
                             <button
                                 onClick={() => console.log("clicked")}
                                 className="text-lg bg-white text-blue-500 hover:bg-neutral-200 px-4 py-2 rounded transition duration-300"
                             >
-                                Contact Us
+                                Try for Free
                             </button>
                         </Link>
                     </div>

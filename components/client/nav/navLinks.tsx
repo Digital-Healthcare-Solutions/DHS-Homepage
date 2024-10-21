@@ -16,7 +16,7 @@ const NavLinks = () => {
                         : "font-semibold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 "
                 }
             >
-                Home
+                Features
             </Link>
             {/* <Menu
                 transition="scale-y"

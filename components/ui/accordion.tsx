@@ -13,7 +13,8 @@ const accordionItemVariants = cva("border-b", {
     variants: {
         variant: {
             default: "",
-            filled: "bg-neutral-100 hover:bg-neutral-200/75 dark:bg-zinc-800 dark:hover:bg-neutral-800/80 rounded-lg mb-2"
+            filled: "bg-neutral-100 hover:bg-neutral-200/75 dark:bg-zinc-800 dark:hover:bg-neutral-800/80 rounded-lg mb-2",
+            outlined: "border rounded-lg mb-2 dark:bg-neutral-800"
         }
     },
     defaultVariants: {
@@ -43,7 +44,8 @@ const accordionTriggerVariants = cva(
         variants: {
             variant: {
                 default: "hover:underline",
-                filled: "px-4"
+                filled: "px-4",
+                outlined: "px-4"
             }
         },
         defaultVariants: {
@@ -79,7 +81,8 @@ const accordionContentVariants = cva(
         variants: {
             variant: {
                 default: "",
-                filled: "px-4"
+                filled: "px-4",
+                outlined: "px-4"
             }
         },
         defaultVariants: {

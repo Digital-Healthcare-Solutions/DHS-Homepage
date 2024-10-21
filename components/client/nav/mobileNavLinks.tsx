@@ -27,7 +27,7 @@ const MobileNav = ({ open, setOpen }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute  top-14 md:hidden w-full h-fit"
+            className="absolute top-14 md:hidden w-full h-fit"
         >
             <Card className=" bg-white dark:bg-neutral-950 rounded-none ">
                 <motion.section key={"section"} className="flex flex-col">
@@ -39,7 +39,7 @@ const MobileNav = ({ open, setOpen }) => {
                                 : "font-bold text-base lg:text-lg  active:text-blue-500 hover:bg-neutral-100 p-2  rounded-md hover:ring-1 ring-neutral-200 dark:hover:bg-neutral-800 dark:hover:ring-neutral-700 dark:hover:text-neutral-100 dark:text-neutral-100 dark:font-normal active:ring-2 ml-1"
                         }
                     >
-                        Home
+                        Features
                     </Link>
 
                     {/* <Menu

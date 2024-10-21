@@ -18,21 +18,19 @@ export const ProductDemoVideo = () => {
 
     return (
         <div className="flex flex-col justify-center items-center py-20">
-            <h2 className="text-2xl font-semibold">
-                Get started with 3 easy steps
-            </h2>
+            <h2 className="text-6xl font-semibold pb-10">How it works</h2>
             {resolvedTheme === "light" ? (
                 <Image
                     src={"/productDemoWhite.svg"}
                     alt="Product Demo"
-                    width={960}
+                    width={1000}
                     height={540}
                 />
             ) : (
                 <Image
                     src="/productDemo.svg"
                     alt="Product Demo"
-                    width={960}
+                    width={1000}
                     height={540}
                 />
             )}
