@@ -59,8 +59,8 @@ const PricingCard = ({
                     </li>
                 ))}
             </ul>
-        </div>{" "}
-        {addOns && addOns.length > 0 && (
+        </div>
+        {/* {addOns && addOns.length > 0 && (
             <div className="mt-auto p-8">
                 <h4 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-3">
                     {title} Add-ons:
@@ -84,7 +84,7 @@ const PricingCard = ({
                     ))}
                 </ul>
             </div>
-        )}
+        )} */}
         <div className="p-6 mt-auto">
             {btnType === "link" ? (
                 <Link href="https://app.getaxon.ai/signup">
@@ -99,16 +99,6 @@ const PricingCard = ({
                     </button>
                 </Link>
             ) : (
-                // <button
-                //     onClick={onGetStarted}
-                //     className={`w-full py-3 rounded-md transition-colors duration-300 ${
-                //         highlight
-                //             ? "bg-blue-600 hover:bg-blue-700 text-white"
-                //             : "bg-blue-100 hover:bg-blue-200 text-blue-700 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-blue-300"
-                //     }`}
-                // >
-                //     {buttonText}
-                // </button>
                 <GetCustomQuote
                     btnText="Get a Custom Quote"
                     btnClassName={`w-full py-3 rounded-md transition-colors duration-300 ${

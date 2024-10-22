@@ -1,5 +1,6 @@
 import PricingCard from "@/components/client/pricing/PricingCard"
 import { Metadata } from "next"
+import { features } from "process"
 // import PricingSection from "../components/client/pricing/PricingSection"
 
 export const metadata: Metadata = {
@@ -7,19 +8,18 @@ export const metadata: Metadata = {
     description:
         "Flexible pricing options to suit healthcare providers of all sizes. All plans include custom onboarding, training, and access to new features.",
     keywords:
-        "pricing, healthcare, providers, plans, custom, onboarding, training, features"
+        "pricing, healthcare, providers, plans, custom, onboarding, training, features, Axon AI Pricing, Axon AI Plans"
 }
 
 const plans = [
     {
-        title: "Base",
-        price: "300",
-        description: "Ideal for small practices with 1-3 providers.",
+        title: "Individual",
+        price: "75",
+        description: "Ideal for single practitioners.",
         features: [
-            "3000 texts and 3000 call minutes included",
-            "$0.05 for each additional text/minute",
-            "Smart Form custom form builder",
-            "50 AI *assists per month"
+            "Live transcription",
+            "Unlimited notes",
+            "Customizable templates"
         ],
         highlight: false,
         buttonType: "start",
@@ -39,16 +39,14 @@ const plans = [
         ]
     },
     {
-        title: "Premium",
-        price: "1000",
-        description:
-            "For larger practices or practices needing enhanced automation.",
+        title: "Team",
+        price: "100",
+        description: "For small practices and clinics with up to 10 users.",
         features: [
-            "5000 texts and 5000 call minutes included",
-            "$0.05 for each additional text/minute",
-            "Enhanced AI automation features",
-            "500 AI *assists per month",
-            "Smart Form auto analysis"
+            "Everything in Individual",
+            "Team collaboration",
+            "Shared templates & questionaries",
+            "Customizable permissions"
         ],
         highlight: true,
         buttonType: "start",
@@ -72,14 +70,20 @@ const plans = [
         price: "Custom",
         description:
             "Tailored solutions for large organizations with complex requirements.",
+        // features: [
+        //     "Everything in Premium",
+        //     "Custom texts & call minutes",
+        //     "Custom / proprietary solutions",
+        //     "Dedicated servers and database",
+        //     "Enhanced SLA and security",
+        //     "SSO/SAML",
+        //     "Enterprise add-ons available"
+        // ],
         features: [
-            "Everything in Premium",
-            "Custom texts & call minutes",
-            "Custom / proprietary solutions",
+            "Everything in Team",
             "Dedicated servers and database",
             "Enhanced SLA and security",
-            "SSO/SAML",
-            "Enterprise add-ons available"
+            "SSO/SAML"
         ],
         highlight: false,
         buttonType: "quote",
