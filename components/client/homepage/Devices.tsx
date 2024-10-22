@@ -3,9 +3,9 @@ import React from "react"
 
 const Devices = () => {
     return (
-        <div className="flex flex-col justify-center items-center py-20">
+        <div className="flex flex-col justify-center items-center py-12">
             <h2 className="text-4xl md:text-6xl font-semibold">
-                Works on Any Device
+                Access on Any Device
             </h2>
 
             <Image

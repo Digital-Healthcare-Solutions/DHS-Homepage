@@ -17,7 +17,6 @@ const EchoSettingsVideo = () => {
                 loop
                 muted
                 playsInline
-                //pause on click
             >
                 <source src="/echoSettings.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

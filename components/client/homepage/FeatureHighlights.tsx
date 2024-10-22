@@ -10,8 +10,9 @@ import {
 import { Mic, FileText, Users, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { link } from "fs"
 
-const FeatureHighlight = ({ icon: Icon, title, description }) => (
+const FeatureHighlight = ({ icon: Icon, title, description, link }) => (
     <Card className="p-2 rounded-lg dark:bg-neutral-900">
         <CardContent>
             <CardHeader>
@@ -31,9 +32,11 @@ const FeatureHighlight = ({ icon: Icon, title, description }) => (
             </CardHeader>
         </CardContent>
         <CardFooter className="flex justify-center">
-            <Button variant="outline" size="sm">
-                Show Me
-            </Button>
+            <Link href={link}>
+                <Button variant="outline" size="sm">
+                    Show Me
+                </Button>
+            </Link>
         </CardFooter>
     </Card>
 )
@@ -44,19 +47,22 @@ const FeatureHighlights = () => {
             icon: Mic,
             title: "Realtime Transcription",
             description:
-                "Instantly transcribe speech to text in real-time during patient visits, saving time and enhancing accuracy."
+                "Instantly transcribe speech to text in real-time during patient visits, saving time and enhancing accuracy.",
+            link: "/#demo-video"
         },
         {
             icon: FileText,
             title: "Customizable Template Builder",
             description:
-                "Create and modify note templates with our intuitive drag-and-drop interface, tailored to your specific needs."
+                "Create and modify note templates with our intuitive drag-and-drop interface, tailored to your specific needs.",
+            link: "/#settings-demo"
         },
         {
             icon: Users,
             title: "Team Collaboration",
             description:
-                "Seamlessly share and collaborate on patient notes between nurses and doctors, enhancing communication and care coordination."
+                "Seamlessly share and collaborate on patient notes between nurses and doctors, enhancing communication and care coordination.",
+            link: "/#team-collaboration"
         }
     ]
 
