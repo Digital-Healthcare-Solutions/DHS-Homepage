@@ -3,7 +3,10 @@ import React from "react"
 
 const EchoSettingsVideo = () => {
     return (
-        <div className="flex flex-col justify-center items-center py-20">
+        <div
+            className="flex flex-col justify-center items-center py-20"
+            id="settings-demo"
+        >
             <h2 className="p-10 text-4xl font-semibold">
                 Customize your notes to to perfectly suit your style.
             </h2>

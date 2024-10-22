@@ -13,6 +13,7 @@ const Devices = () => {
                 alt="Mobile and Laptop devices"
                 width={1000}
                 height={540}
+                className="hover:scale-105 transform transition-transform duration-300"
             />
         </div>
     )

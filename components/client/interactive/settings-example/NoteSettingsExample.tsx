@@ -211,16 +211,18 @@ const NoteSettingsExample = () => {
                                 toggleExpand={toggleExpand}
                             />
                         </div>
-                        <div className="border dark:border-neutral-700 rounded-md p-1 hidden md:block">
-                            <h3 className="text-lg text-center font-semibold">
+                        <div className="hidden md:block">
+                            <h3 className="text-lg text-center font-semibold mb-2">
                                 Note Preview
                             </h3>
-                            {elements.map((element, index) => (
-                                <PreviewCard
-                                    element={element}
-                                    key={element.id}
-                                />
-                            ))}
+                            <div className="border dark:border-neutral-700 rounded-md p-1">
+                                {elements.map((element, index) => (
+                                    <PreviewCard
+                                        element={element}
+                                        key={element.id}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </section>
                 ) : (

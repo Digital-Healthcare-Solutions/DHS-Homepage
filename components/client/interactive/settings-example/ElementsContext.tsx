@@ -44,7 +44,7 @@ export const NoteElementsProvider: React.FC<{ children: ReactNode }> = ({
     )
     const [localNoteType, setLocalNoteType] = useState<
         "soap" | "sections" | "nurse"
-    >("sections")
+    >("soap")
 
     const updateElements = useUpdateElements(localNoteType)
 

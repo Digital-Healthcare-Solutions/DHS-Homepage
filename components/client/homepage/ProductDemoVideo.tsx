@@ -17,7 +17,10 @@ export const ProductDemoVideo = () => {
         return <div className="flex justify-center items-center py-20" />
 
     return (
-        <div className="flex flex-col justify-center items-center py-20">
+        <div
+            className="flex flex-col justify-center items-center py-20 "
+            id="demo-video"
+        >
             <h2 className="text-6xl font-semibold pb-10">How it works</h2>
             {resolvedTheme === "light" ? (
                 <Image

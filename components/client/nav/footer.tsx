@@ -13,20 +13,20 @@ const data: FooterLinksProps[] = [
         links: [
             {
                 label: "Live Transcription",
-                link: "/product/echo"
+                link: "/#demo-video"
             },
 
             {
                 label: "Drap and Drop Template Builder",
-                link: "/product/echo"
+                link: "/#settings-demo"
             },
-            {
-                label: "Advanced Editor",
-                link: "/product/echo"
-            },
+            // {
+            //     label: "Advanced Editor",
+            //     link: "/product/echo"
+            // },
             {
                 label: "Team Collaboration",
-                link: "/product/echo"
+                link: "/#team-collaboration"
             }
         ]
     },
