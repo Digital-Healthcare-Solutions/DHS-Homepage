@@ -1,3 +1,5 @@
+"use client"
+
 import {
     Accordion,
     AccordionContent,
@@ -5,6 +7,8 @@ import {
     AccordionTrigger
 } from "@/components/ui/accordion"
 import React from "react"
+import { NoteElementsProvider } from "./ElementsContext"
+import NoteSettingsExample from "./NoteSettingsExample"
 
 const InteractiveDragandDropDemo = () => {
     return (
@@ -20,18 +24,9 @@ const InteractiveDragandDropDemo = () => {
                         interface
                     </AccordionTrigger>
                     <AccordionContent variant="outlined" className="">
-                        <div className="flex justify-center items-center p-10">
-                            <div className="flex flex-col gap-5">
-                                <div className="flex gap-5">
-                                    <div className="w-20 h-20 bg-gray-300 rounded-lg"></div>
-                                    <div className="w-20 h-20 bg-gray-300 rounded-lg"></div>
-                                </div>
-                                <div className="flex gap-5">
-                                    <div className="w-20 h-20 bg-gray-300 rounded-lg"></div>
-                                    <div className="w-20 h-20 bg-gray-300 rounded-lg"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <NoteElementsProvider>
+                            <NoteSettingsExample />
+                        </NoteElementsProvider>
                     </AccordionContent>
                 </AccordionItem>
             </Accordion>

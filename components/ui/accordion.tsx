@@ -14,7 +14,7 @@ const accordionItemVariants = cva("border-b", {
         variant: {
             default: "",
             filled: "bg-neutral-100 hover:bg-neutral-200/75 dark:bg-zinc-800 dark:hover:bg-neutral-800/80 rounded-lg mb-2",
-            outlined: "border rounded-lg mb-2 dark:bg-neutral-800"
+            outlined: "border rounded-lg mb-2 dark:bg-neutral-800/90"
         }
     },
     defaultVariants: {

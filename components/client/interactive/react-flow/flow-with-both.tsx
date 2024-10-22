@@ -14,7 +14,10 @@ import ReactFlow, {
 import { useTheme } from "next-themes"
 
 import "reactflow/dist/style.css"
-import { initialEdgesBoth, initialNodesBoth } from "../../../utils/bothCallFlow"
+import {
+    initialEdgesBoth,
+    initialNodesBoth
+} from "../../../../utils/bothCallFlow"
 
 const FlowWithBoth = () => {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodesBoth)

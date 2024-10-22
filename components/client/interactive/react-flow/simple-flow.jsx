@@ -17,7 +17,7 @@ import "reactflow/dist/style.css"
 import {
     initialEdgesSimple,
     initialNodesSimple
-} from "../../utils/simpleFlowNodes"
+} from "../../../../utils/simpleFlowNodes"
 
 const SimpleFlow = () => {
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodesSimple)

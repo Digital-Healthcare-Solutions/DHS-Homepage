@@ -8,7 +8,7 @@ import EchoSettingsVideo from "@/components/client/homepage/EchoSettingsVideo"
 import FeatureHighlights from "@/components/client/homepage/FeatureHighlights"
 import InviteUsers from "@/components/client/homepage/InviteUsers"
 import Devices from "@/components/client/homepage/Devices"
-import InteractiveDragandDropDemo from "@/components/client/interactive"
+import InteractiveDragandDropDemo from "@/components/client/interactive/settings-example"
 
 const Page = () => {
     return (

@@ -227,12 +227,7 @@ const MobileNav = ({ open, setOpen }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Button
-                            onClick={() => {}}
-                            className="text-sm mb-3 ml-2"
-                        >
-                            Login
-                        </Button>
+                        <Button className="text-sm mb-3 ml-2">Login</Button>
                     </a>
                 </motion.section>
             </Card>{" "}

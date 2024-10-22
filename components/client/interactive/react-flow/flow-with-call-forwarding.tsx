@@ -17,15 +17,19 @@ import "reactflow/dist/style.css"
 import {
     initialEdgesSimple,
     initialNodesSimple
-} from "../../../utils/simpleFlowNodes"
+} from "../../../../utils/simpleFlowNodes"
 import {
-    initialNodesAgent,
-    initialEdgesAgent
-} from "../../../utils/agentCallFlow"
+    initialEdgesForwarding,
+    initialNodesForwarding
+} from "../../../../utils/forwarCallFlow"
 
-const FlowWithAgent = () => {
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodesAgent)
-    const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdgesAgent)
+const FlowWithCallForwarding = () => {
+    const [nodes, setNodes, onNodesChange] = useNodesState(
+        initialNodesForwarding
+    )
+    const [edges, setEdges, onEdgesChange] = useEdgesState(
+        initialEdgesForwarding
+    )
     const [isOverlayVisible, setIsOverlayVisible] = useState(true) // Overlay visibility state
 
     const onConnect = useCallback(
@@ -69,12 +73,12 @@ const FlowWithAgent = () => {
             <ReactFlow
                 nodes={nodes}
                 edges={edges}
-                // onNodesChange={onNodesChange}
-                // onEdgesChange={onEdgesChange}
-                // onConnect={onConnect}
-                // selectionMode={SelectionMode.Partial}
-                // selectionOnDrag
-                // panOnDrag={panOnDrag}
+                onNodesChange={onNodesChange}
+                onEdgesChange={onEdgesChange}
+                onConnect={onConnect}
+                selectionMode={SelectionMode.Partial}
+                selectionOnDrag
+                panOnDrag={panOnDrag}
                 fitView
             >
                 <Controls />
@@ -100,4 +104,4 @@ const FlowWithAgent = () => {
     )
 }
 
-export default FlowWithAgent
+export default FlowWithCallForwarding

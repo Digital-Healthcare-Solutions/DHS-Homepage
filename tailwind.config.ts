@@ -117,6 +117,7 @@ module.exports = {
         }
     },
     plugins: [
+        require("tailwind-scrollbar"),
         require("@tailwindcss/aspect-ratio"),
         addVariablesForColors,
         function ({ matchUtilities, theme }: any) {
