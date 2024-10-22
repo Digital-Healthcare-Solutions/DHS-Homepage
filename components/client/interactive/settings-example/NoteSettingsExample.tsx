@@ -194,9 +194,7 @@ const NoteSettingsExample = () => {
                         <div className="flex flex-col gap-4 w-full">
                             <ElementList
                                 title={`${
-                                    localNoteType === "nurse"
-                                        ? "Nurse / Subjective"
-                                        : localNoteType === "soap"
+                                    localNoteType === "soap"
                                         ? "SOAP"
                                         : "Sections"
                                 } Note Elements`}
@@ -206,7 +204,7 @@ const NoteSettingsExample = () => {
                             />
                             <ElementList
                                 title="Unused Elements"
-                                elements={unusedElements}
+                                elements={unusedElements || []}
                                 droppableId="unused-elements"
                                 toggleExpand={toggleExpand}
                             />

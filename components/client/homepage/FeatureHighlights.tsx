@@ -70,7 +70,7 @@ const FeatureHighlights = () => {
         <div className="py-32 ">
             <div className="container mx-auto bg-blue-500 p-8 md:p-20 rounded-lg">
                 <h2 className="text-5xl text-white font-raleway font-bold text-center pb-14">
-                    Instant clinical notes tailored to you
+                    Effortless Notes, Designed to Fit Your Workflow
                 </h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     {features.map((feature, index) => (

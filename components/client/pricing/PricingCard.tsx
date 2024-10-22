@@ -60,7 +60,7 @@ const PricingCard = ({
                 ))}
             </ul>
         </div>
-        {/* {addOns && addOns.length > 0 && (
+        {addOns && addOns.length > 0 && (
             <div className="mt-auto p-8">
                 <h4 className="text-lg font-semibold text-blue-900 dark:text-blue-300 mb-3">
                     {title} Add-ons:
@@ -84,7 +84,7 @@ const PricingCard = ({
                     ))}
                 </ul>
             </div>
-        )} */}
+        )}
         <div className="p-6 mt-auto">
             {btnType === "link" ? (
                 <Link href="https://app.getaxon.ai/signup">

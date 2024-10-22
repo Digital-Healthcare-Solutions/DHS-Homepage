@@ -45,7 +45,7 @@ export function Hero() {
                         />
                     </h1>
 
-                    <p className="mt-8 text-2xl sm:text-xl text-gray-600 dark:text-gray-400">
+                    <p className="mt-8 text-2xl sm:text-xl text-gray-600 dark:text-gray-400 md:max-w-3xl">
                         {firstFinished && (
                             <TypeAnimation
                                 sequence={[
