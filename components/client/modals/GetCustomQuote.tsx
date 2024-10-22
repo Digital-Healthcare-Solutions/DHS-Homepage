@@ -196,7 +196,7 @@ const GetCustomQuote = ({
                         }
                     />
 
-                    <MultiSelect
+                    {/* <MultiSelect
                         label="Select Features"
                         labelWithAsterisk
                         placeholder="Select features"
@@ -216,7 +216,7 @@ const GetCustomQuote = ({
                             { label: "Echo9", value: "Echo9", icon: User },
                             { label: "Echo10", value: "Echo10", icon: User }
                         ]}
-                    />
+                    /> */}
 
                     <div className="flex justify-center pt-5">
                         <Button type="submit" loading={isLoading}>
