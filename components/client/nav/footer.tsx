@@ -119,7 +119,8 @@ function StatusIndicator({ status }: { status: StatusResponse | null }) {
         none: "bg-blue-500 text-white",
         minor: "bg-yellow-500 text-black",
         major: "bg-orange-500 text-white",
-        critical: "bg-red-500 text-white"
+        critical: "bg-red-500 text-white",
+        maintenance: "bg-gray-500 text-white"
     }
 
     return (
@@ -136,6 +137,8 @@ function StatusIndicator({ status }: { status: StatusResponse | null }) {
 
 export async function Footer() {
     const systemStatus = await getSystemStatus()
+
+    console.log(systemStatus)
 
     const groups = data.map((group) => {
         const links = group.links.map((link, index) =>
