@@ -1,3 +1,13 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Axon AI | Security and Compliance",
+    description:
+        "Learn about the security measures and compliance practices we have in place to protect your data on Axon AI.",
+    keywords:
+        "security, compliance, HIPAA, data protection, data security, privacy, PHI, protected health information, BAA, encryption, access controls, audit logs, incident response, data retention, data deletion, user responsibilities, security updates, contact information"
+}
+
 const Security = () => {
     return (
         <div className="py-14">
@@ -8,12 +18,13 @@ const Security = () => {
 
                 <section className="space-y-6">
                     <p>
-                        At Digital Healthcare Solutions, we take the security
-                        and privacy of your data seriously. Our platform, Axon
-                        (getaxon.ai), is designed with robust security measures
-                        to protect sensitive information, including Protected
-                        Health Information (PHI) in compliance with the Health
-                        Insurance Portability and Accountability Act (HIPAA).
+                        At Digital Healthcare Solutions LLC, we take the
+                        security and privacy of your data seriously. Our
+                        platform, Axon AI (getaxon.ai), is designed with robust
+                        security measures to protect sensitive information,
+                        including Protected Health Information (PHI) in
+                        compliance with the Health Insurance Portability and
+                        Accountability Act (HIPAA).
                     </p>
 
                     <h2 className="text-2xl font-semibold">
@@ -159,7 +170,7 @@ const Security = () => {
                         </h3>
                         <p>
                             Users are responsible for ensuring that any PHI
-                            uploaded or shared on Axon complies with HIPAA
+                            uploaded or shared on Axon AI complies with HIPAA
                             regulations. This includes obtaining necessary
                             consents and authorizations from patients.
                         </p>

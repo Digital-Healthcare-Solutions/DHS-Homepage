@@ -1,10 +1,14 @@
+import AddOnPricing from "@/components/client/pricing/AddOnPricing"
+import EnterpriseAlert from "@/components/client/pricing/EnterpriseAlert"
 import PricingCard from "@/components/client/pricing/PricingCard"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Building2 } from "lucide-react"
 import { Metadata } from "next"
 import { features } from "process"
 // import PricingSection from "../components/client/pricing/PricingSection"
 
 export const metadata: Metadata = {
-    title: "Pricing",
+    title: "Axon AI | Pricing",
     description:
         "Flexible pricing options to suit healthcare providers of all sizes. All plans include custom onboarding, training, and access to new features.",
     keywords:
@@ -13,16 +17,34 @@ export const metadata: Metadata = {
 
 const plans = [
     {
-        title: "Individual",
-        price: "99",
-        description: "Ideal for single practitioners.",
+        title: "Starter",
+        price: "Free Forever",
+        description: "For individual practitioners with basic needs.",
         features: [
+            "1 User",
             "Live transcription",
             "Unlimited notes",
-            "Customizable templates",
+            "SOAP, Sections, and Nurse note templates",
             "Dictation Mode"
         ],
         highlight: false,
+        buttonType: "start",
+        buttonText: "Get Started"
+    },
+    {
+        title: "Individual",
+        price: "100",
+        description: "For solo practitioners with advanced needs.",
+        features: [
+            "1 User",
+            "Everything in Free",
+            "More advanced 'reasoning' AI models",
+            "Unlimited Customizable templates",
+            "SmartForm included",
+            "First 100 pages Efax free",
+            "Free Scheduling software"
+        ],
+        highlight: true,
         buttonType: "start",
         buttonText: "Start 14 Day Free Trial"
         // addOns: [
@@ -48,14 +70,16 @@ const plans = [
     },
     {
         title: "Team",
-        price: "199",
-        description: "For small practices and clinics with up to 10 users.",
+        price: "250",
+        description: "For small practices and clinics with multiple users.",
         features: [
+            "Up to 10 Users",
             "Everything in Individual",
             "Team collaboration",
-            "Shared templates & questionnaires"
+            "Shared templates & questionnaires",
+            "EMR integration included (for select EMRs)"
         ],
-        highlight: true,
+        highlight: false,
         buttonType: "start",
         buttonText: "Start 14 Day Free Trial"
         // addOns: [
@@ -71,45 +95,14 @@ const plans = [
         //             "7500 fax pages included, $0.06 per additional page"
         //     }
         // ]
-        // addOns: [
-        //     {
-        //         name: "EMR Integration",
-        //         price: "$250/month",
-        //         description: "Upload notes to your EMR with a single click"
-        //     }
-        // ]
-    },
-    {
-        title: "Enterprise",
-        price: "Custom",
-        description:
-            "Tailored solutions for large organizations with complex requirements.",
-        // features: [
-        //     "Everything in Premium",
-        //     "Custom texts & call minutes",
-        //     "Custom / proprietary solutions",
-        //     "Dedicated servers and database",
-        //     "Enhanced SLA and security",
-        //     "SSO/SAML",
-        //     "Enterprise add-ons available"
-        // ],
-        features: [
-            "Everything in Team",
-            "Dedicated servers and database",
-            "Enhanced SLA and security",
-            "SSO/SAML",
-            "API access"
-        ],
-        highlight: false,
-        buttonType: "quote",
-        buttonText: "Get Custom Quote"
+        //
     }
 ]
 const Pricing = () => {
     return (
         <section className="flex justify-center items-center pb-20 pt-8">
             <div className="flex flex-col items-center py-4 overflow-x-scroll md:overflow-x-hidden w-full">
-                <div className="bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-gray-900 py-16 px-4 transition-colors duration-300 rounded-lg w-fit">
+                <div className="bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-gray-900 py-16 px-4 transition-colors duration-300 rounded-lg w-fit mb-20">
                     <div className="max-w-7xl mx-auto">
                         <h1 className="text-4xl md:text-5xl font-bold text-center text-blue-900 dark:text-blue-200 mb-4">
                             Choose Your Plan
@@ -124,18 +117,17 @@ const Pricing = () => {
                                 <PricingCard
                                     key={index}
                                     {...plan}
-                                    btnType={index === 2 ? "quote" : "link"}
+                                    btnType={"link"}
                                     // addOns={plan.addOns}
                                 />
                             ))}
-
-                            {/* <GetCustomQuote
-                isModalOpen={isModalOpen}
-                setIsModalOpen={setIsModalOpen}
-            /> */}
                         </div>
                     </div>
                 </div>
+                <div className="pb-40 w-full">
+                    <AddOnPricing />
+                </div>
+                <EnterpriseAlert />
             </div>
         </section>
     )

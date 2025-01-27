@@ -7,14 +7,9 @@ import { Toaster } from "@/components/ui/sonner"
 
 export const metadata: Metadata = {
     title: "Axon AI",
-    description: "Welcome to Axon AI"
+    description: "All in one AI platform for medical offices"
 }
 
-const raleway = Raleway({
-    subsets: ["latin"],
-    display: "swap",
-    variable: "--font-Raleway"
-})
 const rubik = Rubik({
     subsets: ["latin"],
     display: "swap",

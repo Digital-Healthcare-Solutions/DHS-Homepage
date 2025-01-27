@@ -1,3 +1,13 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Axon AI | Terms of Service",
+    description:
+        "By accessing or using Axon AI, you agree to be bound by these Terms of Service. Learn more about your responsibilities, intellectual property rights, and dispute resolution.",
+    keywords:
+        "terms of service, terms, service, agreement, user responsibilities, intellectual property, disclaimer, limitation of liability, indemnification, modifications, termination, governing law, dispute resolution, severability, entire agreement, contact information"
+}
+
 const Terms = () => {
     return (
         <div className="py-14">
@@ -9,9 +19,9 @@ const Terms = () => {
                 <section className="space-y-6">
                     <p>
                         These Terms of Service ("Terms") govern your use of Axon
-                        (getaxon.ai) and its related services, provided by
+                        AI (getaxon.ai) and its related services, provided by
                         Digital Healthcare Solutions ("we," "us," or "our"). By
-                        accessing or using the Axon platform, you agree to be
+                        accessing or using the Axon AI platform, you agree to be
                         bound by these Terms.
                     </p>
 
@@ -19,8 +29,8 @@ const Terms = () => {
                         1. Acceptance of Terms
                     </h2>
                     <p>
-                        By accessing or using Axon, you affirm that you are of
-                        legal age and have the capacity to enter into this
+                        By accessing or using Axon AI, you affirm that you are
+                        of legal age and have the capacity to enter into this
                         agreement. If you are accessing or using the platform on
                         behalf of an organization, you represent and warrant
                         that you have the authority to bind that organization to
@@ -37,9 +47,9 @@ const Terms = () => {
                         </h3>
                         <p>
                             You may need to create an account to use certain
-                            features of Axon. You agree to provide accurate and
-                            complete information during the registration process
-                            and to keep your account credentials secure.
+                            features of Axon AI. You agree to provide accurate
+                            and complete information during the registration
+                            process and to keep your account credentials secure.
                         </p>
                     </div>
 
@@ -51,19 +61,20 @@ const Terms = () => {
                             You are solely responsible for complying with all
                             applicable laws and regulations, including the
                             Health Insurance Portability and Accountability Act
-                            (HIPAA). By posting HIPAA-protected content on Axon,
-                            you represent and warrant that you have obtained the
-                            necessary consents and authorizations from patients
-                            or individuals involved, as required by HIPAA, and
-                            that you will handle and protect this information in
-                            compliance with HIPAA regulations. You acknowledge
-                            and understand that Digital Healthcare Solutions
-                            will act as a business associate and will enter into
-                            a separate Business Associate Agreement with you
-                            upon request to establish the obligations and
-                            responsibilities of each party in accordance with
-                            HIPAA. You may find the BAA request form in the
-                            settings page of your account.
+                            (HIPAA). By posting HIPAA-protected content on Axon
+                            AI, you represent and warrant that you have obtained
+                            the necessary consents and authorizations from
+                            patients or individuals involved, as required by
+                            HIPAA, and that you will handle and protect this
+                            information in compliance with HIPAA regulations.
+                            You acknowledge and understand that Digital
+                            Healthcare Solutions will act as a business
+                            associate and will enter into a separate Business
+                            Associate Agreement with you upon request to
+                            establish the obligations and responsibilities of
+                            each party in accordance with HIPAA. You may find
+                            the BAA request form in the settings page of your
+                            account.
                         </p>
                     </div>
 
@@ -77,7 +88,7 @@ const Terms = () => {
                         </p>
                         <ul className="list-disc list-inside pl-5">
                             <li>
-                                Using Axon for any illegal or unauthorized
+                                Using Axon AI for any illegal or unauthorized
                                 purpose.
                             </li>
                             <li>
@@ -87,7 +98,7 @@ const Terms = () => {
                             <li>Impersonating any person or entity.</li>
                             <li>
                                 Interfering with or disrupting the functionality
-                                of Axon.
+                                of Axon AI.
                             </li>
                             <li>
                                 Uploading or transmitting any malicious code or
@@ -99,7 +110,7 @@ const Terms = () => {
                             </li>
                             <li>
                                 Engaging in any activity that may adversely
-                                affect the performance or security of Axon.
+                                affect the performance or security of Axon AI.
                             </li>
                         </ul>
                     </div>
@@ -111,13 +122,13 @@ const Terms = () => {
                     <div>
                         <h3 className="text-xl font-semibold">a. Ownership:</h3>
                         <p>
-                            Axon and all its associated content, including but
-                            not limited to text, graphics, logos, and software,
-                            are the intellectual property of Digital Healthcare
-                            Solutions or its licensors. These Terms do not grant
-                            you any rights to use our trademarks, service marks,
-                            or copyrighted materials without prior written
-                            consent.
+                            Axon AI and all its associated content, including
+                            but not limited to text, graphics, logos, and
+                            software, are the intellectual property of Digital
+                            Healthcare Solutions or its licensors. These Terms
+                            do not grant you any rights to use our trademarks,
+                            service marks, or copyrighted materials without
+                            prior written consent.
                         </p>
                     </div>
 
@@ -125,8 +136,8 @@ const Terms = () => {
                         <h3 className="text-xl font-semibold">b. Feedback:</h3>
                         <p>
                             We welcome any feedback or suggestions you provide
-                            regarding Axon. By submitting feedback, you grant us
-                            the right to use and incorporate it into our
+                            regarding Axon AI. By submitting feedback, you grant
+                            us the right to use and incorporate it into our
                             products or services without any obligation to
                             compensate you.
                         </p>
@@ -136,8 +147,8 @@ const Terms = () => {
                         4. Disclaimer of Warranties
                     </h2>
                     <p>
-                        Axon is provided on an "as is" and "as available" basis
-                        without warranties of any kind, either express or
+                        Axon AI is provided on an "as is" and "as available"
+                        basis without warranties of any kind, either express or
                         implied. We do not warrant that the platform will be
                         uninterrupted, error-free, or completely secure.
                     </p>
@@ -151,8 +162,8 @@ const Terms = () => {
                         employees, and agents shall not be liable for any
                         direct, indirect, incidental, consequential, or special
                         damages arising out of or in connection with your use of
-                        Axon, even if we have been advised of the possibility of
-                        such damages.
+                        Axon AI, even if we have been advised of the possibility
+                        of such damages.
                     </p>
 
                     <h2 className="text-2xl font-semibold">
@@ -164,7 +175,7 @@ const Terms = () => {
                         directors, employees, and agents from any claims,
                         liabilities, damages, losses, or expenses, including
                         reasonable attorneys' fees, arising out of or relating
-                        to your use of Axon or violation of these Terms.
+                        to your use of Axon AI or violation of these Terms.
                     </p>
 
                     <h2 className="text-2xl font-semibold">
@@ -172,10 +183,11 @@ const Terms = () => {
                     </h2>
                     <p>
                         We reserve the right to modify, suspend, or terminate
-                        Axon or any part of it at any time without prior notice.
-                        We may also update these Terms from time to time, and
-                        your continued use of Axon after any modifications shall
-                        constitute your acceptance of the updated Terms.
+                        Axon AI or any part of it at any time without prior
+                        notice. We may also update these Terms from time to
+                        time, and your continued use of Axon AI after any
+                        modifications shall constitute your acceptance of the
+                        updated Terms.
                     </p>
 
                     <h2 className="text-2xl font-semibold">
@@ -203,7 +215,7 @@ const Terms = () => {
                     <p>
                         These Terms constitute the entire agreement between you
                         and Digital Healthcare Solutions regarding your use of
-                        Axon and supersede any prior agreements.
+                        Axon AI and supersede any prior agreements.
                     </p>
 
                     <h2 className="text-2xl font-semibold">

@@ -1,3 +1,13 @@
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Axon AI | Privacy Policy",
+    description:
+        "Learn how Axon AI collects, uses, and protects your personal information and Protected Health Information (PHI) in our Privacy Policy.",
+    keywords:
+        "privacy policy, data protection, data privacy, personal information, PHI, healthcare, Axon AI Privacy Policy"
+}
+
 const PrivacyPolicy = () => {
     return (
         <div className="py-14">

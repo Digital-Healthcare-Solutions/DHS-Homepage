@@ -38,9 +38,11 @@ const PricingCard = ({
             </h3>
             <div className="mb-4">
                 <span className="text-4xl font-bold text-blue-700 dark:text-blue-400">
-                    {price !== "Custom" ? `$${price}` : price}
+                    {price !== "Custom" && price !== "Free Forever"
+                        ? `$${price}`
+                        : price}
                 </span>
-                {price !== "Custom" && (
+                {price !== "Custom" && price !== "Free Forever" && (
                     <span className="text-blue-600 dark:text-blue-300">
                         /month
                     </span>

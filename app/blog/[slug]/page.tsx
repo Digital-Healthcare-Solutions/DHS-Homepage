@@ -64,10 +64,10 @@ export async function generateMetadata({
     ]
 
     return {
-        title: `${post.title} | Digital Healthcare Solutions`,
+        title: `${post.title} | Axon AI`,
         description: post.description,
         openGraph: {
-            title: `${post.title} | Digital Healthcare Solutions`,
+            title: `${post.title} |Axon AI`,
             description: post.description,
             type: "article",
             publishedTime: post._createdAt,
