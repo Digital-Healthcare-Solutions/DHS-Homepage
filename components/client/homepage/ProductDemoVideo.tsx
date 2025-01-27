@@ -19,7 +19,10 @@ export const ProductDemoVideo = () => {
   }
 
   return (
-    <section className="relative py-32 overflow-hidden" id="demo-video">
+    <section
+      className="relative py-32 overflow-hidden bg-gradient-to-b dark:from-neutral-900 to dark:to-neutral-950"
+      id="demo-video"
+    >
       <div className="absolute inset-0 bg-center opacity-10"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -54,12 +57,7 @@ export const ProductDemoVideo = () => {
 
         <div className="text-center mt-12">
           <Link href="/product/ai-scribe">
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-            >
-              Show me more
-            </Button>
+            <Button size="lg">Show me more</Button>
           </Link>
         </div>
       </div>

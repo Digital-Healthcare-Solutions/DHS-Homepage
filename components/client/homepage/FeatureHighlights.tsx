@@ -68,8 +68,8 @@ const FeatureHighlights = () => {
   return (
     <section className="relative py-32 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white dark:from-neutral-950 dark:to-neutral-900"></div>
-      <div className="absolute right-0 top-0 h-96 w-96 bg-blue-200 rounded-full blur-3xl opacity-20 dark:bg-blue-900 dark:opacity-30"></div>
-      <div className="absolute left-0 bottom-0 h-96 w-96 bg-blue-200 rounded-full blur-3xl opacity-20 dark:bg-blue-900 dark:opacity-30"></div>
+      <div className="absolute left-0 top-36 h-96 w-96 bg-blue-200 rounded-full blur-3xl opacity-20 dark:bg-blue-900 dark:opacity-30"></div>
+      <div className="absolute right-0 bottom-36 h-96 w-96 bg-blue-200 rounded-full blur-3xl opacity-20 dark:bg-blue-900 dark:opacity-30"></div>
 
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
@@ -90,10 +90,7 @@ const FeatureHighlights = () => {
 
         <div className="text-center mt-16">
           <Link href="https://app.getaxon.ai/signup">
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
-            >
+            <Button size="lg">
               <Send className="w-5 h-5 mr-2" />
               Get Started for Free
             </Button>
