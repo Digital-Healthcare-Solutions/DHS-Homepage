@@ -21,19 +21,25 @@ import {
 
 const CallCenterPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white dark:from-neutral-950 dark:to-neutral-900">
+    // <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-white dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-900">
+    <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-sky-50 to-white dark:from-neutral-950 dark:to-neutral-900"></div>
-        <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-sky-100 to-transparent dark:from-sky-950 dark:to-transparent"></div>
+      <section className="relative overflow-hidden pb-32">
+        {/* Background gradients with smoother transitions */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-50 via-blue-50/50 to-white dark:from-neutral-950 dark:via-neutral-950/90 dark:to-neutral-900"></div>
+        <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-blue-100/80 to-transparent dark:from-blue-950/50 dark:to-transparent"></div>
 
-        {/* Decorative Elements */}
-        <div className="absolute right-0 top-1/4 w-96 h-96 bg-gradient-to-br from-sky-200 to-blue-300 dark:from-sky-800 dark:to-blue-900 rounded-full blur-3xl opacity-20 -z-10"></div>
-        <div className="absolute left-0 bottom-1/4 w-96 h-96 bg-gradient-to-tr from-blue-200 to-sky-300 dark:from-blue-800 dark:to-sky-900 rounded-full blur-3xl opacity-20 -z-10"></div>
+        {/* Decorative Elements with extended reach */}
+        <div className="absolute right-0 top-20 w-[800px] h-[800px] bg-gradient-to-br from-blue-200/40 to-sky-300/40 dark:from-blue-800/30 dark:to-sky-900/30 rounded-full blur-3xl opacity-60  transform translate-x-1/4"></div>
+        <div className="absolute left-0 bottom-10 w-[600px] h-[600px] bg-gradient-to-tr from-sky-200/40 to-blue-300/60 dark:from-sky-800/30 dark:to-blue-900/30 rounded-full blur-3xl opacity-50  transform -translate-x-1/4 translate-y-1/4"></div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32 relative">
+        {/* Additional subtle gradient for transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-white via-white/95 to-transparent dark:from-neutral-950 dark:via-neutral-950/75 dark:to-transparent"></div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 relative">
+          {/* Rest of the hero content remains the same */}
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-sky-500 dark:from-blue-400 dark:to-sky-400 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-sky-600 to-blue-500 dark:from-sky-400 dark:to-blue-400 bg-clip-text text-transparent">
               Automate phone based workflows with conversational AI
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-10">
@@ -44,14 +50,14 @@ const CallCenterPage = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button
                 size="lg"
-                className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600"
+                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
               >
                 Try Free Demo
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-sky-200 text-sky-600 hover:bg-sky-50 dark:border-sky-800 dark:text-sky-400 dark:hover:bg-sky-950"
+                className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-950"
               >
                 Listen to Sample Calls
               </Button>
@@ -60,9 +66,10 @@ const CallCenterPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card className="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-6">
+              {/* Card contents remain the same */}
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
-                  <Heart className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                <div className="p-3 rounded-xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900">
+                  <Heart className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -74,10 +81,11 @@ const CallCenterPage = () => {
                 </div>
               </div>
             </Card>
+            {/* Other cards remain the same */}
             <Card className="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
-                  <Clock className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                <div className="p-3 rounded-xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900">
+                  <Clock className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -91,8 +99,8 @@ const CallCenterPage = () => {
             </Card>
             <Card className="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
-                  <Users className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                <div className="p-3 rounded-xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900">
+                  <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 dark:text-white">
@@ -140,8 +148,8 @@ const CallCenterPage = () => {
                 className="p-8 bg-gradient-to-b from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-900 border border-gray-100 dark:border-gray-800 rounded-3xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900 mb-6">
-                    <capability.icon className="w-8 h-8 text-sky-600 dark:text-sky-400" />
+                  <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900 mb-6">
+                    <capability.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
                     {capability.title}
@@ -210,8 +218,8 @@ const CallCenterPage = () => {
                 className="p-8 bg-white dark:bg-neutral-900 border border-gray-100 dark:border-gray-800 rounded-3xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex gap-6">
-                  <div className="inline-flex p-3 h-fit rounded-2xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
-                    <section.icon className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                  <div className="inline-flex p-3 h-fit rounded-2xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900">
+                    <section.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
@@ -220,8 +228,8 @@ const CallCenterPage = () => {
                     <ul className="space-y-3">
                       {section.features.map((feature) => (
                         <li key={feature} className="flex items-center gap-3">
-                          <span className="inline-flex p-1 rounded-lg bg-sky-100 dark:bg-sky-900">
-                            <Check className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                          <span className="inline-flex p-1 rounded-lg bg-blue-100 dark:bg-blue-900">
+                            <Check className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                           </span>
                           <span className="text-gray-600 dark:text-gray-300">
                             {feature}
@@ -260,8 +268,8 @@ const CallCenterPage = () => {
                 className="p-6 bg-gradient-to-br from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-900 border border-gray-100 dark:border-gray-800 rounded-2xl hover:shadow-md transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
-                  <span className="inline-flex p-2 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
-                    <CheckCircle className="w-5 h-5 text-sky-600 dark:text-sky-400" />
+                  <span className="inline-flex p-2 rounded-xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900">
+                    <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </span>
                   <p className="font-medium text-gray-900 dark:text-white">
                     {task}
@@ -296,9 +304,9 @@ const CallCenterPage = () => {
             ].map((stat) => (
               <Card
                 key={stat.description}
-                className="p-8 text-center bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-950 dark:to-sky-950 border-0 rounded-3xl"
+                className="p-8 text-center bg-gradient-to-br from-sky-50 to-blue-50 dark:from-sky-950 dark:to-blue-950 border-0 rounded-3xl"
               >
-                <h3 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-sky-500 dark:from-blue-400 dark:to-sky-400 bg-clip-text text-transparent mb-4">
+                <h3 className="text-5xl font-bold bg-gradient-to-r from-sky-600 to-blue-500 dark:from-sky-400 dark:to-blue-400 bg-clip-text text-transparent mb-4">
                   {stat.metric}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300">

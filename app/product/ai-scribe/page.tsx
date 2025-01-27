@@ -49,8 +49,8 @@ const AIScribePage = () => {
       {/* Hero Section */}
       <section className="relative pt-20 pb-32 overflow-hidden">
         <div className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-emerald-50 to-transparent dark:from-emerald-950/30 dark:to-transparent"></div>
-        <div className="absolute right-0 top-20 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20 dark:bg-emerald-900 dark:opacity-30"></div>
-        <div className="absolute left-0 bottom-20 w-96 h-96 bg-teal-200 rounded-full blur-3xl opacity-20 dark:bg-teal-900 dark:opacity-30"></div>
+        <div className="absolute right-0 top-20 w-96 h-96 bg-emerald-200 rounded-full blur-3xl opacity-20 dark:bg-emerald-900 dark:opacity-20"></div>
+        <div className="absolute left-0 bottom-20 w-96 h-96 bg-teal-200 rounded-full blur-3xl opacity-20 dark:bg-teal-900 dark:opacity-20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -233,7 +233,7 @@ const AIScribePage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16 text-emerald-900 dark:text-emerald-100">
             Key Benefits
@@ -263,7 +263,7 @@ const AIScribePage = () => {
             ].map((benefit) => (
               <Card
                 key={benefit.title}
-                className="backdrop-blur-sm bg-white/60 dark:bg-neutral-900/60 border-0 rounded-3xl p-8"
+                className="backdrop-blur-sm bg-white/60 dark:bg-neutral-900/75 rounded-3xl p-7 transition-all duration-300 border border-emerald-200 dark:border-emerald-900/50 shadow-lg hover:border-emerald-500 dark:hover:border-emerald-700"
               >
                 <div className="flex items-center gap-6">
                   <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">

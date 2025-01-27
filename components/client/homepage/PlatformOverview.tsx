@@ -161,7 +161,7 @@ const PlatformOverview = () => {
             title="AI Scribe"
             description="Revolutionary AI-powered medical documentation that captures every detail of patient visits in real-time, allowing you to focus entirely on patient care."
             icon={Pen}
-            color="blue"
+            color="emerald"
             badge="Free"
             features={[
               "Real-time note generation",
@@ -183,7 +183,7 @@ const PlatformOverview = () => {
             title="Call Center"
             description="Streamline patient engagement with AI-powered communication tools that automate appointment reminders, appointment scheduling, follow-ups, and two-way messaging."
             icon={Phone}
-            color="purple"
+            color="blue"
             features={[
               "let AI handle scheduling",
               "Automated reminders",
@@ -206,7 +206,7 @@ const PlatformOverview = () => {
             title="eFax Automation"
             description="Eliminate paper faxes with our intelligent eFax system that automatically routes, processes, and stores documents in a HIPAA-compliant environment."
             icon={Printer}
-            color="emerald"
+            color="purple"
             features={[
               "Auto extraction of key details",
               "AI Summarization",
