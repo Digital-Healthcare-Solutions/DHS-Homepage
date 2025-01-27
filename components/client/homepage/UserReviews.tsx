@@ -28,7 +28,7 @@ const UserReviews = () => {
             title: "Physician, Family Medicine"
           }
         ]}
-        pauseOnHover={true}
+        pauseOnHover={false}
         speed="normal"
       />
       <InfiniteMovingCards
@@ -52,7 +52,7 @@ const UserReviews = () => {
             title: "Physician, Family Medicine"
           }
         ]}
-        pauseOnHover={true}
+        pauseOnHover={false}
         speed="normal"
         direction="right"
       />

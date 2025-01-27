@@ -11,8 +11,6 @@ import {
   Phone
 } from "lucide-react"
 import Link from "next/link"
-
-// Define TypeScript types for the component props
 const ProductCard = ({
   title,
   description,
@@ -29,7 +27,7 @@ const ProductCard = ({
   title: string
   description: string
   icon: React.ElementType
-  color?: string
+  color?: "blue" | "purple" | "emerald" | "amber"
   badge?: string
   features: string[]
   benefits: string[]
@@ -38,69 +36,108 @@ const ProductCard = ({
   buttonText?: string
   link: string
 }) => {
+  const borderGradientMap = {
+    blue: "group-hover:border-blue-500",
+    purple: "group-hover:border-purple-500",
+    emerald: "group-hover:border-emerald-500",
+    amber: "group-hover:border-amber-500"
+  }
+
+  const iconBgMap = {
+    blue: "bg-blue-100 dark:bg-blue-900/50",
+    purple: "bg-purple-100 dark:bg-purple-900/50",
+    emerald: "bg-emerald-100 dark:bg-emerald-900/50",
+    amber: "bg-amber-100 dark:bg-amber-900/50"
+  }
+
+  const iconColorMap = {
+    blue: "text-blue-600 dark:text-blue-300",
+    purple: "text-purple-600 dark:text-purple-300",
+    emerald: "text-emerald-600 dark:text-emerald-400",
+    amber: "text-amber-600 dark:text-amber-400"
+  }
+
   return (
-    <Card
-      className={`bg-white dark:bg-neutral-900 border-${color}-500/20 hover:border-${color}-500/40 transition-all duration-300`}
-    >
-      <div className="p-8">
-        <div className="flex items-start gap-6">
-          <div className={`bg-${color}-500/10 p-4 rounded-lg`}>
-            <Icon className={`w-8 h-8 text-${color}-400`} />
-          </div>
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-3">
-              <h3 className="text-2xl font-bold">{title}</h3>
-              {badge && (
-                <Badge
-                  className={`bg-${color}-500/20 text-${color}-700 dark:text-${color}-300 hover:bg-${color}-500/30`}
+    <div className="group">
+      <Card
+        className={`
+        relative rounded-3xl bg-white dark:bg-neutral-900 
+        border-2 border-transparent transition-colors duration-300
+        ${borderGradientMap[color]}
+        shadow-lg overflow-hidden
+      `}
+      >
+        <div className="p-8">
+          <div className="flex items-start gap-6">
+            <div className={`${iconBgMap[color]} p-4 rounded-2xl`}>
+              <Icon className={`w-8 h-8 ${iconColorMap[color]}`} />
+            </div>
+            <div className="flex-1">
+              <div className="flex items-center gap-3 mb-3">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  {title}
+                </h3>
+                {badge && (
+                  <Badge
+                    className={`${iconBgMap[color]} ${iconColorMap[color]}`}
+                  >
+                    {badge}
+                  </Badge>
+                )}
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
+                {description}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div className="space-y-4">
+                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    {featuresTitle}
+                  </h4>
+                  <ul className="space-y-3">
+                    {features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-3">
+                        <span className={`p-1 rounded-lg ${iconBgMap[color]}`}>
+                          <Check className={`w-4 h-4 ${iconColorMap[color]}`} />
+                        </span>
+                        <span className="text-gray-600 dark:text-gray-300">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
+                    {benefitsTitle}
+                  </h4>
+                  <ul className="space-y-3">
+                    {benefits.map((benefit) => (
+                      <li key={benefit} className="flex items-center gap-3">
+                        <span className={`p-1 rounded-lg ${iconBgMap[color]}`}>
+                          <Check className={`w-4 h-4 ${iconColorMap[color]}`} />
+                        </span>
+                        <span className="text-gray-600 dark:text-gray-300">
+                          {benefit}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <Link href={link}>
+                <Button
+                  className={`${iconBgMap[color]} ${iconColorMap[color]} hover:opacity-90`}
                 >
-                  {badge}
-                </Badge>
-              )}
+                  {buttonText}
+                </Button>
+              </Link>
             </div>
-            <p className="text-muted-foreground text-lg mb-6">{description}</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-              <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  {featuresTitle}
-                </h4>
-                <ul className="space-y-2">
-                  {features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-2">
-                      <Check className={`w-4 h-4 text-${color}-400`} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  {benefitsTitle}
-                </h4>
-                <ul className="space-y-2">
-                  {benefits.map((benefit) => (
-                    <li key={benefit} className="flex items-center gap-2">
-                      <Check className={`w-4 h-4 text-${color}-400`} />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <Link href={link}>
-              <Button
-                className={`bg-${color}-600 hover:bg-${color}-700 text-white`}
-              >
-                {buttonText}
-              </Button>
-            </Link>
           </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </div>
   )
 }
-
 const PlatformOverview = () => {
   return (
     <div className="py-24">
