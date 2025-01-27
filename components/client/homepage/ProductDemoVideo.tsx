@@ -20,7 +20,7 @@ export const ProductDemoVideo = () => {
 
   return (
     <section
-      className="relative py-32 overflow-hidden bg-gradient-to-b dark:from-neutral-900 to dark:to-neutral-950"
+      className="relative py-12 overflow-hidden bg-gradient-to-b dark:from-neutral-900 to dark:to-neutral-950"
       id="demo-video"
     >
       <div className="absolute inset-0 bg-center opacity-10"></div>
@@ -29,7 +29,7 @@ export const ProductDemoVideo = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
             How it works
           </h2>
-          <p className="text-lg text-neutral-600 dark:text-neutral-300">
+          <p className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-300">
             See how our AI scribe transforms your documentation workflow
           </p>
         </div>
@@ -53,12 +53,6 @@ export const ProductDemoVideo = () => {
               className="relative"
             />
           )}
-        </div>
-
-        <div className="text-center mt-12">
-          <Link href="/product/ai-scribe">
-            <Button size="lg">Show me more</Button>
-          </Link>
         </div>
       </div>
     </section>

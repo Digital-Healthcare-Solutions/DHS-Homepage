@@ -67,7 +67,7 @@ const FeatureHighlights = () => {
 
   return (
     <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-white dark:from-neutral-950 dark:to-neutral-900"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white to-white dark:from-neutral-950 dark:to-neutral-900"></div>
       <div className="absolute left-0 top-36 h-96 w-96 bg-blue-200 rounded-full blur-3xl opacity-20 dark:bg-blue-900 dark:opacity-30"></div>
       <div className="absolute right-0 bottom-36 h-96 w-96 bg-blue-200 rounded-full blur-3xl opacity-20 dark:bg-blue-900 dark:opacity-30"></div>
 

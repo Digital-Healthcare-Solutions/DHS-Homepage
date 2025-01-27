@@ -44,10 +44,10 @@ const ProductCard = ({
   }
 
   const iconBgMap = {
-    blue: "bg-blue-100 dark:bg-blue-900/50",
-    purple: "bg-purple-100 dark:bg-purple-900/50",
-    emerald: "bg-emerald-100 dark:bg-emerald-900/50",
-    amber: "bg-amber-100 dark:bg-amber-900/50"
+    blue: "bg-blue-100 hover:bg-blue-200/75 dark:bg-blue-900/50",
+    purple: "bg-purple-100 hover:bg-purple-200/75 dark:bg-purple-900/50",
+    emerald: "bg-emerald-100 hover:bg-emerald-200/75 dark:bg-emerald-900/50",
+    amber: "bg-amber-100 hover:bg-amber-200/75 dark:bg-amber-900/50"
   }
 
   const iconColorMap = {
@@ -62,7 +62,7 @@ const ProductCard = ({
       <Card
         className={`
         relative rounded-3xl bg-white dark:bg-neutral-900 
-        border-2 border-transparent transition-colors duration-300
+        border-2 border-opacity-100 transition-colors duration-300
         ${borderGradientMap[color]}
         shadow-lg overflow-hidden
       `}
@@ -164,10 +164,10 @@ const PlatformOverview = () => {
             color="emerald"
             badge="Free"
             features={[
-              "Real-time note generation",
-              "Custom templates",
-              "Voice commands",
-              "EHR integration"
+              "Real-time transcription",
+              "Customizable drag and drop templates",
+              "Dictation Mode",
+              "Team collaboration"
             ]}
             benefits={[
               "Save 2+ hours daily",
@@ -185,10 +185,10 @@ const PlatformOverview = () => {
             icon={Phone}
             color="blue"
             features={[
-              "let AI handle scheduling",
+              "Let AI handle calls and scheduling",
               "Automated reminders",
               "Two-way texting",
-              "Voice & SMS support",
+              "Voicemail & SMS support",
               "Integrates with your EMR"
             ]}
             benefits={[
@@ -199,7 +199,7 @@ const PlatformOverview = () => {
             ]}
             featuresTitle="Features"
             benefitsTitle="Impact"
-            buttonText="Learn More About Communication"
+            buttonText="Learn More About our Call Center"
             link="/product/call-center"
           />
           <ProductCard
@@ -230,16 +230,18 @@ const PlatformOverview = () => {
             icon={FileSpreadsheet}
             color="amber"
             features={[
+              "Drag-and-drop builder",
               "Mobile-friendly",
-              "Auto-population",
-              "Digital signatures",
-              "Custom branding"
+              "Auto-completing fields",
+              "Collect Digital signatures",
+              "Add Custom branding"
             ]}
             benefits={[
               "Better accuracy",
               "Faster check-in",
               "Staff efficiency",
-              "Patient satisfaction"
+              "Patient satisfaction",
+              "Secure and HIPAA-compliant"
             ]}
             featuresTitle="Key Features"
             benefitsTitle="Results"

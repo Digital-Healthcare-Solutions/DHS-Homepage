@@ -10,10 +10,7 @@
 //   return (
 //     <div>
 //       <Hero />
-//       <EchoSettingsVideo />
-//       <InteractiveDragandDropDemo />
-//       <InviteUsers />
-//       <Devices />
+//
 //       <RequestDemo />
 //     </div>
 //   )
@@ -42,6 +39,10 @@ import {
   PencilLine,
   ScrollText
 } from "lucide-react"
+import EchoSettingsVideo from "@/components/client/homepage/EchoSettingsVideo"
+import InteractiveDragandDropDemo from "@/components/client/interactive/settings-example"
+import InviteUsers from "@/components/client/homepage/InviteUsers"
+import Devices from "@/components/client/homepage/Devices"
 
 const AIScribePage = () => {
   return (
@@ -132,7 +133,7 @@ const AIScribePage = () => {
       </section>
 
       {/* Key Features */}
-      <section className="py-24 relative">
+      {/* <section className="py-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-emerald-900 dark:text-emerald-100 mb-4">
@@ -183,10 +184,10 @@ const AIScribePage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Workflow Section */}
-      <section className="py-24 bg-gradient-to-b from-white to-emerald-50/50 dark:from-neutral-900 dark:to-neutral-950">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16 text-emerald-900 dark:text-emerald-100">
             How It Works
@@ -201,19 +202,19 @@ const AIScribePage = () => {
               },
               {
                 step: "2",
-                title: "AI Processing",
+                title: "Live Transcription",
                 description:
-                  "Our AI transcribes and structures the conversation in real-time"
+                  "AI-powered transcription converts speech to text in real-time"
               },
               {
                 step: "3",
-                title: "Review & Sign",
+                title: "Generate Notes",
                 description:
-                  "Quickly review, edit if needed, and sign your notes"
+                  "Automatically generate structured clinical notes for review"
               }
             ].map((step) => (
               <div key={step.title} className="relative">
-                <div className="absolute -left-4 top-0 w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center">
+                <div className="absolute -left-6 top-10 w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center gap-2">
                   <span className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
                     {step.step}
                   </span>
@@ -231,6 +232,11 @@ const AIScribePage = () => {
           </div>
         </div>
       </section>
+
+      <EchoSettingsVideo />
+      <InteractiveDragandDropDemo />
+      <InviteUsers />
+      <Devices />
 
       {/* Benefits Section */}
       <section className="py-24 bg-white dark:bg-neutral-950">

@@ -1,7 +1,7 @@
 import React from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Clock, Check, Users, ArrowRight } from "lucide-react"
+import { Clock, Check, Users, ArrowRight, Shield } from "lucide-react"
 import Link from "next/link"
 
 const HeroV2 = () => {
@@ -20,7 +20,7 @@ const HeroV2 = () => {
         <div className="text-center">
           {/* Badge */}
           <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/40">
               <div className="h-2 w-2 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse"></div>
               <span className="text-sm font-medium text-blue-900 dark:text-blue-300">
                 AI-Powered Medical Scribe
@@ -103,14 +103,14 @@ const HeroV2 = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-transparent dark:from-blue-900/30 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               <div className="relative flex items-start gap-4">
                 <div className="p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/50">
-                  <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <Shield className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
                   <h3 className="font-semibold text-lg text-neutral-900 dark:text-white">
-                    Used by 10,000+ Providers
+                    HIPAA Compliant
                   </h3>
                   <p className="text-neutral-600 dark:text-neutral-300">
-                    Join thousands of satisfied healthcare professionals
+                    Enterprise-grade security and privacy protection
                   </p>
                 </div>
               </div>
