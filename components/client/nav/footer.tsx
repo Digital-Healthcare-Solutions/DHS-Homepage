@@ -12,7 +12,7 @@ const data: FooterLinksProps[] = [
     title: "Products",
     links: [
       {
-        label: "AI Scribe",
+        label: "Free AI Scribe",
         link: "/product/ai-scribe"
       },
       {

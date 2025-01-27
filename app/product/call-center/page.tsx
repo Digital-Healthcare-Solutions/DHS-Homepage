@@ -16,8 +16,10 @@ import {
   PhoneCall,
   Check,
   ArrowRight,
-  Heart
+  Heart,
+  Wand2
 } from "lucide-react"
+import { MdAutoAwesome } from "react-icons/md"
 
 const CallCenterPage = () => {
   return (
@@ -52,14 +54,15 @@ const CallCenterPage = () => {
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
               >
-                Try Free Demo
+                Get Started
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-950"
+                endIcon={<MdAutoAwesome size={14} />}
               >
-                Listen to Sample Calls
+                Try Interactive Demo
               </Button>
             </div>
           </div>
@@ -339,8 +342,9 @@ const CallCenterPage = () => {
               size="lg"
               variant="outline"
               className="text-white border-white hover:bg-sky-500 dark:hover:bg-sky-600"
+              endIcon={<MdAutoAwesome size={16} />}
             >
-              Schedule Demo
+              Try Interactive Demo
             </Button>
           </div>
         </div>
