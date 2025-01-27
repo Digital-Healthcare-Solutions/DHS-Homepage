@@ -1,0 +1,344 @@
+import React from "react"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import {
+  Phone,
+  Calendar,
+  Brain,
+  Clock,
+  Users,
+  Headphones,
+  MessageSquare,
+  BarChart,
+  CheckCircle,
+  Clock8,
+  Building,
+  PhoneCall,
+  Check,
+  ArrowRight,
+  Heart
+} from "lucide-react"
+
+const CallCenterPage = () => {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-sky-50 to-white dark:from-neutral-950 dark:to-neutral-900">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-sky-50 to-white dark:from-neutral-950 dark:to-neutral-900"></div>
+        <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-sky-100 to-transparent dark:from-sky-950 dark:to-transparent"></div>
+
+        {/* Decorative Elements */}
+        <div className="absolute right-0 top-1/4 w-96 h-96 bg-gradient-to-br from-sky-200 to-blue-300 dark:from-sky-800 dark:to-blue-900 rounded-full blur-3xl opacity-20 -z-10"></div>
+        <div className="absolute left-0 bottom-1/4 w-96 h-96 bg-gradient-to-tr from-blue-200 to-sky-300 dark:from-blue-800 dark:to-sky-900 rounded-full blur-3xl opacity-20 -z-10"></div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-32 relative">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-sky-500 dark:from-blue-400 dark:to-sky-400 bg-clip-text text-transparent">
+              Automate phone based workflows with conversational AI
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-10">
+              Free your healthcare team from phone duties with an AI assistant
+              that handles routine calls, allowing your staff to focus on
+              providing exceptional in-person patient care.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button
+                size="lg"
+                className="bg-sky-600 hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600"
+              >
+                Try Free Demo
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-sky-200 text-sky-600 hover:bg-sky-50 dark:border-sky-800 dark:text-sky-400 dark:hover:bg-sky-950"
+              >
+                Listen to Sample Calls
+              </Button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
+                  <Heart className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    Enhanced Care
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    More time with patients
+                  </p>
+                </div>
+              </div>
+            </Card>
+            <Card className="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
+                  <Clock className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    24/7 Support
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Always available
+                  </p>
+                </div>
+              </div>
+            </Card>
+            <Card className="bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl p-6">
+              <div className="flex items-center gap-4">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
+                  <Users className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">
+                    Staff Relief
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Reduce workload
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Capabilities Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+            Empower Your Team with AI Support
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Calendar,
+                title: "Automated Scheduling",
+                description:
+                  "Let AI handle routine scheduling tasks while your staff focuses on complex patient needs"
+              },
+              {
+                icon: Heart,
+                title: "Enhanced Patient Care",
+                description:
+                  "Free up your team to provide more personal attention and care to patients in the office"
+              },
+              {
+                icon: CheckCircle,
+                title: "Streamlined Operations",
+                description:
+                  "Reduce administrative burden and operating costs while maintaining high service quality"
+              }
+            ].map((capability) => (
+              <Card
+                key={capability.title}
+                className="p-8 bg-gradient-to-b from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-900 border border-gray-100 dark:border-gray-800 rounded-3xl hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex flex-col items-center text-center">
+                  <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900 mb-6">
+                    <capability.icon className="w-8 h-8 text-sky-600 dark:text-sky-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-white">
+                    {capability.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    {capability.description}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-neutral-900 dark:to-neutral-950">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+            Supporting Your Team
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: PhoneCall,
+                title: "Call Management",
+                features: [
+                  "Handles routine patient inquiries",
+                  "Reduces phone queue times",
+                  "Manages high call volumes",
+                  "24/7 availability"
+                ]
+              },
+              {
+                icon: Users,
+                title: "Staff Benefits",
+                features: [
+                  "More time for patient care",
+                  "Reduced stress and interruptions",
+                  "Focus on meaningful work",
+                  "Better work-life balance"
+                ]
+              },
+              {
+                icon: Building,
+                title: "Practice Efficiency",
+                features: [
+                  "Streamlined operations",
+                  "Reduced administrative costs",
+                  "Improved patient satisfaction",
+                  "Better resource allocation"
+                ]
+              },
+              {
+                icon: Brain,
+                title: "Smart Integration",
+                features: [
+                  "Works alongside your team",
+                  "Seamless handoffs when needed",
+                  "Customizable workflows",
+                  "Easy system integration"
+                ]
+              }
+            ].map((section) => (
+              <Card
+                key={section.title}
+                className="p-8 bg-white dark:bg-neutral-900 border border-gray-100 dark:border-gray-800 rounded-3xl hover:shadow-lg transition-all duration-300"
+              >
+                <div className="flex gap-6">
+                  <div className="inline-flex p-3 h-fit rounded-2xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
+                    <section.icon className="w-6 h-6 text-sky-600 dark:text-sky-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
+                      {section.title}
+                    </h3>
+                    <ul className="space-y-3">
+                      {section.features.map((feature) => (
+                        <li key={feature} className="flex items-center gap-3">
+                          <span className="inline-flex p-1 rounded-lg bg-sky-100 dark:bg-sky-900">
+                            <Check className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                          </span>
+                          <span className="text-gray-600 dark:text-gray-300">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tasks Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+            Supporting Your Daily Operations
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              "Routine Appointment Scheduling",
+              "Basic Insurance Questions",
+              "Prescription Refill Requests",
+              "General Practice Information",
+              "Appointment Reminders",
+              "Simple Form Requests",
+              "Payment Inquiries",
+              "After-hours Information",
+              "Basic Triage Support"
+            ].map((task) => (
+              <Card
+                key={task}
+                className="p-6 bg-gradient-to-br from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-900 border border-gray-100 dark:border-gray-800 rounded-2xl hover:shadow-md transition-all duration-300"
+              >
+                <div className="flex items-center gap-4">
+                  <span className="inline-flex p-2 rounded-xl bg-gradient-to-br from-blue-100 to-sky-100 dark:from-blue-900 dark:to-sky-900">
+                    <CheckCircle className="w-5 h-5 text-sky-600 dark:text-sky-400" />
+                  </span>
+                  <p className="font-medium text-gray-900 dark:text-white">
+                    {task}
+                  </p>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-neutral-900 dark:to-neutral-950">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+            Measurable Impact
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                metric: "60%",
+                description: "Reduction in staff phone time"
+              },
+              {
+                metric: "75%",
+                description: "Faster response times"
+              },
+              {
+                metric: "40%",
+                description: "Lower operational costs"
+              }
+            ].map((stat) => (
+              <Card
+                key={stat.description}
+                className="p-8 text-center bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-950 dark:to-sky-950 border-0 rounded-3xl"
+              >
+                <h3 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-sky-500 dark:from-blue-400 dark:to-sky-400 bg-clip-text text-transparent mb-4">
+                  {stat.metric}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {stat.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-sky-500 dark:from-blue-700 dark:to-sky-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Empower Your Healthcare Team
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Give your staff the support they need to focus on what matters most
+            - providing exceptional patient care
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-white text-sky-600 hover:bg-sky-50 dark:bg-gray-200 dark:hover:bg-gray-300"
+            >
+              Start Free Trial
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="text-white border-white hover:bg-sky-500 dark:hover:bg-sky-600"
+            >
+              Schedule Demo
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
+
+export default CallCenterPage
