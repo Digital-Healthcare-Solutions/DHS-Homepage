@@ -15,6 +15,15 @@ import {
   X
 } from "lucide-react"
 import { MdAutoAwesome } from "react-icons/md"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Axon AI | Efax",
+  description:
+    "Transform your practice with AI-powered eFax. Say goodbye to paper faxes and hello to intelligent document processing. Our HIPAA-compliant eFax solution automates your workflow while ensuring security and compliance.",
+  keywords:
+    "efax, electronic fax, fax, faxing, document processing, document management, secure fax, secure document management, healthcare, medical, HIPAA, HITECH, AI, artificial intelligence, machine learning, automation, digital fax, digital document management"
+}
 
 const EFaxPage = () => {
   return (

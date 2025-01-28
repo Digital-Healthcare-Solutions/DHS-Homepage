@@ -35,56 +35,56 @@ publishedAt < now()] | order(publishedAt desc) {
       {
         loc: "/", // Absolute url
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 1
       },
 
       {
         loc: "/product/ai-scribe",
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 0.9
       },
       {
         loc: "/product/call-center",
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 0.85
       },
       {
         loc: "/product/efax",
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 0.8
       },
       {
         loc: "/product/digital-forms",
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 0.8
       },
       {
         loc: "/pricing",
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 0.8
       },
       {
         loc: "/privacy-policy",
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 0.8
       },
       {
         loc: "/terms-of-service",
         lastmod: new Date().toISOString(),
-        changefreq: "daily",
+        changefreq: "monthly",
         priority: 0.8
       }
     ]
     const finalBlogsPages = blogUrls.map((url) => ({
       loc: url.url,
-      changefreq: "daily",
+      changefreq: "weekly",
       priority: 0.7
     }))
     return [...currentPages, ...finalBlogsPages]

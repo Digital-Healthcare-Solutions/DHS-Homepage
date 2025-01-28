@@ -26,6 +26,15 @@ import {
 } from "lucide-react"
 import { MdAutoAwesome } from "react-icons/md"
 import CallMeForm from "@/components/client/forms/callMeForm"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Axon AI | Call Center",
+  description:
+    "Automate phone-based workflows with conversational AI. Free your healthcare team from phone duties with an AI assistant that handles routine calls, allowing your staff to focus on providing exceptional in-person patient care.",
+  keywords:
+    "AI, phone agent, healthcare call center, healthcare phone system, healthcare automation, medical AI phone, medical phone system, 24/7 support, appointment reminders, AI healthcare, AI medical, AI phone assistant, AI phone system, AI scheduling, automated phone system, automated scheduling, call center AI, call center automation, call center software, call center system, conversational AI, healthcare AI, medical AI, medical call center, scheduling AI"
+}
 
 const features = [
   {

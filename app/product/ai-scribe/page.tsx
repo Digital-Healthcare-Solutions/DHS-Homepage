@@ -44,6 +44,15 @@ import InteractiveDragandDropDemo from "@/components/client/interactive/settings
 import InviteUsers from "@/components/client/homepage/InviteUsers"
 import Devices from "@/components/client/homepage/Devices"
 import Link from "next/link"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Axon AI | AI Scribe",
+  description:
+    "Transform patient encounters with AI-powered documentation. Automatically generate accurate clinical notes while you focus on patient care.",
+  keywords:
+    "AI Scribe, Medical Scribe, AI-powered Medical Scribe, Clinical Documentation, Clinical Notes, Medical Notes, Medical Transcription, Medical Dictation, Healthcare AI, Healthcare Technology, Medical AI Technology, Medical AI, Axon AI, Axon AI Scribe"
+}
 
 const features = [
   {

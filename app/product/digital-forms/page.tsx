@@ -17,6 +17,15 @@ import {
   Shield,
   Settings
 } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Axon AI | Digital Forms",
+  description:
+    "Create secure, AI-powered forms with our drag-and-drop builder. Automatically identify patient concerns and streamline your intake process.",
+  keywords:
+    "medical forms, digital forms, form builder, AI forms, patient intake, healthcare forms, healthcare form solution, digital health online forms, healthcare forms solution, healthcare paperless solutions"
+}
 
 const SmartFormPage = () => {
   return (
