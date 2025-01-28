@@ -21,8 +21,8 @@ const Page = () => {
       <HeroV2 />
       <FeatureHighlights />
       <ProductDemoVideo />
-
       <PlatformOverview />
+      <Devices />
       <UserReviews />
       <RequestDemo />
       <FAQ />

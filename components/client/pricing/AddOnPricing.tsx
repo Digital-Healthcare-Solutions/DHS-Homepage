@@ -6,7 +6,10 @@ import {
   CardDescription,
   CardContent
 } from "@/components/ui/card"
+import { add } from "date-fns"
 import { Check, ChevronRight, Phone, Printer } from "lucide-react"
+import GetCustomQuote from "../modals/GetCustomQuote"
+import { show } from "@intercom/messenger-js-sdk"
 
 const AddOnPricing = () => {
   const addOns = [
@@ -81,15 +84,26 @@ const AddOnPricing = () => {
                   </div>
                 </div>{" "}
                 <div className="mt-4">
-                  <span className="text-gray-600 dark:text-gray-400">
-                    starting @{" "}
-                  </span>
-                  <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
-                    ${addon.price}
-                  </span>
-                  <span className="text-gray-600 dark:text-gray-400">
-                    /month
-                  </span>
+                  {addon.title === "Call-Center" ? (
+                    <>
+                      <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
+                        <span className="hover:underline">Contact us</span> for
+                        a quote
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        starting @{" "}
+                      </span>
+                      <span className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
+                        ${addon.price}
+                      </span>
+                      <span className="text-gray-600 dark:text-gray-400">
+                        /month
+                      </span>
+                    </>
+                  )}
                 </div>
               </CardHeader>
 
@@ -106,14 +120,16 @@ const AddOnPricing = () => {
                     </div>
                   ))}
                 </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-900/50"
-                >
-                  Learn more
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </Button>
+                <div className="flex items-center justify-between">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-900/50"
+                  >
+                    Learn more
+                    <ChevronRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           )

@@ -162,7 +162,7 @@ const PlatformOverview = () => {
             description="Revolutionary AI-powered medical documentation that captures every detail of patient visits in real-time, allowing you to focus entirely on patient care."
             icon={Pen}
             color="emerald"
-            badge="Free"
+            // badge="Free"
             features={[
               "Real-time transcription",
               "Customizable drag and drop templates",

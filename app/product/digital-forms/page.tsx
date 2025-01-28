@@ -23,11 +23,6 @@ const SmartFormPage = () => {
     <div className="min-h-screen bg-amber-50/50 dark:bg-neutral-950">
       {/* Hero Section */}
       <section className="relative pb-32 pt-24">
-        <div className="absolute inset-0 overflow-hidden -z-10">
-          <div className="absolute left-1/2 top-0 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-b from-amber-200 to-amber-300 opacity-20 blur-3xl dark:from-amber-700 dark:to-amber-800"></div>
-        </div>
-        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] dark:[mask-image:linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0))] -z-10"></div>
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-900/30 mb-8">
@@ -160,16 +155,16 @@ const SmartFormPage = () => {
                 icon: Settings,
                 title: "Integration & Automation",
                 features: [
-                  "EHR integration",
                   "Automated notifications",
-                  "SMS delivery",
-                  "API access"
+                  "SMS delivery through Call Center",
+                  "Webhooks & APIs",
+                  "EMR integration"
                 ]
               }
             ].map((section) => (
               <Card
                 key={section.title}
-                className="group overflow-hidden backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70 border border-amber-100/50 dark:border-amber-900/30 hover:border-amber-200 dark:hover:border-amber-800 rounded-3xl p-8 transition-all duration-300"
+                className="group overflow-hidden backdrop-blur-sm bg-white/70 dark:bg-neutral-900/70 border border-amber-100/50 dark:border-amber-900/30 hover:border-amber-400 dark:hover:border-amber-800 rounded-3xl p-8 transition-all duration-300"
               >
                 <div className="flex gap-6">
                   <div className="inline-flex p-3 h-fit rounded-2xl bg-gradient-to-br from-amber-100 to-amber-50 dark:from-amber-900/50 dark:to-amber-900/30">

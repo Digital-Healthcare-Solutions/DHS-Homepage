@@ -43,6 +43,55 @@ import EchoSettingsVideo from "@/components/client/homepage/EchoSettingsVideo"
 import InteractiveDragandDropDemo from "@/components/client/interactive/settings-example"
 import InviteUsers from "@/components/client/homepage/InviteUsers"
 import Devices from "@/components/client/homepage/Devices"
+import Link from "next/link"
+
+const features = [
+  {
+    icon: Mic,
+    title: "Real-time Transcription",
+    description: "Converts speech to clinical notes instantly",
+    bgClass: "bg-emerald-50 dark:bg-emerald-900/30",
+    textClass: "text-emerald-900 dark:text-emerald-100",
+    descClass: "text-emerald-700 dark:text-emerald-300",
+    iconClass: "text-emerald-600 dark:text-emerald-400"
+  },
+  {
+    icon: Brain,
+    title: "Smart Analysis",
+    description: "Identifies key clinical symptoms and information",
+    bgClass: "bg-teal-50 dark:bg-teal-900/30",
+    textClass: "text-teal-900 dark:text-teal-100",
+    descClass: "text-teal-700 dark:text-teal-300",
+    iconClass: "text-teal-600 dark:text-teal-400"
+  },
+  {
+    icon: ScrollText,
+    title: "Custom Note Builder",
+    description: "Build Custom Note Templates for different visit types",
+    bgClass: "bg-emerald-50 dark:bg-emerald-900/30",
+    textClass: "text-emerald-900 dark:text-emerald-100",
+    descClass: "text-emerald-700 dark:text-emerald-300",
+    iconClass: "text-emerald-600 dark:text-emerald-400"
+  }
+]
+
+const steps = [
+  {
+    step: "1",
+    title: "Start Recording",
+    description: "Begin your patient encounter with one click recording"
+  },
+  {
+    step: "2",
+    title: "Live Transcription",
+    description: "AI-powered transcription converts speech to text in real-time"
+  },
+  {
+    step: "3",
+    title: "Generate Notes",
+    description: "Automatically generate structured clinical notes for review"
+  }
+]
 
 const AIScribePage = () => {
   return (
@@ -88,43 +137,34 @@ const AIScribePage = () => {
             </div>
 
             {/* Feature Preview Card */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl transform rotate-1 opacity-10 dark:opacity-20"></div>
-              <Card className="relative backdrop-blur-sm bg-white/80 dark:bg-neutral-900/80 border-0 shadow-xl rounded-3xl p-8">
+            <div className="relative group">
+              {/* Animated gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl transform rotate-1 opacity-10 dark:opacity-20 transition-all duration-300 ease-in-out group-hover:rotate-2 group-hover:scale-105 group-hover:opacity-30 dark:group-hover:opacity-40"></div>
+
+              {/* Main card */}
+              <Card className="relative backdrop-blur-sm bg-white/80 dark:bg-neutral-900/80 border-0 shadow-xl rounded-3xl p-8 transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:bg-white/90 dark:group-hover:bg-neutral-900/90">
                 <div className="space-y-6">
-                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-900/30">
-                    <Mic className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
-                    <div>
-                      <h3 className="font-semibold text-emerald-900 dark:text-emerald-100">
-                        Real-time Transcription
-                      </h3>
-                      <p className="text-sm text-emerald-700 dark:text-emerald-300">
-                        Converts speech to clinical notes instantly
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-teal-50 dark:bg-teal-900/30">
-                    <Brain className="w-8 h-8 text-teal-600 dark:text-teal-400" />
-                    <div>
-                      <h3 className="font-semibold text-teal-900 dark:text-teal-100">
-                        Smart Analysis
-                      </h3>
-                      <p className="text-sm text-teal-700 dark:text-teal-300">
-                        Identifies key clinical information
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-4 p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-900/30">
-                    <ClipboardCheck className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
-                    <div>
-                      <h3 className="font-semibold text-emerald-900 dark:text-emerald-100">
-                        Structured Notes
-                      </h3>
-                      <p className="text-sm text-emerald-700 dark:text-emerald-300">
-                        Automatic formatting and organization
-                      </p>
-                    </div>
-                  </div>
+                  {features.map((feature, index) => {
+                    const Icon = feature.icon
+                    return (
+                      <div
+                        key={feature.title}
+                        className={`flex items-center gap-4 p-4 rounded-2xl ${feature.bgClass} transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg transform group-hover:translate-x-1`}
+                      >
+                        <Icon
+                          className={`w-8 h-8 ${feature.iconClass} transition-transform duration-300 group-hover:scale-110`}
+                        />
+                        <div className="transition-transform duration-300">
+                          <h3 className={`font-semibold ${feature.textClass}`}>
+                            {feature.title}
+                          </h3>
+                          <p className={`text-sm ${feature.descClass}`}>
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               </Card>
             </div>
@@ -132,94 +172,30 @@ const AIScribePage = () => {
         </div>
       </section>
 
-      {/* Key Features */}
-      {/* <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-emerald-900 dark:text-emerald-100 mb-4">
-              Streamline Your Documentation
-            </h2>
-            <p className="text-lg text-emerald-700 dark:text-emerald-300">
-              Save time and improve accuracy with AI-powered features
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Mic,
-                title: "Voice Recognition",
-                description:
-                  "Advanced speech recognition trained on medical terminology"
-              },
-              {
-                icon: Brain,
-                title: "Clinical Intelligence",
-                description:
-                  "Auto-detects diagnoses, medications, and key findings"
-              },
-              {
-                icon: ScrollText,
-                title: "Template Management",
-                description: "Customizable templates for different visit types"
-              }
-            ].map((feature) => (
-              <Card
-                key={feature.title}
-                className="group relative overflow-hidden backdrop-blur-sm bg-white/60 dark:bg-neutral-900/60 border-0 shadow-lg rounded-3xl p-8"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-100 to-transparent dark:from-emerald-900/30 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative">
-                  <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-emerald-100 to-emerald-50 dark:from-emerald-900/50 dark:to-emerald-900/30 mb-6">
-                    <feature.icon className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-emerald-900 dark:text-emerald-100">
-                    {feature.title}
-                  </h3>
-                  <p className="text-emerald-700 dark:text-emerald-300">
-                    {feature.description}
-                  </p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Workflow Section */}
-      <section className="py-24">
+      <section className="py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-16 text-emerald-900 dark:text-emerald-100">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-16 text-emerald-900 dark:text-emerald-100">
             How It Works
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                step: "1",
-                title: "Start Recording",
-                description:
-                  "Begin your patient encounter with one click recording"
-              },
-              {
-                step: "2",
-                title: "Live Transcription",
-                description:
-                  "AI-powered transcription converts speech to text in real-time"
-              },
-              {
-                step: "3",
-                title: "Generate Notes",
-                description:
-                  "Automatically generate structured clinical notes for review"
-              }
-            ].map((step) => (
-              <div key={step.title} className="relative">
-                <div className="absolute -left-6 top-10 w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center gap-2">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
+            {steps.map((step, index) => (
+              <div key={step.title} className="relative pt-12 md:pt-0">
+                {/* Number Circle */}
+                <div className="absolute left-4 md:-left-6 top-0 md:top-10 w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center shadow-sm">
                   <span className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
                     {step.step}
                   </span>
                 </div>
-                <Card className="ml-8 backdrop-blur-sm bg-white/60 dark:bg-neutral-900/60 border border-emerald-100 dark:border-emerald-900/50 rounded-3xl p-6">
+
+                {/* Connecting Lines (hidden on mobile) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-16 left-12 w-full border-t-2 border-dashed border-emerald-200 dark:border-emerald-800" />
+                )}
+
+                {/* Card */}
+                <Card className="ml-20 md:ml-8 backdrop-blur-sm bg-white/60 dark:bg-neutral-900/60 border border-emerald-100 dark:border-emerald-900/50 rounded-3xl p-6 transition-transform duration-300 dark:hover:border-emerald-800 hover:border-emerald-400">
                   <h3 className="text-xl font-semibold mb-3 text-emerald-900 dark:text-emerald-100">
                     {step.title}
                   </h3>
@@ -230,68 +206,52 @@ const AIScribePage = () => {
               </div>
             ))}
           </div>
+          <Link className="flex justify-center mt-10" href={`/#demo-video`}>
+            <Button
+              className="mx-auto mt-8 bg-emerald-300 hover:bg-emerald-400 dark:bg-emerald-600 dark:hover:bg-emerald-700 text-black dark:text-white"
+              endIcon={<ArrowRight size={14} />}
+            >
+              See it in action
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Key Features */}
+      <section className="pt-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-emerald-900 dark:text-emerald-100 mb-4">
+              Customize your notes to to perfectly suit your style.
+            </h2>
+            <p className="text-lg md:text-xl text-emerald-700 dark:text-emerald-300">
+              Drag and drop Different element into your note to create the
+              perfect note format for a specific visit type.
+            </p>
+          </div>
         </div>
       </section>
 
       <EchoSettingsVideo />
       <InteractiveDragandDropDemo />
-      <InviteUsers />
-      <Devices />
-
-      {/* Benefits Section */}
-      <section className="py-24 bg-white dark:bg-neutral-950">
+      {/* Key Features */}
+      <section className="pt-40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-16 text-emerald-900 dark:text-emerald-100">
-            Key Benefits
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                metric: "75%",
-                title: "Time Saved",
-                description: "Reduce documentation time significantly"
-              },
-              {
-                metric: "99%",
-                title: "Accuracy",
-                description: "High precision clinical documentation"
-              },
-              {
-                metric: "50%",
-                title: "Cost Reduction",
-                description: "Lower transcription and documentation costs"
-              },
-              {
-                metric: "2x",
-                title: "Patient Time",
-                description: "Double your patient face time"
-              }
-            ].map((benefit) => (
-              <Card
-                key={benefit.title}
-                className="backdrop-blur-sm bg-white/60 dark:bg-neutral-900/75 rounded-3xl p-7 transition-all duration-300 border border-emerald-200 dark:border-emerald-900/50 shadow-lg hover:border-emerald-500 dark:hover:border-emerald-700"
-              >
-                <div className="flex items-center gap-6">
-                  <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400">
-                    {benefit.metric}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-emerald-900 dark:text-emerald-100">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-emerald-700 dark:text-emerald-300">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
+          <div className="text-center">
+            <h2 className="text-3xl md:text-5xl font-bold text-emerald-900 dark:text-emerald-100 mb-4">
+              Invite your team to collaborate.
+            </h2>
+            <p className="text-lg md:text-xl text-emerald-700 dark:text-emerald-300">
+              Seamlessly share and collaborate on patient notes between nurses
+              and doctors, enhancing communication and care coordination
+            </p>
           </div>
         </div>
       </section>
+      <InviteUsers />
 
       {/* CTA Section */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-24 mt-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-800 dark:to-teal-800"></div>
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-600/5 to-emerald-600/20 dark:from-transparent dark:via-emerald-900/10 dark:to-emerald-900/40"></div>
@@ -314,7 +274,7 @@ const AIScribePage = () => {
             <Button
               size="lg"
               variant="outline"
-              className="text-white border-white hover:bg-emerald-500/20 dark:hover:bg-emerald-800/30"
+              className="text-white border-white hover:bg-emerald-500/50 hover:text-white dark:hover:bg-emerald-900/70"
             >
               Schedule Demo
             </Button>

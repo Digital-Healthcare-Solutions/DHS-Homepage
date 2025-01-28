@@ -4,18 +4,9 @@ import React from "react"
 const InviteUsers = () => {
   return (
     <div
-      className="container max-w-6xl mx-auto flex flex-col justify-center items-center py-20 gap-5"
+      className="container max-w-6xl mx-auto flex flex-col justify-center items-center gap-5"
       id="team-collaboration"
     >
-      <div>
-        <h2 className="text-4xl font-semibold pb-5">
-          Invite your team to collaborate.
-        </h2>
-        <p className="text-lg text-muted-foreground">
-          Seamlessly share and collaborate on patient notes between nurses and
-          doctors, enhancing communication and care coordination.
-        </p>
-      </div>
       <video
         className="w-[900px] h-[640px]"
         // controls

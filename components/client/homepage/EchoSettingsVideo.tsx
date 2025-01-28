@@ -4,12 +4,12 @@ import React from "react"
 const EchoSettingsVideo = () => {
   return (
     <div
-      className="flex flex-col justify-center items-center py-20"
+      className="flex flex-col justify-center items-center"
       id="settings-demo"
     >
-      <h2 className="p-10 text-4xl font-semibold text-emerald-900 dark:text-emerald-100">
+      {/* <h2 className="p-10 text-4xl font-semibold text-emerald-900 dark:text-emerald-100">
         Customize your notes to to perfectly suit your style.
-      </h2>
+      </h2> */}
       <video
         className="w-[960px] h-[540px]"
         controls

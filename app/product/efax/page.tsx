@@ -11,8 +11,10 @@ import {
   Smartphone,
   FileText,
   Check,
-  ArrowRight
+  ArrowRight,
+  X
 } from "lucide-react"
+import { MdAutoAwesome } from "react-icons/md"
 
 const EFaxPage = () => {
   return (
@@ -33,7 +35,7 @@ const EFaxPage = () => {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600"
+                  className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:text-white"
                 >
                   Start Free Trial
                 </Button>
@@ -46,26 +48,29 @@ const EFaxPage = () => {
                 </Button>
               </div>
             </div>
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-3xl transform rotate-3 opacity-10 dark:opacity-20"></div>
-              <Card className="p-8 relative backdrop-blur-sm bg-white/80 dark:bg-neutral-900/80 border-0 shadow-xl rounded-3xl">
+            <div className="relative group">
+              {/* Animated gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-3xl transform rotate-3 opacity-10 dark:opacity-20 transition-all duration-300 ease-in-out group-hover:rotate-6 group-hover:scale-105 group-hover:opacity-30 dark:group-hover:opacity-40"></div>
+
+              {/* Main card */}
+              <Card className="p-8 relative backdrop-blur-sm bg-white/80 dark:bg-neutral-900/80 border-0 shadow-xl rounded-3xl transition-all duration-300 ease-in-out group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:bg-white/90 dark:group-hover:bg-neutral-900/90">
                 <div className="space-y-6">
-                  <div className="flex items-center gap-4">
-                    <Shield className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                  <div className="flex items-center gap-4 transition-transform duration-300 ease-in-out hover:translate-x-2">
+                    <MdAutoAwesome className="w-8 h-8 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
                     <p className="text-gray-600 dark:text-gray-300">
-                      HIPAA Compliant
+                      Automated AI Summarization
                     </p>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <Clock className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                  <div className="flex items-center gap-4 transition-transform duration-300 ease-in-out hover:translate-x-2">
+                    <Clock className="w-8 h-8 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
                     <p className="text-gray-600 dark:text-gray-300">
                       80% Faster Processing
                     </p>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <DollarSign className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                  <div className="flex items-center gap-4 transition-transform duration-300 ease-in-out hover:translate-x-2">
+                    <Shield className="w-8 h-8 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
                     <p className="text-gray-600 dark:text-gray-300">
-                      Reduce Costs
+                      Secure & HIPAA Compliant
                     </p>
                   </div>
                 </div>
@@ -87,10 +92,10 @@ const EFaxPage = () => {
                 icon: Search,
                 title: "Smart Document Processing",
                 features: [
-                  "AI-powered document classification",
-                  "Automatic routing to correct departments",
+                  "AI-powered document classification and labeling",
+                  "Automated data extraction",
                   "OCR with 99.9% accuracy",
-                  "Intelligent data extraction"
+                  "Groups all faxes for a particular patient together"
                 ]
               },
               {
@@ -104,29 +109,29 @@ const EFaxPage = () => {
                 ]
               },
               {
-                icon: Smartphone,
-                title: "Mobile Access",
+                icon: DollarSign,
+                title: "Cost & Efficiency",
                 features: [
-                  "Send/receive faxes from any device",
-                  "Mobile app for iOS and Android",
-                  "Digital signatures on the go",
-                  "Real-time notifications"
+                  "Eliminate paper and toner expenses",
+                  "Reduce staff time spent on faxing by 80%",
+                  "No need for dedicated fax lines",
+                  "Automatic retry for failed transmissions"
                 ]
               },
               {
                 icon: FileText,
                 title: "Document Management",
                 features: [
-                  "Searchable document archive",
+                  "Searchable document archive by sender or patient",
                   "Custom folder organization",
-                  "Bulk processing capabilities",
-                  "Document annotation tools"
+                  "Customizable filtering and sorting",
+                  "Long document summarization"
                 ]
               }
             ].map((section) => (
               <Card
                 key={section.title}
-                className="p-8 bg-gradient-to-b from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-900 border border-gray-100 dark:border-gray-800 rounded-3xl hover:shadow-lg transition-all duration-300"
+                className="p-8 bg-gradient-to-b from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-900 border border-transparent hover:border-purple-300 dark:hover:border-purple-800 dark:border-gray-800 rounded-3xl hover:shadow-lg transition-all duration-300"
               >
                 <div className="flex flex-col gap-6">
                   <div className="inline-flex p-3 rounded-2xl bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900 dark:to-indigo-900 w-fit">
@@ -156,36 +161,84 @@ const EFaxPage = () => {
         </div>
       </section>
 
-      {/* Integration Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white dark:from-neutral-900 dark:to-neutral-950">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 ">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
-              Seamless Integration
+              Why Choose Smart eFax?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              Works with your existing systems and workflows
+              See how we compare to traditional faxing
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+
+          <Card className="overflow-hidden rounded-3xl border border-purple-100 dark:border-purple-900/50">
+            <div className="grid grid-cols-3 gap-4 p-6 bg-purple-100 dark:bg-purple-700/50">
+              <div className="font-semibold text-gray-900 dark:text-white">
+                Feature
+              </div>
+              <div className="font-semibold text-gray-900 dark:text-white text-center">
+                Traditional Fax
+              </div>
+              <div className="font-semibold text-gray-900 dark:text-white text-center">
+                AI powered eFax
+              </div>
+            </div>
+
             {[
-              "Epic",
-              "Cerner",
-              "Allscripts",
-              "athenahealth",
-              "eClinicalWorks",
-              "NextGen"
-            ].map((ehr) => (
-              <Card
-                key={ehr}
-                className="p-6 bg-white dark:bg-neutral-900 hover:shadow-md transition-all duration-300 rounded-2xl border border-gray-100 dark:border-gray-800"
+              {
+                feature: "Document Processing",
+                traditional: "Manual sorting and routing",
+                smart: "AI-powered automatic classification"
+              },
+              {
+                feature: "Accessibility",
+                traditional: "Physical access required",
+                smart: "Access from any device, anywhere"
+              },
+              {
+                feature: "Data Security",
+                traditional: "Paper documents can be lost",
+                smart: "End-to-end encryption & audit trails"
+              },
+              {
+                feature: "Integration",
+                traditional: "Manual data entry required",
+                smart: "Automated data extraction"
+              },
+              {
+                feature: "Cost",
+                traditional: "Expensive phone lines & paper",
+                smart: "Affordable, paperless solution"
+              },
+              {
+                feature: "Storage",
+                traditional: "Physical filing cabinets",
+                smart: "Searchable digital archive"
+              }
+            ].map((item, index) => (
+              <div
+                key={item.feature}
+                className={`grid grid-cols-3 gap-4 p-6 ${
+                  index % 2 === 0
+                    ? "bg-white dark:bg-neutral-900"
+                    : "bg-gray-50 dark:bg-neutral-800"
+                }`}
               >
-                <p className="font-semibold text-center bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
-                  {ehr}
-                </p>
-              </Card>
+                <div className="text-gray-900 dark:text-white">
+                  {item.feature}
+                </div>
+                <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-300">
+                  <X className="w-5 h-5 text-red-500" />
+                  <span className="text-sm">{item.traditional}</span>
+                </div>
+                <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-300">
+                  <Check className="w-5 h-5 text-green-500" />
+                  <span className="text-sm">{item.smart}</span>
+                </div>
+              </div>
             ))}
-          </div>
+          </Card>
         </div>
       </section>
 
@@ -251,7 +304,7 @@ const EFaxPage = () => {
             <Button
               size="lg"
               variant="outline"
-              className="text-white border-white hover:bg-indigo-500 dark:hover:bg-indigo-600"
+              className="text-white border-white hover:text-white hover:bg-indigo-500/40 dark:hover:bg-indigo-600/40"
             >
               Schedule Demo
             </Button>
