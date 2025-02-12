@@ -161,20 +161,24 @@ const CallCenterPage = () => {
               providing exceptional in-person patient care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white"
-              >
-                Get Started
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 hover:text-blue-600 dark:hover:bg-blue-950 dark:text-blue-400"
-                endIcon={<MdAutoAwesome size={14} />}
-              >
-                Try Interactive Demo
-              </Button>
+              <a href="https://app.getaxon.ai/signup">
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white"
+                >
+                  Get Started
+                </Button>
+              </a>
+              <a href="https://demo-app.getaxon.ai">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 hover:text-blue-600 dark:hover:bg-blue-950 dark:text-blue-400"
+                  endIcon={<MdAutoAwesome size={14} />}
+                >
+                  Try Interactive Demo
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -453,20 +457,25 @@ const CallCenterPage = () => {
             - providing exceptional patient care
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-sky-600 hover:bg-sky-50 dark:bg-gray-200 dark:hover:bg-gray-300"
-            >
-              Start Free Trial
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-white border-white hover:bg-sky-500 dark:hover:bg-sky-600"
-              endIcon={<MdAutoAwesome size={16} />}
-            >
-              Try Interactive Demo
-            </Button>
+            <a href="https://app.getaxon.ai/signup">
+              <Button
+                size="lg"
+                className="bg-white text-sky-600 hover:bg-sky-50 dark:bg-gray-200 dark:hover:bg-gray-300"
+              >
+                Start Free Trial
+              </Button>
+            </a>
+
+            <a href="https://demo-app.getaxon.ai">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white border-white hover:bg-sky-500 dark:hover:bg-sky-600"
+                endIcon={<MdAutoAwesome size={16} />}
+              >
+                Try Interactive Demo
+              </Button>
+            </a>
           </div>
         </div>
       </section>

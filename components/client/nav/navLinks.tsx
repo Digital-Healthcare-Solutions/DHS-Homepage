@@ -23,12 +23,12 @@ const NavLinks = () => {
   const products = [
     {
       title: "AI-Scribe",
-      description: "Intelligent document processing and automation",
+      description: "Effortlessly turn patient interactions into notes.",
       href: "/product/ai-scribe"
     },
     {
-      title: "Call-Center",
-      description: "Advanced call center management solutions",
+      title: "AI Call-Center",
+      description: "Let our AI answer calls and book appointments",
       href: "/product/call-center"
     },
     {
@@ -38,7 +38,7 @@ const NavLinks = () => {
     },
     {
       title: "Smart Forms",
-      description: "Intelligent form processing and management",
+      description: "Intelligent form processing and automation",
       href: "/product/digital-forms"
     }
   ]

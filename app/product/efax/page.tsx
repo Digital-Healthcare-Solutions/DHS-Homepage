@@ -18,6 +18,7 @@ import {
 import { MdAutoAwesome } from "react-icons/md"
 import { Metadata } from "next"
 import MediaShowcase from "@/components/product/efax/media-showcase"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Axon AI | Efax",
@@ -44,19 +45,23 @@ const EFaxPage = () => {
                 workflow while ensuring security and compliance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:text-white"
-                >
-                  Start Free Trial
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-indigo-200 text-indigo-600 hover:bg-indigo-50 dark:border-indigo-700 dark:text-indigo-400 dark:hover:bg-indigo-950"
-                >
-                  Schedule Demo
-                </Button>
+                <a href="https://app.getaxon.ai/signup">
+                  <Button
+                    size="lg"
+                    className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:text-white"
+                  >
+                    Start Free Trial
+                  </Button>
+                </a>
+                <Link href="/#request-demo">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-indigo-200 text-indigo-600 hover:bg-indigo-50 dark:border-indigo-700 dark:text-indigo-400 dark:hover:bg-indigo-950"
+                  >
+                    Schedule Demo
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative group">
@@ -406,7 +411,7 @@ const EFaxPage = () => {
                 description: "Cost savings on fax-related expenses"
               },
               {
-                metric: "95%",
+                metric: "55%",
                 description: "Staff satisfaction improvement"
               }
             ].map((stat) => (
@@ -439,19 +444,23 @@ const EFaxPage = () => {
             their fax workflows
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-indigo-600 hover:bg-indigo-50 dark:bg-gray-200 dark:hover:bg-gray-300"
-            >
-              Start Free Trial
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-white border-white hover:text-white hover:bg-indigo-500/40 dark:hover:bg-indigo-600/40"
-            >
-              Schedule Demo
-            </Button>
+            <a href="https://app.getaxon.ai/signup">
+              <Button
+                size="lg"
+                className="bg-white text-indigo-600 hover:bg-indigo-50 dark:bg-gray-200 dark:hover:bg-gray-300"
+              >
+                Start Free Trial
+              </Button>
+            </a>
+            <Link href="/#request-demo">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white border-white hover:text-white hover:bg-indigo-500/40 dark:hover:bg-indigo-600/40"
+              >
+                Schedule Demo
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

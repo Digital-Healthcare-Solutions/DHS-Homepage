@@ -129,19 +129,23 @@ const AIScribePage = () => {
                 on patient care.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-700"
-                >
-                  Start Free Trial
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-900"
-                >
-                  Watch Demo
-                </Button>
+                <a href="https://app.getaxon.ai/signup">
+                  <Button
+                    size="lg"
+                    className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-700"
+                  >
+                    Start Free Trial
+                  </Button>
+                </a>
+                <Link href={`/#demo-video`}>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-emerald-200 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-900"
+                  >
+                    Watch Demo
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -274,19 +278,23 @@ const AIScribePage = () => {
             improving documentation quality
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-emerald-600 hover:bg-emerald-50 dark:bg-emerald-100 dark:hover:bg-emerald-200 dark:text-emerald-700"
-            >
-              Start Free Trial
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-white border-white hover:bg-emerald-500/50 hover:text-white dark:hover:bg-emerald-900/70"
-            >
-              Schedule Demo
-            </Button>
+            <a href="https://app.getaxon.ai/signup">
+              <Button
+                size="lg"
+                className="bg-white text-emerald-600 hover:bg-emerald-50 dark:bg-emerald-100 dark:hover:bg-emerald-200 dark:text-emerald-700"
+              >
+                Start Free Trial
+              </Button>
+            </a>
+            <Link href={`/#request-demo`}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-white border-white hover:bg-emerald-500/50 hover:text-white dark:hover:bg-emerald-900/70"
+              >
+                Schedule Demo
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

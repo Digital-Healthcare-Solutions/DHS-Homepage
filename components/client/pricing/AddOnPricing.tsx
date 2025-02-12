@@ -10,11 +10,12 @@ import { add } from "date-fns"
 import { Check, ChevronRight, Phone, Printer } from "lucide-react"
 import GetCustomQuote from "../modals/GetCustomQuote"
 import { show } from "@intercom/messenger-js-sdk"
+import Link from "next/link"
 
 const AddOnPricing = () => {
   const addOns = [
     {
-      title: "Call-Center",
+      title: "AI Call-Center",
       icon: Phone,
       price: "300",
       description: "Automate phone based workflows with conversational AI",
@@ -22,12 +23,13 @@ const AddOnPricing = () => {
         "24/7 automated call handling",
         "Appointment scheduling handled by AI",
         "Automated appointment reminders",
-        "HIPAA-compliant SMS messaging",
+        "HIPAA-compliant 2-way SMS messaging",
         "Call transcription and summarization",
-        "Integrates with your EMR",
-        "1500 minutes and 1500 SMS messages included per month",
-        "$0.05 per additional minute of call time or SMS message"
-      ]
+        "Call analytics dashboard",
+        "Customizable flows",
+        "Integrates with your EMR and external systems"
+      ],
+      link: "/product/call-center"
     },
     {
       title: "Efax",
@@ -43,7 +45,8 @@ const AddOnPricing = () => {
         "Automatic labeling & organization",
         "$0.05 per additional outbound page",
         "$0.075 per additional inbound page"
-      ]
+      ],
+      link: "/product/efax"
     }
   ]
 
@@ -121,14 +124,16 @@ const AddOnPricing = () => {
                   ))}
                 </div>
                 <div className="flex items-center justify-between">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-900/50"
-                  >
-                    Learn more
-                    <ChevronRight className="w-4 h-4 ml-1" />
-                  </Button>
+                  <Link href={addon.link}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-800 dark:text-blue-400 dark:hover:bg-blue-900/50"
+                    >
+                      Learn more
+                      <ChevronRight className="w-4 h-4 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>

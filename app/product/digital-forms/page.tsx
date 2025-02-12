@@ -49,12 +49,15 @@ const SmartFormPage = () => {
               process.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-md">
-              <Button
-                size="lg"
-                className="w-full bg-amber-600 hover:bg-amber-700 dark:bg-amber-500 dark:hover:bg-amber-600"
-              >
-                Start Building Free
-              </Button>
+              <a href="https://app.getaxon.ai/signup">
+                <Button
+                  size="lg"
+                  className="w-full bg-amber-600 hover:bg-amber-700 dark:bg-amber-500 dark:hover:bg-amber-600"
+                >
+                  Start Building Free
+                </Button>
+              </a>
+
               <Button
                 size="lg"
                 variant="outline"
@@ -269,12 +272,14 @@ const SmartFormPage = () => {
             their patient intake process
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-amber-600 hover:bg-amber-50 dark:bg-amber-100 dark:hover:bg-amber-200 dark:text-amber-700"
-            >
-              Create Your First Form
-            </Button>
+            <a href="https://app.getaxon.ai/signup">
+              <Button
+                size="lg"
+                className="bg-white text-amber-600 hover:bg-amber-50 dark:bg-amber-100 dark:hover:bg-amber-200 dark:text-amber-700"
+              >
+                Create Your First Form
+              </Button>
+            </a>
             <Button
               size="lg"
               variant="outline"
