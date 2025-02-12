@@ -12,10 +12,12 @@ import {
   FileText,
   Check,
   ArrowRight,
-  X
+  X,
+  DatabaseZap
 } from "lucide-react"
 import { MdAutoAwesome } from "react-icons/md"
 import { Metadata } from "next"
+import MediaShowcase from "@/components/product/efax/media-showcase"
 
 export const metadata: Metadata = {
   title: "Axon AI | Efax",
@@ -67,13 +69,13 @@ const EFaxPage = () => {
                   <div className="flex items-center gap-4 transition-transform duration-300 ease-in-out hover:translate-x-2">
                     <MdAutoAwesome className="w-8 h-8 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
                     <p className="text-gray-600 dark:text-gray-300">
-                      Automated AI Summarization
+                      AI Summarizations
                     </p>
                   </div>
                   <div className="flex items-center gap-4 transition-transform duration-300 ease-in-out hover:translate-x-2">
-                    <Clock className="w-8 h-8 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
+                    <DatabaseZap className="w-8 h-8 text-indigo-600 dark:text-indigo-400 transition-transform duration-300 group-hover:scale-110" />
                     <p className="text-gray-600 dark:text-gray-300">
-                      80% Faster Processing
+                      Automated data extraction
                     </p>
                   </div>
                   <div className="flex items-center gap-4 transition-transform duration-300 ease-in-out hover:translate-x-2">
@@ -104,7 +106,7 @@ const EFaxPage = () => {
                   "AI-powered document classification and labeling",
                   "Automated data extraction",
                   "OCR with 99.9% accuracy",
-                  "Groups all faxes for a particular patient together"
+                  "Intelligent search and filtering"
                 ]
               },
               {
@@ -166,6 +168,137 @@ const EFaxPage = () => {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* Fax Number Options Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 ">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+              Choose Your Fax Number
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Set up your fax line in minutes
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Port Existing Number */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-200 to-indigo-200 dark:from-purple-800 dark:to-indigo-800 rounded-[2.5rem] transform rotate-2 transition-transform group-hover:rotate-3 group-hover:scale-105"></div>
+              <Card className="relative p-10 backdrop-blur-sm bg-white/90 dark:bg-neutral-900/90 border-0 shadow-xl rounded-[2.5rem]">
+                <div className="absolute top-6 right-6">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 dark:bg-purple-900">
+                    <span className="text-sm font-medium text-purple-700 dark:text-purple-300">
+                      Most Popular
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col h-full">
+                  <div className="mb-8">
+                    <div className="inline-flex p-3 mb-6 rounded-2xl bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900 dark:to-indigo-900">
+                      <ArrowRight className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                      Port Your Existing Number
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
+                      Keep your current fax number and upgrade to smart features
+                    </p>
+                  </div>
+
+                  <div className="flex-grow">
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 mt-1 text-green-500" />
+                        <span className="text-gray-600 dark:text-gray-300">
+                          Maintain your existing fax number with zero downtime
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 mt-1 text-green-500" />
+                        <span className="text-gray-600 dark:text-gray-300">
+                          We handle the entire porting process with your carrier
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 mt-1 text-green-500" />
+                        <span className="text-gray-600 dark:text-gray-300">
+                          Keep business continuity with your existing contacts
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                  {/* 
+                  <Button
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 dark:from-purple-500 dark:to-indigo-500"
+                  >
+                    Start Porting Process
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button> */}
+                </div>
+              </Card>
+            </div>
+
+            {/* New Number */}
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-200 to-purple-200 dark:from-indigo-800 dark:to-purple-800 rounded-[2.5rem] transform -rotate-2 transition-transform group-hover:-rotate-3 group-hover:scale-105"></div>
+              <Card className="relative p-10 backdrop-blur-sm bg-white/90 dark:bg-neutral-900/90 border-0 shadow-xl rounded-[2.5rem]">
+                <div className="absolute top-6 right-6">
+                  <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 dark:bg-indigo-900">
+                    <span className="text-sm font-medium text-indigo-700 dark:text-indigo-300">
+                      Instant Setup
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col h-full">
+                  <div className="mb-8">
+                    <div className="inline-flex p-3 mb-6 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900">
+                      <DollarSign className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                      Purchase a New Number
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
+                      Start fresh with a new dedicated fax line in minutes
+                    </p>
+                  </div>
+
+                  <div className="flex-grow">
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 mt-1 text-green-500" />
+                        <span className="text-gray-600 dark:text-gray-300">
+                          Choose your preferred area code and number
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 mt-1 text-green-500" />
+                        <span className="text-gray-600 dark:text-gray-300">
+                          Get started immediately with instant activation
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <Check className="w-5 h-5 mt-1 text-green-500" />
+                        <span className="text-gray-600 dark:text-gray-300">
+                          Add multiple numbers for different departments
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  {/* <Button
+                    size="lg"
+                    className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 dark:from-indigo-500 dark:to-purple-500"
+                  >
+                    Select New Number
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button> */}
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -292,6 +425,8 @@ const EFaxPage = () => {
           </div>
         </div>
       </section>
+
+      <MediaShowcase />
 
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-purple-600 to-indigo-600 dark:from-purple-700 dark:to-indigo-700">
