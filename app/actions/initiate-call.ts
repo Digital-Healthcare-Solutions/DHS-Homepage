@@ -22,7 +22,7 @@ export async function initiateCall(phoneNumber: string) {
     const formattedNumber = `+1${cleanNumber}`
 
     // Create TwiML for the call
-    const twimlUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/twilio/voice` // You'll need to create this endpoint
+    const twimlUrl = `${process.env.SERVER_BASE_URL}/call/incoming` // You'll need to create this endpoint
 
     // Initiate the call
     const call = await client.calls.create({
