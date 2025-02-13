@@ -40,9 +40,8 @@ const plans = [
       "Everything in Free",
       "More advanced 'reasoning' AI models",
       "Unlimited Customizable templates",
-      "SmartForm included",
       "First 100 pages Efax free",
-      "Free Scheduling software"
+      "Free Digital Forms included"
     ],
     highlight: true,
     buttonType: "start",
@@ -77,7 +76,7 @@ const plans = [
       "Everything in Individual",
       "Team collaboration",
       "Shared templates & questionnaires",
-      "EMR integration included (for select EMRs)"
+      "EMR integration included (select EMRs)"
     ],
     highlight: false,
     buttonType: "start",

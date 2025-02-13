@@ -23,7 +23,7 @@ const Page = () => {
       <ProductDemoVideo />
       <PlatformOverview />
       <Devices />
-      <UserReviews />
+      {/* <UserReviews /> */}
       <RequestDemo />
       <FAQ />
     </div>

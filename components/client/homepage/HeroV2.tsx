@@ -19,27 +19,28 @@ const HeroV2 = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative">
         <div className="text-center">
           {/* Badge */}
-          <div className="mb-8 flex justify-center">
+          {/* <div className="mb-8 flex justify-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/40">
               <div className="h-2 w-2 rounded-full bg-blue-500 dark:bg-blue-400 animate-pulse"></div>
               <span className="text-sm font-medium text-blue-900 dark:text-blue-300">
                 AI-Powered Medical Scribe
               </span>
             </div>
-          </div>
+          </div> */}
 
           {/* Main headline */}
           <div className="space-y-6 mb-12">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white">
-              Cut documentation time by
+              Practice
               <span className="bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
                 {" "}
-                70%
+                Medicine
               </span>
+              , Not Documentation
             </h1>
             <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
-              Free AI scribe for all medical practices. Perfect notes while you
-              focus on what matters - your patients.
+              Free AI scribe for all medical practices. Let AI write notes in
+              your style, while you focus on your patients.
             </p>
           </div>
 

@@ -27,6 +27,7 @@ import {
 import { MdAutoAwesome } from "react-icons/md"
 import CallMeForm from "@/components/client/forms/callMeForm"
 import { Metadata } from "next"
+import EMRIntegrations from "@/components/product/call-center/emr-integrations"
 
 export const metadata: Metadata = {
   title: "Axon AI | Call Center",
@@ -446,6 +447,7 @@ const CallCenterPage = () => {
           </div>
         </div>
       </section>
+      <EMRIntegrations />
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-blue-600 to-sky-500 dark:from-blue-700 dark:to-sky-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
