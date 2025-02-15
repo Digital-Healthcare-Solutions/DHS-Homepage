@@ -76,7 +76,9 @@ const CallMeForm = () => {
       const result = await initiateCall(rawNumber)
 
       if (result.success) {
-        toast("Call initiated! Please answer when you receive the call.")
+        toast.success(
+          "Call initiated! You should receive a call from our agent shortly."
+        )
         setPhone("") // Clear the form
       } else {
         throw new Error(result.error)

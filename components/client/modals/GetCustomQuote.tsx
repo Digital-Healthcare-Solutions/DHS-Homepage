@@ -89,8 +89,9 @@ const GetCustomQuote = ({
         <DialogHeader>
           <DialogTitle>Let us know more about your business</DialogTitle>
           <DialogDescription>
-            Thank you for your interest in our product! Please fill out the form
-            below and we will get back to you as soon as possible.
+            {callCenterForm
+              ? "Thank you for your interest in our AI Call Center! Please fill out the form below and we will get back to you soon."
+              : "Thank you for your interest in our product! Please fill out the form below and we will get back to you as soon as possible."}
           </DialogDescription>
         </DialogHeader>
 
