@@ -26,6 +26,7 @@ const EnterpriseAlert = () => {
               <GetCustomQuote
                 btnText="Get a Custom Quote"
                 btnClassName="inline-flex items-center justify-center rounded-xl px-6 py-3 text-lg font-semibold bg-white text-gray-900 hover:bg-gray-100 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 transition-all duration-300"
+                enterpriseForm
               />
             </div>
           </div>

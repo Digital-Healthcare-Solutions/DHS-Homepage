@@ -28,6 +28,7 @@ import { MdAutoAwesome } from "react-icons/md"
 import CallMeForm from "@/components/client/forms/callMeForm"
 import { Metadata } from "next"
 import EMRIntegrations from "@/components/product/call-center/emr-integrations"
+import GetCustomQuote from "@/components/client/modals/GetCustomQuote"
 
 export const metadata: Metadata = {
   title: "Axon AI | Call Center",
@@ -36,61 +37,42 @@ export const metadata: Metadata = {
   keywords:
     "AI, phone agent, healthcare call center, healthcare phone system, healthcare automation, medical AI phone, medical phone system, 24/7 support, appointment reminders, AI healthcare, AI medical, AI phone assistant, AI phone system, AI scheduling, automated phone system, automated scheduling, call center AI, call center automation, call center software, call center system, conversational AI, healthcare AI, medical AI, medical call center, scheduling AI"
 }
-
 const features = [
   {
-    icon: Calendar,
-    title: "Intelligent Scheduling",
+    icon: PhoneCall,
+    title: "Inbound Call Handling",
     description:
-      "AI-powered scheduling that understands complex availability patterns and patient preferences for optimal appointment booking."
-  },
-  {
-    icon: Shield,
-    title: "Insurance Verification",
-    description:
-      "Automated insurance eligibility checks and benefit verification to streamline the administrative process."
-  },
-  {
-    icon: FileText,
-    title: "Prescription Management",
-    description:
-      "Secure handling of refill requests with automated verification and routing to appropriate staff members."
+      "Instantly answers patient calls 24/7, handling routine inquiries about appointments, medications, and billing with natural conversation."
   },
   {
     icon: Phone,
-    title: "24/7 Availability",
+    title: "Outbound Appointment Calls",
     description:
-      "Round-the-clock response to patient inquiries, ensuring no call goes unanswered, even after hours."
+      "Proactively calls patients to confirm upcoming appointments, reducing no-shows and keeping schedules optimized."
   },
   {
-    icon: Clock,
-    title: "Smart Reminders",
+    icon: MessageSquare,
+    title: "SMS Communication",
     description:
-      "Proactive appointment reminders and follow-ups to reduce no-shows and improve patient engagement."
-  },
-  {
-    icon: BrainCircuit,
-    title: "Initial Screening",
-    description:
-      "AI-driven preliminary patient screening to gather essential information before staff involvement."
-  },
-  {
-    icon: Heart,
-    title: "Care Coordination",
-    description:
-      "Seamless coordination between patients, providers, and staff for improved care delivery."
-  },
-  {
-    icon: CreditCard,
-    title: "Payment Support",
-    description:
-      "Handle billing inquiries and payment-related questions with automated assistance available 24/7."
+      "Sends automated text confirmations and reminders, with ability to handle text-based responses while on a call."
   },
   {
     icon: FileText,
-    title: "Form Processing",
+    title: "Medication & Billing Info",
     description:
-      "Intelligent processing of medical forms and documentation with automated data extraction."
+      "Provides accurate information about prescriptions, refills, and billing questions using your practice's secure patient records."
+  },
+  {
+    icon: Clock,
+    title: "24/7 Availability",
+    description:
+      "Always available to handle calls and messages, ensuring patients get immediate assistance at any time."
+  },
+  {
+    icon: Users,
+    title: "Staff Coordination",
+    description:
+      "Seamlessly routes urgent matters to staff while handling routine inquiries independently."
   }
 ]
 
@@ -162,14 +144,22 @@ const CallCenterPage = () => {
               providing exceptional in-person patient care.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <a href="https://app.getaxon.ai/signup">
+              {/* <a href="https://app.getaxon.ai/signup">
                 <Button
                   size="lg"
                   className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 dark:text-white"
                 >
                   Get Started
-                </Button>
-              </a>
+                </Button>{" "}
+              </a> */}
+              <div className="w-fit">
+                <GetCustomQuote
+                  btnText="Get a Custom Quote"
+                  btnClassName="inline-flex items-center justify-center rounded px-6 py-3 text-sm font-semibold bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white"
+                  callCenterForm
+                />
+              </div>
+
               <a href="https://demo-app.getaxon.ai">
                 <Button
                   size="lg"
@@ -229,6 +219,81 @@ const CallCenterPage = () => {
                     Reduce workload
                   </p>
                 </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Real-time Response Section */}
+      <section className="pb-20 pt-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto relative">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-sky-600 to-blue-600 dark:from-sky-400 dark:to-blue-400 bg-clip-text text-transparent">
+              Human-Speed Conversations, Infinite Scale
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Our AI matches human conversation speed with 0.5-second responses,
+              while handling unlimited concurrent calls
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-sky-100/50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl blur-3xl"></div>
+            <Card className="relative backdrop-blur-sm bg-white/90 dark:bg-neutral-900/90 border-0 shadow-lg rounded-3xl p-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center p-6 relative group hover:-translate-y-1 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 to-blue-100/50 dark:from-sky-900/30 dark:to-blue-900/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900 mb-4">
+                      <Clock8 className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      0.5s
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Avg Response Time
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center p-6 relative group hover:-translate-y-1 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 to-blue-100/50 dark:from-sky-900/30 dark:to-blue-900/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900 mb-4">
+                      <Users className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      ∞
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Concurrent Calls
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center p-6 relative group hover:-translate-y-1 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-sky-100/50 to-blue-100/50 dark:from-sky-900/30 dark:to-blue-900/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative">
+                    <div className="inline-flex p-4 rounded-2xl bg-gradient-to-br from-sky-100 to-blue-100 dark:from-sky-900 dark:to-blue-900 mb-4">
+                      <MessageSquare className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      Natural
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      Conversation Flow
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12 text-center">
+                <p className="text-lg text-gray-600 dark:text-gray-300">
+                  Just like talking to your best phone operator, but available
+                  for every caller, every time, 24/7. Ask questions anytime -
+                  our AI maintains context and responds naturally.
+                </p>
               </div>
             </Card>
           </div>

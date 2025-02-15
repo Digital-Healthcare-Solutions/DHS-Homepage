@@ -94,7 +94,7 @@ const CallMeForm = () => {
       <div className="flex items-center gap-2 mb-4">
         <Sparkles className="w-5 h-5 text-blue-600 dark:text-blue-400" />
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-          Experience Axon AI&apos;s Phone Agent in action
+          Try out our Phone Agent for yourself
         </h3>
       </div>
 
@@ -105,10 +105,13 @@ const CallMeForm = () => {
           value={phone}
           onChange={handlePhoneChange}
           className={`bg-white dark:bg-neutral-800 border border-gray-200 dark:border-gray-700 rounded-lg 
-            focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent h-10
+            focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent dark:focus:border-transparent h-10
             ${
-              !phone || isValidPhone ? "" : "border-red-500 dark:border-red-500"
+              !phone || isValidPhone
+                ? ""
+                : "border-destructive dark:border-destructive"
             }`}
+          // error={phone && !isValidPhone ? true : false}
           maxLength={14}
           aria-invalid={phone && !isValidPhone ? "true" : "false"}
         />

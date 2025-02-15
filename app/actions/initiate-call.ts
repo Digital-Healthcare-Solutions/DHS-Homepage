@@ -15,22 +15,18 @@ const client = twilio(accountSid, authToken)
 
 export async function initiateCall(phoneNumber: string) {
   try {
-    // Remove any non-numeric characters from the phone number
     const cleanNumber = phoneNumber.replace(/\D/g, "")
 
-    // Format for E.164 standard (required by Twilio)
     const formattedNumber = `+1${cleanNumber}`
 
-    // Create TwiML for the call
-    const twimlUrl = `${process.env.SERVER_BASE_URL}/call/incoming` // You'll need to create this endpoint
+    const twimlUrl = `${process.env.SERVER_BASE_URL}/call/incoming`
 
-    // Initiate the call
     const call = await client.calls.create({
       to: formattedNumber,
       from: twilioNumber ?? "",
-      url: twimlUrl
-      //   statusCallback: `${process.env.NEXT_PUBLIC_BASE_URL}/api/twilio/status`, // Optional status callback
-      //   statusCallbackEvent: ["initiated", "ringing", "answered", "completed"]
+      url: twimlUrl,
+      statusCallback: process.env.TWILIO_DEMO_CALLBACK_URL ?? undefined,
+      statusCallbackEvent: ["completed"]
     })
 
     return {
