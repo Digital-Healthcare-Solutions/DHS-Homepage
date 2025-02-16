@@ -84,7 +84,7 @@ const CallMeForm = () => {
         throw new Error(result.error)
       }
     } catch (error) {
-      toast.error("Failed to initiate call. Please try again later.")
+      toast.error(error instanceof Error ? error.message : String(error))
     } finally {
       setIsLoading(false)
     }

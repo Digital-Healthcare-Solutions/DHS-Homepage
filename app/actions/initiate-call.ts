@@ -12,7 +12,7 @@ const twilioNumber = process.env.TWILIO_PHONE_NUMBER
 
 const ratelimit = new Ratelimit({
   redis: Redis.fromEnv(),
-  limiter: Ratelimit.slidingWindow(1, "60 s"),
+  limiter: Ratelimit.slidingWindow(2, "60 s"),
   analytics: true,
   /**
    * Optional prefix for the keys used in redis. This is useful if you want to share a redis
@@ -37,8 +37,8 @@ export async function initiateCall(phoneNumber: string) {
       throw new Error("Missing required param 'phoneNumber'")
     }
 
+    //rate limiter
     const response = await ratelimit.limit(userIp ?? phoneNumber)
-
     if (!response.success) {
       throw new Error("Too many requests. Please try again later.")
     }
@@ -65,7 +65,6 @@ export async function initiateCall(phoneNumber: string) {
       callSid: call.sid
     }
   } catch (error) {
-    console.error("Error initiating call:", error)
     return {
       success: false,
       error: error instanceof Error ? error.message : "Failed to initiate call"
