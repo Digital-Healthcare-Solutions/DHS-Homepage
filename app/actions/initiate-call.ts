@@ -19,14 +19,17 @@ export async function initiateCall(phoneNumber: string) {
 
     const formattedNumber = `+1${cleanNumber}`
 
-    const twimlUrl = `${process.env.SERVER_BASE_URL}/call/incoming`
+    const twimlUrl = `${process.env.SERVER_BASE_URL}/call/voice-agent-deepgram-demo`
 
     const call = await client.calls.create({
       to: formattedNumber,
       from: twilioNumber ?? "",
       url: twimlUrl,
       statusCallback: process.env.TWILIO_DEMO_CALLBACK_URL ?? undefined,
-      statusCallbackEvent: ["completed"]
+      statusCallbackEvent: ["completed"],
+      timeLimit: 600
+      // machineDetection: "Enable",
+      // machineDetectionTimeout: 10
     })
 
     return {

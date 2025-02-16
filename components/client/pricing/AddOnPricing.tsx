@@ -88,7 +88,7 @@ const AddOnPricing = () => {
                   </div>
                 </div>
 
-                <div className="mt-8">
+                <div className="pt-4 flex items-center">
                   {addon.title === "AI Call-Center" ? (
                     <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent">
                       <span className="hover:underline cursor-pointer">
