@@ -54,8 +54,11 @@ export async function initiateCall(phoneNumber: string) {
       to: formattedNumber,
       from: twilioNumber ?? "",
       url: twimlUrl,
-      statusCallback: process.env.TWILIO_DEMO_CALLBACK_URL ?? undefined,
-      statusCallbackEvent: ["completed"],
+      record: true,
+      recordingStatusCallback:
+        process.env.TWILIO_DEMO_CALLBACK_URL ?? undefined,
+      recordingStatusCallbackEvent: ["completed"],
+      recordingStatusCallbackMethod: "POST",
       timeLimit: 300
       // machineDetection: "Enable",
       // machineDetectionTimeout: 10
