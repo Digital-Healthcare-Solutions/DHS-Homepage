@@ -11,7 +11,7 @@ const EchoSettingsVideo = () => {
         Customize your notes to to perfectly suit your style.
       </h2> */}
       <video
-        className="w-[960px] h-[540px]"
+        className="w-[960px] h-[250px] md:h-[540px]"
         controls
         autoPlay
         loop

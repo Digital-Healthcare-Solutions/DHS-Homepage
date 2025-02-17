@@ -143,7 +143,7 @@ const CallCenterPage = () => {
               that handles routine calls, allowing your staff to focus on
               providing exceptional in-person patient care.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <div className="flex flex-col items-center sm:flex-row gap-4 justify-center mb-16">
               {/* <a href="https://app.getaxon.ai/signup">
                 <Button
                   size="lg"
@@ -448,6 +448,9 @@ const CallCenterPage = () => {
             </h2>
             <p className="text-gray-600 dark:text-gray-300">
               Our AI handles a wide range of daily tasks with precision and care
+            </p>
+            <p className="md:hidden text-gray-600 dark:text-gray-300 pt-3">
+              (Tap on a card to see more details)
             </p>
           </div>
 

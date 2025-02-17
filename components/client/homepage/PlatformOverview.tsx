@@ -69,7 +69,9 @@ const ProductCard = ({
       >
         <div className="p-8">
           <div className="flex items-start gap-6">
-            <div className={`${iconBgMap[color]} p-4 rounded-2xl`}>
+            <div
+              className={`${iconBgMap[color]} p-4 rounded-2xl hidden md:block`}
+            >
               <Icon className={`w-8 h-8 ${iconColorMap[color]}`} />
             </div>
             <div className="flex-1">

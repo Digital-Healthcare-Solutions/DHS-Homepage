@@ -8,7 +8,7 @@ const InviteUsers = () => {
       id="team-collaboration"
     >
       <video
-        className="w-[900px] h-[640px]"
+        className="w-[900px] h-[250px] md:h-[640px]"
         // controls
         autoPlay
         loop

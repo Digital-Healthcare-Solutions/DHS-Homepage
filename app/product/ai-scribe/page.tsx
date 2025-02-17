@@ -1,23 +1,3 @@
-// import RequestDemo from "@/components/client/forms/requestDemo"
-// import Devices from "@/components/client/homepage/Devices"
-// import EchoSettingsVideo from "@/components/client/homepage/EchoSettingsVideo"
-// import { Hero } from "@/components/client/homepage/Hero"
-// import InviteUsers from "@/components/client/homepage/InviteUsers"
-// import InteractiveDragandDropDemo from "@/components/client/interactive/settings-example"
-// import React from "react"
-
-// const Page = () => {
-//   return (
-//     <div>
-//       <Hero />
-//
-//       <RequestDemo />
-//     </div>
-//   )
-// }
-
-// export default Page
-
 import React from "react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
@@ -231,7 +211,7 @@ const AIScribePage = () => {
       </section>
 
       {/* Key Features */}
-      <section className="pt-24 relative">
+      <section className="pt-12 md:pt-24 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-emerald-900 dark:text-emerald-100 mb-4">
@@ -248,11 +228,11 @@ const AIScribePage = () => {
       <EchoSettingsVideo />
       <InteractiveDragandDropDemo />
       {/* Key Features */}
-      <section className="pt-40 relative">
+      <section className="pt-20 md:pt-40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl md:text-5xl font-bold text-emerald-900 dark:text-emerald-100 mb-4">
-              Invite your team to collaborate.
+              Invite your whole team to collaborate.
             </h2>
             <p className="text-lg md:text-xl text-emerald-700 dark:text-emerald-300">
               Seamlessly share and collaborate on patient notes between nurses

@@ -31,7 +31,7 @@ const SmartFormPage = () => {
   return (
     <div className="min-h-screen bg-amber-50/50 dark:bg-neutral-950">
       {/* Hero Section */}
-      <section className="relative pb-32 pt-24">
+      <section className="relative pb-12 md:pb-32 pt-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 dark:bg-amber-900/30 mb-8">
@@ -71,7 +71,7 @@ const SmartFormPage = () => {
       </section>
 
       {/* Key Features Grid */}
-      <section className="py-24 relative">
+      <section className="py-12 md:py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-amber-50/50 to-white dark:from-neutral-950 dark:to-neutral-900"></div>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-16">
@@ -126,7 +126,7 @@ const SmartFormPage = () => {
       </section>
 
       {/* Form Builder Features */}
-      <section className="py-24 bg-gradient-to-b from-white to-amber-50/50 dark:from-neutral-900 dark:to-neutral-950">
+      <section className="py-12 md:py-24 bg-gradient-to-b from-white to-amber-50/50 dark:from-neutral-900 dark:to-neutral-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16 text-amber-900 dark:text-amber-100">
             Powerful Form Building Features
@@ -207,7 +207,7 @@ const SmartFormPage = () => {
       </section>
 
       {/* Distribution Section */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-16 text-amber-900 dark:text-amber-100">
             Multiple Ways to Share Forms
