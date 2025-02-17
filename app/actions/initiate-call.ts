@@ -31,7 +31,8 @@ const client = twilio(accountSid, authToken)
 export async function initiateCall(phoneNumber: string) {
   try {
     const headersList = headers()
-    const userIp = headersList.get("x-real-ip")
+    const userIp = headersList["x-real-ip"] ?? headersList["x-forwarded-for"]
+    console.log("userIp", userIp)
 
     if (!phoneNumber) {
       throw new Error("Missing required param 'phoneNumber'")
@@ -55,7 +56,7 @@ export async function initiateCall(phoneNumber: string) {
       url: twimlUrl,
       statusCallback: process.env.TWILIO_DEMO_CALLBACK_URL ?? undefined,
       statusCallbackEvent: ["completed"],
-      timeLimit: 600
+      timeLimit: 300
       // machineDetection: "Enable",
       // machineDetectionTimeout: 10
     })
