@@ -136,7 +136,7 @@ const CallCenterPage = () => {
               </span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-sky-600 to-blue-500 dark:from-sky-400 dark:to-blue-400 bg-clip-text text-transparent">
-              Automate phone based workflows with conversational AI
+              Transform patient communication with AI-powered phone automation
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-10">
               Free your healthcare team from phone duties with an AI assistant
