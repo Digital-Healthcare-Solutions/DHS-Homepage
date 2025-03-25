@@ -12,9 +12,7 @@ const PricingCard = ({
   features,
   highlight,
   btnType = "link",
-  buttonType,
-  buttonText,
-  addOns
+  buttonText
 }: {
   title: string
   price: string
@@ -22,9 +20,7 @@ const PricingCard = ({
   features: string[]
   highlight: boolean
   btnType: "link" | "quote"
-  buttonType: string
   buttonText: string
-  addOns?: { name: string; price: string; description: string }[]
 }) => (
   <Card
     className={`group relative overflow-hidden backdrop-blur-sm bg-white/80 dark:bg-neutral-900/80 border-0 shadow-lg rounded-3xl h-full ${
@@ -96,11 +92,7 @@ const PricingCard = ({
         ) : (
           <GetCustomQuote
             btnText="Get a Custom Quote"
-            btnClassName={`w-full py-3 rounded-xl transition-all duration-300 ${
-              highlight
-                ? "bg-blue-600 hover:bg-blue-700 text-white dark:bg-blue-500 dark:hover:bg-blue-600"
-                : "bg-gray-100 hover:bg-gray-200 text-gray-900 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-gray-100"
-            }`}
+            btnClassName={`w-full text-white bg-gray-100 hover:bg-gray-200 text-gray-900 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-gray-100 rounded-lg p-2.5 flex items-center justify-center font-rubik text-sm`}
           />
         )}
       </div>

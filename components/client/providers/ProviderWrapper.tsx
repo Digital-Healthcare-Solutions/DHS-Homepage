@@ -67,6 +67,16 @@ const ProviderWrapper = ({ children }: { children: React.ReactNode }) => {
 
   gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID2}');`}
       </Script>
+      <Script>
+        {`
+<script async src="https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_TAG_ID}');
+</script>`}
+      </Script>
       <QueryClientProvider client={queryClient}>
         <PostHogProvider client={posthog}>
           <SuspendedPostHogPageView />
