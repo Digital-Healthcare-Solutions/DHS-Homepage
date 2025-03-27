@@ -9,7 +9,8 @@ export const InfiniteMovingCards = ({
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
-  className
+  className,
+  color = "blue"
 }: {
   items: {
     quote: string
@@ -20,6 +21,7 @@ export const InfiniteMovingCards = ({
   speed?: "fast" | "normal" | "slow"
   pauseOnHover?: boolean
   className?: string
+  color?: "green" | "blue" | "purple"
 }) => {
   const containerRef = React.useRef<HTMLDivElement>(null)
   const scrollerRef = React.useRef<HTMLUListElement>(null)
@@ -97,12 +99,36 @@ export const InfiniteMovingCards = ({
             className="w-[350px] max-w-full relative flex-shrink-0 md:w-[450px]"
           >
             <div className="group relative h-full overflow-hidden rounded-3xl backdrop-blur-sm bg-white/80 dark:bg-neutral-900/80 border-0 shadow-lg">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 to-transparent dark:from-blue-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${
+                  color === "green"
+                    ? "from-green-100/50 to-transparent dark:from-green-900/20 dark:to-transparent"
+                    : color === "purple"
+                    ? "from-purple-100/50 to-transparent dark:from-purple-900/20 dark:to-transparent"
+                    : "from-blue-100/50 to-transparent dark:from-blue-900/20 dark:to-transparent"
+                } opacity-0 group-hover:opacity-100 transition-opacity`}
+              ></div>
 
               <div className="relative p-8 flex flex-col h-full min-h-[300px]">
                 <div className="mb-6">
-                  <div className="inline-flex p-3 rounded-2xl bg-blue-100 dark:bg-blue-900/50">
-                    <Quote className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                  <div
+                    className={`inline-flex p-3 rounded-2xl ${
+                      color === "green"
+                        ? "bg-green-100 dark:bg-green-900/40"
+                        : color === "purple"
+                        ? "bg-purple-100 dark:bg-purple-900/50"
+                        : "bg-blue-100 dark:bg-blue-900/50"
+                    }`}
+                  >
+                    <Quote
+                      className={`w-6 h-6 ${
+                        color === "green"
+                          ? "text-green-600 dark:text-green-500"
+                          : color === "purple"
+                          ? "text-purple-600 dark:text-purple-400"
+                          : "text-blue-600 dark:text-blue-400"
+                      } `}
+                    />
                   </div>
                 </div>
 
