@@ -75,28 +75,28 @@ const steps = [
     title: "Start Recording",
     description:
       "Begin your patient encounter with one-click recording. Your conversation is securely captured for AI processing.",
-    image: "/images/start-recording.png" // Replace with actual image path
+    image: "/recording-speech.png"
   },
   {
     number: "2",
     title: "Real-time Transcription",
     description:
       "AI-powered transcription converts speech to text in real-time with medical terminology accuracy above 98%.",
-    image: "/images/transcription.png" // Replace with actual image path
+    image: "/stream-text.png"
   },
   {
     number: "3",
     title: "Generate Clinical Notes",
     description:
       "Automatically generate structured clinical notes formatted exactly the way you want them.",
-    image: "/images/clinical-notes.png" // Replace with actual image path
+    image: "/soap-note.png"
   },
   {
     number: "4",
     title: "Review & Export",
     description:
       "Quickly review AI-generated notes, make any edits, and export directly to your EMR system.",
-    image: "/images/export.png" // Replace with actual image path
+    image: "/export-note-to-emr.png"
   }
 ]
 
@@ -270,23 +270,23 @@ const AIScribePage = () => {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="bg-white dark:bg-neutral-800 rounded-2xl overflow-hidden border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow px-3 pt-3"
+              className="bg-white dark:bg-neutral-800/50 rounded-3xl overflow-hidden border border-neutral-200 dark:border-neutral-700 hover:border-emerald-300 hover:dark:border-emerald-700 shadow-sm hover:shadow-md transition-all"
             >
-              {/* Image area with pale background */}
-              <div className="bg-emerald-50 dark:bg-emerald-900/30 aspect-video flex items-center justify-center p-3 rounded">
+              {/* Image area with overflow effect - notice we removed object-contain */}
+              <div className="relative h-44 overflow-hidden">
                 <img
                   src={step.image}
                   alt={step.title}
-                  className="max-h-full max-w-full object-contain"
+                  className="w-[100%] max-w-none object-cover object-center-top transform -translate-y-4"
                 />
               </div>
 
               {/* Content area */}
               <div className="p-6">
-                <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-white">
                   {step.number}. {step.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-600 dark:text-gray-300 text-lg">
                   {step.description}
                 </p>
               </div>
