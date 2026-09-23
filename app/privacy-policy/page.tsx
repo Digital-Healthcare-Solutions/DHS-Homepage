@@ -139,9 +139,10 @@ const PrivacyPolicy = () => {
             <p>
               With a Customer's prior written authorization, we may use, and
               license to third parties, de-identified data derived from that
-              Customer's records, including for research, analytics, and product
-              development. Recipients may use licensed de-identified data for
-              their own purposes, subject to the safeguards described below. We
+              Customer's records. Recipients may use licensed de-identified data
+              for their own purposes, including research, analytics, product
+              development, and the development and training of artificial
+              intelligence models, subject to the safeguards described below. We
               will not create, use, or license de-identified data derived from a
               Customer's records without that Customer's written authorization.
             </p>
@@ -203,8 +204,9 @@ const PrivacyPolicy = () => {
 
           <p>
             We do not use PHI or other identifiable personal information to
-            train artificial intelligence models. Any use of de-identified data
-            is governed by Section 3.
+            train artificial intelligence models. De-identified data licensed
+            under Section 3 may be used by recipients to develop and train AI
+            models.
           </p>
 
           <h3 className="text-2xl font-semibold">6. Data Security</h3>
